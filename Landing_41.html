@@ -1,0 +1,3501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fernando Opoka Fotografía | Fotógrafo de Bodas</title>
+<meta name="description" content="Fotografía de bodas enfocada en las emociones reales de los novios. 9 años de experiencia. Agenda tu reunión previa sin compromiso.">
+<meta property="og:title" content="Fernando Opoka Fotografía | Fotógrafo de Bodas">
+<meta property="og:description" content="Fotografía de bodas enfocada en las emociones reales. 9 años de experiencia.">
+<!-- OG IMAGE: reemplazar con /images/og-image.jpg cuando tengas una imagen de portada definida -->
+<meta property="og:image" content="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRZ_5316_gmye37.jpg">
+<meta property="og:type" content="website">
+<!-- FAVICON: agregar cuando tengas un favicon definido -->
+<!-- <link rel="icon" href="/images/favicon.png"> -->
+<!-- NOTA SOBRE IDIOMAS: las etiquetas <title>/<meta> de arriba quedan en español porque
+     los buscadores leen el HTML estático (no lo que cambia el selector de idioma con
+     JavaScript). Todo el contenido VISIBLE de la página sí cambia con el selector. Si más
+     adelante querés que Google indexe también versiones en portugués/inglés, lo correcto
+     es crear páginas separadas por idioma (otro proyecto aparte). -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Fernando Opoka",
+  "jobTitle": "Fotógrafo de bodas",
+  "description": "Fotógrafo profesional de bodas con 9 años de experiencia.",
+  "image": "https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRX_6178_s8x5fs.jpg"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream: #F7F2EA;
+    --cream-deep: #EFE6D6;
+    --ink: #332B24;
+    --ink-soft: #5C5245;
+    --bronze: #A98A5D;
+    --bronze-soft: #C9AE85;
+    --charcoal: #221D18;
+    --line: rgba(51,43,36,0.14);
+    --radius-arch: 200px 200px 12px 12px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Jost', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    font-weight:300;
+    line-height:1.65;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%; display:block;}
+
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    color:var(--ink);
+    line-height:1.12;
+  }
+
+  .eyebrow{
+    font-family:'Petit Formal Script', cursive;
+    font-size:1.4rem;
+    color:var(--bronze);
+    font-weight:400;
+    display:block;
+    margin-bottom:0.4rem;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  section{padding:44px 0;}
+
+  .btn{
+    display:inline-block;
+    background:var(--charcoal);
+    color:var(--cream);
+    font-family:'Jost', sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:18px 40px;
+    border:none;
+    cursor:pointer;
+    transition:background 0.25s ease, transform 0.25s ease;
+  }
+  .btn:hover{background:var(--bronze); transform:translateY(-2px) scale(1.03);}
+  .btn:focus-visible{outline:3px solid var(--bronze-soft); outline-offset:3px;}
+
+  .microcopy{
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    margin-top:14px;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- SELECTOR DE IDIOMA (bloquea todo hasta elegir) ---------- */
+  .lang-modal-overlay{
+    position:fixed; inset:0;
+    background:rgba(20,17,14,0.94);
+    z-index:3000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .lang-modal-overlay[hidden]{display:none;}
+  .lang-modal{
+    background:var(--cream);
+    border-radius:18px;
+    padding:40px 30px;
+    max-width:420px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 30px 80px rgba(0,0,0,0.45);
+  }
+  .lang-modal-title{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--ink);
+    margin-bottom:26px;
+    line-height:1.6;
+  }
+  .lang-modal-options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .lang-option{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:var(--cream-deep);
+    border:2px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    font-family:'Jost', sans-serif;
+    font-size:1rem;
+    color:var(--ink);
+    cursor:pointer;
+    transition:border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  }
+  .lang-option .flag{font-size:1.3rem;}
+  .lang-option .country{color:var(--ink-soft); font-size:0.85rem;}
+  .lang-option:hover{border-color:var(--bronze); background:#F1E4CE; transform:translateY(-2px);}
+  .lang-option:focus-visible{outline:3px solid var(--bronze-soft); outline-offset:2px;}
+
+  /* Botón fijo para volver a cambiar el idioma más adelante */
+  .lang-switcher{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:600;
+    background:rgba(34,29,24,0.75);
+    color:var(--cream);
+    border:1px solid rgba(247,242,234,0.3);
+    border-radius:20px;
+    padding:8px 14px;
+    font-family:'Jost', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    cursor:pointer;
+    backdrop-filter:blur(4px);
+  }
+  .lang-switcher:hover{background:rgba(34,29,24,0.92);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    align-items:flex-end;
+    padding:0;
+    overflow:hidden;
+  }
+  .hero picture, .hero img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    z-index:0;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(34,29,24,0.15) 0%, rgba(34,29,24,0.15) 40%, rgba(34,29,24,0.72) 100%);
+    z-index:1;
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    width:100%;
+    padding:48px 24px 56px;
+    text-align:center;
+    color:#fff;
+  }
+  .hero-textbox{
+    margin:0 auto 26px;
+    max-width:720px;
+  }
+  .hero-btn-row{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+    max-width:360px;
+    margin:0 auto;
+  }
+  @media (min-width:640px){
+    .hero-btn-row{
+      flex-direction:row;
+      justify-content:center;
+      flex-wrap:wrap;
+      max-width:none;
+    }
+  }
+  .hero-btn{width:100%;}
+  @media (min-width:640px){ .hero-btn{width:auto;} }
+  /* En el hero, el eyebrow deja de ser el scriptcito chico y pasa a verse
+     como un verdadero título secundario: tipografía serif itálica, más
+     grande y con más peso, en vez del cursive pequeño que se usa en el
+     resto de la página. */
+  .hero-content .eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.6rem;
+    letter-spacing:0.01em;
+    color:#fff;
+    text-shadow:0 2px 14px rgba(0,0,0,0.65), 0 1px 3px rgba(0,0,0,0.6);
+    margin-bottom:0.9rem;
+  }
+  @media (min-width:768px){
+    .hero-content .eyebrow{font-size:2.1rem;}
+  }
+  .hero h1{
+    color:#fff;
+    font-size:2.1rem;
+    max-width:760px;
+    margin:0 auto 18px;
+    font-style:italic;
+    font-weight:400;
+  }
+  .hero p.sub{
+    color:rgba(255,255,255,0.88);
+    max-width:520px;
+    margin:0 auto;
+    font-size:1rem;
+  }
+
+  @media (min-width:768px){
+    .hero h1{font-size:3.3rem;}
+    .hero p.sub{font-size:1.1rem;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 48px;
+  }
+  .section-head h2{font-size:2rem; font-style:italic;}
+  @media (min-width:768px){ .section-head h2{font-size:2.6rem;} }
+
+  /* ---------- VSL ---------- */
+  .vsl{background:var(--charcoal); padding:56px 0;}
+  .vsl-box{
+    max-width:900px;
+    margin:0 auto;
+    aspect-ratio:16/9;
+    background:#151210;
+    border:1px solid rgba(247,242,234,0.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .vsl-box .play{
+    width:74px; height:74px;
+    border-radius:50%;
+    background:var(--bronze);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:1.6rem;
+  }
+  .vsl-box p{
+    position:absolute;
+    bottom:22px;
+    left:0; right:0;
+    text-align:center;
+    color:rgba(247,242,234,0.5);
+    font-size:0.8rem;
+    letter-spacing:0.04em;
+  }
+
+  /* ---------- PROBLEMA ---------- */
+  .problema{background:var(--cream);}
+  .problema .grid{
+    display:grid;
+    gap:40px;
+    align-items:center;
+  }
+  @media (min-width:768px){
+    .problema .grid{grid-template-columns: 0.9fr 1.1fr; gap:64px;}
+  }
+  .arch-frame{
+    border-radius:var(--radius-arch);
+    overflow:hidden;
+    aspect-ratio: 3/4;
+  }
+  .arch-frame img{width:100%; height:100%; object-fit:cover;}
+
+  .problema h2{font-size:1.9rem; font-style:italic; margin-bottom:20px;}
+  .problema p{color:var(--ink-soft); margin-bottom:16px; max-width:46ch;}
+
+  /* En mobile: la foto ocupa todo el ancho y se ve más alta/oscurecida,
+     y el bloque de texto se desliza encima al hacer scroll. */
+  @media (max-width:767px){
+    .problema .grid{display:block; gap:0;}
+    .problema .grid .arch-frame{
+      width:100%; max-width:none; margin:0;
+      aspect-ratio:3/4.1;
+      position:relative;
+      filter:brightness(0.8);
+    }
+    .problema .grid .arch-frame::after{
+      content:'';
+      position:absolute; inset:auto 0 0 0; height:85%;
+      background:linear-gradient(to top,
+        rgba(20,16,12,0.82) 0%,
+        rgba(20,16,12,0.55) 32%,
+        rgba(20,16,12,0.24) 62%,
+        rgba(20,16,12,0) 100%);
+      pointer-events:none;
+    }
+    .problema .grid > div:last-child{
+      position:relative; z-index:1;
+      margin-top:-64px;
+      background:rgba(20,16,12,0.86);
+      -webkit-backdrop-filter:blur(6px);
+      backdrop-filter:blur(6px);
+      border-radius:20px 20px 0 0;
+      padding:26px 20px 20px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .6s ease, transform .6s ease;
+    }
+    .problema .grid.in-view > div:last-child{opacity:1; transform:translateY(0);}
+    .problema h2{color:#F7F2EA;}
+    .problema p{color:rgba(247,242,234,0.86);}
+  }
+
+  /* ---------- PROCESO ---------- */
+  .proceso{background:var(--cream-deep);}
+  .steps{
+    display:grid;
+    gap:32px;
+  }
+  @media (min-width:768px){
+    .steps{grid-template-columns:repeat(3,1fr); gap:40px;}
+  }
+  .step{text-align:center; padding:0 12px;}
+  .step-num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.1rem;
+    color:var(--bronze);
+    display:block;
+    margin-bottom:10px;
+  }
+  .step h3{font-size:1.4rem; margin-bottom:10px; font-weight:500;}
+  .step p{color:var(--ink-soft); font-size:0.95rem;}
+
+  /* ---------- PROMESA / RIESGO ---------- */
+  .promesa{
+    background:var(--charcoal);
+    color:var(--cream);
+    text-align:center;
+  }
+  .promesa .eyebrow{color:var(--bronze-soft);}
+  .promesa h2{color:#fff; font-size:1.9rem; font-style:italic; max-width:700px; margin:0 auto 22px;}
+  .promesa p{color:rgba(247,242,234,0.82); max-width:620px; margin:0 auto;}
+  @media (min-width:768px){ .promesa h2{font-size:2.5rem;} }
+
+  /* ---------- PORTAFOLIO (CARRUSEL INFINITO) ---------- */
+  .portafolio{background:var(--cream); overflow:hidden;}
+  .portafolio .wrap{overflow:visible;}
+  .carousel-viewport{
+    overflow:hidden;
+    width:100%;
+    margin-top:8px;
+  }
+  .carousel-track{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    width:max-content;
+    will-change:transform;
+    /* Loop infinito: el track contiene el set de fotos duplicado (ver script).
+       El movimiento (auto-scroll y también el drag/swipe táctil) se maneja
+       por JS con requestAnimationFrame en vez de una animación CSS, para
+       poder combinarlo con que el usuario toque y deslice la galería. */
+    cursor:grab;
+    touch-action:pan-y;
+  }
+  .carousel-track.is-dragging{cursor:grabbing; transition:none;}
+  .carousel-track.is-dragging *{pointer-events:none;}
+  .carousel-track figure{
+    flex:0 0 auto;
+    margin:0;
+    height:230px;
+    border-radius:14px;
+    overflow:hidden;
+    cursor:zoom-in;
+  }
+  @media (min-width:768px){
+    .carousel-track figure{height:320px;}
+  }
+  .carousel-track img{
+    height:100%;
+    width:auto;
+    display:block;
+    object-fit:cover;
+    transition:transform 0.35s ease;
+    -webkit-user-drag:none;
+    user-select:none;
+  }
+  .carousel-track figure:hover img{transform:scale(1.05);}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox-overlay{
+    position:fixed; inset:0;
+    background:rgba(34,29,24,0.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+    padding:32px;
+    cursor:zoom-out;
+  }
+  .lightbox-overlay.is-open{display:flex;}
+  .lightbox-overlay img{
+    max-width:100%;
+    max-height:90vh;
+    width:auto;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-close{
+    position:absolute;
+    top:24px; right:28px;
+    background:none;
+    border:none;
+    color:var(--cream);
+    font-size:2rem;
+    line-height:1;
+    cursor:pointer;
+    font-family:'Jost', sans-serif;
+  }
+
+  /* ---------- SOBRE MI ---------- */
+  .sobre{background:var(--cream-deep);}
+  .sobre .grid{
+    display:grid;
+    gap:40px;
+    align-items:center;
+  }
+  @media (min-width:768px){
+    .sobre .grid{grid-template-columns: 0.8fr 1.2fr; gap:64px;}
+  }
+  .sobre .arch-frame{aspect-ratio:3/3.6;}
+  .sobre h2{font-size:1.9rem; font-style:italic; margin-bottom:18px;}
+  .sobre p{color:var(--ink-soft); margin-bottom:14px; max-width:50ch;}
+  /* En mobile: misma idea que "El problema" — foto a todo el ancho,
+     oscurecida, con el texto deslizándose encima al hacer scroll. */
+  @media (max-width:767px){
+    .sobre .grid{display:block; gap:0;}
+    .sobre .grid .arch-frame{
+      width:100%; max-width:none; margin:0;
+      aspect-ratio:3/4.1;
+      position:relative;
+      filter:brightness(0.8);
+    }
+    .sobre .grid .arch-frame::after{
+      content:'';
+      position:absolute; inset:auto 0 0 0; height:85%;
+      background:linear-gradient(to top,
+        rgba(20,16,12,0.82) 0%,
+        rgba(20,16,12,0.55) 32%,
+        rgba(20,16,12,0.24) 62%,
+        rgba(20,16,12,0) 100%);
+      pointer-events:none;
+    }
+    .sobre .grid > div:last-child{
+      position:relative; z-index:1;
+      margin-top:-64px;
+      background:rgba(20,16,12,0.86);
+      -webkit-backdrop-filter:blur(6px);
+      backdrop-filter:blur(6px);
+      border-radius:20px 20px 0 0;
+      padding:26px 20px 20px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .6s ease, transform .6s ease;
+    }
+    .sobre .grid.in-view > div:last-child{opacity:1; transform:translateY(0);}
+    .sobre h2{color:#F7F2EA;}
+    .sobre p{color:rgba(247,242,234,0.86);}
+  }
+  .sobre .credit{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--bronze);
+    font-size:1.1rem;
+  }
+
+  /* ---------- PAQUETES ---------- */
+  .servicios{background:var(--cream);}
+  .pkg-grid{
+    display:grid;
+    gap:28px;
+    max-width:980px;
+    margin:0 auto;
+  }
+  @media (min-width:768px){
+    .pkg-grid{grid-template-columns:repeat(3,1fr); align-items:stretch;}
+  }
+  .pkg-card{
+    background:var(--cream-deep);
+    border:2px solid var(--line);
+    padding:40px 30px;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position:relative;
+  }
+  .pkg-card:hover{
+    transform:scale(1.02);
+    box-shadow:0 18px 40px rgba(51,43,36,0.12);
+  }
+  /* Wedding Plus vuelve a usar el negro que tenía Full Wedding (esta regla
+     compartida .is-featured), y Full Wedding pasa a usar el estilo claro
+     tipo Mini (ver el bloque .pkg-card.is-luxe más abajo, que le pisa este
+     negro). O sea: se intercambiaron los colores entre el paquete 2 y 3. */
+  .pkg-card.is-featured{
+    background:var(--charcoal);
+    color:var(--cream);
+    border-color:var(--charcoal);
+  }
+  .pkg-card.is-selected{
+    background:#F1E4CE;
+    border-color:var(--bronze);
+    box-shadow:0 18px 40px rgba(169,138,93,0.3);
+  }
+  .pkg-card.is-featured.is-selected{
+    background:#3A2E1E;
+    border-color:var(--bronze-soft);
+  }
+  /* Full Wedding: mismo look claro que Mini (cream-deep + texto oscuro),
+     pisando el negro de .is-featured de arriba con la misma especificidad
+     (2 clases) pero declarado después, y lo mismo para cada texto/ítem que
+     .is-featured recolorea más abajo para el modo oscuro. */
+  .pkg-card.is-luxe{
+    background:var(--cream-deep);
+    color:var(--ink);
+    border-color:var(--line);
+  }
+  .pkg-card.is-luxe.is-selected{
+    background:#F1E4CE;
+    border-color:var(--bronze);
+    box-shadow:0 18px 40px rgba(169,138,93,0.3);
+  }
+  .pkg-card.is-selected::after{
+    content:"✓ Seleccionado";
+    position:absolute;
+    top:-13px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--bronze);
+    color:#fff;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    padding:5px 14px;
+    border-radius:20px;
+  }
+  html[lang="pt-BR"] .pkg-card.is-selected::after{content:"✓ Selecionado";}
+  html[lang="en-US"] .pkg-card.is-selected::after{content:"✓ Selected";}
+  .pkg-badge{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--charcoal);
+    color:var(--cream);
+    font-size:0.7rem;
+    letter-spacing:0.02em;
+    padding:7px 16px;
+    border-radius:20px;
+    white-space:nowrap;
+    box-shadow:0 6px 16px rgba(51,43,36,0.25);
+  }
+  .pkg-card.is-selected .pkg-badge{top:-38px;}
+  .pkg-card .pkg-eyebrow{
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    color:var(--bronze);
+  }
+  .pkg-card.is-featured .pkg-eyebrow{color:var(--bronze-soft);}
+  .pkg-card h3{
+    font-size:1.6rem;
+    font-style:italic;
+    margin:10px 0 16px;
+  }
+  .pkg-card.is-featured h3{color:var(--bronze-soft);}
+  .pkg-card .pkg-price{
+    font-family:'Jost', sans-serif;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+    margin-bottom:20px;
+  }
+  .pkg-card.is-featured .pkg-price{color:rgba(247,242,234,0.75);}
+  .pkg-price-note{
+    font-family:'Jost', sans-serif;
+    font-size:0.76rem;
+    color:var(--ink-soft);
+    margin:-14px 0 4px;
+  }
+  .pkg-price-save{
+    font-family:'Jost', sans-serif;
+    font-size:0.8rem;
+    font-weight:600;
+    color:#2E9B57;
+    margin-bottom:18px;
+  }
+  .pkg-card.is-featured .pkg-price-note{color:rgba(247,242,234,0.55);}
+  .pkg-card.is-featured .pkg-price-save{color:#7FE3A6;}
+  .pkg-card ul{
+    list-style:none;
+    margin:0 0 30px;
+    padding:0;
+    text-align:left;
+    flex-grow:1;
+  }
+  .pkg-card li{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    padding:9px 0 9px 26px;
+    border-top:1px solid var(--line);
+    position:relative;
+  }
+  .pkg-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#2E9B57;
+    font-weight:600;
+  }
+  .pkg-card li.not-included{
+    color:var(--ink-soft);
+    opacity:0.45;
+  }
+  .pkg-card li.not-included::before{
+    content:"✕";
+    color:#C43B3B;
+  }
+  .pkg-card li.is-gift-item::before{
+    content:"🎁";
+    color:inherit;
+    font-size:0.85rem;
+  }
+
+  /* Ítem seleccionable (elegí uno de los dos): signo de pregunta negro por
+     defecto, alineado arriba a la izquierda del texto (con flex, para que
+     no se descentre si el texto ocupa dos líneas), que se metamorfosea
+     (rota + cambia de forma) en el mismo tilde/equis que ya se usa en el
+     resto de la lista. */
+  .pkg-card li.li-choice{
+    cursor:pointer;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    border:1px solid rgba(51,43,36,0.18);
+    border-radius:10px;
+    background:rgba(51,43,36,0.04);
+    margin:6px 0;
+    padding:9px 12px;
+    transition:background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .pkg-card li.li-choice:hover{
+    background:rgba(51,43,36,0.08);
+  }
+  .pkg-card li.li-choice.is-decided{
+    background:transparent;
+    border-color:var(--line);
+  }
+  .pkg-card li.li-choice::before{content:none;}
+  .choice-icon{
+    position:relative;
+    flex-shrink:0;
+    width:15px; height:15px;
+    margin-top:3px;
+  }
+  .choice-glyph{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.92rem;
+    font-weight:600;
+    line-height:1;
+    color:var(--ink);
+    opacity:1;
+    transform:scale(1) rotate(0deg);
+    transition:transform 0.5s cubic-bezier(.4,0,.2,1), opacity 0.4s ease, color 0.3s ease;
+  }
+  .choice-glyph::after{content:"?";}
+  .li-choice.is-decided .choice-glyph{
+    animation:choiceGlyphPop 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  .choice-glyph.is-chosen{color:#2E9B57;}
+  .choice-glyph.is-chosen::after{content:"✓";}
+  .choice-glyph.is-rejected{color:#C43B3B;}
+  .choice-glyph.is-rejected::after{content:"✕";}
+  @keyframes choiceGlyphPop{
+    0%{ transform:scale(1) rotate(0deg); }
+    45%{ transform:scale(0.3) rotate(-135deg); opacity:0.4; }
+    100%{ transform:scale(1) rotate(0deg); opacity:1; }
+  }
+  .pkg-card li.li-choice.not-included{color:var(--ink-soft); opacity:0.55;}
+  .pkg-card.is-featured li{
+    color:rgba(247,242,234,0.82);
+    border-top-color:rgba(247,242,234,0.15);
+  }
+  .pkg-card.is-featured li::before{color:#4CC47C;}
+  .pkg-card.is-featured li.not-included::before{color:#E36B6B;}
+  .pkg-card.is-featured li.not-included{color:rgba(247,242,234,0.5);}
+  .pkg-card li:last-child{border-bottom:1px solid var(--line);}
+  .pkg-card.is-featured li:last-child{border-bottom-color:rgba(247,242,234,0.15);}
+  .pkg-card .btn{width:100%;}
+  .pkg-card.is-featured .btn{background:var(--bronze); color:var(--charcoal);}
+  .pkg-card.is-featured .btn:hover{background:var(--bronze-soft);}
+  /* Full Wedding: se declaran después de las reglas .is-featured de arriba
+     (misma especificidad, pero último en el CSS gana) para que le ganen el
+     estilo oscuro y quede con el look claro tipo Mini. */
+  .pkg-card.is-luxe .pkg-eyebrow{color:var(--bronze);}
+  .pkg-card.is-luxe h3{color:var(--ink);}
+  .pkg-card.is-luxe .pkg-price{color:var(--ink-soft);}
+  .pkg-card.is-luxe .pkg-price-note{color:var(--ink-soft);}
+  .pkg-card.is-luxe .pkg-price-save{color:#2E9B57;}
+  .pkg-card.is-luxe li{color:var(--ink-soft); border-top-color:var(--line);}
+  .pkg-card.is-luxe li::before{color:#2E9B57;}
+  .pkg-card.is-luxe li.not-included::before{color:#C43B3B;}
+  .pkg-card.is-luxe li.not-included{color:var(--ink-soft); opacity:0.45;}
+  .pkg-card.is-luxe li:last-child{border-bottom-color:var(--line);}
+  .pkg-card.is-luxe .btn{background:var(--charcoal); color:var(--cream);}
+  .pkg-card.is-luxe .btn:hover{background:var(--bronze);}
+
+  /* En celular los 3 paquetes van apilados y ocupaban demasiado alto: se
+     recortan paddings, márgenes y el tamaño de la lista para que se vean
+     más compactos sin perder legibilidad. */
+  @media (max-width:767px){
+    .pkg-card{padding:26px 22px;}
+    .pkg-card h3{margin:6px 0 10px; font-size:1.4rem;}
+    .pkg-card .pkg-price{margin-bottom:12px;}
+    .pkg-price-note{margin:-8px 0 2px; font-size:0.7rem;}
+    .pkg-price-save{margin-bottom:12px; font-size:0.74rem;}
+    .pkg-card ul{margin:0 0 18px;}
+    .pkg-card li{padding:6px 0 6px 24px; font-size:0.86rem;}
+    .pkg-card li.li-choice{padding:7px 10px; margin:4px 0;}
+  }
+
+  /* Banda oscura para el aviso de paquete personalizado, mismo estilo que "Lo que está en juego" */
+  .pkg-custom-band{
+    background:var(--charcoal);
+    text-align:center;
+    padding:44px 24px;
+  }
+  .pkg-custom{
+    font-size:1rem;
+    color:rgba(247,242,234,0.85);
+    max-width:620px;
+    margin:0 auto;
+  }
+  .pkg-custom a{
+    color:var(--bronze-soft);
+    text-decoration:underline;
+  }
+  .pkg-custom a:hover{color:var(--cream);}
+
+  /* ---------- SERVICIOS EXTRAS ---------- */
+  .extras{background:var(--cream-deep);}
+  .extras-sub{
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 auto;
+  }
+  .extras-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  @media (min-width:600px){
+    .extras-grid{grid-template-columns:repeat(4,1fr); max-width:820px;}
+  }
+  /* Tema "paquete de regalo" aplicado por defecto a los botones de álbum */
+  .extra-chip{
+    position:relative;
+    background:#F1E4CE;
+    border:2px solid var(--bronze-soft);
+    padding:26px 12px;
+    text-align:center;
+    cursor:pointer;
+    font-family:'Jost', sans-serif;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .extra-chip:hover{
+    transform:scale(1.05);
+    box-shadow:0 12px 26px rgba(51,43,36,0.15);
+  }
+  .extra-chip.is-selected{
+    border-color:var(--bronze);
+    background:var(--charcoal);
+  }
+  .extra-chip-title{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.2rem;
+    color:var(--ink);
+  }
+  .extra-chip.is-selected .extra-chip-title{color:var(--cream);}
+  .extra-chip-sub{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  .extra-chip.is-selected .extra-chip-sub{color:var(--bronze-soft);}
+  .extra-chip-price{
+    font-size:0.78rem;
+    color:var(--bronze);
+    margin-top:2px;
+    font-weight:600;
+  }
+  .extra-chip.is-selected .extra-chip-price{color:var(--bronze-soft);}
+  .extra-chip-price-sub{
+    font-size:0.68rem;
+    color:#2E9B57;
+    font-weight:500;
+  }
+  .extra-chip.is-selected .extra-chip-price-sub{color:#7FE3A6;}
+  .price-old{
+    text-decoration:line-through;
+    color:var(--ink-soft);
+    font-weight:400;
+    margin-right:5px;
+    opacity:0.7;
+  }
+  .extra-chip.is-selected .price-old{color:rgba(247,242,234,0.55);}
+
+  .gift-banner{
+    text-align:center;
+    max-width:520px;
+    margin:0 auto 30px;
+    background:#F1E4CE;
+    border:1px dashed var(--bronze);
+    color:var(--ink);
+    font-size:0.9rem;
+    padding:12px 18px;
+  }
+  /* Badges arriba a la izquierda: regalo (bronce) y descuento (sello rojo clásico) */
+  .gift-ribbon{
+    position:absolute;
+    top:-12px;
+    left:-10px;
+    background:var(--bronze);
+    color:#fff;
+    font-size:0.66rem;
+    letter-spacing:0.02em;
+    padding:5px 11px;
+    border-radius:20px;
+    white-space:nowrap;
+    box-shadow:0 4px 10px rgba(51,43,36,0.25);
+  }
+  .extra-chip.is-gift{
+    border-color:var(--bronze);
+    background:#E8D3AC;
+  }
+  .extra-chip.is-gift.is-selected{
+    background:var(--charcoal);
+    border-color:var(--bronze);
+  }
+  .discount-badge{
+    position:absolute;
+    top:-14px;
+    left:-14px;
+    width:46px; height:46px;
+    border-radius:50%;
+    background:#C43B3B;
+    color:#fff;
+    font-size:0.62rem;
+    font-weight:700;
+    line-height:1.1;
+    letter-spacing:0.01em;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transform:rotate(-14deg);
+    box-shadow:0 4px 10px rgba(0,0,0,0.28);
+    border:2px dashed rgba(255,255,255,0.6);
+  }
+
+  .discount-badge[hidden],
+  .gift-ribbon[hidden]{
+    display:none !important;
+  }
+
+  /* Animación tipo pop-up para cuando aparecen los badges de regalo/descuento */
+  @keyframes badgePopIn{
+    0%{ transform:scale(0) rotate(-14deg); opacity:0; }
+    65%{ transform:scale(1.18) rotate(-14deg); opacity:1; }
+    100%{ transform:scale(1) rotate(-14deg); opacity:1; }
+  }
+  @keyframes badgePopInStraight{
+    0%{ transform:scale(0); opacity:0; }
+    65%{ transform:scale(1.15); opacity:1; }
+    100%{ transform:scale(1); opacity:1; }
+  }
+  .discount-badge.pop-anim{ animation:badgePopIn 0.6s ease; }
+  .gift-ribbon.pop-anim{ animation:badgePopInStraight 0.6s ease; }
+
+  .budget-box{
+    max-width:460px;
+    margin:36px auto 30px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:26px 30px;
+  }
+  .budget-empty{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+  }
+  .budget-line{
+    display:flex;
+    justify-content:space-between;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    padding:8px 0;
+  }
+  .budget-line span:last-child{transition:color 0.35s ease;}
+  /* En modo Pix el precio es más bajo (con descuento): se muestra en verde. */
+  .budget-line span:last-child.is-pix{color:#2E9B57;}
+  .budget-installments{
+    margin:2px 0 0;
+    text-align:right;
+    font-size:0.82rem;
+    font-weight:600;
+    color:#2E9B57;
+    transition:opacity 0.3s ease, color 0.3s ease;
+  }
+  /* En modo Pix esta línea es la seña del 30%, no un ahorro: va en beige,
+     no en verde (el verde queda reservado para descuentos/valores más bajos). */
+  .budget-installments.is-pix{color:var(--bronze);}
+  .budget-total{
+    display:flex;
+    justify-content:space-between;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.4rem;
+    color:var(--ink);
+    padding-top:14px;
+    margin-top:6px;
+    border-top:1px solid var(--line);
+  }
+  .budget-total span:last-child{color:var(--bronze); transition:color 0.35s ease;}
+  .budget-total span:last-child.is-pix{color:#2E9B57;}
+
+  /* Animación de "pulso" para los números y la línea de cuotas cada vez que
+     cambia el modo de pago (tarjeta/Pix), para que el cambio de valor/color
+     se note en vez de saltar de golpe. */
+  @keyframes amountPulse{
+    0%{ opacity:0.15; transform:translateY(3px); }
+    100%{ opacity:1; transform:translateY(0); }
+  }
+  .amount-pulse{ animation:amountPulse 0.4s ease; }
+  @media (prefers-reduced-motion: reduce){
+    .amount-pulse{ animation:none; }
+  }
+  .extras #extrasContinue{display:block; width:fit-content; margin:0 auto;}
+
+  /* Switch Pix / Tarjeta de crédito: cambia en vivo los números del
+     presupuesto (acá y en el popup flotante), para comparar ambas formas
+     de pago sin tener que escribir por WhatsApp. La "píldora" de fondo se
+     desliza con transform (no width/left) y easing tipo iOS, para que se
+     sienta fluida y no un simple cambio de color entre botones. */
+  .payment-toggle{
+    position:relative;
+    display:flex;
+    width:fit-content;
+    margin:0 auto 18px;
+    background:#141110;
+    border-radius:20px;
+    padding:3px;
+    gap:2px;
+    isolation:isolate;
+  }
+  .payment-toggle .toggle-thumb{
+    position:absolute;
+    top:3px; bottom:3px; left:3px;
+    width:calc(50% - 3px);
+    background:var(--bronze-soft);
+    border-radius:16px;
+    z-index:0;
+    transform:translateX(0);
+    transition:transform 0.4s cubic-bezier(0.34, 1.35, 0.4, 1), background-color 0.4s ease;
+    will-change:transform, background-color;
+  }
+  .payment-toggle.mode-pix .toggle-thumb{
+    transform:translateX(100%);
+    background:#2E9B57;
+  }
+  .payment-toggle button{
+    position:relative;
+    z-index:1;
+    border:none;
+    background:transparent;
+    font-family:'Jost', sans-serif;
+    font-size:0.74rem;
+    letter-spacing:0.02em;
+    padding:8px 16px;
+    border-radius:16px;
+    cursor:pointer;
+    color:rgba(247,242,234,0.55);
+    transition:color 0.3s ease;
+  }
+  .payment-toggle button.is-active{color:#fff;}
+  .floating-payment-toggle{
+    position:relative;
+    display:flex;
+    width:fit-content;
+    background:#141110;
+    border-radius:14px;
+    padding:2px;
+    gap:2px;
+    margin:2px 0 2px;
+    isolation:isolate;
+  }
+  .floating-payment-toggle .toggle-thumb{
+    position:absolute;
+    top:2px; bottom:2px; left:2px;
+    width:calc(50% - 2px);
+    background:var(--bronze-soft);
+    border-radius:11px;
+    z-index:0;
+    transform:translateX(0);
+    transition:transform 0.4s cubic-bezier(0.34, 1.35, 0.4, 1), background-color 0.4s ease;
+    will-change:transform, background-color;
+  }
+  .floating-payment-toggle.mode-pix .toggle-thumb{
+    transform:translateX(100%);
+    background:#2E9B57;
+  }
+  .floating-payment-toggle button{
+    position:relative;
+    z-index:1;
+    border:none;
+    background:transparent;
+    font-family:'Jost', sans-serif;
+    font-size:0.64rem;
+    letter-spacing:0.02em;
+    padding:4px 9px;
+    border-radius:11px;
+    cursor:pointer;
+    color:rgba(247,242,234,0.55);
+    transition:color 0.3s ease;
+  }
+  .floating-payment-toggle button.is-active{color:#fff;}
+  /* El texto "Tarjeta" es más largo que "Pix", así que dentro de su mitad de
+     la píldora queda corrido hacia la derecha; se lo recorta un poco a la
+     izquierda para que se vea centrado. */
+  .floating-payment-toggle button[data-mode="card"]{padding-left:6px; padding-right:11px;}
+  @media (prefers-reduced-motion: reduce){
+    .payment-toggle .toggle-thumb, .floating-payment-toggle .toggle-thumb{transition:none;}
+  }
+  @media (max-width:640px){
+    /* En celular sí se muestra el switch, pero con los dos botones del mismo
+       ancho, uno al lado del otro (en vez de ajustarse al texto de cada uno). */
+    .floating-payment-toggle{width:100%; margin:6px 0 2px;}
+    .floating-payment-toggle .toggle-thumb{width:calc(50% - 2px);}
+    .floating-payment-toggle button{flex:1; text-align:center; padding:6px 4px;}
+    .floating-payment-toggle button[data-mode="card"]{padding:6px 4px;}
+  }
+
+  /* Popup flotante del subtotal: ahora a la derecha de la pantalla, para poder
+     compararlo mientras se van cambiando paquetes/álbumes más arriba. */
+  .floating-subtotal{
+    position:fixed;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%) translateX(30px);
+    z-index:500;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:3px;
+    max-width:210px;
+    background:var(--charcoal);
+    color:var(--cream);
+    padding:16px 20px;
+    border-radius:14px;
+    box-shadow:0 14px 34px rgba(0,0,0,0.3);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.35s ease, transform 0.35s ease;
+  }
+  .floating-subtotal.is-visible{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+    pointer-events:auto;
+  }
+  /* Botón para ocultar el popup cuando molesta; se vuelve a mostrar solo
+     cuando haya algo nuevo que avisar (nuevo paquete o álbum elegido). */
+  .floating-subtotal-close{
+    position:absolute;
+    top:6px;
+    right:8px;
+    border:none;
+    background:transparent;
+    color:rgba(247,242,234,0.55);
+    font-size:0.85rem;
+    line-height:1;
+    padding:4px;
+    cursor:pointer;
+    transition:color 0.2s ease;
+  }
+  .floating-subtotal-close:hover{color:#fff;}
+  .floating-subtotal-label{
+    font-size:0.68rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(247,242,234,0.65);
+  }
+  .floating-subtotal-pkg{
+    font-size:0.82rem;
+    color:rgba(247,242,234,0.9);
+  }
+  .floating-subtotal-extra{
+    font-size:0.72rem;
+    color:rgba(247,242,234,0.65);
+  }
+  .floating-subtotal-installments{
+    font-size:0.72rem;
+    font-weight:600;
+    color:#4FCB80;
+    transition:opacity 0.3s ease, color 0.3s ease;
+  }
+  /* Igual que en el presupuestador: en Pix es la seña del 30%, va en beige. */
+  .floating-subtotal-installments.is-pix{color:var(--bronze-soft);}
+  .floating-subtotal-amount{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    color:var(--bronze-soft);
+    transition:color 0.3s ease;
+  }
+  .floating-subtotal-amount.is-pix{color:#4FCB80;}
+  @media (max-width:640px){
+    /* En celular el popup se ubica abajo al centro, con un ancho fijo
+       (no relativo al contenido) para que nunca cambie de tamaño al
+       cambiar entre tarjeta y Pix. */
+    .floating-subtotal{
+      left:50%; right:auto; top:auto; bottom:18px;
+      width:min(88vw, 300px);
+      max-width:none;
+      flex-direction:column;
+      align-items:stretch;
+      justify-content:flex-start;
+      padding:14px 18px;
+      transform:translateX(-50%) translateY(24px);
+    }
+    .floating-subtotal.is-visible{transform:translateX(-50%) translateY(0);}
+    .floating-subtotal-label,
+    .floating-subtotal-installments,
+    .floating-subtotal-amount{text-align:center;}
+    .floating-subtotal-pkg, .floating-subtotal-extra{display:none;}
+    .floating-subtotal-amount{font-size:1.15rem;}
+  }
+
+  /* Spotlight: resalta los 2 ítems a elegir en Mini Wedding oscureciendo el resto.
+     pointer-events:none para que el click llegue directo a los ítems resaltados
+     (elegir de un solo click, sin tener que primero "cerrar" el overlay); el
+     cierre por click afuera del spotlight se maneja por JS con un listener en
+     document, no bloqueando la zona resaltada. */
+  .pkg-spotlight-overlay{
+    position:fixed;
+    inset:0;
+    z-index:900;
+    background:transparent;
+    pointer-events:none;
+  }
+  .pkg-spotlight-box{
+    position:fixed;
+    z-index:901;
+    border-radius:10px;
+    box-shadow:0 0 0 9999px rgba(20,17,14,0.5);
+    pointer-events:none;
+    transition:top 0.3s ease, left 0.3s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity:0;
+  }
+  .pkg-spotlight-box.is-visible{opacity:1;}
+  /* El hint (texto manuscrito + flechita) ya no queda fijo abajo de la
+     pantalla: el script lo posiciona pegado al recuadro resaltado (arriba o
+     abajo, según entre en pantalla) para que la flecha señale de verdad a
+     las opciones, y aparece/desaparece exactamente junto con el spotlight
+     (misma clase .is-visible que el recuadro, activada en el mismo frame). */
+  .pkg-spotlight-hint{
+    position:fixed;
+    z-index:902;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0;
+    color:var(--bronze-soft);
+    pointer-events:none;
+    text-align:center;
+    opacity:0;
+    transition:opacity 0.3s ease;
+  }
+  .pkg-spotlight-hint.is-visible{opacity:1;}
+  /* Cuando no entra debajo del recuadro (opciones muy abajo en la pantalla),
+     se coloca arriba y se invierte el orden + la flecha, para que en vez de
+     apuntar hacia arriba, apunte hacia abajo, hacia el recuadro. */
+  .pkg-spotlight-hint.is-above{flex-direction:column-reverse;}
+  .pkg-spotlight-hint.is-above .spotlight-arrow{transform:scaleY(-1);}
+  .spotlight-hint-text{
+    display:inline-block;
+    font-family:'Petit Formal Script', cursive;
+    font-size:1.7rem;
+    color:var(--bronze-soft);
+    transform:rotate(-4deg);
+    text-shadow:0 2px 10px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.55);
+    white-space:nowrap;
+  }
+  .spotlight-arrow{
+    width:38px;
+    height:44px;
+    color:var(--bronze-soft);
+    filter:drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+  }
+  @media (max-width:480px){
+    .spotlight-hint-text{font-size:1.4rem;}
+    .spotlight-arrow{width:30px; height:36px;}
+  }
+
+  .travel-notice{
+    text-align:center;
+    max-width:520px;
+    margin:22px auto 0;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:10px 16px;
+  }
+
+  /* ---------- METODOS DE PAGO ---------- */
+  .payment-methods{background:var(--cream);}
+  /* Siempre 2 columnas (nunca apiladas, ni en celular en vertical), para que
+     Tarjeta y Pix queden una al lado de la otra como dos cuadrados iguales. */
+  .payment-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+    max-width:420px;
+    margin:0 auto;
+  }
+  .payment-card{
+    position:relative;
+    min-height:170px;
+    overflow:hidden;
+    background:var(--cream-deep);
+    border:2px solid var(--line);
+    border-radius:14px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:6px;
+    padding:16px 12px;
+    cursor:pointer;
+    transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  }
+  .payment-card:hover{
+    transform:scale(1.02);
+    box-shadow:0 12px 28px rgba(51,43,36,0.14);
+  }
+  .payment-icon{font-size:2.16rem; line-height:1; flex-shrink:0;}
+  .payment-card .payment-text{display:flex; flex-direction:column; align-items:center; gap:2px;}
+  .payment-card h3{
+    font-size:1.24rem;
+    font-style:italic;
+    margin:0;
+  }
+  .payment-card p{
+    color:var(--ink-soft);
+    font-size:0.89rem;
+    line-height:1.25;
+    max-width:22ch;
+    margin:0;
+  }
+  .payment-card.is-selected{
+    border-color:var(--bronze);
+    box-shadow:0 0 0 3px rgba(169,138,93,0.35);
+  }
+  .payment-card.is-selected h3{color:var(--bronze);}
+  @media (max-width:380px){
+    .payment-icon{font-size:2.03rem;}
+    .payment-card h3{font-size:1.16rem;}
+    .payment-card p{font-size:0.84rem;}
+  }
+  .payment-badge{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--bronze);
+    color:#fff;
+    font-size:0.92rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:6px 16px;
+    border-radius:20px;
+    white-space:nowrap;
+    box-shadow:0 6px 16px rgba(51,43,36,0.25);
+  }
+  .payment-note{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    max-width:42ch;
+    margin:16px auto 0;
+    text-align:center;
+  }
+
+  /* ---------- CTA FINAL / FORM ---------- */
+  .cta-final{
+    background:var(--cream-deep);
+    position:relative;
+  }
+  .cta-final .grid{
+    display:grid;
+    gap:44px;
+  }
+  @media (min-width:900px){
+    .cta-final .grid{grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:flex-start;}
+  }
+  .cta-text-col{text-align:center;}
+  .cta-final .arch-frame{aspect-ratio:3/4;}
+  /* En mobile: foto a todo el ancho, oscurecida, con el texto y el
+     mini formulario deslizándose encima al hacer scroll. */
+  @media (max-width:899px){
+    .cta-final .grid{display:block; gap:0;}
+    .cta-final .grid .arch-frame{
+      width:100%; max-width:none; margin:0;
+      aspect-ratio:3/4.1;
+      position:relative;
+      filter:brightness(0.8);
+    }
+    .cta-final .grid .arch-frame::after{
+      content:'';
+      position:absolute; inset:auto 0 0 0; height:85%;
+      background:linear-gradient(to top,
+        rgba(20,16,12,0.82) 0%,
+        rgba(20,16,12,0.55) 32%,
+        rgba(20,16,12,0.24) 62%,
+        rgba(20,16,12,0) 100%);
+      pointer-events:none;
+    }
+    .cta-text-col{
+      text-align:left;
+      position:relative; z-index:1;
+      margin-top:-64px;
+      background:rgba(20,16,12,0.86);
+      -webkit-backdrop-filter:blur(6px);
+      backdrop-filter:blur(6px);
+      border-radius:20px 20px 0 0;
+      padding:26px 20px 22px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .6s ease, transform .6s ease;
+    }
+    .cta-final .grid.in-view .cta-text-col{opacity:1; transform:translateY(0);}
+    .cta-text-col .microcopy{color:rgba(247,242,234,0.86);}
+    .cta-text-col label{color:rgba(247,242,234,0.65);}
+    .cta-text-col input, .cta-text-col textarea{color:#F7F2EA; border-bottom-color:rgba(247,242,234,0.35);}
+    .cta-text-col input::placeholder, .cta-text-col textarea::placeholder{color:rgba(247,242,234,0.45);}
+  }
+  .cta-final h2{font-size:2rem; font-style:italic; margin-bottom:14px;}
+  @media (min-width:768px){ .cta-final h2{font-size:2.5rem;} }
+  .cta-final .intro{color:var(--ink-soft); margin-bottom:0; max-width:52ch;}
+  .cal-embed-wrap{
+    width:100%;
+    max-width:960px;
+    margin:40px auto 0;
+    min-height:560px;
+    border:1px solid var(--bronze-soft);
+    border-radius:16px;
+    background:var(--cream);
+    box-shadow:0 22px 50px rgba(51,43,36,0.14);
+    overflow:hidden;
+  }
+  .cal-embed-wrap #my-cal-inline{
+    width:100%;
+    height:640px;
+    overflow:auto;
+  }
+  @media (min-width:768px){
+    .cal-embed-wrap #my-cal-inline{height:680px;}
+  }
+  .btn-whatsapp{
+    background:#25D366;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .btn-whatsapp:hover{background:#1EBE5A;}
+
+  form{display:flex; flex-direction:column; gap:20px;}
+  .form-row{display:grid; gap:20px;}
+  @media (min-width:520px){
+    .form-row.two{grid-template-columns:1fr 1fr;}
+  }
+  label{
+    display:block;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+  }
+  input, textarea{
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--line);
+    background:transparent;
+    padding:8px 2px 12px;
+    font-family:'Jost', sans-serif;
+    font-size:1rem;
+    color:var(--ink);
+  }
+  input:focus, textarea:focus{
+    outline:none;
+    border-bottom-color:var(--bronze);
+  }
+  textarea{resize:vertical; min-height:90px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--charcoal);
+    color:rgba(247,242,234,0.75);
+    padding:48px 0 28px;
+    text-align:center;
+  }
+  footer .brand{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.5rem;
+    color:var(--cream);
+    margin-bottom:14px;
+  }
+  footer .socials{
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    margin-bottom:22px;
+    font-size:0.82rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  footer .socials a{color:var(--bronze-soft); text-decoration:none;}
+  footer .socials a:hover{color:var(--cream);}
+  footer .fine{font-size:0.72rem; color:rgba(247,242,234,0.4);}
+
+  @media (min-width:768px){
+    section{padding:68px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= SELECTOR DE IDIOMA ================= -->
+<!-- Bloquea toda interacción hasta elegir idioma. Se muestra en los 3 idiomas
+     a la vez porque todavía no sabemos cuál habla la persona. La elección
+     queda guardada (localStorage) para que no vuelva a aparecer en su
+     próxima visita desde el mismo navegador. -->
+<div class="lang-modal-overlay" id="langModalOverlay">
+  <div class="lang-modal">
+    <p class="lang-modal-title">Escolha seu idioma · Elegí tu idioma · Choose your language</p>
+    <div class="lang-modal-options">
+      <button type="button" class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português <span class="country">(Brasil)</span></button>
+      <button type="button" class="lang-option" data-lang="es"><span class="flag">🇦🇷</span> Español <span class="country">(Argentina)</span></button>
+      <button type="button" class="lang-option" data-lang="en"><span class="flag">🇺🇸</span> English <span class="country">(United States)</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Botón discreto para volver a cambiar de idioma en cualquier momento -->
+<button type="button" class="lang-switcher" id="langSwitcher" data-i18n="lang.switcher">🌐 Idioma</button>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <img
+    src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRZ_5316_gmye37.jpg"
+    srcset="https://res.cloudinary.com/drfoww3ch/image/upload/w_800/v1777600669/FRZ_5316_gmye37.jpg 800w,
+            https://res.cloudinary.com/drfoww3ch/image/upload/w_1600/v1777600669/FRZ_5316_gmye37.jpg 1600w"
+    sizes="100vw"
+    data-i18n-alt="hero.imgAlt"
+    alt="Novios abrazados durante su casamiento, fotografía de Fernando Opoka"
+    loading="eager">
+  <div class="hero-content">
+    <div class="hero-textbox">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Fotografía de casamiento con alma</span>
+      <h1 data-i18n="hero.h1">¿De verdad quieres contratar al fotógrafo más barato el día de tu casamiento?</h1>
+      <p class="sub" data-i18n="hero.sub">Tu boda no se repite. Las fotos que la cuenten, tampoco deberían ser cualquier cosa.</p>
+    </div>
+    <div class="hero-btn-row">
+      <a href="#paquetes" class="btn hero-btn" data-i18n="hero.btn1">¿Cuánto cuesta?</a>
+      <a href="#contacto" class="btn hero-btn" data-i18n="hero.btn2">Quiero agendar una reunión</a>
+      <a href="#proceso" class="btn hero-btn" data-i18n="hero.btn3">¿Cómo es el método?</a>
+    </div>
+    <p class="microcopy" style="color:rgba(255,255,255,0.75)" data-i18n="hero.microcopy">Sin compromiso. Te respondo en menos de 8h.</p>
+  </div>
+</header>
+
+<!-- ================= VSL ================= -->
+<!-- Reemplazá este bloque por tu video: pegá el <iframe> de YouTube/Vimeo
+     dentro de .vsl-box, o cambiá el <div class="play"> por un <video>. -->
+<section class="vsl">
+  <div class="wrap">
+    <div class="vsl-box">
+      <div class="play">▶</div>
+      <p data-i18n="vsl.placeholder">Espacio reservado para tu VSL</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLEMA ================= -->
+<section class="problema">
+  <div class="wrap grid">
+    <div class="arch-frame">
+      <img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRZ_5319_diw0nn.jpg" data-i18n-alt="problema.imgAlt" alt="Detalle emotivo de la ceremonia de boda" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow" data-i18n="problema.eyebrow">El problema</span>
+      <h2 data-i18n="problema.h2">Buscas algo más que fotos bonitas</h2>
+      <p data-i18n="problema.p1">Quieres confiar en tu fotógrafo: en la calidad de su trabajo, en su calidez, su educación y su amabilidad el día más importante de tu vida.</p>
+      <p data-i18n="problema.p2">Busco hacerte fotos inolvidables, enfocadas en las emociones tuyas, de tu pareja y de las personas que más quieren.</p>
+      <p data-i18n="problema.p3">Por eso, antes de tu boda, nos reunimos: quiero conocer tus gustos y tu estilo antes de tomar la cámara.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESO ================= -->
+<section class="proceso" id="proceso">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="proceso.eyebrow">Cómo trabajamos</span>
+      <h2 data-i18n="proceso.h2">Un proceso pensado para que disfrutes tu día</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num" data-i18n="proceso.step1.num">Antes</span>
+        <h3 data-i18n="proceso.step1.h3">Nos conocemos</h3>
+        <p data-i18n="proceso.step1.p">Reunión previa para hablar de tu historia, tus gustos y el estilo de fotos que quieres conservar para siempre, con asesoramiento de imagen incluido.</p>
+      </div>
+      <div class="step">
+        <span class="step-num" data-i18n="proceso.step2.num">El gran día</span>
+        <h3 data-i18n="proceso.step2.h3">Cobertura completa</h3>
+        <p data-i18n="proceso.step2.p">Making of, ceremonia y fiesta, con cobertura personalizada a cargo de 2 fotógrafos siempre atentos a los momentos reales y espontáneos.</p>
+      </div>
+      <div class="step">
+        <span class="step-num" data-i18n="proceso.step3.num">Después</span>
+        <h3 data-i18n="proceso.step3.h3">Entrega sin esperas</h3>
+        <p data-i18n="proceso.step3.p">Galería digital completa, sin límites, en 7 días. Según tu paquete, también hay opción de entrega inmediata de fotos la misma noche y álbumes impresos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROMESA / RIESGO ================= -->
+<section class="promesa">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="promesa.eyebrow">Lo que está en juego</span>
+    <h2 data-i18n="promesa.h2">Contratar al más barato puede costarte mucho más que dinero</h2>
+    <p data-i18n="promesa.p">Elegir por precio puede costarte los recuerdos que después no vas a poder recuperar. Nadie va a preocuparse por tu boda como yo.</p>
+  </div>
+</section>
+
+<!-- ================= PORTAFOLIO ================= -->
+<section class="portafolio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="portafolio.eyebrow">Portafolio</span>
+      <h2 data-i18n="portafolio.h2">Momentos auténticos</h2>
+    </div>
+  </div>
+  <!-- Carrusel infinito: el track de abajo se duplica por script para que el
+       loop no corte, y se desliza solo de izquierda a derecha (ver CSS
+       .carousel-track / @keyframes carouselSlide). Pasar el mouse lo pausa. -->
+  <div class="carousel-viewport">
+    <div class="carousel-track" id="portfolioTrack">
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600670/FRZ_5707_sil8ny.jpg" data-i18n-alt="portafolio.alt1" alt="Fotografía de boda 1" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRZ_5187_kybuqf.jpg" data-i18n-alt="portafolio.alt2" alt="Fotografía de boda 2" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/Bere_Mati-73_a7mon4.jpg" data-i18n-alt="portafolio.alt3" alt="Fotografía de boda 3" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/Bere_Mati-36_tq3yjd.jpg" data-i18n-alt="portafolio.alt4" alt="Fotografía de boda 4" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/FRZ_5642_som9ny.jpg" data-i18n-alt="portafolio.alt5" alt="Fotografía de boda 5" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/Bere_Mati-5_oasam3.jpg" data-i18n-alt="portafolio.alt6" alt="Fotografía de boda 6" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/Bere_Mati-19_uxnjym.jpg" data-i18n-alt="portafolio.alt7" alt="Fotografía de boda 7" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/Bere_Mati-199_s3py0u.jpg" data-i18n-alt="portafolio.alt8" alt="Fotografía de boda 8" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/Bere_Mati-107_sz87md.jpg" data-i18n-alt="portafolio.alt9" alt="Fotografía de boda 9" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600667/FRZ_5381_pkqs3c.jpg" data-i18n-alt="portafolio.alt10" alt="Fotografía de boda 10" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600667/Bere_Mati-178_tnpk93.jpg" data-i18n-alt="portafolio.alt11" alt="Fotografía de boda 11" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600667/FRZ_5356_cbjlhk.jpg" data-i18n-alt="portafolio.alt12" alt="Fotografía de boda 12" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1785636365/FRX_9990_h4a9sb.jpg" data-i18n-alt="portafolio.alt13" alt="Fotografía de boda 13" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1785636366/FRX_9988_ntc7ln.jpg" data-i18n-alt="portafolio.alt14" alt="Fotografía de boda 14" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1785636367/FRX_0254_ekcxl2.jpg" data-i18n-alt="portafolio.alt15" alt="Fotografía de boda 15" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1785636367/FRX_9878_offtl0.jpg" data-i18n-alt="portafolio.alt16" alt="Fotografía de boda 16" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1785636462/FRZ_5671_gzlrin.jpg" data-i18n-alt="portafolio.alt17" alt="Fotografía de boda 17" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1789338375/FRZ_5437_edoszm.jpg" data-i18n-alt="portafolio.alt18" alt="Fotografía de boda 18" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1789338377/FRZ_5316_mij7jj.jpg" data-i18n-alt="portafolio.alt19" alt="Fotografía de boda 19" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRZ_5321_y8l2tk.jpg" data-i18n-alt="portafolio.alt20" alt="Fotografía de boda 20" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1785783556/FRZ_5316_gmye37.jpg" data-i18n-alt="portafolio.alt21" alt="Fotografía de boda 21" loading="lazy"></figure>
+      <figure data-lightbox><img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRZ_5245_vvzozx.jpg" data-i18n-alt="portafolio.alt22" alt="Fotografía de boda 22" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE MI ================= -->
+<section class="sobre">
+  <div class="wrap grid">
+    <div class="arch-frame">
+      <img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRX_6178_s8x5fs.jpg" data-i18n-alt="sobre.imgAlt" alt="Fernando Opoka, fotógrafo de bodas" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow" data-i18n="sobre.eyebrow">Sobre mí</span>
+      <h2>Fernando Opoka</h2>
+      <p data-i18n="sobre.p1">Llevo 9 años fotografiando bodas para parejas que quieren algo más que fotos básicas: quieren que alguien se preocupe genuinamente por su historia.</p>
+      <p data-i18n="sobre.p2">Trabajo con calidez, cercanía y con la certeza de que cada boda merece que alguien la mire con atención y respeto.</p>
+      <p class="credit" data-i18n="sobre.credit">Fotógrafo profesional de bodas</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAQUETES ================= -->
+<section class="servicios" id="paquetes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="paquetes.eyebrow">Paquetes</span>
+      <h2 data-i18n="paquetes.h2">Elegí cómo quieres vivir tu día</h2>
+    </div>
+    <div class="pkg-grid" id="pkgGrid">
+
+      <div class="pkg-card" data-package="mini" data-package-name="Mini Wedding" data-price-pix="2600" data-price-card="3060">
+        <span class="pkg-eyebrow" data-i18n="pkg.mini.eyebrow">Paquete 1</span>
+        <h3>Mini Wedding</h3>
+        <p class="pkg-price">R$ 3.060</p>
+        <p class="pkg-price-note" data-i18n="pkg.mini.priceNote">Hasta 6 cuotas sin interés con tarjeta (6x de R$ 510)</p>
+        <p class="pkg-price-save" data-i18n="pkg.mini.priceSave">💚 Pagando con Pix: R$ 2.600 (ahorrás R$ 460)</p>
+        <ul>
+          <li data-i18n="pkg.mini.li1">Hasta 6 horas de cobertura</li>
+          <li class="li-choice" data-choice-group="mini-session" data-choice="pre-boda"><span class="choice-icon" aria-hidden="true"><span class="choice-glyph"></span></span><span data-i18n="pkg.choice.preboda">Ensayo pre boda: 25 fotos</span></li>
+          <li class="li-choice" data-choice-group="mini-session" data-choice="making-of"><span class="choice-icon" aria-hidden="true"><span class="choice-glyph"></span></span><span data-i18n="pkg.choice.makingof">Making of</span></li>
+          <li data-i18n="pkg.mini.li2">Cobertura hecha por 2 fotógrafos</li>
+          <li data-i18n="pkg.mini.li3">Entrega en un plazo de 7 días</li>
+          <li data-i18n="pkg.mini.li4">Más de 300 fotos del día de la boda</li>
+          <li data-i18n="pkg.mini.li5">Galería online para descargar y compartir tus fotos</li>
+          <li data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
+          <li data-i18n="pkg.mini.li7">Asesoramiento de imagen</li>
+          <li class="not-included" data-i18n="pkg.mini.li8">Fotos editadas la misma noche de la boda</li>
+          <li class="not-included" data-i18n="pkg.mini.li9">Álbum impreso de 25x25, regalo de 20 páginas</li>
+        </ul>
+        <button type="button" class="btn pkg-select" data-i18n="pkg.btn">Quiero este paquete</button>
+      </div>
+
+      <div class="pkg-card is-featured" data-package="plus" data-package-name="Wedding Plus" data-price-pix="4800" data-price-card="5650">
+        <span class="pkg-badge" data-i18n="pkg.plus.badge">Regalo: álbum 25x25 de 20 páginas (el de 30 páginas, con 15% off)</span>
+        <span class="pkg-eyebrow" data-i18n="pkg.plus.eyebrow">Paquete 2 · el más elegido</span>
+        <h3>Wedding Plus</h3>
+        <p class="pkg-price">R$ 5.650</p>
+        <p class="pkg-price-note" data-i18n="pkg.plus.priceNote">Hasta 6 cuotas sin interés con tarjeta (6x de R$ 941,67)</p>
+        <p class="pkg-price-save" data-i18n="pkg.plus.priceSave">💚 Pagando con Pix: R$ 4.800 (ahorrás R$ 850)</p>
+        <ul>
+          <li data-i18n="pkg.plus.li1">Hasta 8 horas de cobertura</li>
+          <li data-i18n="pkg.plus.li2">Ensayo pre boda: 50 fotos + 1 video de 20 segundos</li>
+          <li data-i18n="pkg.choice.makingof">Making of</li>
+          <li data-i18n="pkg.mini.li2">Cobertura hecha por 2 fotógrafos</li>
+          <li data-i18n="pkg.mini.li3">Entrega en un plazo de 7 días</li>
+          <li data-i18n="pkg.plus.li3">Más de 450 fotos del día de la boda</li>
+          <li data-i18n="pkg.mini.li5">Galería online para descargar y compartir tus fotos</li>
+          <li data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
+          <li data-i18n="pkg.mini.li7">Asesoramiento de imagen</li>
+          <li data-i18n="pkg.plus.li4">10 fotos editadas la misma noche de la boda</li>
+          <li class="is-gift-item" data-i18n="pkg.plus.li5">Álbum impreso de 25x25, 20 páginas de regalo (o 30 páginas con 15% off)</li>
+        </ul>
+        <button type="button" class="btn pkg-select" data-i18n="pkg.btn">Quiero este paquete</button>
+      </div>
+
+      <div class="pkg-card is-featured is-luxe" data-package="full" data-package-name="Full Wedding" data-price-pix="6200" data-price-card="7300">
+        <span class="pkg-badge" data-i18n="pkg.full.badge">Regalo: álbum 25x25 de 20 páginas (el de 30 páginas, con 50% off)</span>
+        <span class="pkg-eyebrow" data-i18n="pkg.full.eyebrow">Paquete 3</span>
+        <h3>Full Wedding</h3>
+        <p class="pkg-price">R$ 7.300</p>
+        <p class="pkg-price-note" data-i18n="pkg.full.priceNote">Hasta 6 cuotas sin interés con tarjeta (6x de R$ 1.216,67)</p>
+        <p class="pkg-price-save" data-i18n="pkg.full.priceSave">💚 Pagando con Pix: R$ 6.200 (ahorrás R$ 1.100)</p>
+        <ul>
+          <li data-i18n="pkg.full.li1">Hasta 10 horas de cobertura</li>
+          <li data-i18n="pkg.full.li2">Ensayo pre boda: 80 fotos + 2 videos de 20 segundos</li>
+          <li data-i18n="pkg.choice.makingof">Making of</li>
+          <li data-i18n="pkg.mini.li2">Cobertura hecha por 2 fotógrafos</li>
+          <li data-i18n="pkg.mini.li3">Entrega en un plazo de 7 días</li>
+          <li data-i18n="pkg.full.li3">Más de 600 fotos del día de la boda</li>
+          <li data-i18n="pkg.mini.li5">Galería online para descargar y compartir tus fotos</li>
+          <li data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
+          <li data-i18n="pkg.mini.li7">Asesoramiento de imagen</li>
+          <li data-i18n="pkg.full.li4">25 fotos editadas la misma noche de la boda</li>
+          <li class="is-gift-item" data-i18n="pkg.full.li5">Álbum impreso de 25x25, 20 páginas de regalo (o 30 páginas con 50% off)</li>
+        </ul>
+        <button type="button" class="btn pkg-select" data-i18n="pkg.btn">Quiero este paquete</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SERVICIOS EXTRAS ================= -->
+<section class="extras" id="extras">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="extras.eyebrow">¿Le sumamos un álbum?</span>
+      <h2 id="extrasTitle" data-i18n="extras.h2">Sumá un álbum extra a tu paquete</h2>
+      <p class="extras-sub" id="extrasSub" data-i18n="extras.sub">Elegí el tamaño de álbum 25x25 que quieras agregar a tu presupuesto.</p>
+    </div>
+
+    <p class="gift-banner" id="giftBanner" hidden></p>
+
+    <div class="extras-grid" id="extrasGrid">
+      <button type="button" class="extra-chip" id="chip20" data-extra="20 páginas" data-price-pix="1300" data-price-card="1530">
+        <span class="gift-ribbon" id="chip20Ribbon" hidden data-i18n="extras.giftRibbon">🎁 FREE</span>
+        <span class="discount-badge" id="chip20Badge" hidden data-i18n-html="extras.discountBadge">15%<br>OFF</span>
+        <span class="extra-chip-title" data-i18n="extras.chipTitle">Álbum de 25x25</span>
+        <span class="extra-chip-sub" data-i18n="extras.chip20Sub">20 páginas</span>
+        <span class="extra-chip-price" id="chip20Price">R$ 1.530</span>
+        <span class="extra-chip-price-sub" id="chip20PriceSub" data-i18n="extras.pixPrice20">Pix: R$ 1.300</span>
+      </button>
+      <button type="button" class="extra-chip" id="chip30" data-extra="30 páginas" data-price-pix="1900" data-price-card="2240">
+        <span class="gift-ribbon" id="chip30Ribbon" hidden data-i18n="extras.giftRibbon">🎁 FREE</span>
+        <span class="discount-badge" id="chip30Badge" hidden data-i18n-html="extras.discountBadge50">50%<br>OFF</span>
+        <span class="extra-chip-title" data-i18n="extras.chipTitle">Álbum de 25x25</span>
+        <span class="extra-chip-sub" data-i18n="extras.chip30Sub">30 páginas</span>
+        <span class="extra-chip-price" id="chip30Price">R$ 2.240</span>
+        <span class="extra-chip-price-sub" id="chip30PriceSub" data-i18n="extras.pixPrice30">Pix: R$ 1.900</span>
+      </button>
+      <button type="button" class="extra-chip" id="chip40" data-extra="40 páginas" data-price-pix="2200" data-price-card="2590">
+        <span class="discount-badge" id="chip40Badge" hidden data-i18n-html="extras.discountBadge">15%<br>OFF</span>
+        <span class="extra-chip-title" data-i18n="extras.chipTitle">Álbum de 25x25</span>
+        <span class="extra-chip-sub" data-i18n="extras.chip40Sub">40 páginas</span>
+        <span class="extra-chip-price" id="chip40Price">R$ 2.590</span>
+        <span class="extra-chip-price-sub" id="chip40PriceSub" data-i18n="extras.pixPrice40">Pix: R$ 2.200</span>
+      </button>
+      <!-- Álbum mayor: sin precio fijo (se cotiza a medida), usa el mismo
+           mecanismo "consult" que ya soporta el resto del script. -->
+      <button type="button" class="extra-chip" id="chipMayor" data-extra="mayor">
+        <span class="extra-chip-title" data-i18n="extras.chipMayorTitle">Álbum de Mayor tamaño</span>
+        <span class="extra-chip-sub" data-i18n="extras.chipMayorSub">Más de 40 páginas</span>
+        <span class="extra-chip-price" data-i18n="budget.consult">Consultar</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METODOS DE PAGO ================= -->
+<section class="payment-methods">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="payment.eyebrow">Cómo pagar</span>
+      <h2 data-i18n="payment.h2">Elegí tu método de pago</h2>
+    </div>
+    <div class="payment-grid">
+      <div class="payment-card is-selected" data-mode="card" role="button" tabindex="0" id="paymentCardCard">
+        <span class="payment-icon" aria-hidden="true">💳</span>
+        <div class="payment-text">
+          <h3 data-i18n="payment.cardTitle1">Tarjeta de crédito</h3>
+          <p data-i18n="payment.cardSub1">Cuotas más livianas: hasta 6 sin interés</p>
+        </div>
+      </div>
+      <div class="payment-card" data-mode="pix" role="button" tabindex="0" id="paymentCardPix">
+        <span class="payment-icon" aria-hidden="true">💵</span>
+        <div class="payment-text">
+          <h3 data-i18n="payment.cardTitle2">Pix</h3>
+          <p data-i18n="payment.cardSub2">Pagá con Pix y ganá un 15% de descuento en todo</p>
+        </div>
+      </div>
+    </div>
+    <p class="payment-note" data-i18n="payment.pixTerms">Señal del 30% para reservar la fecha (solo para pago en Pix); el resto hasta 30 días antes de la boda.</p>
+  </div>
+</section>
+
+<section class="extras extras-continued">
+  <div class="wrap">
+    <!-- ---- PRESUPUESTADOR ---- -->
+    <div class="budget-box" id="budgetBox">
+      <p class="budget-empty" id="budgetEmpty" data-i18n="budget.empty">Elegí un paquete arriba para ver tu presupuesto acá.</p>
+      <div class="budget-line" id="budgetPkgLine" hidden>
+        <span id="budgetPkgLabel"></span>
+        <span id="budgetPkgAmount"></span>
+      </div>
+      <div class="budget-line" id="budgetExtraLine" hidden>
+        <span id="budgetExtraLabel"></span>
+        <span id="budgetExtraAmount"></span>
+      </div>
+      <p class="budget-installments" id="budgetInstallments" hidden></p>
+      <div class="budget-total" id="budgetTotalLine" hidden>
+        <span data-i18n="budget.subtotalLabel">Subtotal</span>
+        <span id="budgetSubtotal">R$ 0</span>
+      </div>
+    </div>
+
+    <a href="#contacto" class="btn" id="extrasContinue" data-i18n="extras.continueBtn">Continuar con mi consulta</a>
+
+    <p class="travel-notice" data-i18n="extras.travelNotice">📍 Los valores pueden aumentar para desplazamientos mayores a 20 km de Balneário Camboriú.</p>
+  </div>
+</section>
+
+<!-- Popup flotante con el subtotal: ahora aparece apenas se elige el primer
+     paquete (no hace falta llegar hasta el presupuestador), y queda fijo a
+     la derecha de la pantalla para poder compararlo mientras se van
+     cambiando paquetes o álbumes más arriba. -->
+<div class="floating-subtotal" id="floatingSubtotal" hidden>
+  <button type="button" class="floating-subtotal-close" id="floatingSubtotalClose" aria-label="Cerrar" data-i18n-aria="budget.closePopup">✕</button>
+  <span class="floating-subtotal-label" data-i18n="budget.subtotalLabel">Subtotal</span>
+  <div class="floating-payment-toggle mode-card" id="floatingPaymentToggle">
+    <span class="toggle-thumb" aria-hidden="true"></span>
+    <button type="button" data-mode="card" class="is-active" data-i18n="payment.toggleCardShort">Tarjeta</button>
+    <button type="button" data-mode="pix" data-i18n="payment.togglePix">Pix</button>
+  </div>
+  <span class="floating-subtotal-pkg" id="floatingSubtotalPkg"></span>
+  <span class="floating-subtotal-extra" id="floatingSubtotalExtra"></span>
+  <span class="floating-subtotal-installments" id="floatingSubtotalInstallments" hidden></span>
+  <span class="floating-subtotal-amount" id="floatingSubtotalAmount">R$ 0</span>
+</div>
+
+<!-- Spotlight: oscurece la página resaltando los 2 ítems a elegir en Mini Wedding -->
+<div class="pkg-spotlight-overlay" id="pkgSpotlightOverlay" hidden></div>
+<div class="pkg-spotlight-box" id="pkgSpotlightBox" hidden></div>
+<div class="pkg-spotlight-hint" id="pkgSpotlightHint" hidden>
+  <svg class="spotlight-arrow" viewBox="0 0 60 70" aria-hidden="true" focusable="false">
+    <path d="M8,64 C9,42 20,20 45,9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M45,9 L35,11 M45,9 L40,18.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span class="spotlight-hint-text" data-i18n="spotlight.hint">Elige una opción para continuar</span>
+</div>
+
+<div class="pkg-custom-band">
+  <p class="pkg-custom"><span data-i18n="custom.text">¿Ninguno se ajusta del todo? También armamos un paquete personalizado a tu medida.</span> <a href="https://wa.me/5547988821970" id="customPkgLink" target="_blank" rel="noopener" data-i18n="custom.link">Contame qué necesitás</a>.</p>
+</div>
+
+<!-- ================= CTA FINAL + FORM ================= -->
+<section class="cta-final" id="contacto">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="cta.eyebrow">Agenda tu fecha</span>
+      <h2 data-i18n="cta.h2">Conversemos sobre tu boda</h2>
+      <p class="intro" style="margin-left:auto; margin-right:auto;" data-i18n="cta.intro">Contame un poco de ustedes y de tu boda. Elegí un horario abajo, o escribime por WhatsApp o el formulario. Te respondo en menos de 8 horas.</p>
+    </div>
+
+    <!-- CAL.COM: el link queda configurado, pero la carga real (Cal("inline"...))
+         se dispara recién en applyLanguage(), abajo, para poder pasarle el
+         idioma elegido (?lang=) al widget. -->
+    <div class="cal-embed-wrap">
+      <div id="my-cal-inline"></div>
+    </div>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    </script>
+
+    <div class="grid" style="margin-top:56px;">
+      <div class="arch-frame">
+        <img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/Bere_Mati-178_tnpk93.jpg" data-i18n-alt="cta.imgAlt" alt="Novios el día de su boda" loading="lazy">
+      </div>
+      <div class="cta-text-col">
+        <p class="microcopy" style="margin:0 0 14px;" data-i18n="cta.preferOther">Escribime directo por WhatsApp:</p>
+
+      <!-- WHATSAPP: número real configurado (+55 47 98882-1970). El texto se arma
+           dinámicamente por script según el paquete/álbum elegido y los campos
+           del mini-formulario de abajo (ver JS al final, función
+           updateWhatsappLink). -->
+      <form id="whatsappForm" class="mini-form">
+        <div class="form-row two">
+          <div>
+            <label for="nombre" data-i18n="form.nombre">Tu nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name">
+          </div>
+          <div>
+            <label for="pareja" data-i18n="form.pareja">Nombre de tu pareja</label>
+            <input type="text" id="pareja" name="pareja">
+          </div>
+        </div>
+        <div class="form-row two">
+          <div>
+            <label for="fecha" data-i18n="form.fecha">Fecha y lugar de la boda</label>
+            <input type="text" id="fecha" name="fecha" data-i18n-placeholder="form.fechaPlaceholder" placeholder="Ej. 12 de octubre, Buenos Aires">
+          </div>
+          <div>
+            <label for="email" data-i18n="form.email">Correo electrónico</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+          </div>
+        </div>
+        <div>
+          <label for="mensaje" data-i18n="form.mensaje">Contanos un poco más</label>
+          <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+        </div>
+        <a href="https://wa.me/5547988821970" id="whatsappBtn"
+           class="btn btn-whatsapp" target="_blank" rel="noopener"
+           onclick="if(typeof updateWhatsappLink==='function'){updateWhatsappLink();}">
+          <span data-i18n="cta.whatsappBtn">Agendar reunión por WhatsApp</span>
+        </a>
+      </form>
+      <p class="microcopy" data-i18n="form.microcopy">Sin compromiso. Respondo en menos de 8h.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="brand">Fernando Opoka Fotografía</div>
+    <div class="socials">
+      <!-- REDES: reemplazar con tus enlaces reales de Instagram / Facebook -->
+      <a href="#" data-i18n-aria="footer.socialsAria" aria-label="Instagram de Fernando Opoka Fotografía">Instagram</a>
+    </div>
+    <p class="fine" data-i18n="footer.fine">© 2026 Fernando Opoka Fotografía. Tus datos se usan únicamente para responder tu consulta.</p>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" data-i18n-aria="lightbox.close" aria-label="Cerrar imagen ampliada">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  // ============================================================
+  // I18N: diccionario de textos (Português-Brasil / Español-Argentina /
+  // English-US) + helper t(key, vars) + applyLanguage(lang).
+  // Se declara primero porque el resto del código (carrusel, elección,
+  // paquetes, whatsapp) lo usa para armar textos dinámicos.
+  // ============================================================
+  var currentLang = 'es';
+
+  var LANG = {
+    es: {
+      'lang.switcher': '🌐 Idioma',
+      'hero.imgAlt': 'Novios abrazados durante su casamiento, fotografía de Fernando Opoka',
+      'hero.eyebrow': 'Fotografía de casamiento con alma',
+      'hero.h1': '¿De verdad quieres contratar al fotógrafo más barato el día de tu casamiento?',
+      'hero.sub': 'Tu boda no se repite. Las fotos que la cuenten, tampoco deberían ser cualquier cosa.',
+      'hero.btn1': '¿Cuánto cuesta?',
+      'hero.btn2': 'Quiero agendar una reunión',
+      'hero.btn3': '¿Cómo es el método?',
+      'hero.microcopy': 'Sin compromiso. Te respondo en menos de 8h.',
+      'vsl.placeholder': 'Espacio reservado para tu VSL',
+      'problema.imgAlt': 'Detalle emotivo de la ceremonia de boda',
+      'problema.eyebrow': 'El problema',
+      'problema.h2': 'Buscas algo más que fotos bonitas',
+      'problema.p1': 'Quieres confiar en tu fotógrafo: en la calidad de su trabajo, en su calidez, su educación y su amabilidad el día más importante de tu vida.',
+      'problema.p2': 'Busco hacerte fotos inolvidables, enfocadas en las emociones tuyas, de tu pareja y de las personas que más quieren.',
+      'problema.p3': 'Por eso, antes de tu boda, nos reunimos: quiero conocer tus gustos y tu estilo antes de tomar la cámara.',
+      'proceso.eyebrow': 'Cómo trabajamos',
+      'proceso.h2': 'Un proceso pensado para que disfrutes tu día',
+      'proceso.step1.num': 'Antes',
+      'proceso.step1.h3': 'Nos conocemos',
+      'proceso.step1.p': 'Reunión previa para hablar de tu historia, tus gustos y el estilo de fotos que quieres conservar para siempre, con asesoramiento de imagen incluido.',
+      'proceso.step2.num': 'El gran día',
+      'proceso.step2.h3': 'Cobertura completa',
+      'proceso.step2.p': 'Making of, ceremonia y fiesta, con cobertura personalizada a cargo de 2 fotógrafos siempre atentos a los momentos reales y espontáneos.',
+      'proceso.step3.num': 'Después',
+      'proceso.step3.h3': 'Entrega sin esperas',
+      'proceso.step3.p': 'Galería digital completa, sin límites, en 7 días. Según tu paquete, también hay opción de entrega inmediata de fotos la misma noche y álbumes impresos.',
+      'promesa.eyebrow': 'Lo que está en juego',
+      'promesa.h2': 'Contratar al más barato puede costarte mucho más que dinero',
+      'promesa.p': 'Elegir por precio puede costarte los recuerdos que después no vas a poder recuperar. Nadie va a preocuparse por tu boda como yo.',
+      'portafolio.eyebrow': 'Portafolio',
+      'portafolio.h2': 'Momentos auténticos',
+      'portafolio.alt1': 'Fotografía de boda 1', 'portafolio.alt2': 'Fotografía de boda 2',
+      'portafolio.alt3': 'Fotografía de boda 3', 'portafolio.alt4': 'Fotografía de boda 4',
+      'portafolio.alt5': 'Fotografía de boda 5', 'portafolio.alt6': 'Fotografía de boda 6',
+      'portafolio.alt7': 'Fotografía de boda 7', 'portafolio.alt8': 'Fotografía de boda 8',
+      'portafolio.alt9': 'Fotografía de boda 9', 'portafolio.alt10': 'Fotografía de boda 10',
+      'portafolio.alt11': 'Fotografía de boda 11', 'portafolio.alt12': 'Fotografía de boda 12',
+      'portafolio.alt13': 'Fotografía de boda 13', 'portafolio.alt14': 'Fotografía de boda 14',
+      'portafolio.alt15': 'Fotografía de boda 15', 'portafolio.alt16': 'Fotografía de boda 16',
+      'portafolio.alt17': 'Fotografía de boda 17', 'portafolio.alt18': 'Fotografía de boda 18',
+      'portafolio.alt19': 'Fotografía de boda 19', 'portafolio.alt20': 'Fotografía de boda 20',
+      'portafolio.alt21': 'Fotografía de boda 21', 'portafolio.alt22': 'Fotografía de boda 22',
+      'sobre.imgAlt': 'Fernando Opoka, fotógrafo de bodas',
+      'sobre.eyebrow': 'Sobre mí',
+      'sobre.p1': 'Llevo 9 años fotografiando bodas para parejas que quieren algo más que fotos básicas: quieren que alguien se preocupe genuinamente por su historia.',
+      'sobre.p2': 'Trabajo con calidez, cercanía y con la certeza de que cada boda merece que alguien la mire con atención y respeto.',
+      'sobre.credit': 'Fotógrafo profesional de bodas',
+      'paquetes.eyebrow': 'Paquetes',
+      'paquetes.h2': 'Elegí cómo quieres vivir tu día',
+      'pkg.mini.eyebrow': 'Paquete 1',
+      'pkg.mini.li1': 'Hasta 6 horas de cobertura',
+      'pkg.choice.preboda': 'Ensayo pre boda: 25 fotos',
+      'pkg.choice.makingof': 'Making of',
+      'pkg.mini.li2': 'Cobertura hecha por 2 fotógrafos',
+      'pkg.mini.li3': 'Entrega en un plazo de 7 días',
+      'pkg.mini.li4': 'Más de 300 fotos del día de la boda',
+      'pkg.mini.li5': 'Galería online para descargar y compartir tus fotos',
+      'pkg.mini.li6': 'Invitación digital de regalo',
+      'pkg.mini.li7': 'Asesoramiento de imagen',
+      'pkg.mini.li8': 'Fotos editadas la misma noche de la boda',
+      'pkg.mini.li9': 'Álbum impreso de 25x25, regalo de 20 páginas',
+      'pkg.mini.priceNote': 'Hasta 6 cuotas sin interés con tarjeta (6x de R$ 510)',
+      'pkg.mini.priceSave': '💚 Pagando con Pix: R$ 2.600 (ahorrás R$ 460)',
+      'pkg.btn': 'Quiero este paquete',
+      'pkg.plus.badge': 'Regalo: álbum 25x25 de 20 páginas (el de 30 páginas, con 15% off)',
+      'pkg.plus.eyebrow': 'Paquete 2 · el más elegido',
+      'pkg.plus.li1': 'Hasta 8 horas de cobertura',
+      'pkg.plus.li2': 'Ensayo pre boda: 50 fotos + 1 video de 20 segundos',
+      'pkg.plus.li3': 'Más de 450 fotos del día de la boda',
+      'pkg.plus.li4': '10 fotos editadas la misma noche de la boda',
+      'pkg.plus.li5': 'Álbum impreso de 25x25, 20 páginas de regalo (o 30 páginas con 15% off)',
+      'pkg.plus.priceNote': 'Hasta 6 cuotas sin interés con tarjeta (6x de R$ 941,67)',
+      'pkg.plus.priceSave': '💚 Pagando con Pix: R$ 4.800 (ahorrás R$ 850)',
+      'pkg.full.badge': 'Regalo: álbum 25x25 de 20 páginas (el de 30 páginas, con 50% off)',
+      'pkg.full.eyebrow': 'Paquete 3',
+      'pkg.full.li1': 'Hasta 10 horas de cobertura',
+      'pkg.full.li2': 'Ensayo pre boda: 80 fotos + 2 videos de 20 segundos',
+      'pkg.full.li3': 'Más de 600 fotos del día de la boda',
+      'pkg.full.li4': '25 fotos editadas la misma noche de la boda',
+      'pkg.full.li5': 'Álbum impreso de 25x25, 20 páginas de regalo (o 30 páginas con 50% off)',
+      'pkg.full.priceNote': 'Hasta 6 cuotas sin interés con tarjeta (6x de R$ 1.216,67)',
+      'pkg.full.priceSave': '💚 Pagando con Pix: R$ 6.200 (ahorrás R$ 1.100)',
+      'extras.eyebrow': '¿Le sumamos un álbum?',
+      'extras.h2': 'Sumá un álbum extra a tu paquete',
+      'extras.sub': 'Elegí el tamaño de álbum 25x25 que quieras agregar a tu presupuesto.',
+      'extras.giftRibbon': '🎁 FREE',
+      'extras.discountBadge': '15%<br>OFF',
+      'extras.discountBadge50': '50%<br>OFF',
+      'extras.chipTitle': 'Álbum de 25x25',
+      'extras.chip20Sub': '20 páginas',
+      'extras.chip30Sub': '30 páginas',
+      'extras.chip40Sub': '40 páginas',
+      'extras.chipMayorTitle': 'Álbum de Mayor tamaño',
+      'extras.chipMayorSub': 'Más de 40 páginas',
+      'extras.continueBtn': 'Continuar con mi consulta',
+      'extras.travelNotice': '📍 Los valores pueden aumentar para desplazamientos mayores a 20 km de Balneário Camboriú.',
+      'budget.empty': 'Elegí un paquete arriba para ver tu presupuesto acá.',
+      'budget.subtotalLabel': 'Subtotal',
+      'budget.closePopup': 'Cerrar',
+      'budget.installmentsLine': '6x de {amount} sin interés',
+      'budget.depositLine': 'Entrega del 30%: {amount}',
+      'budget.albumLabel': 'Álbum 25x25',
+      'budget.albumLabelWith': 'Álbum 25x25, {album}',
+      'budget.free': 'Incluido, gratis',
+      'budget.consult': 'Consultar',
+      'budget.noAlbum': 'Sin álbum',
+      'spotlight.hint': 'Elige una opción para continuar',
+      'custom.text': '¿Ninguno se ajusta del todo? También armamos un paquete personalizado a tu medida.',
+      'custom.link': 'Contame qué necesitás',
+      'payment.eyebrow': 'Cómo pagar',
+      'payment.h2': 'Elegí tu método de pago',
+      'payment.cardTitle1': 'Tarjeta de crédito',
+      'payment.cardSub1': 'Cuotas más livianas: hasta 6 sin interés',
+      'payment.badge': 'Más conveniente',
+      'payment.cardTitle2': 'Pix',
+      'payment.cardSub2': 'Pagá con Pix y ganá un 15% de descuento en todo',
+      'payment.pixTerms': 'Señal del 30% para reservar la fecha (solo para pago en Pix); el resto hasta 30 días antes de la boda.',
+      'payment.toggleCardFull': 'Tarjeta de crédito',
+      'payment.toggleCardShort': 'Tarjeta',
+      'payment.togglePix': 'Pix',
+      'extras.pixPrice': 'Pix: {price}',
+      'extras.pixPrice20': 'Pix: R$ 1.300',
+      'extras.pixPrice30': 'Pix: R$ 1.900',
+      'extras.pixPrice40': 'Pix: R$ 2.200',
+      'cta.eyebrow': 'Agenda tu fecha',
+      'cta.h2': 'Conversemos sobre tu boda',
+      'cta.intro': 'Contame un poco de ustedes y de tu boda. Si elegís una fecha y horario abajo, quedás agendado directo para una reunión conmigo; si preferís, también podés escribirme directo por WhatsApp. Te respondo en menos de 8 horas.',
+      'cta.imgAlt': 'Novios el día de su boda',
+      'cta.preferOther': 'Escribime directo por WhatsApp:',
+      'cta.whatsappBtn': 'Agendar reunión por WhatsApp',
+      'form.nombre': 'Tu nombre',
+      'form.pareja': 'Nombre de tu pareja',
+      'form.email': 'Correo electrónico',
+      'form.fecha': 'Fecha y lugar de la boda',
+      'form.fechaPlaceholder': 'Ej. 12 de octubre, Buenos Aires',
+      'form.mensaje': 'Contanos un poco más',
+      'form.submit': 'Enviar por WhatsApp',
+      'form.microcopy': 'Sin compromiso. Respondo en menos de 8h.',
+      'footer.socialsAria': 'Instagram de Fernando Opoka Fotografía',
+      'footer.fine': '© 2026 Fernando Opoka Fotografía. Tus datos se usan únicamente para responder tu consulta.',
+      'lightbox.close': 'Cerrar imagen ampliada',
+      'lightbox.ariaLabel': 'Ampliar foto',
+      'wa.greetingName': 'Hola, soy {name}, ',
+      'wa.greetingGeneric': 'Hola, ',
+      'wa.wantsPkg': 'quiero consultar por el paquete {pkg}',
+      'wa.withAlbum': ' con el álbum de {album}',
+      'wa.generic': 'quiero consultar por tus paquetes de fotografía de bodas.',
+      'wa.custom': 'no encontré un paquete que se ajuste del todo a lo que busco. ¿Podemos armar algo a mi medida? Te cuento un poco qué necesito: ',
+      'wa.partner': 'Pareja: {partner}.',
+      'wa.date': 'Fecha y lugar: {date}.',
+      'wa.email': 'Mi correo: {email}.',
+      'wa.extraMsg': 'Más info: {msg}'
+    },
+    pt: {
+      'lang.switcher': '🌐 Idioma',
+      'hero.imgAlt': 'Noivos abraçados durante o casamento, fotografia de Fernando Opoka',
+      'hero.eyebrow': 'Fotografia de casamento com alma',
+      'hero.h1': 'Você realmente quer contratar o fotógrafo mais barato no dia do seu casamento?',
+      'hero.sub': 'Seu casamento não se repete. As fotos que vão contá-lo também não deveriam ser qualquer coisa.',
+      'hero.btn1': 'Quanto custa?',
+      'hero.btn2': 'Quero agendar uma reunião',
+      'hero.btn3': 'Como funciona o método?',
+      'hero.microcopy': 'Sem compromisso. Respondo em menos de 8h.',
+      'vsl.placeholder': 'Espaço reservado para o seu VSL',
+      'problema.imgAlt': 'Detalhe emocionante da cerimônia de casamento',
+      'problema.eyebrow': 'O problema',
+      'problema.h2': 'Você busca mais do que fotos bonitas',
+      'problema.p1': 'Você quer confiar no seu fotógrafo: na qualidade do trabalho, na sua calidez, educação e gentileza no dia mais importante da sua vida.',
+      'problema.p2': 'Busco fazer fotos inesquecíveis, focadas nas emoções de vocês e das pessoas que mais amam.',
+      'problema.p3': 'Por isso, antes do casamento, nos encontramos: quero conhecer seus gostos e seu estilo antes de pegar a câmera.',
+      'proceso.eyebrow': 'Como trabalhamos',
+      'proceso.h2': 'Um processo pensado para você aproveitar o seu dia',
+      'proceso.step1.num': 'Antes',
+      'proceso.step1.h3': 'Nos conhecemos',
+      'proceso.step1.p': 'Reunião prévia para falar da sua história, dos seus gostos e do estilo de fotos que você quer guardar para sempre, com consultoria de imagem incluída.',
+      'proceso.step2.num': 'O grande dia',
+      'proceso.step2.h3': 'Cobertura completa',
+      'proceso.step2.p': 'Making of, cerimônia e festa, com cobertura personalizada de 2 fotógrafos sempre atentos aos momentos reais e espontâneos.',
+      'proceso.step3.num': 'Depois',
+      'proceso.step3.h3': 'Entrega sem demora',
+      'proceso.step3.p': 'Galeria digital completa, sem limites, em 7 dias. Dependendo do seu pacote, também há opção de entrega imediata de fotos na mesma noite e álbuns impressos.',
+      'promesa.eyebrow': 'O que está em jogo',
+      'promesa.h2': 'Contratar o mais barato pode custar muito mais do que dinheiro',
+      'promesa.p': 'Escolher pelo preço pode custar as lembranças que depois você não vai conseguir recuperar. Ninguém vai se importar com o seu casamento como eu.',
+      'portafolio.eyebrow': 'Portfólio',
+      'portafolio.h2': 'Momentos autênticos',
+      'portafolio.alt1': 'Fotografia de casamento 1', 'portafolio.alt2': 'Fotografia de casamento 2',
+      'portafolio.alt3': 'Fotografia de casamento 3', 'portafolio.alt4': 'Fotografia de casamento 4',
+      'portafolio.alt5': 'Fotografia de casamento 5', 'portafolio.alt6': 'Fotografia de casamento 6',
+      'portafolio.alt7': 'Fotografia de casamento 7', 'portafolio.alt8': 'Fotografia de casamento 8',
+      'portafolio.alt9': 'Fotografia de casamento 9', 'portafolio.alt10': 'Fotografia de casamento 10',
+      'portafolio.alt11': 'Fotografia de casamento 11', 'portafolio.alt12': 'Fotografia de casamento 12',
+      'portafolio.alt13': 'Fotografia de casamento 13', 'portafolio.alt14': 'Fotografia de casamento 14',
+      'portafolio.alt15': 'Fotografia de casamento 15', 'portafolio.alt16': 'Fotografia de casamento 16',
+      'portafolio.alt17': 'Fotografia de casamento 17', 'portafolio.alt18': 'Fotografia de casamento 18',
+      'portafolio.alt19': 'Fotografia de casamento 19', 'portafolio.alt20': 'Fotografia de casamento 20',
+      'portafolio.alt21': 'Fotografia de casamento 21', 'portafolio.alt22': 'Fotografia de casamento 22',
+      'sobre.imgAlt': 'Fernando Opoka, fotógrafo de casamentos',
+      'sobre.eyebrow': 'Sobre mim',
+      'sobre.p1': 'Há 9 anos fotografo casamentos para casais que querem mais do que fotos básicas: querem que alguém se importe genuinamente com a história deles.',
+      'sobre.p2': 'Trabalho com calor humano, proximidade e a certeza de que cada casamento merece que alguém o olhe com atenção e respeito.',
+      'sobre.credit': 'Fotógrafo profissional de casamentos',
+      'paquetes.eyebrow': 'Pacotes',
+      'paquetes.h2': 'Escolha como quer viver o seu dia',
+      'pkg.mini.eyebrow': 'Pacote 1',
+      'pkg.mini.li1': 'Até 6 horas de cobertura',
+      'pkg.choice.preboda': 'Ensaio pré-casamento: 25 fotos',
+      'pkg.choice.makingof': 'Making of',
+      'pkg.mini.li2': 'Cobertura feita por 2 fotógrafos',
+      'pkg.mini.li3': 'Entrega em até 7 dias',
+      'pkg.mini.li4': 'Mais de 300 fotos do dia do casamento',
+      'pkg.mini.li5': 'Galeria online para baixar e compartilhar suas fotos',
+      'pkg.mini.li6': 'Convite digital de presente',
+      'pkg.mini.li7': 'Consultoria de imagem',
+      'pkg.mini.li8': 'Fotos editadas na mesma noite do casamento',
+      'pkg.mini.li9': 'Álbum impresso 25x25, presente de 20 páginas',
+      'pkg.mini.priceNote': 'Até 6x sem juros no cartão (6x de R$ 510)',
+      'pkg.mini.priceSave': '💚 Pagando no Pix: R$ 2.600 (economize R$ 460)',
+      'pkg.btn': 'Quero este pacote',
+      'pkg.plus.badge': 'Presente: álbum 25x25 de 20 páginas (o de 30 páginas, com 15% off)',
+      'pkg.plus.eyebrow': 'Pacote 2 · o mais escolhido',
+      'pkg.plus.li1': 'Até 8 horas de cobertura',
+      'pkg.plus.li2': 'Ensaio pré-casamento: 50 fotos + 1 vídeo de 20 segundos',
+      'pkg.plus.li3': 'Mais de 450 fotos do dia do casamento',
+      'pkg.plus.li4': '10 fotos editadas na mesma noite do casamento',
+      'pkg.plus.li5': 'Álbum impresso 25x25, 20 páginas de presente (ou 30 páginas com 15% off)',
+      'pkg.plus.priceNote': 'Até 6x sem juros no cartão (6x de R$ 941,67)',
+      'pkg.plus.priceSave': '💚 Pagando no Pix: R$ 4.800 (economize R$ 850)',
+      'pkg.full.badge': 'Presente: álbum 25x25 de 20 páginas (o 30 páginas com 50% off)',
+      'pkg.full.eyebrow': 'Pacote 3',
+      'pkg.full.li1': 'Até 10 horas de cobertura',
+      'pkg.full.li2': 'Ensaio pré-casamento: 80 fotos + 2 vídeos de 20 segundos',
+      'pkg.full.li3': 'Mais de 600 fotos do dia do casamento',
+      'pkg.full.li4': '25 fotos editadas na mesma noite do casamento',
+      'pkg.full.li5': 'Álbum impresso 25x25, 20 páginas de presente (ou 30 páginas com 50% off)',
+      'pkg.full.priceNote': 'Até 6x sem juros no cartão (6x de R$ 1.216,67)',
+      'pkg.full.priceSave': '💚 Pagando no Pix: R$ 6.200 (economize R$ 1.100)',
+      'extras.eyebrow': 'Vamos incluir um álbum?',
+      'extras.h2': 'Adicione um álbum extra ao seu pacote',
+      'extras.sub': 'Escolha o tamanho do álbum 25x25 que você quer adicionar ao seu orçamento.',
+      'extras.giftRibbon': '🎁 FREE',
+      'extras.discountBadge': '15%<br>OFF',
+      'extras.discountBadge50': '50%<br>OFF',
+      'extras.chipTitle': 'Álbum de 25x25',
+      'extras.chip20Sub': '20 páginas',
+      'extras.chip30Sub': '30 páginas',
+      'extras.chip40Sub': '40 páginas',
+      'extras.chipMayorTitle': 'Álbum de tamanho maior',
+      'extras.chipMayorSub': 'Mais de 40 páginas',
+      'extras.continueBtn': 'Continuar com minha consulta',
+      'extras.travelNotice': '📍 Os valores podem aumentar para deslocamentos maiores que 20 km de Balneário Camboriú.',
+      'budget.empty': 'Escolha um pacote acima para ver seu orçamento aqui.',
+      'budget.subtotalLabel': 'Subtotal',
+      'budget.closePopup': 'Fechar',
+      'budget.installmentsLine': '6x de {amount} sem juros',
+      'budget.depositLine': 'Entrada de 30%: {amount}',
+      'budget.albumLabel': 'Álbum 25x25',
+      'budget.albumLabelWith': 'Álbum 25x25, {album}',
+      'budget.free': 'Incluído, grátis',
+      'budget.consult': 'Consultar',
+      'budget.noAlbum': 'Sem álbum',
+      'spotlight.hint': 'Escolha uma opção para continuar',
+      'custom.text': 'Nenhum se encaixa totalmente? Também montamos um pacote personalizado sob medida.',
+      'custom.link': 'Me conte o que você precisa',
+      'payment.eyebrow': 'Como pagar',
+      'payment.h2': 'Escolha sua forma de pagamento',
+      'payment.cardTitle1': 'Cartão de crédito',
+      'payment.cardSub1': 'Parcelas mais leves: até 6x sem juros',
+      'payment.badge': 'Mais vantajoso',
+      'payment.cardTitle2': 'Pix',
+      'payment.cardSub2': 'Pague com Pix e ganhe 15% de desconto em tudo',
+      'payment.pixTerms': 'Sinal de 30% para reservar a data (somente para pagamento via Pix); o restante até 30 dias antes do casamento.',
+      'payment.toggleCardFull': 'Cartão de crédito',
+      'payment.toggleCardShort': 'Cartão',
+      'payment.togglePix': 'Pix',
+      'extras.pixPrice': 'Pix: {price}',
+      'extras.pixPrice20': 'Pix: R$ 1.300',
+      'extras.pixPrice30': 'Pix: R$ 1.900',
+      'extras.pixPrice40': 'Pix: R$ 2.200',
+      'cta.eyebrow': 'Marque sua data',
+      'cta.h2': 'Vamos conversar sobre o seu casamento',
+      'cta.intro': 'Me conte um pouco sobre vocês e sobre o casamento. Se escolher uma data e horário abaixo, você já agenda uma reunião comigo; se preferir, também pode me escrever direto pelo WhatsApp. Respondo em menos de 8 horas.',
+      'cta.imgAlt': 'Noivos no dia do casamento',
+      'cta.preferOther': 'Me escreva direto pelo WhatsApp:',
+      'cta.whatsappBtn': 'Agendar reunião pelo WhatsApp',
+      'form.nombre': 'Seu nome',
+      'form.pareja': 'Nome do seu par',
+      'form.email': 'E-mail',
+      'form.fecha': 'Data e local do casamento',
+      'form.fechaPlaceholder': 'Ex.: 12 de outubro, Florianópolis',
+      'form.mensaje': 'Conte um pouco mais',
+      'form.submit': 'Enviar pelo WhatsApp',
+      'form.microcopy': 'Sem compromisso. Respondo em menos de 8h.',
+      'footer.socialsAria': 'Instagram do Fernando Opoka Fotografia',
+      'footer.fine': '© 2026 Fernando Opoka Fotografia. Seus dados são usados apenas para responder à sua consulta.',
+      'lightbox.close': 'Fechar imagem ampliada',
+      'lightbox.ariaLabel': 'Ampliar foto',
+      'wa.greetingName': 'Olá, sou {name}, ',
+      'wa.greetingGeneric': 'Olá, ',
+      'wa.wantsPkg': 'quero saber mais sobre o pacote {pkg}',
+      'wa.withAlbum': ' com o álbum de {album}',
+      'wa.generic': 'quero saber mais sobre os pacotes de fotografia de casamento.',
+      'wa.custom': 'não encontrei um pacote que combine totalmente com o que eu preciso. Podemos montar algo sob medida? Vou te contar um pouco o que estou buscando: ',
+      'wa.partner': 'Parceiro(a): {partner}.',
+      'wa.date': 'Data e local: {date}.',
+      'wa.email': 'Meu e-mail: {email}.',
+      'wa.extraMsg': 'Mais informações: {msg}'
+    },
+    en: {
+      'lang.switcher': '🌐 Language',
+      'hero.imgAlt': 'Newlyweds embracing at their wedding, photography by Fernando Opoka',
+      'hero.eyebrow': 'Wedding photography with soul',
+      'hero.h1': 'Do you really want to hire the cheapest photographer for your wedding day?',
+      'hero.sub': "Your wedding won't happen twice. The photos that tell its story shouldn't be an afterthought either.",
+      'hero.btn1': 'How much does it cost?',
+      'hero.btn2': "I'd like to book a meeting",
+      'hero.btn3': 'How does the process work?',
+      'hero.microcopy': "No commitment. I'll reply within 8h.",
+      'vsl.placeholder': 'Space reserved for your VSL',
+      'problema.imgAlt': 'Emotional moment from the wedding ceremony',
+      'problema.eyebrow': 'The problem',
+      'problema.h2': "You're looking for more than pretty pictures",
+      'problema.p1': 'You want to trust your photographer: in the quality of their work, their warmth, professionalism, and kindness on the most important day of your life.',
+      'problema.p2': "I aim to create unforgettable photos, focused on your emotions, your partner's, and the people you love most.",
+      'problema.p3': "That's why, before your wedding, we meet: I want to get to know your taste and style before ever picking up the camera.",
+      'proceso.eyebrow': 'How we work',
+      'proceso.h2': 'A process designed for you to enjoy your day',
+      'proceso.step1.num': 'Before',
+      'proceso.step1.h3': 'We get to know each other',
+      'proceso.step1.p': 'A prior meeting to talk about your story, your taste, and the photo style you want to keep forever, including image consulting.',
+      'proceso.step2.num': 'The big day',
+      'proceso.step2.h3': 'Full coverage',
+      'proceso.step2.p': 'Getting-ready photos, ceremony and reception, with personalized coverage by 2 photographers always watching for real, spontaneous moments.',
+      'proceso.step3.num': 'Afterward',
+      'proceso.step3.h3': 'No-wait delivery',
+      'proceso.step3.p': 'A complete, unlimited digital gallery within 7 days. Depending on your package, same-night photo delivery and printed albums are also available.',
+      'promesa.eyebrow': "What's at stake",
+      'promesa.h2': 'Hiring the cheapest option can cost you far more than money',
+      'promesa.p': "Choosing by price can cost you memories you won't be able to get back later. No one will care about your wedding the way I will.",
+      'portafolio.eyebrow': 'Portfolio',
+      'portafolio.h2': 'Genuine moments',
+      'portafolio.alt1': 'Wedding photo 1', 'portafolio.alt2': 'Wedding photo 2',
+      'portafolio.alt3': 'Wedding photo 3', 'portafolio.alt4': 'Wedding photo 4',
+      'portafolio.alt5': 'Wedding photo 5', 'portafolio.alt6': 'Wedding photo 6',
+      'portafolio.alt7': 'Wedding photo 7', 'portafolio.alt8': 'Wedding photo 8',
+      'portafolio.alt9': 'Wedding photo 9', 'portafolio.alt10': 'Wedding photo 10',
+      'portafolio.alt11': 'Wedding photo 11', 'portafolio.alt12': 'Wedding photo 12',
+      'portafolio.alt13': 'Wedding photo 13', 'portafolio.alt14': 'Wedding photo 14',
+      'portafolio.alt15': 'Wedding photo 15', 'portafolio.alt16': 'Wedding photo 16',
+      'portafolio.alt17': 'Wedding photo 17', 'portafolio.alt18': 'Wedding photo 18',
+      'portafolio.alt19': 'Wedding photo 19', 'portafolio.alt20': 'Wedding photo 20',
+      'portafolio.alt21': 'Wedding photo 21', 'portafolio.alt22': 'Wedding photo 22',
+      'sobre.imgAlt': 'Fernando Opoka, wedding photographer',
+      'sobre.eyebrow': 'About me',
+      'sobre.p1': "I've spent 9 years photographing weddings for couples who want more than basic photos: they want someone who genuinely cares about their story.",
+      'sobre.p2': 'I work with warmth and closeness, knowing every wedding deserves to be seen with care and respect.',
+      'sobre.credit': 'Professional wedding photographer',
+      'paquetes.eyebrow': 'Packages',
+      'paquetes.h2': 'Choose how you want to live your day',
+      'pkg.mini.eyebrow': 'Package 1',
+      'pkg.mini.li1': 'Up to 6 hours of coverage',
+      'pkg.choice.preboda': 'Pre-wedding session: 25 photos',
+      'pkg.choice.makingof': 'Getting-ready coverage',
+      'pkg.mini.li2': 'Coverage by 2 photographers',
+      'pkg.mini.li3': 'Delivery within 7 days',
+      'pkg.mini.li4': '300+ photos from the wedding day',
+      'pkg.mini.li5': 'Online gallery to download and share your photos',
+      'pkg.mini.li6': 'Free digital invitation',
+      'pkg.mini.li7': 'Image consulting',
+      'pkg.mini.li8': 'Photos edited the same night of the wedding',
+      'pkg.mini.li9': 'Printed 25x25 album, 20-page gift',
+      'pkg.mini.priceNote': 'Up to 6 interest-free installments (6x of R$510)',
+      'pkg.mini.priceSave': '💚 Paying with Pix: R$ 2,600 (save R$ 460)',
+      'pkg.btn': 'I want this package',
+      'pkg.plus.badge': 'Gift: 25x25 album, 20 pages (30 pages at 15% off)',
+      'pkg.plus.eyebrow': 'Package 2 · most popular',
+      'pkg.plus.li1': 'Up to 8 hours of coverage',
+      'pkg.plus.li2': 'Pre-wedding session: 50 photos + one 20-second video',
+      'pkg.plus.li3': '450+ photos from the wedding day',
+      'pkg.plus.li4': '10 photos edited the same night of the wedding',
+      'pkg.plus.li5': 'Printed 25x25 album, 20 pages as a gift (or 30 pages at 15% off)',
+      'pkg.plus.priceNote': 'Up to 6 interest-free installments (6x of R$941.67)',
+      'pkg.plus.priceSave': '💚 Paying with Pix: R$ 4,800 (save R$ 850)',
+      'pkg.full.badge': 'Gift: 25x25 album, 20 pages (30-page album at 50% off)',
+      'pkg.full.eyebrow': 'Package 3',
+      'pkg.full.li1': 'Up to 10 hours of coverage',
+      'pkg.full.li2': 'Pre-wedding session: 80 photos + two 20-second videos',
+      'pkg.full.li3': '600+ photos from the wedding day',
+      'pkg.full.li4': '25 photos edited the same night of the wedding',
+      'pkg.full.li5': 'Printed 25x25 album, 20 pages as a gift (or 30 pages at 50% off)',
+      'pkg.full.priceNote': 'Up to 6 interest-free installments (6x of R$1,216.67)',
+      'pkg.full.priceSave': '💚 Paying with Pix: R$ 6,200 (save R$ 1,100)',
+      'extras.eyebrow': 'Want to add an album?',
+      'extras.h2': 'Add an extra album to your package',
+      'extras.sub': "Choose the size of the 25x25 album you'd like to add to your quote.",
+      'extras.giftRibbon': '🎁 FREE',
+      'extras.discountBadge': '15%<br>OFF',
+      'extras.discountBadge50': '50%<br>OFF',
+      'extras.chipTitle': '25x25 Album',
+      'extras.chip20Sub': '20 pages',
+      'extras.chip30Sub': '30 pages',
+      'extras.chip40Sub': '40 pages',
+      'extras.chipMayorTitle': 'Larger-size album',
+      'extras.chipMayorSub': 'More than 40 pages',
+      'extras.continueBtn': 'Continue with my inquiry',
+      'extras.travelNotice': '📍 Rates may increase for travel beyond 20 km from Balneário Camboriú.',
+      'budget.empty': 'Choose a package above to see your quote here.',
+      'budget.subtotalLabel': 'Subtotal',
+      'budget.closePopup': 'Close',
+      'budget.installmentsLine': '6x of {amount} interest-free',
+      'budget.depositLine': '30% deposit: {amount}',
+      'budget.albumLabel': '25x25 Album',
+      'budget.albumLabelWith': '25x25 Album, {album}',
+      'budget.free': 'Included, free',
+      'budget.consult': 'Ask for a quote',
+      'budget.noAlbum': 'No album',
+      'spotlight.hint': 'Choose an option to continue',
+      'custom.text': "None of these quite fit? We also put together a custom package tailored to you.",
+      'custom.link': "Tell me what you need",
+      'payment.eyebrow': 'How to pay',
+      'payment.h2': 'Choose your payment method',
+      'payment.cardTitle1': 'Credit card',
+      'payment.cardSub1': 'Lighter payments: up to 6 interest-free installments',
+      'payment.badge': 'Best value',
+      'payment.cardTitle2': 'Pix',
+      'payment.cardSub2': 'Pay with Pix and get 15% off everything',
+      'payment.pixTerms': '30% deposit to reserve the date (only for Pix payments); the rest due up to 30 days before the wedding.',
+      'payment.toggleCardFull': 'Credit card',
+      'payment.toggleCardShort': 'Card',
+      'payment.togglePix': 'Pix',
+      'extras.pixPrice': 'Pix: {price}',
+      'extras.pixPrice20': 'Pix: R$ 1,300',
+      'extras.pixPrice30': 'Pix: R$ 1,900',
+      'extras.pixPrice40': 'Pix: R$ 2,200',
+      'cta.eyebrow': 'Book your date',
+      'cta.h2': "Let's talk about your wedding",
+      'cta.intro': "Tell me a bit about you and your wedding. Picking a date and time below books a meeting with me directly; if you'd rather, you can also message me directly on WhatsApp. I'll reply within 8 hours.",
+      'cta.imgAlt': 'Newlyweds on their wedding day',
+      'cta.preferOther': 'Message me directly on WhatsApp:',
+      'cta.whatsappBtn': 'Book a meeting on WhatsApp',
+      'form.nombre': 'Your name',
+      'form.pareja': "Your partner's name",
+      'form.email': 'Email address',
+      'form.fecha': 'Wedding date and location',
+      'form.fechaPlaceholder': 'E.g. October 12th, Miami',
+      'form.mensaje': 'Tell us a bit more',
+      'form.submit': 'Send via WhatsApp',
+      'form.microcopy': "No commitment. I'll reply within 8h.",
+      'footer.socialsAria': 'Instagram for Fernando Opoka Fotografía',
+      'footer.fine': '© 2026 Fernando Opoka Fotografía. Your data is used only to respond to your inquiry.',
+      'lightbox.close': 'Close enlarged image',
+      'lightbox.ariaLabel': 'Enlarge photo',
+      'wa.greetingName': "Hi, I'm {name}, ",
+      'wa.greetingGeneric': 'Hi, ',
+      'wa.wantsPkg': "I'd like to ask about the {pkg} package",
+      'wa.withAlbum': ' with the {album} album',
+      'wa.generic': "I'd like to ask about your wedding photography packages.",
+      'wa.custom': "none of the packages quite fit what I'm looking for. Could we put something custom together? Here's a bit about what I need: ",
+      'wa.partner': 'Partner: {partner}.',
+      'wa.date': 'Date and location: {date}.',
+      'wa.email': 'My email: {email}.',
+      'wa.extraMsg': 'More info: {msg}'
+    }
+  };
+
+  function t(key, vars){
+    var dict = LANG[currentLang] || LANG.es;
+    var str = dict[key];
+    if(str === undefined){ str = (LANG.es[key] !== undefined) ? LANG.es[key] : key; }
+    if(vars){
+      Object.keys(vars).forEach(function(k){
+        str = str.split('{' + k + '}').join(vars[k]);
+      });
+    }
+    return str;
+  }
+
+  // Traduce "20 páginas" / "30 páginas" / "40 páginas" (así se guardan
+  // internamente, como en portugués) a "20 pages" etc. solo para inglés.
+  function pageLabelText(label){
+    if(currentLang === 'en'){ return label.replace('páginas', 'pages'); }
+    return label;
+  }
+
+  // Nombre a mostrar de cualquier álbum seleccionado, incluido "mayor" (que no
+  // es un tamaño fijo tipo "40 páginas" sino la opción "Álbum mayor" / "Larger
+  // album" / "Álbum maior" a consultar). Se apoya en el diccionario de idioma
+  // para no repetir el texto traducido en varios lugares del código.
+  function albumDisplayName(name){
+    if(name === 'mayor'){ return t('extras.chipMayorTitle'); }
+    return pageLabelText(name);
+  }
+
+  var calInitialized = false;
+  function initCalEmbedOnce(lang){
+    if(calInitialized || typeof Cal !== 'function') return;
+    calInitialized = true;
+    var calLangParam = lang === 'pt' ? 'pt-BR' : (lang === 'en' ? 'en' : 'es');
+    Cal("init", {origin:"https://cal.com"});
+    Cal("inline", {
+      elementOrSelector:"#my-cal-inline",
+      calLink: "fernando-opoka/prueba?lang=" + calLangParam,
+      layout: "month_view",
+      config: { "theme": "light", "layout": "month_view" }
+    });
+    Cal("ui", {
+      theme: "light",
+      styles: {branding:{brandColor:"#A98A5D"}},
+      cssVarsPerTheme: {
+        light: {
+          "cal-brand": "#A98A5D",
+          "cal-brand-emphasis": "#8B6F47",
+          "cal-brand-text": "#F7F2EA",
+          "cal-bg": "#F7F2EA",
+          "cal-bg-emphasis": "#EFE6D6",
+          "cal-bg-muted": "#F1E4CE",
+          "cal-border": "#E3D6BE",
+          "cal-border-emphasis": "#C9AE85",
+          "cal-text": "#332B24",
+          "cal-text-emphasis": "#332B24",
+          "cal-text-subtle": "#5C5245"
+        }
+      },
+      hideEventTypeDetails: false
+    });
+  }
+
+  function applyLanguage(lang){
+    if(!LANG[lang]) lang = 'es';
+    currentLang = lang;
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : (lang === 'en' ? 'en-US' : 'es-AR');
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      el.textContent = t(el.getAttribute('data-i18n'));
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      el.innerHTML = t(el.getAttribute('data-i18n-html'));
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el){
+      el.alt = t(el.getAttribute('data-i18n-alt'));
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+      el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria')));
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+    });
+
+    initCalEmbedOnce(lang);
+
+    // Vuelve a renderizar precios, banner de regalo, presupuesto y el
+    // mensaje de WhatsApp con el nuevo idioma (definido más abajo).
+    if(window.FO_rerenderDynamic){ window.FO_rerenderDynamic(); }
+  }
+
+  // ---------- SELECTOR DE IDIOMA: modal bloqueante + botón para reabrirlo ----------
+  (function(){
+    var overlay = document.getElementById('langModalOverlay');
+    var buttons = overlay.querySelectorAll('.lang-option');
+    var switcher = document.getElementById('langSwitcher');
+    var saved = null;
+    try{ saved = localStorage.getItem('fo_lang'); }catch(e){}
+
+    function openModal(){
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(lang){
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+      try{ localStorage.setItem('fo_lang', lang); }catch(e){}
+      applyLanguage(lang);
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){ closeModal(btn.getAttribute('data-lang')); });
+    });
+    switcher.addEventListener('click', openModal);
+
+    if(saved && LANG[saved]){
+      overlay.hidden = true;
+      applyLanguage(saved);
+    } else {
+      openModal();
+      applyLanguage('es'); // contenido de base mientras se elige (queda oculto detrás del modal)
+    }
+  })();
+
+  // ---------- CARRUSEL DE PORTAFOLIO: duplica las fotos para el loop infinito ----------
+  // Se ejecuta antes que el lightbox de abajo para que el buscador de
+  // [data-lightbox] encuentre también las fotos duplicadas y las haga clicables,
+  // y para que hereden el atributo data-i18n-alt (así también se traducen).
+  (function(){
+    var track = document.getElementById('portfolioTrack');
+    if(!track) return;
+    var originals = Array.prototype.slice.call(track.children);
+    originals.forEach(function(fig){
+      var clone = fig.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true'); // es una copia visual, no la repetimos para lectores de pantalla
+      clone.setAttribute('tabindex', '-1');
+      track.appendChild(clone);
+    });
+  })();
+
+  // ---------- CARRUSEL DE PORTAFOLIO: auto-scroll + drag/swipe táctil ----------
+  // Antes el movimiento era una animación CSS pura; ahora se maneja con
+  // requestAnimationFrame para poder combinarlo con que el usuario toque y
+  // deslice la galería con el dedo (o el mouse) para navegarla manualmente.
+  (function(){
+    var viewport = document.querySelector('.carousel-viewport');
+    var track = document.getElementById('portfolioTrack');
+    if(!track || !viewport) return;
+
+    var pos = 0; // translateX actual, en px (0 a -halfWidth, con wrap)
+    var halfWidth = 0;
+    var speed = 0; // px por ms del auto-scroll
+    var AUTO_SCROLL_SECONDS = 46; // misma duración que tenía la animación CSS
+    var isDragging = false;
+    var dragMoved = false;
+    var startX = 0;
+    var startPos = 0;
+    var isHovering = false;
+    var reducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+    function wrap(p){
+      if(halfWidth <= 0) return p;
+      while(p > 0){ p -= halfWidth; }
+      while(p < -halfWidth){ p += halfWidth; }
+      return p;
+    }
+
+    function computeWidth(){
+      halfWidth = track.scrollWidth / 2;
+      speed = halfWidth > 0 ? (halfWidth / (AUTO_SCROLL_SECONDS * 1000)) : 0;
+      pos = wrap(pos);
+      track.style.transform = 'translateX(' + pos + 'px)';
+    }
+    computeWidth();
+    window.addEventListener('load', computeWidth);
+    window.addEventListener('resize', computeWidth);
+
+    viewport.addEventListener('mouseenter', function(){ isHovering = true; });
+    viewport.addEventListener('mouseleave', function(){ isHovering = false; });
+
+    function onPointerDown(e){
+      if(e.pointerType === 'mouse' && e.button !== 0) return;
+      isDragging = true;
+      dragMoved = false;
+      startX = e.clientX;
+      startPos = pos;
+      track.classList.add('is-dragging');
+      if(track.setPointerCapture){
+        try{ track.setPointerCapture(e.pointerId); }catch(err){}
+      }
+    }
+    function onPointerMove(e){
+      if(!isDragging) return;
+      var dx = e.clientX - startX;
+      if(Math.abs(dx) > 4) dragMoved = true;
+      pos = wrap(startPos + dx);
+      track.style.transform = 'translateX(' + pos + 'px)';
+    }
+    function endDrag(){
+      if(!isDragging) return;
+      isDragging = false;
+      track.classList.remove('is-dragging');
+    }
+    track.addEventListener('pointerdown', onPointerDown);
+    track.addEventListener('pointermove', onPointerMove);
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointercancel', endDrag);
+    track.addEventListener('pointerleave', function(e){
+      // Solo soltar si no se mantiene el botón/gesto presionado sobre otro elemento.
+      if(isDragging && e.buttons === 0){ endDrag(); }
+    });
+
+    // Si el usuario arrastró (no fue solo un tap/click), evita que el click
+    // suelto al final abra el lightbox de esa foto por accidente.
+    track.addEventListener('click', function(e){
+      if(dragMoved){
+        e.preventDefault();
+        e.stopPropagation();
+        dragMoved = false;
+      }
+    }, true);
+
+    var lastTs = null;
+    function frame(ts){
+      if(lastTs === null){ lastTs = ts; }
+      var dt = ts - lastTs;
+      lastTs = ts;
+      if(!isDragging && !isHovering && !reducedMotion && halfWidth > 0){
+        pos = wrap(pos - speed * dt);
+        track.style.transform = 'translateX(' + pos + 'px)';
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  (function(){
+    var overlay = document.getElementById('lightbox');
+    var overlayImg = document.getElementById('lightboxImg');
+    var closeBtn = document.getElementById('lightboxClose');
+    var figures = document.querySelectorAll('[data-lightbox]');
+
+    figures.forEach(function(fig){
+      var img = fig.querySelector('img');
+      if(!img) return;
+      fig.setAttribute('tabindex', '0');
+      fig.setAttribute('role', 'button');
+      fig.setAttribute('aria-label', t('lightbox.ariaLabel'));
+
+      function openLightbox(){
+        overlayImg.src = img.src;
+        overlayImg.alt = img.alt;
+        overlay.classList.add('is-open');
+      }
+      fig.addEventListener('click', openLightbox);
+      fig.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          openLightbox();
+        }
+      });
+    });
+
+    function closeLightbox(){
+      overlay.classList.remove('is-open');
+      overlayImg.src = '';
+    }
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeLightbox();
+    });
+  })();
+
+  // Puente entre el módulo de elección y el de paquetes: permite que
+  // "Quiero este paquete" espere a que se resuelva una elección pendiente.
+  var AfterChoice = { callbacks: {} };
+
+  // ---------- ELECCIÓN: ENSAYO PRE BODA O MAKING OF (Mini Wedding) ----------
+  (function(){
+    var groups = {};
+    document.querySelectorAll('.li-choice').forEach(function(li){
+      var group = li.getAttribute('data-choice-group');
+      if(!groups[group]) groups[group] = [];
+      groups[group].push(li);
+    });
+
+    Object.keys(groups).forEach(function(group){
+      var items = groups[group];
+      items.forEach(function(li){
+        li.setAttribute('role', 'button');
+        li.setAttribute('tabindex', '0');
+
+        function choose(){
+          items.forEach(function(other){
+            var glyph = other.querySelector('.choice-glyph');
+            other.classList.add('is-decided');
+            if(other === li){
+              other.classList.remove('not-included');
+              glyph.classList.remove('is-rejected');
+              glyph.classList.add('is-chosen');
+            } else {
+              other.classList.add('not-included');
+              glyph.classList.remove('is-chosen');
+              glyph.classList.add('is-rejected');
+            }
+          });
+
+          if(AfterChoice.callbacks[group]){
+            var cb = AfterChoice.callbacks[group];
+            AfterChoice.callbacks[group] = null;
+            cb();
+          }
+        }
+
+        li.addEventListener('click', choose);
+        li.addEventListener('keydown', function(e){
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            choose();
+          }
+        });
+      });
+    });
+  })();
+
+  // ---------- PAQUETES + SERVICIOS EXTRAS + PRESUPUESTADOR + WHATSAPP ----------
+  (function(){
+    var pkgButtons = document.querySelectorAll('.pkg-select');
+    var pkgCards = document.querySelectorAll('.pkg-card');
+    var extraChips = document.querySelectorAll('.extra-chip');
+    var continueBtn = document.getElementById('extrasContinue');
+    var mensajeField = document.getElementById('mensaje');
+    var nombreField = document.getElementById('nombre');
+    var parejaField = document.getElementById('pareja');
+    var emailField = document.getElementById('email');
+    var fechaField = document.getElementById('fecha');
+    var whatsappBtn = document.getElementById('whatsappBtn');
+    var customPkgLink = document.getElementById('customPkgLink');
+    var whatsappForm = document.getElementById('whatsappForm');
+
+    var giftBanner = document.getElementById('giftBanner');
+    var chip20 = document.getElementById('chip20');
+    var chip20Ribbon = document.getElementById('chip20Ribbon');
+    var chip20Badge = document.getElementById('chip20Badge');
+    var chip20Price = document.getElementById('chip20Price');
+    var chip20PriceSub = document.getElementById('chip20PriceSub');
+    var chip30 = document.getElementById('chip30');
+    var chip30Ribbon = document.getElementById('chip30Ribbon');
+    var chip30Badge = document.getElementById('chip30Badge');
+    var chip30Price = document.getElementById('chip30Price');
+    var chip30PriceSub = document.getElementById('chip30PriceSub');
+    var chip40 = document.getElementById('chip40');
+    var chip40Badge = document.getElementById('chip40Badge');
+    var chip40Price = document.getElementById('chip40Price');
+    var chip40PriceSub = document.getElementById('chip40PriceSub');
+
+    // ---------- PAGO: tarjeta (precio oficial, hasta 6 cuotas) vs Pix (descuento) ----------
+    // Es ilegal cobrar más por usar tarjeta, así que el precio "de lista" que
+    // se ve en cada paquete/álbum es el de tarjeta; Pix se muestra como el
+    // descuento por pagar así. El switch permite comparar ambos en vivo.
+    var paymentMode = 'card'; // 'card' | 'pix'
+    var floatingPaymentToggle = document.getElementById('floatingPaymentToggle');
+    var paymentCardCard = document.getElementById('paymentCardCard');
+    var paymentCardPix = document.getElementById('paymentCardPix');
+
+    function setPaymentMode(mode){
+      paymentMode = mode;
+      [floatingPaymentToggle].forEach(function(toggle){
+        if(!toggle) return;
+        // La píldora (.toggle-thumb) se desliza vía transform según esta
+        // clase; los botones solo cambian de color, nunca de fondo, para que
+        // el único movimiento visible sea el de la píldora (fluido, como los
+        // switches de iOS).
+        toggle.classList.remove('mode-card', 'mode-pix');
+        toggle.classList.add('mode-' + mode);
+        toggle.querySelectorAll('button').forEach(function(btn){
+          btn.classList.toggle('is-active', btn.getAttribute('data-mode') === mode);
+        });
+      });
+      // Las tarjetas de "Métodos de pago" también reflejan y controlan el modo actual.
+      if(paymentCardCard){ paymentCardCard.classList.toggle('is-selected', mode === 'card'); }
+      if(paymentCardPix){ paymentCardPix.classList.toggle('is-selected', mode === 'pix'); }
+      updateBudget();
+      pulseAmounts();
+    }
+
+    // Reinicia (retriggerea) la animación de "pulso" en los números y la
+    // línea de cuotas cada vez que cambia el modo de pago, para que el
+    // cambio de valor/color se note en vez de saltar de golpe.
+    function pulseAmounts(){
+      [budgetPkgAmount, budgetExtraAmount, budgetSubtotal, budgetInstallments,
+       floatingSubtotalAmount, floatingSubtotalInstallments].forEach(function(el){
+        if(!el || el.hidden) return;
+        el.classList.remove('amount-pulse');
+        void el.offsetWidth; // fuerza reflow para poder repetir la animación
+        el.classList.add('amount-pulse');
+      });
+    }
+
+    // Un solo click en CUALQUIER parte del switch (no importa sobre qué botón
+    // caiga) lo manda siempre al lado opuesto, como un interruptor físico.
+    [floatingPaymentToggle].forEach(function(toggle){
+      if(!toggle) return;
+      toggle.addEventListener('click', function(){
+        setPaymentMode(paymentMode === 'pix' ? 'card' : 'pix');
+      });
+    });
+
+    // Las tarjetas grandes de "Métodos de pago" también son clickeables: cada
+    // una fija directamente el modo que representa (no alternan como el switch).
+    [paymentCardCard, paymentCardPix].forEach(function(card){
+      if(!card) return;
+      card.addEventListener('click', function(){
+        setPaymentMode(card.getAttribute('data-mode'));
+      });
+      card.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          setPaymentMode(card.getAttribute('data-mode'));
+        }
+      });
+    });
+
+    function currentPrice(obj){
+      return paymentMode === 'pix' ? obj.pricePix : obj.priceCard;
+    }
+
+    var budgetEmpty = document.getElementById('budgetEmpty');
+    var budgetPkgLine = document.getElementById('budgetPkgLine');
+    var budgetPkgLabel = document.getElementById('budgetPkgLabel');
+    var budgetPkgAmount = document.getElementById('budgetPkgAmount');
+    var budgetExtraLine = document.getElementById('budgetExtraLine');
+    var budgetExtraLabel = document.getElementById('budgetExtraLabel');
+    var budgetExtraAmount = document.getElementById('budgetExtraAmount');
+    var budgetTotalLine = document.getElementById('budgetTotalLine');
+    var budgetSubtotal = document.getElementById('budgetSubtotal');
+    var budgetInstallments = document.getElementById('budgetInstallments');
+
+    var floatingSubtotal = document.getElementById('floatingSubtotal');
+    var floatingSubtotalClose = document.getElementById('floatingSubtotalClose');
+    var floatingSubtotalPkg = document.getElementById('floatingSubtotalPkg');
+    var floatingSubtotalExtra = document.getElementById('floatingSubtotalExtra');
+    var floatingSubtotalInstallments = document.getElementById('floatingSubtotalInstallments');
+    var floatingSubtotalAmount = document.getElementById('floatingSubtotalAmount');
+    var hasBudgetToShow = false;
+
+    // El popup flotante imita a un subtotal "sticky": solo aparece cuando el
+    // subtotal real (dentro del presupuestador) se sale de la pantalla, y se
+    // esconde de nuevo apenas ese subtotal real vuelve a estar visible — así
+    // nunca se ven los dos números al mismo tiempo. Además se exige que:
+    // (1) haya un paquete Y un álbum ya elegidos (no alcanza con solo el
+    // paquete), (2) el usuario haya visto el presupuestador real al menos una
+    // vez, y (3) haya dejado de verlo (scrolleado fuera de vista). También se
+    // puede cerrar a mano con el botón de "✕", quedando oculto hasta que haya
+    // algo nuevo que avisar.
+    var realSubtotalVisible = true; // si aún no hay IntersectionObserver, asumimos visible (no mostrar popup)
+    var hasSeenRealSubtotal = false;
+    var popupDismissed = false;
+    function syncFloatingPopup(){
+      var hasPackageAndAlbum = !!selectedPackage && !!selectedExtra;
+      var shouldShow = hasPackageAndAlbum && hasSeenRealSubtotal && !realSubtotalVisible && !popupDismissed;
+      floatingSubtotal.classList.toggle('is-visible', shouldShow);
+    }
+
+    if('IntersectionObserver' in window && budgetTotalLine){
+      var subtotalObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          realSubtotalVisible = entry.isIntersecting;
+          if(entry.isIntersecting){ hasSeenRealSubtotal = true; }
+          syncFloatingPopup();
+        });
+      }, {threshold: 0});
+      subtotalObserver.observe(budgetTotalLine);
+    }
+
+    if(floatingSubtotalClose){
+      floatingSubtotalClose.addEventListener('click', function(){
+        popupDismissed = true;
+        syncFloatingPopup();
+      });
+    }
+
+    var selectedPackage = null; // { id, name, pricePix, priceCard }
+    var selectedExtra = null;   // { name, pricePix, priceCard, status: 'priced' | 'free' | 'consult' }
+    var wantsCustom = false;    // true si tocó "Contame qué necesitás" (paquete personalizado)
+
+    function formatBRL(n){
+      var locale = currentLang === 'en' ? 'en-US' : (currentLang === 'pt' ? 'pt-BR' : 'es-AR');
+      return 'R$ ' + n.toLocaleString(locale);
+    }
+
+    // Anima un monto tipo "contador" (como un odómetro) desde el valor
+    // anterior hasta el nuevo, rápido, en vez de saltar directo al número.
+    function animateAmount(el, toValue){
+      if(!el) return;
+      toValue = Math.round(toValue);
+      var prevRaw = parseFloat(el.getAttribute('data-raw'));
+      if(isNaN(prevRaw)){
+        // Primera vez que se llena este campo: sin animación, directo al valor.
+        el.setAttribute('data-raw', toValue);
+        el.textContent = formatBRL(toValue);
+        return;
+      }
+      el.setAttribute('data-raw', toValue);
+      if(prevRaw === toValue){ el.textContent = formatBRL(toValue); return; }
+      if(el._amountRAF){ cancelAnimationFrame(el._amountRAF); el._amountRAF = null; }
+      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        el.textContent = formatBRL(toValue);
+        return;
+      }
+      var startTime = null;
+      var duration = 320; // rápido, tipo contador que corre y frena
+      function step(ts){
+        if(startTime === null) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(prevRaw + (toValue - prevRaw) * eased);
+        el.textContent = formatBRL(current);
+        if(progress < 1){
+          el._amountRAF = requestAnimationFrame(step);
+        } else {
+          el._amountRAF = null;
+        }
+      }
+      el._amountRAF = requestAnimationFrame(step);
+    }
+
+    // Muestra un badge (regalo o descuento) con la animación tipo pop-up de 0.6s.
+    function popShow(el){
+      el.hidden = false;
+      el.classList.remove('pop-anim');
+      void el.offsetWidth; // fuerza reflow para poder repetir la animación
+      el.classList.add('pop-anim');
+    }
+    function popHide(el){
+      el.hidden = true;
+      el.classList.remove('pop-anim');
+    }
+
+    // Cada tamaño de álbum tiene su precio base y su versión con 15% off,
+    // cada uno con su valor en tarjeta (base/off * mismo recargo que en los
+    // paquetes) y en Pix (el que ya estaba). El texto se formatea siempre
+    // con formatBRL para respetar el idioma.
+    var ALBUM_INFO = {
+      '20 páginas': {chip: chip20, badge: chip20Badge, ribbon: chip20Ribbon, price: chip20Price, priceSub: chip20PriceSub, base: 1300, off: 1105, cardBase: 1530, cardOff: 1300},
+      '30 páginas': {chip: chip30, badge: chip30Badge, ribbon: chip30Ribbon, price: chip30Price, priceSub: chip30PriceSub, base: 1900, off: 950, cardBase: 2240, cardOff: 1120},
+      '40 páginas': {chip: chip40, badge: chip40Badge, ribbon: null,        price: chip40Price, priceSub: chip40PriceSub, base: 2200, off: 1870, cardBase: 2590, cardOff: 2200}
+    };
+
+    // Qué álbumes regala cada paquete (puede ser más de uno, a elección) y
+    // a cuáles les aplica descuento (el % de descuento de cada álbum está en
+    // su propio "off"/"cardOff" dentro de ALBUM_INFO: 40 páginas es 15% off,
+    // 30 páginas en Full Wedding es 50% off). Wedding Plus tiene su propio
+    // descuento del 15% en el álbum de 30 páginas vía "overrides" (distinto
+    // al 50% de Full Wedding, que usa los valores por defecto de ALBUM_INFO).
+    // Mini no regala ni descuenta nada.
+    var ALBUM_RULES_BY_PACKAGE = {
+      plus: {
+        gift: ['20 páginas'],
+        discount: ['30 páginas'],
+        overrides: {
+          '30 páginas': { off: 1615, cardOff: 1904, badgeKey: 'extras.discountBadge' }
+        }
+      },
+      full: { gift: ['20 páginas'], discount: ['30 páginas', '40 páginas'] }
+    };
+
+    function currentAlbumRules(){
+      if(!selectedPackage) return {gift: [], discount: []};
+      return ALBUM_RULES_BY_PACKAGE[selectedPackage.id] || {gift: [], discount: []};
+    }
+
+    // Actualiza el estado (regalo / 15% off / precio normal) de los 3 álbumes
+    // según el paquete elegido, y sincroniza el precio del álbum ya seleccionado.
+    // También sirve para volver a pintar los precios cuando cambia el idioma.
+    function updateGiftMode(){
+      var rules = currentAlbumRules();
+      var hasGift = rules.gift.length > 0;
+      giftBanner.hidden = !hasGift;
+      if(hasGift){
+        var giftText = rules.gift.length > 1
+          ? rules.gift.map(pageLabelText).join(currentLang === 'pt' ? ' ou ' : (currentLang === 'en' ? ' or ' : ' o '))
+          : pageLabelText(rules.gift[0]);
+        var choiceSuffix = rules.gift.length > 1
+          ? (currentLang === 'pt' ? ', à sua escolha' : (currentLang === 'en' ? ', your choice' : ', a elección'))
+          : '';
+        var emoji = '🎁 ';
+        var body = currentLang === 'pt'
+          ? emoji + 'Seu ' + selectedPackage.name + ' já inclui o álbum 25x25 de ' + giftText + choiceSuffix + ' de presente'
+          : currentLang === 'en'
+            ? emoji + 'Your ' + selectedPackage.name + ' already includes the 25x25 album, ' + giftText + choiceSuffix + ', as a gift'
+            : emoji + 'Tu ' + selectedPackage.name + ' ya incluye el álbum 25x25 de ' + giftText + choiceSuffix + ' de regalo';
+        giftBanner.textContent = body;
+      }
+
+      Object.keys(ALBUM_INFO).forEach(function(pageLabel){
+        var info = ALBUM_INFO[pageLabel];
+        var isGifted = rules.gift.indexOf(pageLabel) !== -1;
+        var isDiscounted = !isGifted && rules.discount.indexOf(pageLabel) !== -1;
+
+        info.chip.classList.toggle('is-gift', isGifted);
+
+        if(info.ribbon){
+          if(isGifted){ popShow(info.ribbon); } else { popHide(info.ribbon); }
+        }
+        var override = rules.overrides && rules.overrides[pageLabel];
+        var effOff = override ? override.off : info.off;
+        var effCardOff = override ? override.cardOff : info.cardOff;
+
+        if(isDiscounted){
+          var badgeKey = (override && override.badgeKey) || info.badge.getAttribute('data-i18n-html');
+          if(badgeKey){ info.badge.innerHTML = t(badgeKey); }
+          popShow(info.badge);
+          info.chip.setAttribute('data-price-pix', effOff);
+          info.chip.setAttribute('data-price-card', effCardOff);
+          info.price.innerHTML = '<span class="price-old">' + formatBRL(info.cardBase) + '</span> ' + formatBRL(effCardOff);
+          if(info.priceSub){ info.priceSub.textContent = t('extras.pixPrice', {price: formatBRL(effOff)}); info.priceSub.hidden = false; }
+        } else {
+          popHide(info.badge);
+          info.chip.setAttribute('data-price-pix', info.base);
+          info.chip.setAttribute('data-price-card', info.cardBase);
+          if(!isGifted){
+            info.price.textContent = formatBRL(info.cardBase);
+            if(info.priceSub){ info.priceSub.textContent = t('extras.pixPrice', {price: formatBRL(info.base)}); info.priceSub.hidden = false; }
+          }
+        }
+
+        if(isGifted){
+          info.price.textContent = t('budget.free');
+          if(info.priceSub){ info.priceSub.hidden = true; }
+        }
+
+        if(selectedExtra && selectedExtra.name === pageLabel){
+          if(isGifted){
+            selectedExtra.status = 'free';
+            selectedExtra.pricePix = 0;
+            selectedExtra.priceCard = 0;
+          } else if(isDiscounted){
+            selectedExtra.status = 'priced';
+            selectedExtra.pricePix = effOff;
+            selectedExtra.priceCard = effCardOff;
+          } else {
+            selectedExtra.status = 'priced';
+            selectedExtra.pricePix = info.base;
+            selectedExtra.priceCard = info.cardBase;
+          }
+        }
+      });
+    }
+
+    function updateBudget(){
+      var hasPkg = !!selectedPackage;
+      var hasExtra = !!selectedExtra;
+      // En Pix los valores son más bajos (con descuento), así que los números
+      // se muestran en verde; en tarjeta vuelven a su color normal.
+      var isPixMode = (paymentMode !== 'card');
+
+      budgetEmpty.hidden = hasPkg;
+
+      budgetPkgLine.hidden = !hasPkg;
+      if(hasPkg){
+        budgetPkgLabel.textContent = selectedPackage.name;
+        animateAmount(budgetPkgAmount, currentPrice(selectedPackage));
+        budgetPkgAmount.classList.toggle('is-pix', isPixMode);
+      }
+
+      budgetExtraLine.hidden = !hasPkg;
+      if(hasExtra){
+        budgetExtraLabel.textContent = t('budget.albumLabelWith', {album: albumDisplayName(selectedExtra.name)});
+        if(selectedExtra.status === 'free'){
+          budgetExtraAmount.removeAttribute('data-raw');
+          budgetExtraAmount.textContent = t('budget.free');
+          budgetExtraAmount.classList.remove('is-pix');
+        } else if(selectedExtra.status === 'consult'){
+          budgetExtraAmount.removeAttribute('data-raw');
+          budgetExtraAmount.textContent = t('budget.consult');
+          budgetExtraAmount.classList.remove('is-pix');
+        } else {
+          animateAmount(budgetExtraAmount, currentPrice(selectedExtra));
+          budgetExtraAmount.classList.toggle('is-pix', isPixMode);
+        }
+      } else {
+        budgetExtraLabel.textContent = t('budget.albumLabel');
+        budgetExtraAmount.removeAttribute('data-raw');
+        budgetExtraAmount.textContent = t('budget.noAlbum');
+        budgetExtraAmount.classList.remove('is-pix');
+      }
+
+      var showTotal = hasPkg || hasExtra;
+      budgetTotalLine.hidden = !showTotal;
+      if(showTotal){
+        var extraAdds = (hasExtra && selectedExtra.status === 'priced') ? currentPrice(selectedExtra) : 0;
+        var total = (hasPkg ? currentPrice(selectedPackage) : 0) + extraAdds;
+        animateAmount(budgetSubtotal, total);
+        animateAmount(floatingSubtotalAmount, total);
+        budgetSubtotal.classList.toggle('is-pix', isPixMode);
+        floatingSubtotalAmount.classList.toggle('is-pix', isPixMode);
+        floatingSubtotalPkg.textContent = hasPkg ? selectedPackage.name : '';
+        floatingSubtotalExtra.textContent = hasExtra ? albumDisplayName(selectedExtra.name) : '';
+
+        // Siempre se muestra una sola línea de nota (nunca las dos a la vez
+        // ni ninguna) para que la caja del presupuestador y el popup no
+        // cambien de tamaño al pasar de tarjeta a Pix o viceversa.
+        var noteText = (paymentMode === 'card')
+          ? t('budget.installmentsLine', {amount: formatBRL(Math.round(total / 6))})
+          : t('budget.depositLine', {amount: formatBRL(Math.round(total * 0.3))});
+        budgetInstallments.textContent = noteText;
+        budgetInstallments.hidden = false;
+        budgetInstallments.classList.toggle('is-pix', isPixMode);
+        floatingSubtotalInstallments.textContent = noteText;
+        floatingSubtotalInstallments.hidden = false;
+        floatingSubtotalInstallments.classList.toggle('is-pix', isPixMode);
+
+        hasBudgetToShow = true;
+      } else {
+        budgetInstallments.hidden = true;
+        floatingSubtotalInstallments.hidden = true;
+        hasBudgetToShow = false;
+      }
+      syncFloatingPopup();
+    }
+
+    // ---------- WHATSAPP: mensaje predeterminado según lo que eligió el cliente ----------
+    var WHATSAPP_NUMBER = '5547988821970'; // +55 47 98882-1970
+
+    // Sin backend: los datos del formulario (nombre, pareja, fecha/lugar,
+    // correo, mensaje libre) no se "envían" a ningún lado, sino que
+    // enriquecen en vivo el texto predeterminado del botón de WhatsApp.
+    function updateWhatsappLink(){
+      if(!whatsappBtn) return;
+      var name = (nombreField && nombreField.value.trim()) ? nombreField.value.trim() : '';
+      var partner = (parejaField && parejaField.value.trim()) ? parejaField.value.trim() : '';
+      var email = (emailField && emailField.value.trim()) ? emailField.value.trim() : '';
+      var date = (fechaField && fechaField.value.trim()) ? fechaField.value.trim() : '';
+      var extraMsg = (mensajeField && mensajeField.value.trim()) ? mensajeField.value.trim() : '';
+
+      var msg = name ? t('wa.greetingName', {name: name}) : t('wa.greetingGeneric');
+
+      if(wantsCustom){
+        msg += t('wa.custom');
+      } else if(selectedPackage){
+        msg += t('wa.wantsPkg', {pkg: selectedPackage.name});
+        if(selectedExtra){
+          msg += t('wa.withAlbum', {album: albumDisplayName(selectedExtra.name)});
+        }
+        msg += '.';
+      } else {
+        msg += t('wa.generic');
+      }
+
+      var extraLines = [];
+      if(partner) extraLines.push(t('wa.partner', {partner: partner}));
+      if(date) extraLines.push(t('wa.date', {date: date}));
+      if(email) extraLines.push(t('wa.email', {email: email}));
+      if(extraMsg) extraLines.push(t('wa.extraMsg', {msg: extraMsg}));
+      if(extraLines.length){
+        msg += '\n' + extraLines.join('\n');
+      }
+
+      whatsappBtn.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+    }
+
+    [nombreField, parejaField, emailField, fechaField, mensajeField].forEach(function(field){
+      if(field){ field.addEventListener('input', updateWhatsappLink); }
+    });
+
+    // El formulario ya no "envía" nada a un servidor: solo se asegura de que
+    // el mensaje esté armado con los últimos datos y abre WhatsApp directo.
+    if(whatsappForm){
+      whatsappForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        updateWhatsappLink();
+        window.open(whatsappBtn.href, '_blank');
+      });
+    }
+
+    if(customPkgLink){
+      customPkgLink.addEventListener('click', function(e){
+        e.preventDefault();
+        wantsCustom = true;
+        updateWhatsappLink();
+        customPkgLink.href = whatsappBtn.href;
+        window.open(whatsappBtn.href, '_blank');
+      });
+    }
+
+    // Hook global: applyLanguage() lo llama para que todo lo dinámico
+    // (precios, banner de regalo, presupuesto, whatsapp) se vuelva a
+    // renderizar en el idioma recién elegido.
+    window.FO_rerenderDynamic = function(){
+      updateGiftMode();
+      updateBudget();
+      updateWhatsappLink();
+    };
+
+    // Spotlight: resalta la elección pendiente de "ensayo pre boda / making of"
+    // oscureciendo el resto de la página, y retoma la acción del botón al elegir.
+    var spotlightOverlay = document.getElementById('pkgSpotlightOverlay');
+    var spotlightBox = document.getElementById('pkgSpotlightBox');
+    var spotlightHint = document.getElementById('pkgSpotlightHint');
+
+    function isMiniSessionDecided(){
+      var decided = false;
+      document.querySelectorAll('[data-choice-group="mini-session"]').forEach(function(li){
+        if(li.classList.contains('is-decided')) decided = true;
+      });
+      return decided;
+    }
+
+    // Bloquea/libera el scroll de la página mientras el spotlight obliga a
+    // elegir entre ensayo pre boda o making of (Mini Wedding). Compensa el
+    // ancho de la scrollbar para que el contenido no salte al ocultarla.
+    function lockPageScroll(){
+      var scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      if(scrollBarWidth > 0){ document.body.style.paddingRight = scrollBarWidth + 'px'; }
+    }
+    function unlockPageScroll(){
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+
+    // Antes se usaba un setTimeout fijo de 350ms para esperar a que termine
+    // el scroll y recién ahí medir la posición de los ítems a resaltar. En
+    // scrolls largos (o en celulares más lentos) el scroll todavía no había
+    // terminado a los 350ms, y el spotlight se dibujaba mal encuadrado.
+    // Ahora se espera de verdad a que el scroll se detenga (varios frames
+    // seguidos sin cambio de posición), con un tope de seguridad por si el
+    // scroll nunca se estabiliza del todo.
+    function waitForScrollSettle(callback){
+      var maxWait = 1200;
+      var stableFramesNeeded = 4;
+      var start = performance.now();
+      var lastY = window.scrollY;
+      var stableCount = 0;
+      function tick(){
+        var currentY = window.scrollY;
+        if(Math.abs(currentY - lastY) < 0.5){
+          stableCount++;
+        } else {
+          stableCount = 0;
+          lastY = currentY;
+        }
+        if(stableCount >= stableFramesNeeded || (performance.now() - start) > maxWait){
+          callback();
+          return;
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function hideSpotlight(){
+      spotlightBox.classList.remove('is-visible');
+      spotlightHint.classList.remove('is-visible');
+      spotlightBox.hidden = true;
+      spotlightOverlay.hidden = true;
+      spotlightHint.hidden = true;
+      unlockPageScroll();
+      document.removeEventListener('click', onOutsideSpotlightClick, true);
+    }
+
+    // El overlay ya no intercepta el click (pointer-events:none), así que un
+    // solo click sobre "Ensayo pre boda" o "Making of" elige y avanza de una:
+    // este listener en document (fase de captura) solo cierra el spotlight
+    // cuando el click cae AFUERA de los ítems resaltados.
+    function onOutsideSpotlightClick(e){
+      var insideChoice = e.target.closest && e.target.closest('[data-choice-group="mini-session"]');
+      if(!insideChoice){
+        hideSpotlight();
+        AfterChoice.callbacks['mini-session'] = null;
+      }
+    }
+
+    function showSpotlight(){
+      var items = document.querySelectorAll('[data-choice-group="mini-session"]');
+      if(!items.length) return;
+      var pad = 6;
+      var top = Infinity, left = Infinity, right = -Infinity, bottom = -Infinity;
+      items.forEach(function(el){
+        var r = el.getBoundingClientRect();
+        top = Math.min(top, r.top);
+        left = Math.min(left, r.left);
+        right = Math.max(right, r.right);
+        bottom = Math.max(bottom, r.bottom);
+      });
+      spotlightBox.style.top = (top - pad) + 'px';
+      spotlightBox.style.left = (left - pad) + 'px';
+      spotlightBox.style.width = (right - left + pad * 2) + 'px';
+      spotlightBox.style.height = (bottom - top + pad * 2) + 'px';
+      spotlightBox.hidden = false;
+      spotlightOverlay.hidden = false;
+
+      // Posiciona el hint (texto + flecha) pegado al recuadro resaltado, para
+      // que la flecha señale de verdad a las opciones de "ensayo pre boda" /
+      // "making of", en vez de quedar suelto en un punto fijo de la pantalla.
+      // Si no entra debajo (opciones muy abajo en la pantalla), se coloca
+      // arriba del recuadro con la flecha invertida apuntando hacia abajo.
+      spotlightHint.hidden = false;
+      spotlightHint.classList.remove('is-visible', 'is-above');
+      var hintWidth = spotlightHint.offsetWidth || 220;
+      var hintHeight = spotlightHint.offsetHeight || 90;
+      var gap = 14;
+      var boxVisualBottom = bottom + pad;
+      var boxVisualTop = top - pad;
+      var belowY = boxVisualBottom + gap;
+      var placeAbove = (belowY + hintHeight + 10) > window.innerHeight;
+      var topY = placeAbove ? (boxVisualTop - gap - hintHeight) : belowY;
+      topY = Math.max(10, Math.min(topY, window.innerHeight - hintHeight - 10));
+      var centerX = (left + right) / 2;
+      var halfW = hintWidth / 2 + 10;
+      centerX = Math.max(halfW, Math.min(centerX, window.innerWidth - halfW));
+      spotlightHint.style.left = centerX + 'px';
+      spotlightHint.style.top = topY + 'px';
+      if(placeAbove){ spotlightHint.classList.add('is-above'); }
+
+      lockPageScroll();
+      requestAnimationFrame(function(){
+        spotlightBox.classList.add('is-visible');
+        spotlightHint.classList.add('is-visible');
+      });
+      // Se agrega recién ahora (no antes) para no capturar el mismo click del
+      // botón "Quiero este paquete" que disparó el spotlight.
+      setTimeout(function(){
+        document.addEventListener('click', onOutsideSpotlightClick, true);
+      }, 0);
+    }
+
+    pkgButtons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var card = btn.closest('.pkg-card');
+        var pkgId = card.getAttribute('data-package');
+
+        function activate(){
+          selectedPackage = {
+            id: pkgId,
+            name: card.getAttribute('data-package-name'),
+            pricePix: parseInt(card.getAttribute('data-price-pix'), 10) || 0,
+            priceCard: parseInt(card.getAttribute('data-price-card'), 10) || 0
+          };
+          wantsCustom = false; // si ahora eligió un paquete, ya no es "paquete personalizado"
+          popupDismissed = false; // hay presupuesto nuevo: si lo había cerrado, puede volver a aparecer
+          pkgCards.forEach(function(c){ c.classList.remove('is-selected'); });
+          card.classList.add('is-selected');
+          updateGiftMode();
+
+          var rules = currentAlbumRules();
+          var defaultAlbum = rules.defaultGift || (rules.gift.length === 1 ? rules.gift[0] : null);
+          if(defaultAlbum){
+            selectedExtra = { name: defaultAlbum, pricePix: 0, priceCard: 0, status: 'free' };
+            extraChips.forEach(function(c){ c.classList.remove('is-selected'); });
+            ALBUM_INFO[defaultAlbum].chip.classList.add('is-selected');
+          }
+
+          updateBudget();
+          updateWhatsappLink();
+          // Una vez que el cliente ya vio el presupuestador real (es decir,
+          // ya completó el recorrido normal una vez), si vuelve a elegir
+          // otro paquete es porque está comparando precios: ya no lo
+          // mandamos de nuevo a la sección de álbumes, para no interrumpirle
+          // la comparación con un scroll automático.
+          if(!hasSeenRealSubtotal){
+            document.getElementById('extras').scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        }
+
+        if(pkgId === 'mini' && !isMiniSessionDecided()){
+          card.scrollIntoView({behavior:'smooth', block:'center'});
+          AfterChoice.callbacks['mini-session'] = function(){
+            hideSpotlight();
+            activate();
+          };
+          waitForScrollSettle(showSpotlight);
+          return;
+        }
+
+        activate();
+      });
+    });
+
+    extraChips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        var name = chip.getAttribute('data-extra');
+        var pixAttr = chip.getAttribute('data-price-pix');
+        var cardAttr = chip.getAttribute('data-price-card');
+        var gift = chip.classList.contains('is-gift');
+        var status = gift ? 'free' : (pixAttr ? 'priced' : 'consult');
+        var pricePix = gift ? 0 : (pixAttr ? parseInt(pixAttr, 10) : 0);
+        var priceCard = gift ? 0 : (cardAttr ? parseInt(cardAttr, 10) : 0);
+
+        if(selectedExtra && selectedExtra.name === name){
+          selectedExtra = null;
+          chip.classList.remove('is-selected');
+        } else {
+          selectedExtra = { name: name, pricePix: pricePix, priceCard: priceCard, status: status };
+          extraChips.forEach(function(c){ c.classList.remove('is-selected'); });
+          chip.classList.add('is-selected');
+          popupDismissed = false; // hay presupuesto nuevo: si lo había cerrado, puede volver a aparecer
+          // Al elegir un álbum, llevamos la vista hasta "Métodos de pago" para
+          // que decida cómo pagar sin tener que buscarlo manualmente — pero
+          // solo la primera vez: si ya vio el presupuestador real antes, es
+          // que está comparando álbumes, y no lo interrumpimos con scroll.
+          if(!hasSeenRealSubtotal){
+            var paymentMethodsSection = document.querySelector('.payment-methods');
+            if(paymentMethodsSection){
+              setTimeout(function(){
+                paymentMethodsSection.scrollIntoView({behavior:'smooth', block:'start'});
+              }, 50);
+            }
+          }
+        }
+        updateBudget();
+        updateWhatsappLink();
+      });
+    });
+
+    // Render inicial (sin paquete elegido todavía): precios base y botón de WhatsApp genérico.
+    updateGiftMode();
+    updateWhatsappLink();
+  })();
+
+  // Revelado por scroll (solo aplica visualmente en mobile, ver CSS):
+  // en "El problema", "Sobre mí" y la sección de WhatsApp, el bloque de
+  // texto se desliza y aparece encima de la foto cuando entra en pantalla.
+  (function(){
+    var revealGrids = document.querySelectorAll('.problema .grid, .sobre .grid, .cta-final .grid');
+    if(!revealGrids.length) return;
+    if(!('IntersectionObserver' in window)){
+      revealGrids.forEach(function(grid){ grid.classList.add('in-view'); });
+      return;
+    }
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.25, rootMargin:'0px 0px -10% 0px'});
+    revealGrids.forEach(function(grid){ revealObserver.observe(grid); });
+  })();
+</script>
+
+</body>
+</html>
