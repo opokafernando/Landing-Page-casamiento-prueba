@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# Reemplaza TUDOMINIO por el dominio real una vez que lo tengas
-# (o por tu-sitio.netlify.app si todavia no tenes dominio propio).
-Sitemap: https://TUDOMINIO/sitemap.xml
+Sitemap: https://bodaopokafernando.netlify.app/sitemap.xml
