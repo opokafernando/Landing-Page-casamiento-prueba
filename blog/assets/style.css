@@ -1,0 +1,188 @@
+/* ===== Fernando Opoka Fotografía — Blog shared stylesheet ===== */
+:root{
+  --cream: #F7F2EA;
+  --cream-deep: #EFE6D6;
+  --ink: #332B24;
+  --ink-soft: #5C5245;
+  --bronze: #A98A5D;
+  --bronze-soft: #C9AE85;
+  --charcoal: #221D18;
+  --line: rgba(51,43,36,0.14);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Jost', sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-weight:300;
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+a{color:var(--bronze); text-decoration:underline; text-underline-offset:2px;}
+a:hover{color:var(--ink);}
+img{max-width:100%; display:block; border-radius:2px;}
+
+/* Header */
+header.site{
+  background:var(--charcoal);
+  color:var(--cream);
+  padding:40px 0 32px;
+  text-align:center;
+}
+header.site .brand{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:1.5rem;
+  color:var(--cream);
+  display:inline-block;
+  text-decoration:none;
+}
+header.site .brand:hover{color:var(--bronze-soft);}
+header.site nav{margin-top:14px; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;}
+header.site nav a{color:rgba(247,242,234,0.7); margin:0 10px; text-decoration:none;}
+header.site nav a:hover{color:var(--cream);}
+
+/* Breadcrumb */
+.breadcrumb{
+  font-size:0.75rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:28px 0 6px;
+}
+.breadcrumb a{color:var(--ink-soft); text-decoration:none;}
+.breadcrumb a:hover{color:var(--bronze); text-decoration:underline;}
+
+/* Post / page body */
+main{padding:8px 0 72px;}
+.post-title{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:2.1rem;
+  line-height:1.25;
+  color:var(--ink);
+  margin:6px 0 10px;
+}
+.post-meta{font-size:0.8rem; color:var(--ink-soft); margin-bottom:32px;}
+main h2{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:1.5rem;
+  color:var(--ink);
+  margin:34px 0 12px;
+}
+main p{color:var(--ink-soft); margin-bottom:16px; max-width:65ch;}
+main ul, main ol{margin:0 0 16px 20px; color:var(--ink-soft);}
+main li{margin-bottom:8px;}
+main figure{margin:24px 0;}
+main figcaption{font-size:0.78rem; color:var(--ink-soft); margin-top:8px; text-align:center;}
+blockquote{
+  border-left:3px solid var(--bronze);
+  padding:4px 0 4px 20px;
+  margin:24px 0;
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:1.2rem;
+  color:var(--ink);
+}
+
+/* CTA block at end of posts */
+.post-cta{
+  background:var(--cream-deep);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:32px 28px;
+  margin:48px 0 8px;
+  text-align:center;
+}
+.post-cta h3{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:1.4rem;
+  margin-bottom:10px;
+  color:var(--ink);
+}
+.post-cta p{margin-bottom:20px;}
+.btn-cta{
+  display:inline-block;
+  background:var(--bronze);
+  color:var(--cream) !important;
+  font-family:'Jost', sans-serif;
+  font-size:0.85rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:14px 30px;
+  border-radius:2px;
+  transition:background .2s ease;
+}
+.btn-cta:hover{background:var(--ink);}
+.cta-fine{font-size:0.75rem; color:var(--ink-soft); margin-top:12px; margin-bottom:0;}
+.back-blog{
+  display:inline-block;
+  margin-top:32px;
+  font-size:0.78rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--bronze);
+  text-decoration:none;
+}
+.back-blog:hover{text-decoration:underline;}
+
+/* Blog index */
+.blog-hero{padding:36px 0 8px; text-align:center;}
+.blog-hero h1{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:2.2rem;
+  color:var(--ink);
+}
+.blog-hero p{color:var(--ink-soft); margin-top:10px;}
+.post-list{margin-top:36px;}
+.post-card{
+  padding:26px 0;
+  border-bottom:1px solid var(--line);
+}
+.post-card:first-child{padding-top:0;}
+.post-card .card-date{font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--bronze);}
+.post-card h2{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:1.5rem;
+  margin:8px 0 8px;
+}
+.post-card h2 a{color:var(--ink); text-decoration:none;}
+.post-card h2 a:hover{color:var(--bronze);}
+.post-card p{color:var(--ink-soft); margin-bottom:10px;}
+.post-card .read-more{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em;}
+
+/* Footer (matches site) */
+footer{
+  background:var(--charcoal);
+  color:rgba(247,242,234,0.75);
+  padding:40px 0 24px;
+  text-align:center;
+}
+footer .brand{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:1.3rem;
+  color:var(--cream);
+  margin-bottom:10px;
+  display:block;
+}
+footer .fine{font-size:0.72rem; color:rgba(247,242,234,0.4); margin-top:8px;}
+footer a{color:var(--bronze-soft);}
+
+@media (min-width:768px){
+  .post-title{font-size:2.6rem;}
+  .blog-hero h1{font-size:2.6rem;}
+}
