@@ -12,6 +12,27 @@
 <meta property="og:type" content="website">
 <!-- FAVICON: agregar cuando tengas un favicon definido -->
 <!-- <link rel="icon" href="/images/favicon.png"> -->
+     <meta property="og:url" content="https://bodaopokafernando.netlify.app/">
+     <meta name="twitter:card" content="summary_large_image">
+     <link rel="canonical" href="https://bodaopokafernando.netlify.app/">
+
+     <!-- Meta Pixel Code -->
+     <script>
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+               n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+           if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+           n.queue=[];t=b.createElement(e);t.async=!0;
+           t.src=v;s=b.getElementsByTagName(e)[0];
+           s.parentNode.insertBefore(t,s)}(window, document,'script',
+                                           'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1073898278650891');
+          fbq('track', 'PageView');
+     </script>
+     <noscript><img height="1" width="1" style="display:none"
+                    src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
+                    /></noscript>
+<!-- End Meta Pixel Code -->
 <!-- NOTA SOBRE IDIOMAS: las etiquetas <title>/<meta> de arriba quedan en español porque
      los buscadores leen el HTML estático (no lo que cambia el selector de idioma con
      JavaScript). Todo el contenido VISIBLE de la página sí cambia con el selector. Si más
@@ -2794,6 +2815,13 @@
     var customPkgLink = document.getElementById('customPkgLink');
     var whatsappForm = document.getElementById('whatsappForm');
 
+           // Pixel: registra "Contact" al tocar el boton principal de WhatsApp.
+           if(whatsappBtn){
+                      whatsappBtn.addEventListener('click', function(){
+                                   if(typeof fbq === 'function'){ fbq('track', 'Contact'); }
+                      });
+           }
+
     var giftBanner = document.getElementById('giftBanner');
     var chip20 = document.getElementById('chip20');
     var chip20Ribbon = document.getElementById('chip20Ribbon');
@@ -3224,6 +3252,7 @@
     // el mensaje esté armado con los últimos datos y abre WhatsApp directo.
     if(whatsappForm){
       whatsappForm.addEventListener('submit', function(e){
+                   if(typeof fbq === 'function'){ fbq('track', 'Contact'); }
         e.preventDefault();
         updateWhatsappLink();
         window.open(whatsappBtn.href, '_blank');
@@ -3232,6 +3261,7 @@
 
     if(customPkgLink){
       customPkgLink.addEventListener('click', function(e){
+                   if(typeof fbq === 'function'){ fbq('track', 'Contact'); }
         e.preventDefault();
         wantsCustom = true;
         updateWhatsappLink();
