@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="/assets/global.css">
 
 <script type="application/ld+json">
 {
@@ -42,12 +42,14 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1073898278650891');
 fbq('track', 'PageView');
-fbq('track', 'ViewContent', {content_name: '¿Con cuánta anticipación reservar al fotógrafo de bodas?', content_type: 'article'});
+if(window.FO_Track){ FO_Track.viewContent({content_name: '¿Con cuánta anticipación reservar al fotógrafo de bodas?', content_type: 'article'}); }
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<script src="/assets/tracking.js"></script>
+<script>if(window.FO_Track){FO_Track.markBlogSource();}</script>
 </head>
 <body>
 
@@ -57,6 +59,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     <nav>
       <a href="/">Inicio</a>
       <a href="/blog/">Blog</a>
+      <a href="/recursos/">Recursos gratis</a>
     </nav>
   </div>
 </header>
@@ -93,7 +96,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     <div class="post-cta">
       <h3>¿Ya tenés la fecha de tu boda?</h3>
       <p>Contame cuándo y dónde es, y te confirmo la disponibilidad al toque.</p>
-      <a class="btn-cta" href="https://wa.me/5547988821970?text=Hola%20Fernando%2C%20quiero%20consultar%20disponibilidad%20para%20la%20fecha%20de%20mi%20boda" target="_blank" rel="noopener" onclick="fbq('track','Contact');">Escribime por WhatsApp</a>
+      <a class="btn-cta" href="https://wa.me/5547988821970?text=Hola%20Fernando%2C%20quiero%20consultar%20disponibilidad%20para%20la%20fecha%20de%20mi%20boda" target="_blank" rel="noopener" onclick="if(window.FO_Track){FO_Track.contact(); FO_Track.inicioEnBlog();}">Escribime por WhatsApp</a>
       <p class="cta-fine">Sin compromiso. Respondo en menos de 8h.</p>
     </div>
 

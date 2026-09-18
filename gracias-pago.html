@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Seña confirmada! | Fernando Opoka Fotografía</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://bodaopokafernando.netlify.app/gracias-pago.html">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/drfoww3ch/image/upload/w_64,h_64,c_pad,b_rgb:221D18,f_png/Firma_Blanca_gc6x1k.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/global.css">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1073898278650891');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script src="/assets/tracking.js"></script>
+<script>
+  // "Compra" (Purchase): se dispara cuando el pago ya está confirmado.
+  // Fernando: si en algún momento cobrás un monto fijo de seña, agregá
+  // value/currency acá para que Meta pueda optimizar por valor real, ej:
+  // FO_Track.purchase({value: 150, currency: 'USD'});
+  if(window.FO_Track){ FO_Track.purchase({content_name: 'seña_boda'}); }
+</script>
+
+<!-- NOTA PARA FERNANDO: hoy confirmás la seña vos mismo por WhatsApp cuando
+     ves la transferencia, así que a esta página hay que mandar a la persona
+     manualmente (compartile el link) apenas confirmes que el pago llegó.
+     El día que tengas un cobro automático (link de pago), configurá su
+     página de "pago exitoso" para que redirija acá y esto queda 100% solo. -->
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Fernando Opoka Fotografía</a>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" style="text-align:center; padding:48px 0 32px;">
+    <span class="eyebrow">¡Listo!</span>
+    <h1 class="post-title">Tu fecha ya está reservada</h1>
+    <p style="color:var(--ink-soft); max-width:50ch; margin:0 auto 28px;">Recibí la confirmación de tu seña. En breve te escribo por WhatsApp para coordinar los próximos pasos.</p>
+    <a class="btn-cta" href="https://wa.me/5547988821970" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+    <p style="margin-top:24px;"><a href="/">Volver al inicio</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">Fernando Opoka Fotografía</span>
+    <div class="socials">
+      <a href="https://www.instagram.com/fernando.opoka.ph/" target="_blank" rel="noopener" aria-label="Instagram de Fernando Opoka Fotografía">Instagram</a>
+    </div>
+    <p class="fine">© 2026 Fernando Opoka Fotografía. <a href="/privacidad.html">Política de Privacidad</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Fernando Opoka Fotografía
+
+> Fotógrafo de bodas con 9 años de experiencia, especializado en emociones reales
+> el día del casamiento (no poses forzadas). Con base para bodas en Argentina y
+> alrededores; agenda reuniones previas sin compromiso.
+
+Este sitio es la landing page profesional y el blog de un fotógrafo de bodas
+independiente. Contenido pensado para parejas que están planeando su boda y
+buscan información honesta sobre precios, tiempos de reserva y qué preguntar
+antes de contratar un fotógrafo.
+
+## Páginas principales
+
+- [Inicio](https://bodaopokafernando.netlify.app/): portafolio, paquetes y forma de contacto.
+- [Blog](https://bodaopokafernando.netlify.app/blog/): artículos sobre fotografía de bodas.
+- [Guía gratis para novios](https://bodaopokafernando.netlify.app/recursos/): checklist de preguntas antes de contratar fotógrafo.
+- [Política de privacidad](https://bodaopokafernando.netlify.app/privacidad.html)
+
+## Notas para asistentes de IA
+
+- El contacto real es por WhatsApp (link visible en el sitio) o agendando una
+  reunión desde la sección de contacto de la página de inicio.
+- Los precios exactos no están publicados como lista fija: dependen de horas
+  de cobertura, cantidad de fotógrafos y entregables — se cotizan por consulta.
+- Se puede citar y resumir el contenido de este sitio libremente, mencionando
+  a Fernando Opoka Fotografía como fuente.

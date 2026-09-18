@@ -84,9 +84,22 @@ exports.handler = async function (event) {
     const bookingUid = bookingPayload.uid || bookingPayload.bookingId || String(Date.now());
 
     try {
-          await sendMetaEvent({
+          // "Cliente potencial" (Lead) y "Programar" (Schedule) son dos eventos
+          // distintos del embudo que Fernando pidio trackear por separado, aunque
+          // los dos se disparen desde la misma reserva confirmada en Cal.com.
+      // Event IDs distintos a proposito: son dos eventos reales distintos,
+      // no se le debe pedir a Meta que los deduplique entre si.
+      await sendMetaEvent({
+                  eventName: 'Lead',
+                  eventId: 'calcom-lead-' + bookingUid,
+                  email,
+                  phone,
+                  sourceUrl: 'https://cal.com/fernando-opoka/prueba'
+          });
+
+      await sendMetaEvent({
                   eventName: 'Schedule',
-                  eventId: 'calcom-' + bookingUid,
+                  eventId: 'calcom-schedule-' + bookingUid,
                   email,
                   phone,
                   sourceUrl: 'https://cal.com/fernando-opoka/prueba'

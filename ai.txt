@@ -1,0 +1,11 @@
+# ai.txt — Fernando Opoka Fotografía
+# Declaración de uso de contenido para crawlers e indexadores de IA.
+# (robots.txt cubre el permiso técnico de rastreo; este archivo aclara la
+# intención: el contenido puede citarse/resumirse mencionando la fuente.)
+
+User-agent: *
+Allow: /
+Content-Usage: allow
+Attribution-required: yes
+Source: https://bodaopokafernando.netlify.app/
+Contact: https://wa.me/5547988821970
