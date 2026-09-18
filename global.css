@@ -1,0 +1,1624 @@
+  :root{
+    --cream: #F7F2EA;
+    --cream-deep: #EFE6D6;
+    --ink: #332B24;
+    --ink-soft: #5C5245;
+    --bronze: #A98A5D;
+    --bronze-soft: #C9AE85;
+    --charcoal: #221D18;
+    --line: rgba(51,43,36,0.14);
+    --radius-arch: 200px 200px 12px 12px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Jost', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    font-weight:300;
+    line-height:1.65;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%; display:block;}
+
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    color:var(--ink);
+    line-height:1.12;
+  }
+
+  .eyebrow{
+    font-family:'Petit Formal Script', cursive;
+    font-size:1.4rem;
+    color:var(--bronze);
+    font-weight:400;
+    display:block;
+    margin-bottom:0.4rem;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  section{padding:44px 0;}
+
+  .btn{
+    display:inline-block;
+    background:var(--charcoal);
+    color:var(--cream);
+    font-family:'Jost', sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:18px 40px;
+    border:none;
+    cursor:pointer;
+    transition:background 0.25s ease, transform 0.25s ease;
+  }
+  .btn:hover{background:var(--bronze); transform:translateY(-2px) scale(1.03);}
+  .btn:focus-visible{outline:3px solid var(--bronze-soft); outline-offset:3px;}
+
+  .microcopy{
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    margin-top:14px;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- SELECTOR DE IDIOMA (bloquea todo hasta elegir) ---------- */
+  .lang-modal-overlay{
+    position:fixed; inset:0;
+    background:rgba(20,17,14,0.94);
+    z-index:3000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .lang-modal-overlay[hidden]{display:none;}
+  .lang-modal{
+    background:var(--cream);
+    border-radius:18px;
+    padding:40px 30px;
+    max-width:420px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 30px 80px rgba(0,0,0,0.45);
+  }
+  .lang-modal-title{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--ink);
+    margin-bottom:26px;
+    line-height:1.6;
+  }
+  .lang-modal-options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .lang-option{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:var(--cream-deep);
+    border:2px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    font-family:'Jost', sans-serif;
+    font-size:1rem;
+    color:var(--ink);
+    cursor:pointer;
+    transition:border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  }
+  .lang-option .flag{font-size:1.3rem;}
+  .lang-option .country{color:var(--ink-soft); font-size:0.85rem;}
+  .lang-option:hover{border-color:var(--bronze); background:#F1E4CE; transform:translateY(-2px);}
+  .lang-option:focus-visible{outline:3px solid var(--bronze-soft); outline-offset:2px;}
+
+  /* Botón fijo para volver a cambiar el idioma más adelante */
+  .lang-switcher{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:600;
+    background:rgba(34,29,24,0.75);
+    color:var(--cream);
+    border:1px solid rgba(247,242,234,0.3);
+    border-radius:20px;
+    padding:8px 14px;
+    font-family:'Jost', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    cursor:pointer;
+    backdrop-filter:blur(4px);
+  }
+  .lang-switcher:hover{background:rgba(34,29,24,0.92);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    align-items:flex-end;
+    padding:0;
+    overflow:hidden;
+  }
+  .hero picture, .hero img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    z-index:0;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(34,29,24,0.15) 0%, rgba(34,29,24,0.15) 40%, rgba(34,29,24,0.72) 100%);
+    z-index:1;
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    width:100%;
+    padding:48px 24px 56px;
+    text-align:center;
+    color:#fff;
+  }
+  .hero-textbox{
+    margin:0 auto 26px;
+    max-width:720px;
+  }
+  .hero-btn-row{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+    max-width:360px;
+    margin:0 auto;
+  }
+  @media (min-width:640px){
+    .hero-btn-row{
+      flex-direction:row;
+      justify-content:center;
+      flex-wrap:wrap;
+      max-width:none;
+    }
+  }
+  .hero-btn{width:100%;}
+  @media (min-width:640px){ .hero-btn{width:auto;} }
+  /* En el hero, el eyebrow deja de ser el scriptcito chico y pasa a verse
+     como un verdadero título secundario: tipografía serif itálica, más
+     grande y con más peso, en vez del cursive pequeño que se usa en el
+     resto de la página. */
+  .hero-content .eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.6rem;
+    letter-spacing:0.01em;
+    color:#fff;
+    text-shadow:0 2px 14px rgba(0,0,0,0.65), 0 1px 3px rgba(0,0,0,0.6);
+    margin-bottom:0.9rem;
+  }
+  @media (min-width:768px){
+    .hero-content .eyebrow{font-size:2.1rem;}
+  }
+  .hero h1{
+    color:#fff;
+    font-size:2.1rem;
+    max-width:760px;
+    margin:0 auto 18px;
+    font-style:italic;
+    font-weight:400;
+  }
+  .hero p.sub{
+    color:rgba(255,255,255,0.88);
+    max-width:520px;
+    margin:0 auto;
+    font-size:1rem;
+  }
+
+  @media (min-width:768px){
+    .hero h1{font-size:3.3rem;}
+    .hero p.sub{font-size:1.1rem;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 48px;
+  }
+  .section-head h2{font-size:2rem; font-style:italic;}
+  @media (min-width:768px){ .section-head h2{font-size:2.6rem;} }
+
+  /* ---------- VSL ---------- */
+  .vsl{background:var(--charcoal); padding:56px 0;}
+  .vsl-box{
+    max-width:900px;
+    margin:0 auto;
+    aspect-ratio:16/9;
+    background:#151210;
+    border:1px solid rgba(247,242,234,0.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .vsl-box .play{
+    width:74px; height:74px;
+    border-radius:50%;
+    background:var(--bronze);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:1.6rem;
+  }
+  .vsl-box p{
+    position:absolute;
+    bottom:22px;
+    left:0; right:0;
+    text-align:center;
+    color:rgba(247,242,234,0.5);
+    font-size:0.8rem;
+    letter-spacing:0.04em;
+  }
+
+  /* ---------- PROBLEMA ---------- */
+  .problema{background:var(--cream);}
+  .problema .grid{
+    display:grid;
+    gap:40px;
+    align-items:center;
+  }
+  @media (min-width:768px){
+    .problema .grid{grid-template-columns: 0.9fr 1.1fr; gap:64px;}
+  }
+  .arch-frame{
+    border-radius:var(--radius-arch);
+    overflow:hidden;
+    aspect-ratio: 3/4;
+  }
+  .arch-frame img{width:100%; height:100%; object-fit:cover;}
+
+  .problema h2{font-size:1.9rem; font-style:italic; margin-bottom:20px;}
+  .problema p{color:var(--ink-soft); margin-bottom:16px; max-width:46ch;}
+
+  /* En mobile: la foto ocupa todo el ancho y se ve más alta/oscurecida,
+     y el bloque de texto se desliza encima al hacer scroll. */
+  @media (max-width:767px){
+    .problema .grid{display:block; gap:0;}
+    .problema .grid .arch-frame{
+      width:100%; max-width:none; margin:0;
+      aspect-ratio:3/4.1;
+      position:relative;
+      filter:brightness(0.8);
+    }
+    .problema .grid .arch-frame::after{
+      content:'';
+      position:absolute; inset:auto 0 0 0; height:85%;
+      background:linear-gradient(to top,
+        rgba(20,16,12,0.82) 0%,
+        rgba(20,16,12,0.55) 32%,
+        rgba(20,16,12,0.24) 62%,
+        rgba(20,16,12,0) 100%);
+      pointer-events:none;
+    }
+    .problema .grid > div:last-child{
+      position:relative; z-index:1;
+      margin-top:-64px;
+      background:rgba(20,16,12,0.86);
+      -webkit-backdrop-filter:blur(6px);
+      backdrop-filter:blur(6px);
+      border-radius:20px 20px 0 0;
+      padding:26px 20px 20px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .6s ease, transform .6s ease;
+    }
+    .problema .grid.in-view > div:last-child{opacity:1; transform:translateY(0);}
+    .problema h2{color:#F7F2EA;}
+    .problema p{color:rgba(247,242,234,0.86);}
+  }
+
+  /* ---------- PROCESO ---------- */
+  .proceso{background:var(--cream-deep);}
+  .steps{
+    display:grid;
+    gap:32px;
+  }
+  @media (min-width:768px){
+    .steps{grid-template-columns:repeat(3,1fr); gap:40px;}
+  }
+  .step{text-align:center; padding:0 12px;}
+  .step-num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.1rem;
+    color:var(--bronze);
+    display:block;
+    margin-bottom:10px;
+  }
+  .step h3{font-size:1.4rem; margin-bottom:10px; font-weight:500;}
+  .step p{color:var(--ink-soft); font-size:0.95rem;}
+
+  /* ---------- PROMESA / RIESGO ---------- */
+  .promesa{
+    background:var(--charcoal);
+    color:var(--cream);
+    text-align:center;
+  }
+  .promesa .eyebrow{color:var(--bronze-soft);}
+  .promesa h2{color:#fff; font-size:1.9rem; font-style:italic; max-width:700px; margin:0 auto 22px;}
+  .promesa p{color:rgba(247,242,234,0.82); max-width:620px; margin:0 auto;}
+  @media (min-width:768px){ .promesa h2{font-size:2.5rem;} }
+
+  /* ---------- PORTAFOLIO (CARRUSEL INFINITO) ---------- */
+  .portafolio{background:var(--cream); overflow:hidden;}
+  .portafolio .wrap{overflow:visible;}
+  .carousel-viewport{
+    overflow:hidden;
+    width:100%;
+    margin-top:8px;
+  }
+  .carousel-track{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    width:max-content;
+    will-change:transform;
+    /* Loop infinito: el track contiene el set de fotos duplicado (ver script).
+       El movimiento (auto-scroll y también el drag/swipe táctil) se maneja
+       por JS con requestAnimationFrame en vez de una animación CSS, para
+       poder combinarlo con que el usuario toque y deslice la galería. */
+    cursor:grab;
+    touch-action:pan-y;
+  }
+  .carousel-track.is-dragging{cursor:grabbing; transition:none;}
+  .carousel-track.is-dragging *{pointer-events:none;}
+  .carousel-track figure{
+    flex:0 0 auto;
+    margin:0;
+    height:230px;
+    border-radius:14px;
+    overflow:hidden;
+    cursor:zoom-in;
+  }
+  @media (min-width:768px){
+    .carousel-track figure{height:320px;}
+  }
+  .carousel-track img{
+    height:100%;
+    width:auto;
+    display:block;
+    object-fit:cover;
+    transition:transform 0.35s ease;
+    -webkit-user-drag:none;
+    user-select:none;
+  }
+  .carousel-track figure:hover img{transform:scale(1.05);}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox-overlay{
+    position:fixed; inset:0;
+    background:rgba(34,29,24,0.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+    padding:32px;
+    cursor:zoom-out;
+  }
+  .lightbox-overlay.is-open{display:flex;}
+  .lightbox-overlay img{
+    max-width:100%;
+    max-height:90vh;
+    width:auto;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-close{
+    position:absolute;
+    top:24px; right:28px;
+    background:none;
+    border:none;
+    color:var(--cream);
+    font-size:2rem;
+    line-height:1;
+    cursor:pointer;
+    font-family:'Jost', sans-serif;
+  }
+
+  /* ---------- SOBRE MI ---------- */
+  .sobre{background:var(--cream-deep);}
+  .sobre .grid{
+    display:grid;
+    gap:40px;
+    align-items:center;
+  }
+  @media (min-width:768px){
+    .sobre .grid{grid-template-columns: 0.8fr 1.2fr; gap:64px;}
+  }
+  .sobre .arch-frame{aspect-ratio:3/3.6;}
+  .sobre h2{font-size:1.9rem; font-style:italic; margin-bottom:18px;}
+  .sobre p{color:var(--ink-soft); margin-bottom:14px; max-width:50ch;}
+  /* En mobile: misma idea que "El problema" — foto a todo el ancho,
+     oscurecida, con el texto deslizándose encima al hacer scroll. */
+  @media (max-width:767px){
+    .sobre .grid{display:block; gap:0;}
+    .sobre .grid .arch-frame{
+      width:100%; max-width:none; margin:0;
+      aspect-ratio:3/4.1;
+      position:relative;
+      filter:brightness(0.8);
+    }
+    .sobre .grid .arch-frame::after{
+      content:'';
+      position:absolute; inset:auto 0 0 0; height:85%;
+      background:linear-gradient(to top,
+        rgba(20,16,12,0.82) 0%,
+        rgba(20,16,12,0.55) 32%,
+        rgba(20,16,12,0.24) 62%,
+        rgba(20,16,12,0) 100%);
+      pointer-events:none;
+    }
+    .sobre .grid > div:last-child{
+      position:relative; z-index:1;
+      margin-top:-64px;
+      background:rgba(20,16,12,0.86);
+      -webkit-backdrop-filter:blur(6px);
+      backdrop-filter:blur(6px);
+      border-radius:20px 20px 0 0;
+      padding:26px 20px 20px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .6s ease, transform .6s ease;
+    }
+    .sobre .grid.in-view > div:last-child{opacity:1; transform:translateY(0);}
+    .sobre h2{color:#F7F2EA;}
+    .sobre p{color:rgba(247,242,234,0.86);}
+  }
+  .sobre .credit{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--bronze);
+    font-size:1.1rem;
+  }
+
+  /* ---------- PAQUETES ---------- */
+  .servicios{background:var(--cream);}
+  .pkg-grid{
+    display:grid;
+    gap:28px;
+    max-width:980px;
+    margin:0 auto;
+  }
+  @media (min-width:768px){
+    .pkg-grid{grid-template-columns:repeat(3,1fr); align-items:stretch;}
+  }
+  .pkg-card{
+    background:var(--cream-deep);
+    border:2px solid var(--line);
+    padding:40px 30px;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position:relative;
+  }
+  .pkg-card:hover{
+    transform:scale(1.02);
+    box-shadow:0 18px 40px rgba(51,43,36,0.12);
+  }
+  /* Wedding Plus vuelve a usar el negro que tenía Full Wedding (esta regla
+     compartida .is-featured), y Full Wedding pasa a usar el estilo claro
+     tipo Mini (ver el bloque .pkg-card.is-luxe más abajo, que le pisa este
+     negro). O sea: se intercambiaron los colores entre el paquete 2 y 3. */
+  .pkg-card.is-featured{
+    background:var(--charcoal);
+    color:var(--cream);
+    border-color:var(--charcoal);
+  }
+  .pkg-card.is-selected{
+    background:#F1E4CE;
+    border-color:var(--bronze);
+    box-shadow:0 18px 40px rgba(169,138,93,0.3);
+  }
+  .pkg-card.is-featured.is-selected{
+    background:#3A2E1E;
+    border-color:var(--bronze-soft);
+  }
+  /* Full Wedding: mismo look claro que Mini (cream-deep + texto oscuro),
+     pisando el negro de .is-featured de arriba con la misma especificidad
+     (2 clases) pero declarado después, y lo mismo para cada texto/ítem que
+     .is-featured recolorea más abajo para el modo oscuro. */
+  .pkg-card.is-luxe{
+    background:var(--cream-deep);
+    color:var(--ink);
+    border-color:var(--line);
+  }
+  .pkg-card.is-luxe.is-selected{
+    background:#F1E4CE;
+    border-color:var(--bronze);
+    box-shadow:0 18px 40px rgba(169,138,93,0.3);
+  }
+  .pkg-card.is-selected::after{
+    content:"✓ Seleccionado";
+    position:absolute;
+    top:-13px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--bronze);
+    color:#fff;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    padding:5px 14px;
+    border-radius:20px;
+  }
+  html[lang="pt-BR"] .pkg-card.is-selected::after{content:"✓ Selecionado";}
+  html[lang="en-US"] .pkg-card.is-selected::after{content:"✓ Selected";}
+  .pkg-badge{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--charcoal);
+    color:var(--cream);
+    font-size:0.7rem;
+    letter-spacing:0.02em;
+    padding:7px 16px;
+    border-radius:20px;
+    white-space:nowrap;
+    box-shadow:0 6px 16px rgba(51,43,36,0.25);
+  }
+  .pkg-card.is-selected .pkg-badge{top:-38px;}
+  .pkg-card .pkg-eyebrow{
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    color:var(--bronze);
+  }
+  .pkg-card.is-featured .pkg-eyebrow{color:var(--bronze-soft);}
+  .pkg-card h3{
+    font-size:1.6rem;
+    font-style:italic;
+    margin:10px 0 16px;
+  }
+  .pkg-card.is-featured h3{color:var(--bronze-soft);}
+  .pkg-card .pkg-price{
+    font-family:'Jost', sans-serif;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+    margin-bottom:20px;
+  }
+  .pkg-card.is-featured .pkg-price{color:rgba(247,242,234,0.75);}
+  .pkg-price-note{
+    font-family:'Jost', sans-serif;
+    font-size:0.76rem;
+    color:var(--ink-soft);
+    margin:-14px 0 4px;
+  }
+  .pkg-price-save{
+    font-family:'Jost', sans-serif;
+    font-size:0.8rem;
+    font-weight:600;
+    color:#2E9B57;
+    margin-bottom:18px;
+  }
+  .pkg-card.is-featured .pkg-price-note{color:rgba(247,242,234,0.55);}
+  .pkg-card.is-featured .pkg-price-save{color:#7FE3A6;}
+  .pkg-card ul{
+    list-style:none;
+    margin:0 0 30px;
+    padding:0;
+    text-align:left;
+    flex-grow:1;
+  }
+  .pkg-card li{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    padding:9px 0 9px 26px;
+    border-top:1px solid var(--line);
+    position:relative;
+  }
+  .pkg-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#2E9B57;
+    font-weight:600;
+  }
+  .pkg-card li.not-included{
+    color:var(--ink-soft);
+    opacity:0.45;
+  }
+  .pkg-card li.not-included::before{
+    content:"✕";
+    color:#C43B3B;
+  }
+  .pkg-card li.is-gift-item::before{
+    content:"🎁";
+    color:inherit;
+    font-size:0.85rem;
+  }
+
+  /* Ítem seleccionable (elegí uno de los dos): signo de pregunta negro por
+     defecto, alineado arriba a la izquierda del texto (con flex, para que
+     no se descentre si el texto ocupa dos líneas), que se metamorfosea
+     (rota + cambia de forma) en el mismo tilde/equis que ya se usa en el
+     resto de la lista. */
+  .pkg-card li.li-choice{
+    cursor:pointer;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    border:1px solid rgba(51,43,36,0.18);
+    border-radius:10px;
+    background:rgba(51,43,36,0.04);
+    margin:6px 0;
+    padding:9px 12px;
+    transition:background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .pkg-card li.li-choice:hover{
+    background:rgba(51,43,36,0.08);
+  }
+  .pkg-card li.li-choice.is-decided{
+    background:transparent;
+    border-color:var(--line);
+  }
+  .pkg-card li.li-choice::before{content:none;}
+  .choice-icon{
+    position:relative;
+    flex-shrink:0;
+    width:15px; height:15px;
+    margin-top:3px;
+  }
+  .choice-glyph{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.92rem;
+    font-weight:600;
+    line-height:1;
+    color:var(--ink);
+    opacity:1;
+    transform:scale(1) rotate(0deg);
+    transition:transform 0.5s cubic-bezier(.4,0,.2,1), opacity 0.4s ease, color 0.3s ease;
+  }
+  .choice-glyph::after{content:"?";}
+  .li-choice.is-decided .choice-glyph{
+    animation:choiceGlyphPop 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  .choice-glyph.is-chosen{color:#2E9B57;}
+  .choice-glyph.is-chosen::after{content:"✓";}
+  .choice-glyph.is-rejected{color:#C43B3B;}
+  .choice-glyph.is-rejected::after{content:"✕";}
+  @keyframes choiceGlyphPop{
+    0%{ transform:scale(1) rotate(0deg); }
+    45%{ transform:scale(0.3) rotate(-135deg); opacity:0.4; }
+    100%{ transform:scale(1) rotate(0deg); opacity:1; }
+  }
+  .pkg-card li.li-choice.not-included{color:var(--ink-soft); opacity:0.55;}
+  .pkg-card.is-featured li{
+    color:rgba(247,242,234,0.82);
+    border-top-color:rgba(247,242,234,0.15);
+  }
+  .pkg-card.is-featured li::before{color:#4CC47C;}
+  .pkg-card.is-featured li.not-included::before{color:#E36B6B;}
+  .pkg-card.is-featured li.not-included{color:rgba(247,242,234,0.5);}
+  .pkg-card li:last-child{border-bottom:1px solid var(--line);}
+  .pkg-card.is-featured li:last-child{border-bottom-color:rgba(247,242,234,0.15);}
+  .pkg-card .btn{width:100%;}
+  .pkg-card.is-featured .btn{background:var(--bronze); color:var(--charcoal);}
+  .pkg-card.is-featured .btn:hover{background:var(--bronze-soft);}
+  /* Full Wedding: se declaran después de las reglas .is-featured de arriba
+     (misma especificidad, pero último en el CSS gana) para que le ganen el
+     estilo oscuro y quede con el look claro tipo Mini. */
+  .pkg-card.is-luxe .pkg-eyebrow{color:var(--bronze);}
+  .pkg-card.is-luxe h3{color:var(--ink);}
+  .pkg-card.is-luxe .pkg-price{color:var(--ink-soft);}
+  .pkg-card.is-luxe .pkg-price-note{color:var(--ink-soft);}
+  .pkg-card.is-luxe .pkg-price-save{color:#2E9B57;}
+  .pkg-card.is-luxe li{color:var(--ink-soft); border-top-color:var(--line);}
+  .pkg-card.is-luxe li::before{color:#2E9B57;}
+  .pkg-card.is-luxe li.not-included::before{color:#C43B3B;}
+  .pkg-card.is-luxe li.not-included{color:var(--ink-soft); opacity:0.45;}
+  .pkg-card.is-luxe li:last-child{border-bottom-color:var(--line);}
+  .pkg-card.is-luxe .btn{background:var(--charcoal); color:var(--cream);}
+  .pkg-card.is-luxe .btn:hover{background:var(--bronze);}
+
+  /* En celular los 3 paquetes van apilados y ocupaban demasiado alto: se
+     recortan paddings, márgenes y el tamaño de la lista para que se vean
+     más compactos sin perder legibilidad. */
+  @media (max-width:767px){
+    .pkg-card{padding:26px 22px;}
+    .pkg-card h3{margin:6px 0 10px; font-size:1.4rem;}
+    .pkg-card .pkg-price{margin-bottom:12px;}
+    .pkg-price-note{margin:-8px 0 2px; font-size:0.7rem;}
+    .pkg-price-save{margin-bottom:12px; font-size:0.74rem;}
+    .pkg-card ul{margin:0 0 18px;}
+    .pkg-card li{padding:6px 0 6px 24px; font-size:0.86rem;}
+    .pkg-card li.li-choice{padding:7px 10px; margin:4px 0;}
+  }
+
+  /* Banda oscura para el aviso de paquete personalizado, mismo estilo que "Lo que está en juego" */
+  .pkg-custom-band{
+    background:var(--charcoal);
+    text-align:center;
+    padding:44px 24px;
+  }
+  .pkg-custom{
+    font-size:1rem;
+    color:rgba(247,242,234,0.85);
+    max-width:620px;
+    margin:0 auto;
+  }
+  .pkg-custom a{
+    color:var(--bronze-soft);
+    text-decoration:underline;
+  }
+  .pkg-custom a:hover{color:var(--cream);}
+
+  /* ---------- SERVICIOS EXTRAS ---------- */
+  .extras{background:var(--cream-deep);}
+  .extras-sub{
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 auto;
+  }
+  .extras-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  @media (min-width:600px){
+    .extras-grid{grid-template-columns:repeat(4,1fr); max-width:820px;}
+  }
+  /* Tema "paquete de regalo" aplicado por defecto a los botones de álbum */
+  .extra-chip{
+    position:relative;
+    background:#F1E4CE;
+    border:2px solid var(--bronze-soft);
+    padding:26px 12px;
+    text-align:center;
+    cursor:pointer;
+    font-family:'Jost', sans-serif;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .extra-chip:hover{
+    transform:scale(1.05);
+    box-shadow:0 12px 26px rgba(51,43,36,0.15);
+  }
+  .extra-chip.is-selected{
+    border-color:var(--bronze);
+    background:var(--charcoal);
+  }
+  .extra-chip-title{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.2rem;
+    color:var(--ink);
+  }
+  .extra-chip.is-selected .extra-chip-title{color:var(--cream);}
+  .extra-chip-sub{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  .extra-chip.is-selected .extra-chip-sub{color:var(--bronze-soft);}
+  .extra-chip-price{
+    font-size:0.78rem;
+    color:var(--bronze);
+    margin-top:2px;
+    font-weight:600;
+  }
+  .extra-chip.is-selected .extra-chip-price{color:var(--bronze-soft);}
+  .extra-chip-price-sub{
+    font-size:0.68rem;
+    color:#2E9B57;
+    font-weight:500;
+  }
+  .extra-chip.is-selected .extra-chip-price-sub{color:#7FE3A6;}
+  .price-old{
+    text-decoration:line-through;
+    color:var(--ink-soft);
+    font-weight:400;
+    margin-right:5px;
+    opacity:0.7;
+  }
+  .extra-chip.is-selected .price-old{color:rgba(247,242,234,0.55);}
+
+  .gift-banner{
+    text-align:center;
+    max-width:520px;
+    margin:0 auto 30px;
+    background:#F1E4CE;
+    border:1px dashed var(--bronze);
+    color:var(--ink);
+    font-size:0.9rem;
+    padding:12px 18px;
+  }
+  /* Badges arriba a la izquierda: regalo (bronce) y descuento (sello rojo clásico) */
+  .gift-ribbon{
+    position:absolute;
+    top:-12px;
+    left:-10px;
+    background:var(--bronze);
+    color:#fff;
+    font-size:0.66rem;
+    letter-spacing:0.02em;
+    padding:5px 11px;
+    border-radius:20px;
+    white-space:nowrap;
+    box-shadow:0 4px 10px rgba(51,43,36,0.25);
+  }
+  .extra-chip.is-gift{
+    border-color:var(--bronze);
+    background:#E8D3AC;
+  }
+  .extra-chip.is-gift.is-selected{
+    background:var(--charcoal);
+    border-color:var(--bronze);
+  }
+  .discount-badge{
+    position:absolute;
+    top:-14px;
+    left:-14px;
+    width:46px; height:46px;
+    border-radius:50%;
+    background:#C43B3B;
+    color:#fff;
+    font-size:0.62rem;
+    font-weight:700;
+    line-height:1.1;
+    letter-spacing:0.01em;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transform:rotate(-14deg);
+    box-shadow:0 4px 10px rgba(0,0,0,0.28);
+    border:2px dashed rgba(255,255,255,0.6);
+  }
+
+  .discount-badge[hidden],
+  .gift-ribbon[hidden]{
+    display:none !important;
+  }
+
+  /* Animación tipo pop-up para cuando aparecen los badges de regalo/descuento */
+  @keyframes badgePopIn{
+    0%{ transform:scale(0) rotate(-14deg); opacity:0; }
+    65%{ transform:scale(1.18) rotate(-14deg); opacity:1; }
+    100%{ transform:scale(1) rotate(-14deg); opacity:1; }
+  }
+  @keyframes badgePopInStraight{
+    0%{ transform:scale(0); opacity:0; }
+    65%{ transform:scale(1.15); opacity:1; }
+    100%{ transform:scale(1); opacity:1; }
+  }
+  .discount-badge.pop-anim{ animation:badgePopIn 0.6s ease; }
+  .gift-ribbon.pop-anim{ animation:badgePopInStraight 0.6s ease; }
+
+  .budget-box{
+    max-width:460px;
+    margin:36px auto 30px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:26px 30px;
+  }
+  .budget-empty{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+  }
+  .budget-line{
+    display:flex;
+    justify-content:space-between;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    padding:8px 0;
+  }
+  .budget-line span:last-child{transition:color 0.35s ease;}
+  /* En modo Pix el precio es más bajo (con descuento): se muestra en verde. */
+  .budget-line span:last-child.is-pix{color:#2E9B57;}
+  .budget-installments{
+    margin:2px 0 0;
+    text-align:right;
+    font-size:0.82rem;
+    font-weight:600;
+    color:#2E9B57;
+    transition:opacity 0.3s ease, color 0.3s ease;
+  }
+  /* En modo Pix esta línea es la seña del 30%, no un ahorro: va en beige,
+     no en verde (el verde queda reservado para descuentos/valores más bajos). */
+  .budget-installments.is-pix{color:var(--bronze);}
+  .budget-total{
+    display:flex;
+    justify-content:space-between;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.4rem;
+    color:var(--ink);
+    padding-top:14px;
+    margin-top:6px;
+    border-top:1px solid var(--line);
+  }
+  .budget-total span:last-child{color:var(--bronze); transition:color 0.35s ease;}
+  .budget-total span:last-child.is-pix{color:#2E9B57;}
+
+  /* Animación de "pulso" para los números y la línea de cuotas cada vez que
+     cambia el modo de pago (tarjeta/Pix), para que el cambio de valor/color
+     se note en vez de saltar de golpe. */
+  @keyframes amountPulse{
+    0%{ opacity:0.15; transform:translateY(3px); }
+    100%{ opacity:1; transform:translateY(0); }
+  }
+  .amount-pulse{ animation:amountPulse 0.4s ease; }
+  @media (prefers-reduced-motion: reduce){
+    .amount-pulse{ animation:none; }
+  }
+  .extras #extrasContinue{display:block; width:fit-content; margin:0 auto;}
+
+  /* Switch Pix / Tarjeta de crédito: cambia en vivo los números del
+     presupuesto (acá y en el popup flotante), para comparar ambas formas
+     de pago sin tener que escribir por WhatsApp. La "píldora" de fondo se
+     desliza con transform (no width/left) y easing tipo iOS, para que se
+     sienta fluida y no un simple cambio de color entre botones. */
+  .payment-toggle{
+    position:relative;
+    display:flex;
+    width:fit-content;
+    margin:0 auto 18px;
+    background:#141110;
+    border-radius:20px;
+    padding:3px;
+    gap:2px;
+    isolation:isolate;
+  }
+  .payment-toggle .toggle-thumb{
+    position:absolute;
+    top:3px; bottom:3px; left:3px;
+    width:calc(50% - 3px);
+    background:var(--bronze-soft);
+    border-radius:16px;
+    z-index:0;
+    transform:translateX(0);
+    transition:transform 0.4s cubic-bezier(0.34, 1.35, 0.4, 1), background-color 0.4s ease;
+    will-change:transform, background-color;
+  }
+  .payment-toggle.mode-pix .toggle-thumb{
+    transform:translateX(100%);
+    background:#2E9B57;
+  }
+  .payment-toggle button{
+    position:relative;
+    z-index:1;
+    border:none;
+    background:transparent;
+    font-family:'Jost', sans-serif;
+    font-size:0.74rem;
+    letter-spacing:0.02em;
+    padding:8px 16px;
+    border-radius:16px;
+    cursor:pointer;
+    color:rgba(247,242,234,0.55);
+    transition:color 0.3s ease;
+  }
+  .payment-toggle button.is-active{color:#fff;}
+  .floating-payment-toggle{
+    position:relative;
+    display:flex;
+    width:fit-content;
+    background:#141110;
+    border-radius:14px;
+    padding:2px;
+    gap:2px;
+    margin:2px 0 2px;
+    isolation:isolate;
+  }
+  .floating-payment-toggle .toggle-thumb{
+    position:absolute;
+    top:2px; bottom:2px; left:2px;
+    width:calc(50% - 2px);
+    background:var(--bronze-soft);
+    border-radius:11px;
+    z-index:0;
+    transform:translateX(0);
+    transition:transform 0.4s cubic-bezier(0.34, 1.35, 0.4, 1), background-color 0.4s ease;
+    will-change:transform, background-color;
+  }
+  .floating-payment-toggle.mode-pix .toggle-thumb{
+    transform:translateX(100%);
+    background:#2E9B57;
+  }
+  .floating-payment-toggle button{
+    position:relative;
+    z-index:1;
+    border:none;
+    background:transparent;
+    font-family:'Jost', sans-serif;
+    font-size:0.64rem;
+    letter-spacing:0.02em;
+    padding:4px 9px;
+    border-radius:11px;
+    cursor:pointer;
+    color:rgba(247,242,234,0.55);
+    transition:color 0.3s ease;
+  }
+  .floating-payment-toggle button.is-active{color:#fff;}
+  /* El texto "Tarjeta" es más largo que "Pix", así que dentro de su mitad de
+     la píldora queda corrido hacia la derecha; se lo recorta un poco a la
+     izquierda para que se vea centrado. */
+  .floating-payment-toggle button[data-mode="card"]{padding-left:6px; padding-right:11px;}
+  @media (prefers-reduced-motion: reduce){
+    .payment-toggle .toggle-thumb, .floating-payment-toggle .toggle-thumb{transition:none;}
+  }
+  @media (max-width:640px){
+    /* En celular sí se muestra el switch, pero con los dos botones del mismo
+       ancho, uno al lado del otro (en vez de ajustarse al texto de cada uno). */
+    .floating-payment-toggle{width:100%; margin:6px 0 2px;}
+    .floating-payment-toggle .toggle-thumb{width:calc(50% - 2px);}
+    .floating-payment-toggle button{flex:1; text-align:center; padding:6px 4px;}
+    .floating-payment-toggle button[data-mode="card"]{padding:6px 4px;}
+  }
+
+  /* Popup flotante del subtotal: ahora a la derecha de la pantalla, para poder
+     compararlo mientras se van cambiando paquetes/álbumes más arriba. */
+  .floating-subtotal{
+    position:fixed;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%) translateX(30px);
+    z-index:500;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:3px;
+    max-width:210px;
+    background:var(--charcoal);
+    color:var(--cream);
+    padding:16px 20px;
+    border-radius:14px;
+    box-shadow:0 14px 34px rgba(0,0,0,0.3);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.35s ease, transform 0.35s ease;
+  }
+  .floating-subtotal.is-visible{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+    pointer-events:auto;
+  }
+  /* Botón para ocultar el popup cuando molesta; se vuelve a mostrar solo
+     cuando haya algo nuevo que avisar (nuevo paquete o álbum elegido). */
+  .floating-subtotal-close{
+    position:absolute;
+    top:6px;
+    right:8px;
+    border:none;
+    background:transparent;
+    color:rgba(247,242,234,0.55);
+    font-size:0.85rem;
+    line-height:1;
+    padding:4px;
+    cursor:pointer;
+    transition:color 0.2s ease;
+  }
+  .floating-subtotal-close:hover{color:#fff;}
+  .floating-subtotal-label{
+    font-size:0.68rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(247,242,234,0.65);
+  }
+  .floating-subtotal-pkg{
+    font-size:0.82rem;
+    color:rgba(247,242,234,0.9);
+  }
+  .floating-subtotal-extra{
+    font-size:0.72rem;
+    color:rgba(247,242,234,0.65);
+  }
+  .floating-subtotal-installments{
+    font-size:0.72rem;
+    font-weight:600;
+    color:#4FCB80;
+    transition:opacity 0.3s ease, color 0.3s ease;
+  }
+  /* Igual que en el presupuestador: en Pix es la seña del 30%, va en beige. */
+  .floating-subtotal-installments.is-pix{color:var(--bronze-soft);}
+  .floating-subtotal-amount{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    color:var(--bronze-soft);
+    transition:color 0.3s ease;
+  }
+  .floating-subtotal-amount.is-pix{color:#4FCB80;}
+  @media (max-width:640px){
+    /* En celular el popup se ubica abajo al centro, con un ancho fijo
+       (no relativo al contenido) para que nunca cambie de tamaño al
+       cambiar entre tarjeta y Pix. */
+    .floating-subtotal{
+      left:50%; right:auto; top:auto; bottom:18px;
+      width:min(88vw, 300px);
+      max-width:none;
+      flex-direction:column;
+      align-items:stretch;
+      justify-content:flex-start;
+      padding:14px 18px;
+      transform:translateX(-50%) translateY(24px);
+    }
+    .floating-subtotal.is-visible{transform:translateX(-50%) translateY(0);}
+    .floating-subtotal-label,
+    .floating-subtotal-installments,
+    .floating-subtotal-amount{text-align:center;}
+    .floating-subtotal-pkg, .floating-subtotal-extra{display:none;}
+    .floating-subtotal-amount{font-size:1.15rem;}
+  }
+
+  /* Spotlight: resalta los 2 ítems a elegir en Mini Wedding oscureciendo el resto.
+     pointer-events:none para que el click llegue directo a los ítems resaltados
+     (elegir de un solo click, sin tener que primero "cerrar" el overlay); el
+     cierre por click afuera del spotlight se maneja por JS con un listener en
+     document, no bloqueando la zona resaltada. */
+  .pkg-spotlight-overlay{
+    position:fixed;
+    inset:0;
+    z-index:900;
+    background:transparent;
+    pointer-events:none;
+  }
+  .pkg-spotlight-box{
+    position:fixed;
+    z-index:901;
+    border-radius:10px;
+    box-shadow:0 0 0 9999px rgba(20,17,14,0.5);
+    pointer-events:none;
+    transition:top 0.3s ease, left 0.3s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity:0;
+  }
+  .pkg-spotlight-box.is-visible{opacity:1;}
+  /* El hint (texto manuscrito + flechita) ya no queda fijo abajo de la
+     pantalla: el script lo posiciona pegado al recuadro resaltado (arriba o
+     abajo, según entre en pantalla) para que la flecha señale de verdad a
+     las opciones, y aparece/desaparece exactamente junto con el spotlight
+     (misma clase .is-visible que el recuadro, activada en el mismo frame). */
+  .pkg-spotlight-hint{
+    position:fixed;
+    z-index:902;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0;
+    color:var(--bronze-soft);
+    pointer-events:none;
+    text-align:center;
+    opacity:0;
+    transition:opacity 0.3s ease;
+  }
+  .pkg-spotlight-hint.is-visible{opacity:1;}
+  /* Cuando no entra debajo del recuadro (opciones muy abajo en la pantalla),
+     se coloca arriba y se invierte el orden + la flecha, para que en vez de
+     apuntar hacia arriba, apunte hacia abajo, hacia el recuadro. */
+  .pkg-spotlight-hint.is-above{flex-direction:column-reverse;}
+  .pkg-spotlight-hint.is-above .spotlight-arrow{transform:scaleY(-1);}
+  .spotlight-hint-text{
+    display:inline-block;
+    font-family:'Petit Formal Script', cursive;
+    font-size:1.7rem;
+    color:var(--bronze-soft);
+    transform:rotate(-4deg);
+    text-shadow:0 2px 10px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.55);
+    white-space:nowrap;
+  }
+  .spotlight-arrow{
+    width:38px;
+    height:44px;
+    color:var(--bronze-soft);
+    filter:drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+  }
+  @media (max-width:480px){
+    .spotlight-hint-text{font-size:1.4rem;}
+    .spotlight-arrow{width:30px; height:36px;}
+  }
+
+  .travel-notice{
+    text-align:center;
+    max-width:520px;
+    margin:22px auto 0;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:10px 16px;
+  }
+
+  /* ---------- METODOS DE PAGO ---------- */
+  .payment-methods{background:var(--cream);}
+  /* Siempre 2 columnas (nunca apiladas, ni en celular en vertical), para que
+     Tarjeta y Pix queden una al lado de la otra como dos cuadrados iguales. */
+  .payment-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+    max-width:420px;
+    margin:0 auto;
+  }
+  .payment-card{
+    position:relative;
+    min-height:170px;
+    overflow:hidden;
+    background:var(--cream-deep);
+    border:2px solid var(--line);
+    border-radius:14px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:6px;
+    padding:16px 12px;
+    cursor:pointer;
+    transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  }
+  .payment-card:hover{
+    transform:scale(1.02);
+    box-shadow:0 12px 28px rgba(51,43,36,0.14);
+  }
+  .payment-icon{font-size:2.16rem; line-height:1; flex-shrink:0;}
+  .payment-card .payment-text{display:flex; flex-direction:column; align-items:center; gap:2px;}
+  .payment-card h3{
+    font-size:1.24rem;
+    font-style:italic;
+    margin:0;
+  }
+  .payment-card p{
+    color:var(--ink-soft);
+    font-size:0.89rem;
+    line-height:1.25;
+    max-width:22ch;
+    margin:0;
+  }
+  .payment-card.is-selected{
+    border-color:var(--bronze);
+    box-shadow:0 0 0 3px rgba(169,138,93,0.35);
+  }
+  .payment-card.is-selected h3{color:var(--bronze);}
+  @media (max-width:380px){
+    .payment-icon{font-size:2.03rem;}
+    .payment-card h3{font-size:1.16rem;}
+    .payment-card p{font-size:0.84rem;}
+  }
+  .payment-badge{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--bronze);
+    color:#fff;
+    font-size:0.92rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:6px 16px;
+    border-radius:20px;
+    white-space:nowrap;
+    box-shadow:0 6px 16px rgba(51,43,36,0.25);
+  }
+  .payment-note{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    max-width:42ch;
+    margin:16px auto 0;
+    text-align:center;
+  }
+
+  /* ---------- CTA FINAL / FORM ---------- */
+  .cta-final{
+    background:var(--cream-deep);
+    position:relative;
+  }
+  .cta-final .grid{
+    display:grid;
+    gap:44px;
+  }
+  @media (min-width:900px){
+    .cta-final .grid{grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:flex-start;}
+  }
+  .cta-text-col{text-align:center;}
+  .cta-final .arch-frame{aspect-ratio:3/4;}
+  /* En mobile: foto a todo el ancho, oscurecida, con el texto y el
+     mini formulario deslizándose encima al hacer scroll. */
+  @media (max-width:899px){
+    .cta-final .grid{display:block; gap:0;}
+    .cta-final .grid .arch-frame{
+      width:100%; max-width:none; margin:0;
+      aspect-ratio:3/4.1;
+      position:relative;
+      filter:brightness(0.8);
+    }
+    .cta-final .grid .arch-frame::after{
+      content:'';
+      position:absolute; inset:auto 0 0 0; height:85%;
+      background:linear-gradient(to top,
+        rgba(20,16,12,0.82) 0%,
+        rgba(20,16,12,0.55) 32%,
+        rgba(20,16,12,0.24) 62%,
+        rgba(20,16,12,0) 100%);
+      pointer-events:none;
+    }
+    .cta-text-col{
+      text-align:left;
+      position:relative; z-index:1;
+      margin-top:-64px;
+      background:rgba(20,16,12,0.86);
+      -webkit-backdrop-filter:blur(6px);
+      backdrop-filter:blur(6px);
+      border-radius:20px 20px 0 0;
+      padding:26px 20px 22px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .6s ease, transform .6s ease;
+    }
+    .cta-final .grid.in-view .cta-text-col{opacity:1; transform:translateY(0);}
+    .cta-text-col .microcopy{color:rgba(247,242,234,0.86);}
+    .cta-text-col label{color:rgba(247,242,234,0.65);}
+    .cta-text-col input, .cta-text-col textarea{color:#F7F2EA; border-bottom-color:rgba(247,242,234,0.35);}
+    .cta-text-col input::placeholder, .cta-text-col textarea::placeholder{color:rgba(247,242,234,0.45);}
+  }
+  .cta-final h2{font-size:2rem; font-style:italic; margin-bottom:14px;}
+  @media (min-width:768px){ .cta-final h2{font-size:2.5rem;} }
+  .cta-final .intro{color:var(--ink-soft); margin-bottom:0; max-width:52ch;}
+  .cal-embed-wrap{
+    width:100%;
+    max-width:960px;
+    margin:40px auto 0;
+    min-height:560px;
+    border:1px solid var(--bronze-soft);
+    border-radius:16px;
+    background:var(--cream);
+    box-shadow:0 22px 50px rgba(51,43,36,0.14);
+    overflow:hidden;
+  }
+  .cal-embed-wrap #my-cal-inline{
+    width:100%;
+    height:640px;
+    overflow:auto;
+  }
+  @media (min-width:768px){
+    .cal-embed-wrap #my-cal-inline{height:680px;}
+  }
+  .btn-whatsapp{
+    background:#25D366;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .btn-whatsapp:hover{background:#1EBE5A;}
+
+  form{display:flex; flex-direction:column; gap:20px;}
+  .form-row{display:grid; gap:20px;}
+  @media (min-width:520px){
+    .form-row.two{grid-template-columns:1fr 1fr;}
+  }
+  label{
+    display:block;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+  }
+  input, textarea{
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--line);
+    background:transparent;
+    padding:8px 2px 12px;
+    font-family:'Jost', sans-serif;
+    font-size:1rem;
+    color:var(--ink);
+  }
+  input:focus, textarea:focus{
+    outline:none;
+    border-bottom-color:var(--bronze);
+  }
+  textarea{resize:vertical; min-height:90px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--charcoal);
+    color:rgba(247,242,234,0.75);
+    padding:48px 0 28px;
+    text-align:center;
+  }
+  footer .brand{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.5rem;
+    color:var(--cream);
+    margin-bottom:14px;
+  }
+  footer .socials{
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    margin-bottom:22px;
+    font-size:0.82rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  footer .socials a{color:var(--bronze-soft); text-decoration:none;}
+  footer .socials a:hover{color:var(--cream);}
+  footer .fine{font-size:0.72rem; color:rgba(247,242,234,0.4);}
+
+  @media (min-width:768px){
+    section{padding:68px 0;}
+  }
+
+/* ==========================================================================
+   Estilos compartidos del BLOG (mismo diseño que la landing, sin re-declarar
+   los tokens de color/tipografía de arriba). Aplican a /blog/ y a /recursos/.
+   ========================================================================== */
+
+/* Header */
+header.site{
+  background:var(--charcoal);
+  color:var(--cream);
+  padding:40px 0 32px;
+  text-align:center;
+}
+header.site .brand{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:1.5rem;
+  color:var(--cream);
+  display:inline-block;
+  text-decoration:none;
+}
+header.site .brand:hover{color:var(--bronze-soft);}
+header.site nav{margin-top:14px; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;}
+header.site nav a{color:rgba(247,242,234,0.7); margin:0 10px; text-decoration:none;}
+header.site nav a:hover{color:var(--cream);}
+
+/* Breadcrumb */
+.breadcrumb{
+  font-size:0.75rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:28px 0 6px;
+}
+.breadcrumb a{color:var(--ink-soft); text-decoration:none;}
+.breadcrumb a:hover{color:var(--bronze); text-decoration:underline;}
+
+/* Post / page body */
+main{padding:8px 0 72px;}
+.post-title{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:2.1rem;
+  line-height:1.25;
+  color:var(--ink);
+  margin:6px 0 10px;
+}
+.post-meta{font-size:0.8rem; color:var(--ink-soft); margin-bottom:32px;}
+main h2{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:1.5rem;
+  color:var(--ink);
+  margin:34px 0 12px;
+}
+main p{color:var(--ink-soft); margin-bottom:16px; max-width:65ch;}
+main ul, main ol{margin:0 0 16px 20px; color:var(--ink-soft);}
+main li{margin-bottom:8px;}
+main figure{margin:24px 0;}
+main figcaption{font-size:0.78rem; color:var(--ink-soft); margin-top:8px; text-align:center;}
+blockquote{
+  border-left:3px solid var(--bronze);
+  padding:4px 0 4px 20px;
+  margin:24px 0;
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:1.2rem;
+  color:var(--ink);
+}
+
+/* CTA block at end of posts */
+.post-cta{
+  background:var(--cream-deep);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:32px 28px;
+  margin:48px 0 8px;
+  text-align:center;
+}
+.post-cta h3{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:1.4rem;
+  margin-bottom:10px;
+  color:var(--ink);
+}
+.post-cta p{margin-bottom:20px;}
+.btn-cta{
+  display:inline-block;
+  background:var(--bronze);
+  color:var(--cream) !important;
+  font-family:'Jost', sans-serif;
+  font-size:0.85rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:14px 30px;
+  border-radius:2px;
+  transition:background .2s ease;
+}
+.btn-cta:hover{background:var(--ink);}
+.cta-fine{font-size:0.75rem; color:var(--ink-soft); margin-top:12px; margin-bottom:0;}
+.back-blog{
+  display:inline-block;
+  margin-top:32px;
+  font-size:0.78rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--bronze);
+  text-decoration:none;
+}
+.back-blog:hover{text-decoration:underline;}
+
+/* Blog index */
+.blog-hero{padding:36px 0 8px; text-align:center;}
+.blog-hero h1{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:2.2rem;
+  color:var(--ink);
+}
+.blog-hero p{color:var(--ink-soft); margin-top:10px;}
+.post-list{margin-top:36px;}
+.post-card{
+  padding:26px 0;
+  border-bottom:1px solid var(--line);
+}
+.post-card:first-child{padding-top:0;}
+.post-card .card-date{font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--bronze);}
+.post-card h2{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:1.5rem;
+  margin:8px 0 8px;
+}
+.post-card h2 a{color:var(--ink); text-decoration:none;}
+.post-card h2 a:hover{color:var(--bronze);}
+.post-card p{color:var(--ink-soft); margin-bottom:10px;}
+.post-card .read-more{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em;}
+
+@media (min-width:768px){
+  .post-title{font-size:2.6rem;}
+  .blog-hero h1{font-size:2.6rem;}
+}
