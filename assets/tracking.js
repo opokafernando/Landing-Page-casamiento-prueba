@@ -1,34 +1,44 @@
 /* ==========================================================================
-   Fernando Opoka Fotografía — Tracking centralizado (Meta Pixel + CAPI)
+   Fernando Opoka Fotografía — Tracking centralizado (Meta Pixel + CAPI + GA4)
    ==========================================================================
    Un solo archivo con TODOS los eventos de conversión del embudo, para que:
    - No se repita lógica de tracking en cada página (landing, blog, recursos).
    - Cada evento tenga un event_id único compartido entre Pixel (navegador) y
      CAPI (servidor), lo que evita que Meta cuente el mismo evento dos veces
      (deduplicación oficial de Meta: https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events).
+   - Cada evento también se manda a GA4 (gtag), no solo a Meta.
    - Se pueda auditar de un vistazo qué botón/página dispara qué evento.
 
-   Requiere que el Pixel base (fbq init + PageView) ya se haya cargado ANTES
-   de este archivo (se mantiene en el <head> de cada página, como lo pide
-   Meta).
+   Requiere que el Pixel base (fbq init + PageView) y el Google Tag (gtag)
+   ya se hayan cargado ANTES de este archivo (se mantienen en el <head> de
+   cada página, como lo pide Meta).
 
    Mapa de eventos del embudo (definido junto con Fernando):
      PageView            -> automático, ya lo dispara el snippet base del Pixel.
-     InteresadoReunion    (custom) -> clic en "Agendar reunión" / "Quiero agendar una reunión".
+     interesado_reunion   (custom) -> clic en "Agendar reunión" / "Quiero agendar una reunión",
+                                      elegir un paquete de verdad, o tocar "Continuar con mi consulta".
                                       Es la señal de INTENCIÓN, no de conversión confirmada.
-     Lead                (estándar) -> SOLO desde netlify/functions/cal-webhook.js, cuando
-                                       Cal.com confirma la reserva ("Cliente potencial").
-                                       El navegador no dispara este evento: si lo hiciera
-                                       en paralelo al webhook, Meta contaría cada reserva
-                                       dos veces (los event_id de cada camino no coinciden).
-     Schedule             (estándar) -> mismo origen y misma razón que Lead: SOLO desde
-                                       cal-webhook.js ("Programar").
+     Lead                (estándar) -> se dispara DOS veces a propósito, con el MISMO
+                                       event_id en las dos: acá en el navegador, en el
+                                       instante en que Cal.com confirma la reserva
+                                       (Cal("on", "bookingSuccessful")), y en
+                                       netlify/functions/cal-webhook.js del lado del
+                                       servidor. El event_id viaja desde acá hacia
+                                       Cal.com como metadata ANTES de que la reserva
+                                       se confirme (ver prepareBookingMetadata más abajo),
+                                       así que cuando el webhook lo reusa, Meta ve el
+                                       mismo evento por dos caminos y lo cuenta UNA vez,
+                                       quedándose con la señal más completa de las dos
+                                       (mismo patrón que usa capi.js de Estudio Graphica).
+     Schedule             (estándar) -> mismo mecanismo y mismo motivo que Lead, con su
+                                       propio event_id compartido (son dos eventos reales
+                                       distintos, no se deduplican entre sí).
      Contact              (estándar) -> clic en el botón de WhatsApp, o Thank You Page de la reunión.
      InitiateCheckout     (estándar) -> entra a la Thank You Page de pago ("Inicio compra").
      Purchase              (estándar) -> completa el pago en la Thank You Page de pago ("Compra").
      ViewContent           (estándar) -> abre un artículo del blog ("Ver blog").
-     VioPortafolio        (custom) -> ve la sección de portafolio en la landing.
-     InicioEnBlog          (custom) -> hace clic en un CTA que arrancó dentro del blog.
+     vio_portafolio       (custom) -> ve la sección de portafolio en la landing.
+     inicio_en_blog        (custom) -> hace clic en un CTA que arrancó dentro del blog.
 
    Nota: se quitó cualquier evento tipo "SuscribedButton" — no aplican al
    embudo de Fernando y solo ensucian los datos del CAPI.
@@ -63,6 +73,9 @@
     }
   }
 
+  function getFbp() { return getCookie('_fbp'); }
+  function getFbc() { return getCookie('_fbc'); }
+
   // Recuerda si el visitante llegó desde el blog, para poder mandar ese
   // origen como parámetro extra en los eventos de contacto de la landing.
   function getSource() {
@@ -77,20 +90,31 @@
   }
 
   /**
-   * Envía el evento al Pixel (fbq) y, en paralelo, a la función serverless
-   * de CAPI (netlify/functions/track-event.js) con el MISMO event_id para
-   * que Meta pueda deduplicar automáticamente.
+   * Envía el evento al Pixel (fbq), a GA4 (gtag) y, en paralelo, a la
+   * función serverless de CAPI (netlify/functions/track-event.js) con el
+   * MISMO event_id para que Meta pueda deduplicar automáticamente.
    *
    * @param {string} type       'track' (evento estándar) o 'trackCustom' (evento personalizado).
    * @param {string} eventName  Nombre exacto del evento en Meta.
    * @param {object} [params]   Parámetros opcionales (content_name, value, currency, etc).
+   * @param {string} [presetEventId] Si se pasa (ver prepareBookingMetadata), se usa
+   *                                 este event_id en vez de generar uno nuevo, para que
+   *                                 el evento coincida con el que ya viajó a Cal.com.
    */
-  function fire(type, eventName, params) {
+  function fire(type, eventName, params, presetEventId) {
     params = params || {};
-    var eventId = uuid();
+    var eventId = presetEventId || uuid();
 
     if (typeof window.fbq === 'function') {
       window.fbq(type, eventName, params, { eventID: eventId });
+    }
+
+    // GA4: antes este archivo solo mandaba a Meta, así que el Google Tag
+    // instalado en el <head> únicamente medía lo automático (pageview,
+    // scroll). Con esto, cada conversión real también llega a Analytics.
+    if (typeof window.gtag === 'function') {
+      var gtagParams = Object.assign({}, params, { event_id: eventId });
+      window.gtag('event', eventName, gtagParams);
     }
 
     // Envío a CAPI (best-effort: si falla, no rompe la navegación del usuario).
@@ -106,8 +130,8 @@
           // fbp/fbc: las mismas cookies que ya usa el Pixel del navegador,
           // reenviadas para que el evento gemelo de CAPI tenga con qué
           // matchear la sesión (ver capi.js -> sendMetaEvent -> user_data).
-          fbp: getCookie('_fbp'),
-          fbc: getCookie('_fbc'),
+          fbp: getFbp(),
+          fbc: getFbc(),
           custom_data: params
         }),
         keepalive: true
@@ -119,33 +143,62 @@
 
   var FO_Track = {
     /* ---------- Eventos estándar de Meta ---------- */
-    lead: function (params) { return fire('track', 'Lead', params); },
-    schedule: function (params) { return fire('track', 'Schedule', params); },
+    lead: function (params, presetEventId) { return fire('track', 'Lead', params, presetEventId); },
+    schedule: function (params, presetEventId) { return fire('track', 'Schedule', params, presetEventId); },
     contact: function (params) { return fire('track', 'Contact', params); },
     initiateCheckout: function (params) { return fire('track', 'InitiateCheckout', params); },
     purchase: function (params) { return fire('track', 'Purchase', params); },
     viewContent: function (params) { return fire('track', 'ViewContent', params); },
 
-    /* ---------- Eventos personalizados del embudo de Fernando ---------- */
-    interesadoReunion: function (params) { return fire('trackCustom', 'InteresadoReunion', params); },
-    vioPortafolio: function (params) { return fire('trackCustom', 'VioPortafolio', params); },
-    inicioEnBlog: function (params) { return fire('trackCustom', 'InicioEnBlog', params); },
+    /* ---------- Eventos personalizados del embudo de Fernando ----------
+       En snake_case a propósito (interesado_reunion, no InteresadoReunion):
+       es la misma convención que ya usa Estudio Graphica, para no mezclar
+       estilos de nombre entre eventos custom del mismo negocio. */
+    interesadoReunion: function (params) { return fire('trackCustom', 'interesado_reunion', params); },
+    vioPortafolio: function (params) { return fire('trackCustom', 'vio_portafolio', params); },
+    inicioEnBlog: function (params) { return fire('trackCustom', 'inicio_en_blog', params); },
 
-    /* ---------- NO SE USA DESDE main.js A PROPÓSITO ----------
-       Antes esta función se llamaba al confirmar una reserva en Cal.com,
-       lo que disparaba Lead + Schedule desde el navegador AL MISMO TIEMPO
-       que netlify/functions/cal-webhook.js los disparaba desde el servidor,
-       con event_id distintos en cada camino. Meta no podía deduplicarlos y
-       cada reserva se contaba dos veces (2 Lead + 2 Schedule por reunión
-       agendada). El webhook de servidor es ahora la ÚNICA fuente de estos
-       dos eventos porque solo se dispara cuando la reserva está confirmada
-       de verdad en la base de Cal.com, sin depender del navegador del
-       visitante. Se deja la función acá por si algún día hace falta un
-       funnel SIN webhook de servidor, pero no debe conectarse a ningún
-       botón ni callback mientras cal-webhook.js siga activo. */
-    bookingConfirmado: function (params) {
-      this.lead(params);
-      this.schedule(params);
+    /* ---------- Dedup de Lead + Schedule con Cal.com (mismo patrón que capi.js de Estudio Graphica) ----------
+       Se llama UNA vez, antes de inicializar el embed de Cal.com. Genera
+       dos event_id (uno para Lead, otro para Schedule, son dos eventos
+       reales distintos) y los guarda en sessionStorage. Devuelve el
+       objeto que main.js debe meter en config.metadata del Cal("inline",
+       ...), junto con fbp/fbc. Cal.com guarda cualquier metadata[*] que
+       reciba y la reenvía tal cual en el payload del webhook de
+       "Booking created", así que netlify/functions/cal-webhook.js puede
+       leer metadata.eventIdLead / metadata.eventIdSchedule y usarlos al
+       mandar el evento real por CAPI — mismo event_name + mismo event_id
+       en Pixel (client-side, ver confirmBooking) y CAPI (server-side) =
+       Meta deduplica en una sola conversión, no dos. */
+    prepareBookingMetadata: function () {
+      var leadId = uuid();
+      var scheduleId = uuid();
+      try {
+        sessionStorage.setItem('fo_booking_lead_id', leadId);
+        sessionStorage.setItem('fo_booking_schedule_id', scheduleId);
+      } catch (e) { /* sessionStorage puede fallar en modo privado; se ignora */ }
+      return {
+        eventIdLead: leadId,
+        eventIdSchedule: scheduleId,
+        fbp: getFbp(),
+        fbc: getFbc()
+      };
+    },
+
+    /* Se llama desde Cal("on", {action:"bookingSuccessful", ...}) en main.js,
+       en el instante exacto en que Cal.com confirma que la reserva quedó
+       agendada de verdad. Dispara Lead + Schedule EN EL NAVEGADOR, cada uno
+       con el mismo event_id que ya viajó a Cal.com como metadata (ver
+       prepareBookingMetadata arriba) — así el webhook de servidor no es la
+       única fuente, pero tampoco duplica nada, porque comparten event_id. */
+    confirmBooking: function (params) {
+      var leadId = null, scheduleId = null;
+      try {
+        leadId = sessionStorage.getItem('fo_booking_lead_id');
+        scheduleId = sessionStorage.getItem('fo_booking_schedule_id');
+      } catch (e) {}
+      this.lead(params, leadId || undefined);
+      this.schedule(params, scheduleId || undefined);
     },
 
     /* Marca que el visitante viene del blog, para que la landing lo recuerde
@@ -154,6 +207,8 @@
       try { sessionStorage.setItem('fo_source', 'blog'); } catch (e) {}
     },
 
+    getFbp: getFbp,
+    getFbc: getFbc,
     _getSource: getSource
   };
 

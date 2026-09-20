@@ -11,10 +11,10 @@ antes de contratar un fotógrafo.
 
 ## Páginas principales
 
-- [Inicio](https://bodaopokafernando.netlify.app/): portafolio, paquetes y forma de contacto.
-- [Blog](https://bodaopokafernando.netlify.app/blog/): artículos sobre fotografía de bodas.
-- [Guía gratis para novios](https://bodaopokafernando.netlify.app/recursos/): checklist de preguntas antes de contratar fotógrafo.
-- [Política de privacidad](https://bodaopokafernando.netlify.app/privacidad.html)
+- [Inicio](https://fernando-opoka-bodas.netlify.app/): portafolio, paquetes y forma de contacto.
+- [Blog](https://fernando-opoka-bodas.netlify.app/blog/): artículos sobre fotografía de bodas.
+- [Guía gratis para novios](https://fernando-opoka-bodas.netlify.app/recursos/): checklist de preguntas antes de contratar fotógrafo.
+- [Política de privacidad](https://fernando-opoka-bodas.netlify.app/privacidad.html)
 
 ## Notas para asistentes de IA
 

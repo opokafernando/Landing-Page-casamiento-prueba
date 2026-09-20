@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bodaopokafernando.netlify.app/sitemap.xml
+Sitemap: https://fernando-opoka-bodas.netlify.app/sitemap.xml

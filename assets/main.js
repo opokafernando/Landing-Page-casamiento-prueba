@@ -516,12 +516,28 @@
     if(calInitialized || typeof Cal !== 'function') return;
     calInitialized = true;
     var calLangParam = lang === 'pt' ? 'pt-BR' : (lang === 'en' ? 'en' : 'es');
+    // event_id de Lead/Schedule generado ANTES de abrir el embed, para que
+    // viaje a Cal.com como metadata y netlify/functions/cal-webhook.js lo
+    // pueda reusar al mandar el mismo evento por CAPI (ver el comentario
+    // largo en assets/tracking.js, prepareBookingMetadata, para el porqué).
+    var bookingMeta = window.FO_Track ? window.FO_Track.prepareBookingMetadata() : null;
+    var calConfig = { "theme": "light", "layout": "month_view" };
+    // Cal.com espera la metadata como claves PLANAS con corchetes en el
+    // nombre ("metadata[eventIdLead]"), no como un objeto anidado
+    // (config.metadata = {...}) — así es como lo confirmamos funcionando
+    // en /empezar/ de Estudio Graphica. Un objeto anidado acá no viajaría.
+    if(bookingMeta){
+      calConfig["metadata[eventIdLead]"] = bookingMeta.eventIdLead;
+      calConfig["metadata[eventIdSchedule]"] = bookingMeta.eventIdSchedule;
+      if(bookingMeta.fbp){ calConfig["metadata[fbp]"] = bookingMeta.fbp; }
+      if(bookingMeta.fbc){ calConfig["metadata[fbc]"] = bookingMeta.fbc; }
+    }
     Cal("init", {origin:"https://cal.com"});
     Cal("inline", {
       elementOrSelector:"#my-cal-inline",
       calLink: "fernando-opoka/prueba?lang=" + calLangParam,
       layout: "month_view",
-      config: { "theme": "light", "layout": "month_view" }
+      config: calConfig
     });
     Cal("ui", {
       theme: "light",
@@ -543,14 +559,17 @@
       },
       hideEventTypeDetails: false
     });
-    // Lead y Schedule YA NO se disparan desde acá. netlify/functions/cal-webhook.js
-    // es la única fuente de esos dos eventos: se dispara server-side cuando
-    // Cal.com confirma la reserva de verdad, sin depender del navegador. Si
-    // este callback llamara a FO_Track.bookingConfirmado() además del
-    // webhook, cada reserva se contaría dos veces en Meta (ver el comentario
-    // sobre bookingConfirmado en assets/tracking.js para el detalle completo).
-    // No hace falta ningún callback acá: el webhook no necesita que el
-    // navegador siga abierto para dispararse.
+    // Dispara Lead + Schedule EN EL NAVEGADOR, cada uno con el mismo
+    // event_id que ya viajó arriba como metadata. netlify/functions/cal-webhook.js
+    // manda el mismo evento por CAPI del lado del servidor reusando ese
+    // mismo event_id: Meta ve las dos señales y las cuenta como UNA sola
+    // conversión, no dos (mismo patrón que capi.js de Estudio Graphica).
+    Cal("on", {
+      action: "bookingSuccessful",
+      callback: function(){
+        if(window.FO_Track){ FO_Track.confirmBooking(); }
+      }
+    });
   }
 
   function applyLanguage(lang){
@@ -824,6 +843,15 @@
     var pkgCards = document.querySelectorAll('.pkg-card');
     var extraChips = document.querySelectorAll('.extra-chip');
     var continueBtn = document.getElementById('extrasContinue');
+    // Señal de intención en el punto exacto donde alguien ya vio precio y
+    // decide seguir hacia el formulario de contacto. Antes este botón no
+    // disparaba nada: era el único paso ciego entre "vio el precio" y
+    // "llegó al formulario".
+    if(continueBtn){
+      continueBtn.addEventListener('click', function(){
+        if(window.FO_Track){ FO_Track.interesadoReunion({ content_name: 'continuar_con_mi_consulta' }); }
+      });
+    }
     var mensajeField = document.getElementById('mensaje');
     var nombreField = document.getElementById('nombre');
     var parejaField = document.getElementById('pareja');
@@ -1442,6 +1470,11 @@
             pricePix: parseInt(card.getAttribute('data-price-pix'), 10) || 0,
             priceCard: parseInt(card.getAttribute('data-price-card'), 10) || 0
           };
+          // Señal de intención: eligió un paquete de verdad (no solo lo
+          // clickeó de paso). Mismo evento custom que ya usa el botón del
+          // hero, no uno nuevo, para no fragmentar la poca data que hay
+          // con presupuesto bajo.
+          if(window.FO_Track){ FO_Track.interesadoReunion({ content_name: selectedPackage.name }); }
           wantsCustom = false; // si ahora eligió un paquete, ya no es "paquete personalizado"
           popupDismissed = false; // hay presupuesto nuevo: si lo había cerrado, puede volver a aparecer
           pkgCards.forEach(function(c){ c.classList.remove('is-selected'); });

@@ -2,10 +2,15 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=85be5dbd-e655-4b65-b5f2-700f01fde6a6
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=85be5dbd-e655-4b65-b5f2-700f01fde6a6">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog | Fernando Opoka Fotografía</title>
 <meta name="description" content="Artículos sobre fotografía de bodas: precios, cómo elegir fotógrafo, tiempos de reserva y consejos prácticos de Fernando Opoka Fotografía.">
-<link rel="canonical" href="https://bodaopokafernando.netlify.app/blog/">
+<link rel="canonical" href="https://fernando-opoka-bodas.netlify.app/blog/">
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/drfoww3ch/image/upload/w_64,h_64,c_pad,b_rgb:221D18,f_png/Firma_Blanca_gc6x1k.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +27,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set', 'autoConfig', false, '1073898278650891');
 fbq('init', '1073898278650891');
 fbq('track', 'PageView');
 </script>
@@ -29,6 +35,18 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!-- Google tag (gtag.js) -->
+<!-- IMPORTANTE: reemplazar G-XXXXXXXXXX por el ID real de analytics.google.com. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<!-- End Google tag -->
+
 <script src="/assets/tracking.js"></script>
 <script>if(window.FO_Track){FO_Track.markBlogSource();}</script>
 </head>
@@ -56,23 +74,23 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
 
       <article class="post-card">
         <span class="card-date">Septiembre 2026</span>
-        <h2><a href="cuanto-cuesta-fotografo-bodas.html">¿Cuánto cuesta un fotógrafo de bodas?</a></h2>
+        <h2><a href='/blog/cuanto-cuesta-fotografo-bodas'>¿Cuánto cuesta un fotógrafo de bodas?</a></h2>
         <p>Los factores reales que definen el precio de la cobertura fotográfica de tu boda, y cómo pedir un presupuesto que tenga sentido para vos.</p>
-        <a class="read-more" href="cuanto-cuesta-fotografo-bodas.html">Leer más &rarr;</a>
+        <a class='read-more' href='/blog/cuanto-cuesta-fotografo-bodas'>Leer más &rarr;</a>
       </article>
 
       <article class="post-card">
         <span class="card-date">Septiembre 2026</span>
-        <h2><a href="que-preguntar-antes-contratar-fotografo-bodas.html">Qué preguntar antes de contratar a tu fotógrafo de bodas</a></h2>
+        <h2><a href='/blog/que-preguntar-antes-contratar-fotografo-bodas'>Qué preguntar antes de contratar a tu fotógrafo de bodas</a></h2>
         <p>Una checklist con las preguntas que evitan sorpresas el día de la boda: entrega, respaldo, estilo y qué incluye el paquete.</p>
-        <a class="read-more" href="que-preguntar-antes-contratar-fotografo-bodas.html">Leer más &rarr;</a>
+        <a class='read-more' href='/blog/que-preguntar-antes-contratar-fotografo-bodas'>Leer más &rarr;</a>
       </article>
 
       <article class="post-card">
         <span class="card-date">Septiembre 2026</span>
-        <h2><a href="con-cuanta-anticipacion-reservar-fotografo-bodas.html">¿Con cuánta anticipación hay que reservar al fotógrafo de bodas?</a></h2>
+        <h2><a href='/blog/con-cuanta-anticipacion-reservar-fotografo-bodas'>¿Con cuánta anticipación hay que reservar al fotógrafo de bodas?</a></h2>
         <p>Por qué la fecha de tu fotógrafo suele cerrarse antes que cualquier otro proveedor de la boda, y cuándo es el momento ideal para reservar.</p>
-        <a class="read-more" href="con-cuanta-anticipacion-reservar-fotografo-bodas.html">Leer más &rarr;</a>
+        <a class='read-more' href='/blog/con-cuanta-anticipacion-reservar-fotografo-bodas'>Leer más &rarr;</a>
       </article>
 
     </div>
@@ -85,9 +103,10 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     <div class="socials">
       <a href="https://www.instagram.com/fernando.opoka.ph/" target="_blank" rel="noopener" aria-label="Instagram de Fernando Opoka Fotografía">Instagram</a>
     </div>
-    <p class="fine">© 2026 Fernando Opoka Fotografía. <a href="/privacidad.html">Política de Privacidad</a></p>
+    <p class="fine">© 2026 Fernando Opoka Fotografía. <a href='/privacidad'>Política de Privacidad</a></p>
   </div>
 </footer>
 
 </body>
 </html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="85be5dbd-e655-4b65-b5f2-700f01fde6a6" data-app-host="app.netlify.com"></script>
