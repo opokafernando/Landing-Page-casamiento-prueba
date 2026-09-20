@@ -15,8 +15,14 @@
    Mapa de eventos del embudo (definido junto con Fernando):
      PageView            -> automático, ya lo dispara el snippet base del Pixel.
      InteresadoReunion    (custom) -> clic en "Agendar reunión" / "Quiero agendar una reunión".
-     Lead                (estándar) -> alguien agenda su reunión en Cal.com ("Cliente potencial").
-     Schedule             (estándar) -> se confirma el turno en Cal.com ("Programar").
+                                      Es la señal de INTENCIÓN, no de conversión confirmada.
+     Lead                (estándar) -> SOLO desde netlify/functions/cal-webhook.js, cuando
+                                       Cal.com confirma la reserva ("Cliente potencial").
+                                       El navegador no dispara este evento: si lo hiciera
+                                       en paralelo al webhook, Meta contaría cada reserva
+                                       dos veces (los event_id de cada camino no coinciden).
+     Schedule             (estándar) -> mismo origen y misma razón que Lead: SOLO desde
+                                       cal-webhook.js ("Programar").
      Contact              (estándar) -> clic en el botón de WhatsApp, o Thank You Page de la reunión.
      InitiateCheckout     (estándar) -> entra a la Thank You Page de pago ("Inicio compra").
      Purchase              (estándar) -> completa el pago en la Thank You Page de pago ("Compra").
@@ -43,6 +49,20 @@
     });
   }
 
+  // Lee una cookie por nombre. Se usa para _fbp y _fbc, que el Pixel del
+  // navegador crea solo apenas carga (no hay que generarlas a mano).
+  // Sin esto, los eventos que llegan a Meta por CAPI viajan sin la cookie
+  // que más ayuda a matchear la sesión del navegador con el evento de
+  // servidor, y la calidad de coincidencia (EMQ) se resiente.
+  function getCookie(name) {
+    try {
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? match[2] : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
   // Recuerda si el visitante llegó desde el blog, para poder mandar ese
   // origen como parámetro extra en los eventos de contacto de la landing.
   function getSource() {
@@ -58,8 +78,8 @@
 
   /**
    * Envía el evento al Pixel (fbq) y, en paralelo, a la función serverless
-   * de CAPI (netlify/functions/capi.js) con el MISMO event_id para que Meta
-   * pueda deduplicar automáticamente.
+   * de CAPI (netlify/functions/track-event.js) con el MISMO event_id para
+   * que Meta pueda deduplicar automáticamente.
    *
    * @param {string} type       'track' (evento estándar) o 'trackCustom' (evento personalizado).
    * @param {string} eventName  Nombre exacto del evento en Meta.
@@ -83,6 +103,11 @@
           event_id: eventId,
           event_source_url: window.location.href,
           source: getSource(),
+          // fbp/fbc: las mismas cookies que ya usa el Pixel del navegador,
+          // reenviadas para que el evento gemelo de CAPI tenga con qué
+          // matchear la sesión (ver capi.js -> sendMetaEvent -> user_data).
+          fbp: getCookie('_fbp'),
+          fbc: getCookie('_fbc'),
           custom_data: params
         }),
         keepalive: true
@@ -106,7 +131,18 @@
     vioPortafolio: function (params) { return fire('trackCustom', 'VioPortafolio', params); },
     inicioEnBlog: function (params) { return fire('trackCustom', 'InicioEnBlog', params); },
 
-    /* ---------- Dispara Lead + Schedule juntos (booking confirmado en Cal.com) ---------- */
+    /* ---------- NO SE USA DESDE main.js A PROPÓSITO ----------
+       Antes esta función se llamaba al confirmar una reserva en Cal.com,
+       lo que disparaba Lead + Schedule desde el navegador AL MISMO TIEMPO
+       que netlify/functions/cal-webhook.js los disparaba desde el servidor,
+       con event_id distintos en cada camino. Meta no podía deduplicarlos y
+       cada reserva se contaba dos veces (2 Lead + 2 Schedule por reunión
+       agendada). El webhook de servidor es ahora la ÚNICA fuente de estos
+       dos eventos porque solo se dispara cuando la reserva está confirmada
+       de verdad en la base de Cal.com, sin depender del navegador del
+       visitante. Se deja la función acá por si algún día hace falta un
+       funnel SIN webhook de servidor, pero no debe conectarse a ningún
+       botón ni callback mientras cal-webhook.js siga activo. */
     bookingConfirmado: function (params) {
       this.lead(params);
       this.schedule(params);

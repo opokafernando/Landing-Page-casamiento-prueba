@@ -44,7 +44,14 @@ exports.handler = async function (event) {
     return { statusCode: 400, body: 'JSON invalido' };
   }
 
-  const { event_name: eventName, event_id: eventId, event_source_url: sourceUrl } = payload;
+  const {
+    event_name: eventName,
+    event_id: eventId,
+    event_source_url: sourceUrl,
+    fbp,
+    fbc,
+    custom_data: customData
+  } = payload;
 
   if (!eventName || !ALLOWED_EVENTS.has(eventName)) {
     return { statusCode: 400, body: 'event_name invalido o no permitido' };
@@ -53,12 +60,27 @@ exports.handler = async function (event) {
     return { statusCode: 400, body: 'Falta event_id (necesario para deduplicar con el Pixel)' };
   }
 
+  // Netlify entrega la IP real del visitante en este header propio (no en
+  // event.headers['x-forwarded-for'], que en Netlify Functions no siempre
+  // viene). Se cae a x-forwarded-for igual por si el proxy cambia.
+  const headers = event.headers || {};
+  const clientIpAddress =
+    headers['x-nf-client-connection-ip'] ||
+    headers['x-forwarded-for'] ||
+    undefined;
+  const clientUserAgent = headers['user-agent'] || undefined;
+
   try {
     await sendMetaEvent({
       eventName,
       eventId,
       sourceUrl,
-      actionSource: 'website'
+      actionSource: 'website',
+      fbp,
+      fbc,
+      clientIpAddress,
+      clientUserAgent,
+      customData
     });
   } catch (err) {
     // No hacemos fallar la navegacion del visitante por un problema con Meta:

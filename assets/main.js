@@ -543,14 +543,14 @@
       },
       hideEventTypeDetails: false
     });
-    // Dispara "Cliente potencial" (Lead) + "Programar" (Schedule) cuando
-    // Cal.com confirma que la reunión quedó agendada de verdad.
-    Cal("on", {
-      action: "bookingSuccessful",
-      callback: function(){
-        if(window.FO_Track){ FO_Track.bookingConfirmado(); }
-      }
-    });
+    // Lead y Schedule YA NO se disparan desde acá. netlify/functions/cal-webhook.js
+    // es la única fuente de esos dos eventos: se dispara server-side cuando
+    // Cal.com confirma la reserva de verdad, sin depender del navegador. Si
+    // este callback llamara a FO_Track.bookingConfirmado() además del
+    // webhook, cada reserva se contaría dos veces en Meta (ver el comentario
+    // sobre bookingConfirmado en assets/tracking.js para el detalle completo).
+    // No hace falta ningún callback acá: el webhook no necesita que el
+    // navegador siga abierto para dispararse.
   }
 
   function applyLanguage(lang){

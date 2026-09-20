@@ -2,8 +2,9 @@
 
 /**
  * Helper compartido para hablar con Meta (Conversions API + Custom Audiences).
- * Lo usa netlify/functions/cal-webhook.js, y se puede reutilizar para otros
- * webhooks (Stripe, bajas de agenda, etc.) que sigan el mismo patron.
+ * Lo usa netlify/functions/cal-webhook.js y netlify/functions/track-event.js,
+ * y se puede reutilizar para otros webhooks (Stripe, bajas de agenda, etc.)
+ * que sigan el mismo patron.
  *
  * Nunca hardcodear tokens aca: todo sale de las variables de entorno de Netlify
  * (META_PIXEL_ID, META_AD_ACCOUNT_ID, META_ACCESS_TOKEN).
@@ -38,45 +39,76 @@ function normalizePhone(phone) {
  * Envia un evento a Meta Conversions API (CAPI) para el Pixel configurado.
  * `eventId` debe ser unico por evento real (ej. el uid de la reserva de Cal.com)
  * para que Meta deduplique si el mismo evento tambien llega por el pixel del navegador.
+ *
+ * Parametros de user_data (todos opcionales, pero cuantos mas lleguen, mejor
+ * la calidad de coincidencia que Meta le asigna al evento):
+ *  - email, phone: se hashean aca mismo, nunca hay que pasarlos ya hasheados.
+ *  - fbp, fbc: cookies que deja el Pixel del navegador. Viajan tal cual, sin hash.
+ *  - clientIpAddress, clientUserAgent: contexto de la visita. Van sin hash.
+ *
+ * customData es el objeto que Meta espera en custom_data (value, currency,
+ * content_name, content_type, etc). Se manda tal cual, sin transformar.
  */
-async function sendMetaEvent({ eventName, eventId, email, phone, sourceUrl, actionSource = 'system_generated', eventTime }) {
+async function sendMetaEvent({
+    eventName,
+    eventId,
+    email,
+    phone,
+    fbp,
+    fbc,
+    clientIpAddress,
+    clientUserAgent,
+    customData,
+    sourceUrl,
+    actionSource = 'system_generated',
+    eventTime
+}) {
     const pixelId = process.env.META_PIXEL_ID;
     const accessToken = process.env.META_ACCESS_TOKEN;
     if (!pixelId || !accessToken) {
-          throw new Error('Faltan META_PIXEL_ID o META_ACCESS_TOKEN en las variables de entorno de Netlify.');
+        throw new Error('Faltan META_PIXEL_ID o META_ACCESS_TOKEN en las variables de entorno de Netlify.');
     }
 
-  const userData = {};
+    const userData = {};
     const hashedEmail = sha256(email);
     const hashedPhone = sha256(normalizePhone(phone));
     if (hashedEmail) userData.em = [hashedEmail];
     if (hashedPhone) userData.ph = [hashedPhone];
+    // fbp y fbc NUNCA se hashean: Meta los usa tal cual para matchear la
+    // sesion del navegador con el evento de servidor.
+    if (fbp) userData.fbp = fbp;
+    if (fbc) userData.fbc = fbc;
+    if (clientIpAddress) userData.client_ip_address = clientIpAddress;
+    if (clientUserAgent) userData.client_user_agent = clientUserAgent;
 
-  const body = {
-        data: [
-          {
-                    event_name: eventName,
-                    event_time: eventTime || Math.floor(Date.now() / 1000),
-                    event_id: eventId,
-                    action_source: actionSource,
-                    event_source_url: sourceUrl,
-                    user_data: userData
-          }
-              ]
-  };
+    const eventData = {
+        event_name: eventName,
+        event_time: eventTime || Math.floor(Date.now() / 1000),
+        event_id: eventId,
+        action_source: actionSource,
+        event_source_url: sourceUrl,
+        user_data: userData
+    };
+    // custom_data solo se agrega si de verdad hay algo adentro: mandar un
+    // objeto vacio no rompe nada, pero ensucia el payload sin necesidad.
+    if (customData && Object.keys(customData).length > 0) {
+        eventData.custom_data = customData;
+    }
 
-  const res = await fetch(
+    const body = { data: [eventData] };
+
+    const res = await fetch(
         `https://graph.facebook.com/${GRAPH_API_VERSION}/${pixelId}/events?access_token=${encodeURIComponent(accessToken)}`,
-    {
+        {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
-    }
-      );
+        }
+    );
 
-  const json = await res.json().catch(() => ({}));
+    const json = await res.json().catch(() => ({}));
     if (!res.ok) {
-          throw new Error('Error de Meta CAPI: ' + JSON.stringify(json));
+        throw new Error('Error de Meta CAPI: ' + JSON.stringify(json));
     }
     return json;
 }
@@ -92,7 +124,7 @@ async function findAudienceByName(name) {
     const res = await fetch(url);
     const json = await res.json().catch(() => ({}));
     if (!res.ok) {
-          throw new Error('Error buscando audiencias: ' + JSON.stringify(json));
+        throw new Error('Error buscando audiencias: ' + JSON.stringify(json));
     }
     const match = (json.data || []).find((a) => a.name === name);
     return match ? match.id : null;
@@ -106,18 +138,18 @@ async function createAudience(name) {
     const accessToken = process.env.META_ACCESS_TOKEN;
     const url = `https://graph.facebook.com/${GRAPH_API_VERSION}/act_${adAccountId}/customaudiences?access_token=${encodeURIComponent(accessToken)}`;
     const res = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-                  name,
-                  description: 'Creada automaticamente por el webhook de Cal.com',
-                  customer_file_source: 'USER_PROVIDED_ONLY',
-                  subtype: 'CUSTOM'
-          })
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name,
+            description: 'Creada automaticamente por el webhook de Cal.com',
+            customer_file_source: 'USER_PROVIDED_ONLY',
+            subtype: 'CUSTOM'
+        })
     });
     const json = await res.json().catch(() => ({}));
     if (!res.ok) {
-          throw new Error('Error creando audiencia: ' + JSON.stringify(json));
+        throw new Error('Error creando audiencia: ' + JSON.stringify(json));
     }
     return json.id;
 }
@@ -145,17 +177,17 @@ async function addUserToAudience(audienceId, { email, phone }) {
     if (hashedPhone) { schema.push('PHONE'); dataRow.push(hashedPhone); }
     if (schema.length === 0) return null;
 
-  const url = `https://graph.facebook.com/${GRAPH_API_VERSION}/${audienceId}/users?access_token=${encodeURIComponent(accessToken)}`;
+    const url = `https://graph.facebook.com/${GRAPH_API_VERSION}/${audienceId}/users?access_token=${encodeURIComponent(accessToken)}`;
     const res = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-                  payload: { schema, data: [dataRow] }
-          })
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            payload: { schema, data: [dataRow] }
+        })
     });
     const json = await res.json().catch(() => ({}));
     if (!res.ok) {
-          throw new Error('Error agregando usuario a la audiencia: ' + JSON.stringify(json));
+        throw new Error('Error agregando usuario a la audiencia: ' + JSON.stringify(json));
     }
     return json;
 }

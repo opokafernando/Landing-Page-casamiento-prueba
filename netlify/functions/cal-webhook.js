@@ -3,8 +3,14 @@
 /**
  * Recibe el webhook "Booking created" de Cal.com (evento
  * https://cal.com/fernando-opoka/prueba) y avisa a Meta por dos vias:
- *  1) Un evento CAPI ("Schedule") en el Pixel, deduplicado por el uid de la reserva.
+ *  1) Un evento CAPI ("Lead" + "Schedule") en el Pixel, deduplicado por el uid de la reserva.
  *  2) Agrega a la persona a la audiencia personalizada "Agendaron llamada - Fernando Opoka Fotografia".
+ *
+ * Esta funcion es la UNICA fuente de los eventos Lead y Schedule del embudo.
+ * El navegador (main.js) NO los dispara: solo dispara el evento de intencion
+ * (InteresadoReunion) cuando alguien hace clic en "Agendar reunion". El
+ * evento de conversion real se cuenta una sola vez, aca, cuando Cal.com
+ * confirma que la reserva quedo agendada de verdad.
  *
  * Configurar en Cal.com: Settings -> Developer -> Webhooks -> nueva ->
  *   URL: https://[tu-sitio].netlify.app/.netlify/functions/cal-webhook
@@ -89,12 +95,17 @@ exports.handler = async function (event) {
           // los dos se disparen desde la misma reserva confirmada en Cal.com.
       // Event IDs distintos a proposito: son dos eventos reales distintos,
       // no se le debe pedir a Meta que los deduplique entre si.
+      //
+      // action_source: 'other' porque la reserva se confirma en el servidor
+      // de Cal.com, no en una pagina del sitio. Declararla como "website"
+      // genera advertencias de calidad de coincidencia en Events Manager.
       await sendMetaEvent({
                   eventName: 'Lead',
                   eventId: 'calcom-lead-' + bookingUid,
                   email,
                   phone,
-                  sourceUrl: 'https://cal.com/fernando-opoka/prueba'
+                  sourceUrl: 'https://cal.com/fernando-opoka/prueba',
+                  actionSource: 'other'
           });
 
       await sendMetaEvent({
@@ -102,7 +113,8 @@ exports.handler = async function (event) {
                   eventId: 'calcom-schedule-' + bookingUid,
                   email,
                   phone,
-                  sourceUrl: 'https://cal.com/fernando-opoka/prueba'
+                  sourceUrl: 'https://cal.com/fernando-opoka/prueba',
+                  actionSource: 'other'
           });
 
       const audienceId = await findOrCreateAudience(AUDIENCE_NAME);
