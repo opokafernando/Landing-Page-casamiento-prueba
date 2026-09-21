@@ -156,6 +156,7 @@
        estilos de nombre entre eventos custom del mismo negocio. */
     interesadoReunion: function (params) { return fire('trackCustom', 'interesado_reunion', params); },
     vioPortafolio: function (params) { return fire('trackCustom', 'vio_portafolio', params); },
+    vioGaleria: function (params) { return fire('trackCustom', 'vio_galeria', params); },
     inicioEnBlog: function (params) { return fire('trackCustom', 'inicio_en_blog', params); },
 
     /* ---------- Dedup de Lead + Schedule con Cal.com (mismo patrón que capi.js de Estudio Graphica) ----------
