@@ -3,14 +3,19 @@
 /**
  * Recibe el webhook "Booking created" de Cal.com (evento
  * https://cal.com/fernando-opoka/prueba) y avisa a Meta por dos vias:
- *  1) Un evento CAPI ("Lead" + "Schedule") en el Pixel, deduplicado por el uid de la reserva.
+ *  1) Un evento CAPI ("Lead" + "Schedule"), deduplicado contra el evento
+ *     gemelo que main.js ya disparo en el navegador (Cal("on",
+ *     "bookingSuccessful")) usando el MISMO event_id, que viaja hasta
+ *     aca en metadata.eventIdLead / metadata.eventIdSchedule (puesto por
+ *     assets/tracking.js -> prepareBookingMetadata antes de abrir el
+ *     embed). Mismo patron que netlify/functions/capi.js de Estudio
+ *     Graphica.
  *  2) Agrega a la persona a la audiencia personalizada "Agendaron llamada - Fernando Opoka Fotografia".
  *
- * Esta funcion es la UNICA fuente de los eventos Lead y Schedule del embudo.
- * El navegador (main.js) NO los dispara: solo dispara el evento de intencion
- * (InteresadoReunion) cuando alguien hace clic en "Agendar reunion". El
- * evento de conversion real se cuenta una sola vez, aca, cuando Cal.com
- * confirma que la reserva quedo agendada de verdad.
+ * El navegador (main.js) TAMBIEN dispara el evento de intencion
+ * (interesado_reunion) cuando alguien hace clic en "Agendar reunion" o
+ * elige un paquete, y el evento de conversion real (Lead/Schedule) desde
+ * los dos lados a la vez, ya explicado arriba.
  *
  * Configurar en Cal.com: Settings -> Developer -> Webhooks -> nueva ->
  *   URL: https://[tu-sitio].netlify.app/.netlify/functions/cal-webhook
@@ -27,6 +32,40 @@ const TRACKED_EVENT_SLUGS = ['prueba'];
 
 // Nombre de la audiencia personalizada donde se agregan las personas que agendan.
 const AUDIENCE_NAME = 'Agendaron llamada - Fernando Opoka Fotografia';
+
+// El event_id se genera client-side (ver assets/tracking.js -> prepareBookingMetadata)
+// y se manda como "metadata[eventIdLead]" / "metadata[eventIdSchedule]" en
+// el config del embed inline de Cal.com. Cal.com guarda cualquier
+// metadata[*] que reciba en booking.metadata y lo reenvia tal cual en el
+// webhook, aca como payload.payload.metadata. Con esto, Pixel (client-side)
+// y CAPI (server-side, aca) mandan el MISMO event_id para Lead y para
+// Schedule, y Meta deduplica cada uno por separado. Si por algun motivo la
+// metadata no llega (por ejemplo sessionStorage bloqueado en el navegador
+// del visitante), se cae al esquema anterior basado en el uid de la
+// reserva, para no perder el evento aunque se pierda la deduplicacion.
+function extraerEventIdLead(payload, bookingUid) {
+  const metadata = payload?.payload?.metadata || {};
+  return metadata.eventIdLead || ('calcom-lead-' + bookingUid);
+}
+
+function extraerEventIdSchedule(payload, bookingUid) {
+  const metadata = payload?.payload?.metadata || {};
+  return metadata.eventIdSchedule || ('calcom-schedule-' + bookingUid);
+}
+
+// fbp/fbc viajan igual que los eventId: metadata[fbp] / metadata[fbc],
+// puestas client-side (ver tracking.js -> getFbp/getFbc) justo antes de
+// inicializar el embed. Son las señales de coincidencia mas fuertes para
+// el CAPI, mucho mejores que solo correo/telefono.
+function extraerFbp(payload) {
+  const metadata = payload?.payload?.metadata || {};
+  return metadata.fbp || null;
+}
+
+function extraerFbc(payload) {
+  const metadata = payload?.payload?.metadata || {};
+  return metadata.fbc || null;
+}
 
 function verifySignature(rawBody, signatureHeader, secret) {
     if (!signatureHeader || !secret) return false;
@@ -89,30 +128,38 @@ exports.handler = async function (event) {
                  bookingPayload.responses.attendeePhoneNumber.value);
     const bookingUid = bookingPayload.uid || bookingPayload.bookingId || String(Date.now());
 
+    const fbp = extraerFbp(payload);
+    const fbc = extraerFbc(payload);
+
     try {
           // "Cliente potencial" (Lead) y "Programar" (Schedule) son dos eventos
           // distintos del embudo que Fernando pidio trackear por separado, aunque
           // los dos se disparen desde la misma reserva confirmada en Cal.com.
-      // Event IDs distintos a proposito: son dos eventos reales distintos,
-      // no se le debe pedir a Meta que los deduplique entre si.
+      // Cada uno con su propio event_id (leido de metadata, ver arriba):
+      // son dos eventos reales distintos, no se deduplican entre si, pero
+      // cada uno SI se deduplica con su gemelo del lado del navegador.
       //
       // action_source: 'other' porque la reserva se confirma en el servidor
       // de Cal.com, no en una pagina del sitio. Declararla como "website"
       // genera advertencias de calidad de coincidencia en Events Manager.
       await sendMetaEvent({
                   eventName: 'Lead',
-                  eventId: 'calcom-lead-' + bookingUid,
+                  eventId: extraerEventIdLead(payload, bookingUid),
                   email,
                   phone,
+                  fbp,
+                  fbc,
                   sourceUrl: 'https://cal.com/fernando-opoka/prueba',
                   actionSource: 'other'
           });
 
       await sendMetaEvent({
                   eventName: 'Schedule',
-                  eventId: 'calcom-schedule-' + bookingUid,
+                  eventId: extraerEventIdSchedule(payload, bookingUid),
                   email,
                   phone,
+                  fbp,
+                  fbc,
                   sourceUrl: 'https://cal.com/fernando-opoka/prueba',
                   actionSource: 'other'
           });

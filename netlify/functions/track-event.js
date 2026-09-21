@@ -27,9 +27,9 @@ const ALLOWED_EVENTS = new Set([
   'InitiateCheckout',
   'Purchase',
   'ViewContent',
-  'InteresadoReunion',
-  'VioPortafolio',
-  'InicioEnBlog'
+  'interesado_reunion',
+  'vio_portafolio',
+  'inicio_en_blog'
 ]);
 
 exports.handler = async function (event) {
