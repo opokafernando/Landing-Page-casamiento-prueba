@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fernando Opoka Fotografía | Fotógrafo de Bodas</title>
-<meta name="description" content="Fotografía de bodas enfocada en las emociones reales de los novios. 9 años de experiencia. Agenda tu reunión previa sin compromiso.">
-<meta property="og:title" content="Fernando Opoka Fotografía | Fotógrafo de Bodas">
-<meta property="og:description" content="Fotografía de bodas enfocada en las emociones reales. 9 años de experiencia.">
+<title>The Wedding Project | Fotógrafos de bodas</title>
+<meta name="description" content="The Wedding Project: una pareja de fotógrafos de bodas en Balneário Camboriú. 9 años de experiencia, dos cámaras en cada boda, entrega rápida y personalizada y una atención cercana. Agendá una reunión sin compromiso.">
+<meta property="og:title" content="The Wedding Project | Fotógrafos de bodas">
+<meta property="og:description" content="Una pareja de fotógrafos de bodas: dos cámaras, entrega rápida y personalizada y una atención cercana.">
 <meta property="og:image" content="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRZ_5316_gmye37.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/drfoww3ch/image/upload/w_64,h_64,c_pad,b_rgb:221D18,f_png/Firma_Blanca_gc6x1k.png">
@@ -50,17 +50,21 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Fernando Opoka",
-  "jobTitle": "Fotógrafo de bodas",
-  "description": "Fotógrafo profesional de bodas con 9 años de experiencia.",
-  "image": "https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRX_6178_s8x5fs.jpg"
+  "@type": "ProfessionalService",
+  "name": "The Wedding Project",
+  "alternateName": "Fernando Opoka Fotografía",
+  "description": "Una pareja de fotógrafos de bodas: 9 años de experiencia, dos cámaras en cada boda, entrega rápida y personalizada y una atención cercana.",
+  "url": "https://fernando-opoka-bodas.netlify.app/",
+  "image": "https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRZ_5316_gmye37.jpg",
+  "areaServed": "Balneário Camboriú, Santa Catarina, Brasil",
+  "founder": {"@type": "Person", "name": "Fernando Opoka", "jobTitle": "Fotógrafo de bodas"},
+  "employee": {"@type": "Person", "name": "Jackeline", "jobTitle": "Segunda cámara y asesora de imagen"}
 }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400..900&family=Anton&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -112,6 +116,50 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
   .hero h1{color:#fff; font-size:2.1rem; max-width:760px; margin:0 auto 18px; font-style:italic; font-weight:400;}
   .hero p.sub{color:rgba(255,255,255,0.88); max-width:520px; margin:0 auto; font-size:1rem;}
   @media (min-width:768px){ .hero h1{font-size:3.3rem;} .hero p.sub{font-size:1.1rem;} }
+
+  /* ===== Masthead "The Wedding Project": portada de revista sobre la foto del inicio ===== */
+  .hero::before{content:""; position:absolute; inset:0 0 auto 0; height:55%; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(20,16,12,0.62) 0%, rgba(20,16,12,0.28) 45%, rgba(20,16,12,0) 100%);}
+  .twp{position:relative; z-index:2; width:100%; padding:62px 16px 0; color:#fff; text-align:center; pointer-events:none;}
+  .twp-top{display:flex; align-items:center; justify-content:center; gap:12px; font-family:'Jost', sans-serif; font-weight:600; font-size:0.62rem; letter-spacing:0.42em; text-transform:uppercase; color:rgba(255,255,255,0.88);}
+  .twp-top::before, .twp-top::after{content:""; flex:1; max-width:120px; height:1px; background:rgba(255,255,255,0.55);}
+  .twp-logo{--twp:clamp(2.6rem, min(calc((100vw - 48px) / 4.6), 26svh), 14rem); position:relative; display:inline-block; margin-top:4px; line-height:1; max-width:100%;}
+  .twp-the{position:absolute; left:-0.1em; top:0.34em; font-family:'Anton', 'Oswald', sans-serif; font-size:calc(var(--twp) * 0.15); letter-spacing:0.32em; transform:rotate(-90deg) translateX(-100%); transform-origin:left top; color:#fff;}
+  .twp-wedding{display:block; font-family:'Bodoni Moda', 'Cormorant Garamond', serif; font-style:italic; font-weight:600; font-size:var(--twp); font-optical-sizing:none; font-variation-settings:'opsz' 72; letter-spacing:-0.045em; line-height:0.86; padding:0 0.06em 0 0.22em; white-space:nowrap; color:#fff; text-shadow:0 6px 40px rgba(0,0,0,0.35);}
+  .twp-wedding .ch{display:inline-block; opacity:0; transform:translateY(0.35em) rotate(4deg); filter:blur(8px); animation:twpRise 1.1s cubic-bezier(.2,.8,.2,1) forwards;}
+  .twp-project{display:block; margin-top:-0.08em; font-family:'Anton', 'Oswald', sans-serif; font-size:calc(var(--twp) * 0.43); letter-spacing:0.38em; padding-left:0.38em; line-height:1; color:transparent; -webkit-text-stroke:1.4px rgba(255,255,255,0.95); background:linear-gradient(100deg, transparent 0 40%, rgba(255,255,255,0.95) 50%, transparent 60% 100%) no-repeat; background-size:250% 100%; background-position:120% 0; -webkit-background-clip:text; background-clip:text; opacity:0; animation:twpFade 1s ease 1.15s forwards, twpShine 5.5s ease-in-out 2.4s infinite;}
+  .twp-tag{display:inline-block; margin-top:14px; font-family:'Bodoni Moda', serif; font-style:italic; font-size:clamp(0.95rem, 3.6vw, 1.35rem); color:#fff; text-shadow:0 2px 14px rgba(0,0,0,0.5); opacity:0; animation:twpFade 1s ease 1.6s forwards;}
+  .twp-side{position:absolute; top:50%; white-space:nowrap; font-family:'Jost', sans-serif; font-size:0.62rem; font-weight:600; letter-spacing:0.36em; text-transform:uppercase; color:rgba(255,255,255,0.75); writing-mode:vertical-rl; display:none;}
+  .twp-side.l{left:18px; transform:translateY(-50%) rotate(180deg);}
+  .twp-side.r{right:18px; transform:translateY(-50%);}
+  /* Logo vectorizado: se escala solo, igual en todos los navegadores (no depende de fuentes) */
+  .twp-logo{display:block; margin:6px auto 0; width:min(100%, 1060px, 104svh);}
+  .twp-svg{display:block; width:100%; height:auto; overflow:visible; filter:drop-shadow(0 6px 26px rgba(0,0,0,0.35));}
+  .twp-svg-wedding .ch{opacity:0; transform-box:fill-box; transform-origin:50% 100%; transform:translateY(30%) rotate(4deg); filter:blur(6px); animation:twpRise 1.1s cubic-bezier(.2,.8,.2,1) forwards;}
+  .twp-svg-project{opacity:0; animation:twpOpacity 1s ease 1.15s forwards;}
+  .twp-svg-the{opacity:0; animation:twpOpacity 0.8s ease 0.1s forwards;}
+  @keyframes twpOpacity{ to{opacity:1;} }
+  @media (prefers-reduced-motion: reduce){ .twp-svg-wedding .ch, .twp-svg-project, .twp-svg-the{animation:none; opacity:1; transform:none; filter:none;} }
+  @keyframes twpRise{ to{opacity:1; transform:none; filter:blur(0);} }
+  @keyframes twpFade{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;} }
+  @keyframes twpShine{ 0%{background-position:120% 0;} 45%,100%{background-position:-120% 0;} }
+  @media (min-width:900px){ .twp{padding-top:54px;} .twp-side{display:block;} .twp-top{font-size:0.7rem;} }
+  @media (prefers-reduced-motion: reduce){ .twp-wedding .ch, .twp-project, .twp-tag{animation:none; opacity:1; transform:none; filter:none;} }
+  /* celular / tablet en horizontal: pantalla baja y ancha */
+  @media (orientation:landscape) and (max-height:560px){
+    .twp{padding-top:16px;}
+    .twp-top{font-size:0.56rem;}
+    .twp-tag{margin-top:6px; font-size:0.9rem;}
+    .twp-side{display:none;}
+    .hero-content{padding:14px 18px 22px;}
+    .hero h1{font-size:1.35rem; margin-bottom:10px; max-width:640px;}
+    .hero-textbox{margin-bottom:12px;}
+    .hero-btn-row{flex-direction:row; justify-content:center; max-width:none;}
+    .hero-btn{width:auto; padding:12px 22px;}
+  }
+  /* en celular el título de abajo se achica un poco para dejar aire al masthead */
+  .hero{flex-direction:column; justify-content:space-between; align-items:stretch;}
+  .hero-content .eyebrow{display:none;}
+  @media (max-width:640px){ .hero h1{font-size:1.6rem;} .hero-content{padding:28px 18px 36px;} .hero-textbox{margin-bottom:18px;} }
   .section-head{text-align:center; max-width:640px; margin:0 auto 48px;}
   .section-head h2{font-size:2rem; font-style:italic;}
   @media (min-width:768px){ .section-head h2{font-size:2.6rem;} }
@@ -169,6 +217,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
   .sobre .arch-frame{aspect-ratio:3/3.6;}
   .sobre h2{font-size:1.9rem; font-style:italic; margin-bottom:18px;}
   .sobre p{color:var(--ink-soft); margin-bottom:14px; max-width:50ch;}
+  .sobre p strong{color:var(--ink); font-weight:600;}
   @media (max-width:767px){
     .sobre .grid{display:block; gap:0;}
     .sobre .grid .arch-frame{width:100%; max-width:none; margin:0; aspect-ratio:3/4.1; position:relative; filter:brightness(0.8);}
@@ -177,7 +226,17 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     .sobre .grid.in-view > div:last-child{opacity:1; transform:translateY(0);}
     .sobre h2{color:#F7F2EA;}
     .sobre p{color:rgba(247,242,234,0.86);}
+    .sobre p strong{color:#F7F2EA;}
   }
+  /* Sobre nosotros: 3 fotos en loop. Cada una se ve sola 3 s y el fundido dura 1,5 s
+     (ciclo total 13,5 s = 3 × (3 s + 1,5 s)). */
+  .sobre-fader{position:relative;}
+  .sobre-fader .sobre-slide{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; animation:sobreFade 13.5s linear infinite both;}
+  .sobre-fader .sobre-slide:nth-child(1){animation-delay:-1.5s;}
+  .sobre-fader .sobre-slide:nth-child(2){animation-delay:3s;}
+  .sobre-fader .sobre-slide:nth-child(3){animation-delay:7.5s;}
+  @keyframes sobreFade{ 0%{opacity:0;} 11.111%{opacity:1;} 33.333%{opacity:1;} 44.444%{opacity:0;} 100%{opacity:0;} }
+  @media (prefers-reduced-motion: reduce){ .sobre-fader .sobre-slide{animation:none;} .sobre-fader .sobre-slide:nth-child(1){opacity:1;} }
   .sobre .credit{font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--bronze); font-size:1.1rem;}
   .servicios{background:var(--cream);}
   .pkg-grid{display:grid; gap:28px; max-width:980px; margin:0 auto;}
@@ -289,6 +348,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
   .budget-box{max-width:460px; margin:36px auto 30px; background:var(--cream); border:1px solid var(--line); padding:26px 30px;}
   .budget-empty{text-align:center; color:var(--ink-soft); font-size:0.9rem;}
   .budget-line{display:flex; justify-content:space-between; font-size:0.92rem; color:var(--ink-soft); padding:8px 0;}
+  .budget-line[hidden]{display:none;}
   .budget-line span:last-child{transition:color 0.35s ease;}
   .budget-line span:last-child.is-pix{color:#2E9B57;}
   .budget-installments{margin:2px 0 0; text-align:right; font-size:0.82rem; font-weight:600; color:#2E9B57; transition:opacity 0.3s ease, color 0.3s ease;}
@@ -379,9 +439,6 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
   .cta-final h2{font-size:2rem; font-style:italic; margin-bottom:14px;}
   @media (min-width:768px){ .cta-final h2{font-size:2.5rem;} }
   .cta-final .intro{color:var(--ink-soft); margin-bottom:0; max-width:52ch;}
-  .cal-embed-wrap{width:100%; max-width:960px; margin:40px auto 0; min-height:560px; border:1px solid var(--bronze-soft); border-radius:16px; background:var(--cream); box-shadow:0 22px 50px rgba(51,43,36,0.14); overflow:hidden;}
-  .cal-embed-wrap #my-cal-inline{width:100%; height:640px; overflow:auto;}
-  @media (min-width:768px){ .cal-embed-wrap #my-cal-inline{height:680px;} }
   .btn-whatsapp{background:#25D366; color:#fff; margin-bottom:10px;}
   .btn-whatsapp:hover{background:#1EBE5A;}
   form{display:flex; flex-direction:column; gap:20px;}
@@ -391,8 +448,129 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
   input, textarea{width:100%; border:none; border-bottom:1px solid var(--line); background:transparent; padding:8px 2px 12px; font-family:'Jost', sans-serif; font-size:1rem; color:var(--ink);}
   input:focus, textarea:focus{outline:none; border-bottom-color:var(--bronze);}
   textarea{resize:vertical; min-height:90px;}
+
+  /* ===== Fotos analógicas: estética retro VHS, plegable (PC + celular) ===== */
+  .analog{--vx-y:#F7B733; --vx-o:#F58A2B; --vx-r:#E8452C; --vx-m:#A23A8F; --vx-p:#5B3A9E; --vx-ink:var(--charcoal); --vx-cream:#F4EBD7; --vx-red:#E0362B;
+    position:relative; overflow:hidden; background:var(--vx-cream); color:var(--vx-ink); padding:0;}
+  /* Botón que pliega/despliega */
+  .vx-toggle-row{padding:10px 16px;}
+  .vx-toggle{position:relative; display:flex; align-items:center; gap:12px; width:100%; max-width:560px; margin:0 auto; background:var(--vx-cream); color:var(--vx-ink); border:2.5px solid var(--vx-ink); padding:10px 12px 15px; font-family:'Jost', sans-serif; text-align:left; cursor:pointer; overflow:hidden; transition:transform 0.25s ease, box-shadow 0.25s ease;}
+  .vx-toggle::after{content:""; position:absolute; left:0; right:0; bottom:0; height:6px; background:linear-gradient(90deg,var(--vx-y) 0 20%,var(--vx-o) 20% 40%,var(--vx-r) 40% 60%,var(--vx-m) 60% 80%,var(--vx-p) 80%);}
+  .vx-toggle:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(34,29,24,0.14);}
+  .vx-toggle:focus-visible{outline:3px solid var(--vx-o); outline-offset:3px;}
+  .vx-toggle-box{flex-shrink:0; border:2.5px solid var(--vx-ink); font-family:'Oswald', sans-serif; font-weight:700; font-size:1.15rem; line-height:1; padding:6px 7px;}
+  .vx-toggle-text{flex:1; display:flex; flex-direction:column; line-height:1.15;}
+  .vx-toggle-text strong{font-weight:800; font-size:0.86rem; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;}
+  .vx-toggle-text small{font-size:0.82rem; font-weight:500; color:#5C5245; margin-top:2px;}
+  .vx-chev{flex-shrink:0; width:34px; height:34px; border-radius:50%; background:var(--vx-ink); color:var(--vx-cream); display:flex; align-items:center; justify-content:center; transition:transform 0.8s cubic-bezier(.45,.05,.25,1);}
+  .vx-chev svg{width:14px; height:14px;}
+  .analog.is-open .vx-chev{transform:rotate(180deg);}
+  /* Panel plegable: animación fluida de alto con grid 0fr -> 1fr */
+  .vx-collapse{display:grid; grid-template-rows:0fr; transition:grid-template-rows 1.1s cubic-bezier(.45,.05,.25,1);}
+  .analog.is-open .vx-collapse{grid-template-rows:1fr;}
+  .vx-collapse-inner{min-height:0; overflow:hidden;}
+  .vx-stage{position:relative; max-width:1180px; margin:0 auto; opacity:0; transform:translateY(10px); transition:opacity 0.5s ease, transform 0.6s ease;}
+  .analog.is-open .vx-stage{opacity:1; transform:none; transition:opacity 0.9s ease 0.3s, transform 1.1s cubic-bezier(.25,.8,.3,1) 0.3s;}
+  /* Las franjas se "dibujan" de izquierda a derecha; el fondo negro queda fijo */
+  .vx-wipe{transform:scaleX(0); transform-box:fill-box; transform-origin:left center; transition:transform 0.6s ease;}
+  .analog.is-open .vx-wipe{transform:scaleX(1); transition:transform 1.8s cubic-bezier(.45,.05,.25,1) 0.45s;}
+  @media (prefers-reduced-motion: reduce){ .vx-collapse, .vx-stage, .vx-wipe, .vx-chev{transition:none !important;} }
+  /* Contenido (base = celular) */
+  .vx-art{display:none;}
+  .vx-text{display:grid; grid-template-columns:auto 1fr; align-items:end; column-gap:14px; padding:2px 16px 0;}
+  .vx-title{font-family:'Oswald', 'Jost', sans-serif; font-weight:600; font-style:normal; font-size:4.6rem; line-height:0.86; letter-spacing:-0.01em; color:var(--vx-ink); margin:0;}
+  .vx-title small{font-size:0.42em; font-weight:500; letter-spacing:0.02em; margin-left:2px;}
+  .vx-side{padding-bottom:2px;}
+  .vx-sub{display:inline-block; font-weight:800; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; border-top:2.5px solid var(--vx-ink); border-bottom:2.5px solid var(--vx-ink); padding:3px 1px 2px; margin-bottom:8px;}
+  .vx-tag{display:flex; align-items:flex-end; gap:10px;}
+  .vx-tag-text{font-weight:800; text-transform:uppercase; line-height:1.12; margin:0;}
+  .vx-tag-text small{display:block; font-size:0.62rem; letter-spacing:0.14em; margin-bottom:2px;}
+  .vx-tag-text span{display:block; font-size:0.78rem; color:var(--vx-red);}
+  .vx-dots{display:none; flex-shrink:0; background-image:radial-gradient(circle, var(--vx-red) 0 5px, transparent 5.5px); background-size:14px 14px;}
+  .vx-band{display:block; width:100%; height:auto; aspect-ratio:400/130; margin-top:2px; overflow:visible; clip-path:inset(0 -100vw 0 -100vw);}
+  .vx-sticker{font-family:'Jost', sans-serif; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; fill:var(--vx-ink);}
+  .vx-bottom{background:var(--vx-ink); margin-top:-2px; padding:6px 16px 10px;}
+  .vx-info{color:var(--vx-cream); margin-bottom:12px;}
+  .vx-lead{font-size:0.84rem; line-height:1.45; color:rgba(244,235,215,0.85); margin:0 0 8px;}
+  .vx-list{list-style:none; padding:0; margin:0;}
+  .vx-list li{position:relative; padding:2px 0 2px 20px; font-weight:500; font-size:0.84rem;}
+  .vx-list li::before{content:""; position:absolute; left:0; top:9px; width:11px; height:6px; background:linear-gradient(180deg,var(--vx-y) 0 20%,var(--vx-o) 20% 40%,var(--vx-r) 40% 60%,var(--vx-m) 60% 80%,var(--vx-p) 80%);}
+  .vx-card{background:var(--vx-cream); color:var(--vx-ink); border-radius:14px; padding:14px 16px 12px; box-shadow:0 18px 40px rgba(0,0,0,0.35);}
+  .vx-card-head{display:none; align-items:center; gap:12px; padding-bottom:14px; border-bottom:2px solid var(--vx-ink);}
+  .vx-box{border:2.5px solid var(--vx-ink); font-family:'Oswald', sans-serif; font-weight:700; font-size:1.25rem; line-height:1; padding:6px 8px;}
+  .vx-card-title{font-weight:800; font-size:1.02rem; letter-spacing:0.08em; text-transform:uppercase; line-height:1.15; margin:0;}
+  .vx-card-title small{display:block; font-weight:600; font-size:0.68rem; letter-spacing:0.12em; color:#5C5245; margin-top:3px;}
+  .vx-price{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 0 4px;}
+  .vx-price-big{font-family:'Oswald', sans-serif; font-weight:600; font-size:2.1rem; line-height:1;}
+  .vx-price-meta{text-align:right; font-weight:800; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; line-height:1.35;}
+  .vx-pix{font-weight:600; font-size:0.84rem; color:#1E7A43; margin:0 0 10px;}
+  .analog-btn{display:block; width:100%; font-family:'Jost', sans-serif; font-weight:800; font-size:0.82rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--vx-cream); background:var(--vx-ink); border:none; border-radius:10px; padding:14px 16px; cursor:pointer; transition:transform 0.2s ease, background 0.25s ease, color 0.25s ease;}
+  .analog-btn:hover{transform:translateY(-2px); background:#000;}
+  .analog-btn:focus-visible{outline:3px solid var(--vx-o); outline-offset:3px;}
+  .analog-btn.is-added{background:var(--vx-y); color:var(--vx-ink);}
+  .analog-hint{display:none; font-size:0.72rem; color:#5C5245; margin:7px 0 0; text-align:center;}
+  .vx-film{display:none; align-items:center; gap:10px; color:var(--vx-cream);}
+  .vx-film strong{font-family:'Oswald', sans-serif; font-weight:700; font-size:1.7rem; letter-spacing:0.06em; line-height:1;}
+  .vx-film span{border:1.5px solid rgba(244,235,215,0.8); font-size:0.66rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:2px 7px;}
+  /* Líneas horizontales que funden el negro con el fondo claro de la sección siguiente */
+  .vx-fade{display:flex; flex-direction:column; background:var(--vx-ink); margin-top:-1px;}
+  .vx-fade span{display:block; background:var(--cream);}
+  .vx-fade span:nth-child(1){height:1px; margin-top:6px;}
+  .vx-fade span:nth-child(2){height:2px; margin-top:5px;}
+  .vx-fade span:nth-child(3){height:3px; margin-top:4px;}
+  .vx-fade span:nth-child(4){height:5px; margin-top:3px;}
+  .vx-fade span:nth-child(5){height:8px; margin-top:2px;}
+  @media (min-width:641px){
+    .vx-fade span:nth-child(1){height:2px; margin-top:12px;}
+    .vx-fade span:nth-child(2){height:3px; margin-top:10px;}
+    .vx-fade span:nth-child(3){height:5px; margin-top:8px;}
+    .vx-fade span:nth-child(4){height:8px; margin-top:6px;}
+    .vx-fade span:nth-child(5){height:12px; margin-top:4px;}
+  }
+  /* Tablet: mismo diseño que celular, centrado */
+  @media (min-width:641px) and (max-width:1099px){
+    .vx-text, .vx-info, .vx-card{max-width:560px; margin-left:auto; margin-right:auto;}
+    .vx-info{margin-bottom:14px;}
+    .vx-title{font-size:6rem;}
+    .vx-tag-text span{font-size:0.95rem;}
+    .vx-band{max-height:190px;}
+    .vx-bottom{padding:8px 16px 28px;}
+  }
+  /* PC */
+  @media (min-width:1100px){
+    .vx-toggle-row{padding:28px 24px;}
+    .vx-toggle{max-width:1132px; padding:14px 18px 18px;}
+    .vx-stage{height:800px;}
+    .vx-art{display:block; position:absolute; top:-60px; left:50%; width:1600px; height:860px; margin-left:-800px; overflow:visible;}
+    .vx-band{display:none;}
+    .vx-text{display:block; padding:0;}
+    .vx-title{position:absolute; left:24px; top:10px; font-size:10.5rem; line-height:0.92;}
+    .vx-side{position:static;}
+    .vx-sub{position:absolute; left:24px; top:190px; font-size:1.12rem; padding:5px 2px 4px; margin:0;}
+    .vx-tag{position:absolute; right:24px; top:20px; gap:22px; align-items:flex-start;}
+    .vx-tag-text{text-align:right;}
+    .vx-tag-text small{font-size:0.78rem; margin-bottom:4px;}
+    .vx-tag-text span{font-size:1.5rem; max-width:16ch;}
+    .vx-dots{display:block; width:84px; height:112px;}
+    .vx-bottom{position:absolute; inset:0; background:transparent; margin:0; padding:0; pointer-events:none;}
+    .vx-info{position:absolute; left:24px; top:262px; width:470px; color:var(--vx-ink); margin:0; pointer-events:auto;}
+    .vx-lead{font-size:1rem; line-height:1.6; color:#3D352E; margin-bottom:14px;}
+    .vx-list li{padding:6px 0 6px 24px; font-size:0.95rem;}
+    .vx-list li::before{top:13px; width:12px;}
+    .vx-card{position:absolute; left:760px; top:460px; width:396px; padding:22px 20px 20px; pointer-events:auto;}
+    .vx-card-head{display:flex;}
+    .vx-price{padding:14px 0 6px;}
+    .vx-price-big{font-size:2.6rem;}
+    .vx-price-meta{font-size:0.72rem;}
+    .vx-pix{font-size:0.9rem; margin-bottom:16px;}
+    .analog-btn{font-size:0.86rem; padding:16px 18px;}
+    .analog-hint{display:block; margin-top:9px;}
+    .vx-film{display:flex; position:absolute; left:24px; bottom:34px;}
+  }
   footer{background:var(--charcoal); color:rgba(247,242,234,0.75); padding:48px 0 28px; text-align:center;}
-  footer .brand{font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.5rem; color:var(--cream); margin-bottom:14px;}
+  footer .brand{color:var(--cream); margin-bottom:16px; line-height:1;}
+  footer .brand-name{display:block; font-family:'Bodoni Moda', 'Cormorant Garamond', serif; font-style:italic; font-weight:600; font-size:2rem; letter-spacing:-0.02em;}
+  footer .brand-by{display:block; margin-top:8px; font-family:'Jost', sans-serif; font-size:0.66rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--bronze-soft);}
   footer .socials{display:flex; justify-content:center; gap:22px; margin-bottom:22px; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase;}
   footer .socials a{color:var(--bronze-soft); text-decoration:none;}
   footer .socials a:hover{color:var(--cream);}
@@ -424,18 +602,29 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     data-i18n-alt="hero.imgAlt"
     alt="Novios abrazados durante su casamiento, fotografía de Fernando Opoka"
     loading="eager">
+  <div class="twp">
+    <div class="twp-top" aria-hidden="true"><span data-i18n="twp.top">Fotografía de bodas</span></div>
+    <div class="twp-logo">
+      <svg class="twp-svg" viewBox="0.0 -78.7 423.8 134.8" role="img" aria-label="The Wedding Project" xmlns="http://www.w3.org/2000/svg">
+  <g class="twp-svg-the" transform="translate(12.89 -43.93) rotate(-90)" fill="#fff"><path d="M1.67724609375 0.0V-10.4150390625H0.146484375V-12.890625H5.7861328125V-10.4150390625H4.25537109375V0.0Z"/><path d="M11.2599609375 0.0V-12.890625H13.9552734375V-9.89501953125Q14.16767578125 -10.51025390625 14.60712890625 -10.806884765625Q15.04658203125 -11.103515625 15.63251953125 -11.103515625Q16.77509765625 -11.103515625 17.2951171875 -10.3857421875Q17.81513671875 -9.66796875 17.81513671875 -8.45947265625V0.0H15.16376953125V-8.291015625Q15.16376953125 -8.64990234375 15.013623046875 -8.876953125Q14.8634765625 -9.10400390625 14.5412109375 -9.10400390625Q14.27021484375 -9.10400390625 14.112744140625 -8.86962890625Q13.9552734375 -8.63525390625 13.9552734375 -8.31298828125V0.0Z"/><path d="M26.71669921875 0.1171875Q25.54482421875 0.1171875 24.8490234375 -0.322265625Q24.15322265625 -0.76171875 23.8529296875 -1.58935546875Q23.55263671875 -2.4169921875 23.55263671875 -3.58154296875V-7.998046875Q23.55263671875 -9.52880859375 24.43154296875 -10.316162109375Q25.31044921875 -11.103515625 26.84853515625 -11.103515625Q30.01259765625 -11.103515625 30.01259765625 -7.998046875V-7.19970703125Q30.01259765625 -5.74951171875 29.98330078125 -5.25146484375H26.17470703125V-3.12744140625Q26.17470703125 -2.83447265625 26.211328125 -2.552490234375Q26.24794921875 -2.2705078125 26.376123046875 -2.08740234375Q26.504296875 -1.904296875 26.78994140625 -1.904296875Q27.20009765625 -1.904296875 27.30263671875 -2.259521484375Q27.40517578125 -2.61474609375 27.40517578125 -3.18603515625V-4.24072265625H30.01259765625V-3.6181640625Q30.01259765625 -2.3876953125 29.708642578125 -1.556396484375Q29.4046875 -0.72509765625 28.683251953125 -0.303955078125Q27.96181640625 0.1171875 26.71669921875 0.1171875ZM26.16005859375 -6.55517578125H27.40517578125V-8.03466796875Q27.40517578125 -8.6279296875 27.25869140625 -8.887939453125Q27.11220703125 -9.14794921875 26.81923828125 -9.14794921875Q26.504296875 -9.14794921875 26.332177734375 -8.89892578125Q26.16005859375 -8.64990234375 26.16005859375 -8.03466796875Z"/></g>
+  <g class="twp-svg-wedding" transform="translate(6.16 0)" fill="#fff"><path class="ch" style="animation-delay:0.15s" d="M58.550000000000004 1.0 50.400000000000006 -75.0H63.650000000000006L69.8 -15.600000000000001L104.5 -75.0H105.85000000000001L61.5 1.0ZM28.6 1.0 20.450000000000003 -75.0H34.65L40.7 -15.55L56.900000000000006 -43.5H58.25L32.45 1.0ZM11.850000000000001 -73.75V-75.0H90.95V-73.75ZM61.800000000000004 -41.7 81.25 -75.0H82.60000000000001L63.150000000000006 -41.7ZM95.45 -73.75V-75.0H114.75V-73.75Z"/><path class="ch" style="animation-delay:0.22s" d="M122.70000000000002 1.0Q117.50000000000001 1.0 114.025 -1.0750000000000002Q110.55000000000001 -3.1500000000000004 108.775 -6.775Q107.00000000000001 -10.4 107.00000000000001 -15.0Q107.00000000000001 -21.0 109.20000000000002 -26.7Q111.4 -32.4 115.375 -37.0Q119.35000000000001 -41.6 124.65 -44.3Q129.95000000000002 -47.0 136.10000000000002 -47.0Q142.5 -47.0 146.05 -44.075Q149.60000000000002 -41.150000000000006 149.60000000000002 -36.85Q149.60000000000002 -33.050000000000004 147.125 -30.000000000000004Q144.65 -26.950000000000003 140.22500000000002 -24.775000000000002Q135.8 -22.6 130.05 -21.3Q124.30000000000001 -20.0 117.70000000000002 -19.6V-20.6Q121.60000000000001 -20.85 125.025 -22.1Q128.45000000000002 -23.35 131.22500000000002 -25.35Q134.0 -27.35 135.97500000000002 -29.85Q137.95000000000002 -32.35 139.02500000000003 -35.175Q140.10000000000002 -38.0 140.10000000000002 -40.900000000000006Q140.10000000000002 -42.800000000000004 139.32500000000002 -44.275000000000006Q138.55 -45.75 136.5 -45.75Q134.05 -45.75 131.675 -43.925Q129.3 -42.1 127.15 -38.975Q125.00000000000001 -35.85 123.22500000000002 -32.0Q121.45000000000002 -28.150000000000002 120.12500000000001 -23.975Q118.80000000000001 -19.8 118.10000000000001 -15.825000000000001Q117.4 -11.850000000000001 117.4 -8.65Q117.4 -4.15 119.32500000000002 -2.4250000000000003Q121.25000000000001 -0.7000000000000001 124.30000000000001 -0.7000000000000001Q128.15 -0.7000000000000001 131.675 -2.325Q135.20000000000002 -3.95 138.25 -6.85Q141.3 -9.75 143.70000000000002 -13.600000000000001L144.8 -12.9Q142.60000000000002 -9.3 139.45000000000002 -6.125Q136.3 -2.95 132.15 -0.9750000000000001Q128.0 1.0 122.70000000000002 1.0Z"/><path class="ch" style="animation-delay:0.29s" d="M190.55 1.0Q186.50000000000003 1.0 184.57500000000005 -1.05Q182.65000000000003 -3.1 182.65000000000003 -6.4Q182.65000000000003 -6.95 182.70000000000005 -7.725Q182.75000000000003 -8.5 182.90000000000003 -9.25L184.3 -16.650000000000002L187.20000000000002 -24.900000000000002L187.70000000000002 -30.950000000000003L199.20000000000002 -73.75H191.05V-75.0H210.50000000000003L191.75000000000003 -4.45Q191.55 -3.6500000000000004 191.55 -2.9000000000000004Q191.55 -2.25 191.925 -1.7000000000000002Q192.3 -1.1500000000000001 193.25000000000003 -1.1500000000000001Q195.20000000000002 -1.1500000000000001 197.125 -2.5Q199.05 -3.85 201.125 -7.1000000000000005Q203.20000000000002 -10.350000000000001 205.50000000000003 -15.950000000000001L206.70000000000002 -15.55Q204.40000000000003 -9.850000000000001 202.07500000000005 -6.200000000000001Q199.75000000000003 -2.5500000000000003 196.97500000000002 -0.7750000000000001Q194.20000000000002 1.0 190.55 1.0ZM168.05 1.0Q161.3 1.0 158.22500000000002 -3.375Q155.15 -7.75 155.15 -15.25Q155.15 -21.0 157.275 -26.625Q159.4 -32.25 163.0 -36.85Q166.60000000000002 -41.45 170.97500000000002 -44.225Q175.35000000000002 -47.0 179.8 -47.0Q183.10000000000002 -47.0 185.02500000000003 -45.25Q186.95000000000002 -43.5 187.77500000000003 -40.5Q188.60000000000002 -37.5 188.60000000000002 -33.800000000000004Q188.60000000000002 -30.950000000000003 187.97500000000002 -27.300000000000004Q187.35000000000002 -23.650000000000002 186.12500000000003 -19.75Q184.90000000000003 -15.850000000000001 183.12500000000003 -12.150000000000002Q181.35000000000002 -8.450000000000001 179.05 -5.4750000000000005Q176.75000000000003 -2.5 174.00000000000003 -0.75Q171.25000000000003 1.0 168.05 1.0ZM171.25000000000003 -2.1Q173.65000000000003 -2.1 176.02500000000003 -4.15Q178.40000000000003 -6.2 180.47500000000002 -9.625Q182.55 -13.05 184.15000000000003 -17.25Q185.75000000000003 -21.450000000000003 186.675 -25.775000000000002Q187.60000000000002 -30.1 187.60000000000002 -33.9Q187.60000000000002 -36.95 187.07500000000002 -39.225Q186.55 -41.5 185.35000000000002 -42.8Q184.15000000000003 -44.1 182.20000000000002 -44.1Q179.95000000000002 -44.1 177.65000000000003 -41.825Q175.35000000000002 -39.550000000000004 173.27500000000003 -35.85Q171.20000000000002 -32.15 169.55 -27.675Q167.9 -23.200000000000003 166.95000000000002 -18.75Q166.00000000000003 -14.3 166.00000000000003 -10.65Q166.00000000000003 -6.45 167.35000000000002 -4.275Q168.70000000000002 -2.1 171.25000000000003 -2.1Z"/><path class="ch" style="animation-delay:0.36s" d="M247.20000000000002 1.0Q243.15000000000003 1.0 241.22500000000002 -1.05Q239.3 -3.1 239.3 -6.4Q239.3 -6.95 239.35000000000002 -7.725Q239.40000000000003 -8.5 239.55 -9.25L240.95000000000002 -16.650000000000002L243.85000000000002 -24.900000000000002L244.35000000000002 -30.950000000000003L255.85000000000002 -73.75H247.70000000000002V-75.0H267.15000000000003L248.40000000000003 -4.45Q248.20000000000002 -3.6500000000000004 248.20000000000002 -2.9000000000000004Q248.20000000000002 -2.25 248.57500000000002 -1.7000000000000002Q248.95000000000002 -1.1500000000000001 249.90000000000003 -1.1500000000000001Q251.85000000000002 -1.1500000000000001 253.77500000000003 -2.5Q255.70000000000002 -3.85 257.77500000000003 -7.1000000000000005Q259.85 -10.350000000000001 262.15000000000003 -15.950000000000001L263.35 -15.55Q261.05 -9.850000000000001 258.725 -6.200000000000001Q256.40000000000003 -2.5500000000000003 253.62500000000003 -0.7750000000000001Q250.85000000000002 1.0 247.20000000000002 1.0ZM224.70000000000002 1.0Q217.95000000000002 1.0 214.875 -3.375Q211.8 -7.75 211.8 -15.25Q211.8 -21.0 213.925 -26.625Q216.05 -32.25 219.65000000000003 -36.85Q223.25000000000003 -41.45 227.62500000000003 -44.225Q232.00000000000003 -47.0 236.45000000000002 -47.0Q239.75000000000003 -47.0 241.675 -45.25Q243.60000000000002 -43.5 244.425 -40.5Q245.25000000000003 -37.5 245.25000000000003 -33.800000000000004Q245.25000000000003 -30.950000000000003 244.62500000000003 -27.300000000000004Q244.00000000000003 -23.650000000000002 242.77500000000003 -19.75Q241.55 -15.850000000000001 239.77500000000003 -12.150000000000002Q238.00000000000003 -8.450000000000001 235.70000000000005 -5.4750000000000005Q233.40000000000003 -2.5 230.65000000000003 -0.75Q227.90000000000003 1.0 224.70000000000002 1.0ZM227.90000000000003 -2.1Q230.3 -2.1 232.675 -4.15Q235.05 -6.2 237.125 -9.625Q239.20000000000002 -13.05 240.8 -17.25Q242.40000000000003 -21.450000000000003 243.32500000000005 -25.775000000000002Q244.25000000000003 -30.1 244.25000000000003 -33.9Q244.25000000000003 -36.95 243.72500000000002 -39.225Q243.20000000000002 -41.5 242.0 -42.8Q240.8 -44.1 238.85000000000002 -44.1Q236.60000000000002 -44.1 234.3 -41.825Q232.00000000000003 -39.550000000000004 229.925 -35.85Q227.85000000000002 -32.15 226.20000000000002 -27.675Q224.55 -23.200000000000003 223.60000000000002 -18.75Q222.65000000000003 -14.3 222.65000000000003 -10.65Q222.65000000000003 -6.45 224.00000000000003 -4.275Q225.35000000000002 -2.1 227.90000000000003 -2.1Z"/><path class="ch" style="animation-delay:0.43s" d="M277.65 1.0Q273.2 1.0 271.17499999999995 -0.8250000000000002Q269.15 -2.6500000000000004 269.15 -5.7Q269.15 -6.800000000000001 269.35 -7.8500000000000005Q269.55 -8.9 269.75 -9.700000000000001L279.6 -44.75H272.3V-46.0H290.75L279.25 -4.55Q279.15 -4.15 279.1 -3.7250000000000005Q279.05 -3.3000000000000003 279.05 -2.9000000000000004Q279.05 -2.2 279.4 -1.6750000000000003Q279.75 -1.1500000000000001 280.65 -1.1500000000000001Q282.65 -1.1500000000000001 284.6 -2.5Q286.55 -3.85 288.6 -7.1000000000000005Q290.65 -10.350000000000001 293.0 -15.950000000000001L294.2 -15.55Q291.9 -9.850000000000001 289.575 -6.200000000000001Q287.25 -2.5500000000000003 284.4 -0.7750000000000001Q281.55 1.0 277.65 1.0ZM289.8 -60.6Q287.7 -60.6 286.0 -61.650000000000006Q284.3 -62.7 283.32500000000005 -64.42500000000001Q282.35 -66.15 282.35 -68.15Q282.35 -70.2 283.32500000000005 -71.9Q284.3 -73.60000000000001 286.0 -74.625Q287.7 -75.65 289.8 -75.65Q291.9 -75.65 293.6 -74.625Q295.3 -73.60000000000001 296.32500000000005 -71.9Q297.35 -70.2 297.35 -68.15Q297.35 -66.15 296.32500000000005 -64.42500000000001Q295.3 -62.7 293.6 -61.650000000000006Q291.9 -60.6 289.8 -60.6Z"/><path class="ch" style="animation-delay:0.50s" d="M334.75 1.0Q330.54999999999995 1.0 328.44999999999993 -0.8500000000000001Q326.34999999999997 -2.7 326.34999999999997 -6.15Q326.34999999999997 -7.2 326.59999999999997 -8.325000000000001Q326.84999999999997 -9.450000000000001 327.09999999999997 -10.3L333.4 -31.200000000000003Q334.54999999999995 -35.1 335.0 -37.925Q335.45 -40.75 334.79999999999995 -42.275000000000006Q334.15 -43.800000000000004 332.09999999999997 -43.800000000000004Q330.09999999999997 -43.800000000000004 327.4 -41.300000000000004Q324.7 -38.800000000000004 321.875 -34.5Q319.04999999999995 -30.200000000000003 316.54999999999995 -24.725Q314.04999999999995 -19.25 312.5 -13.3H311.59999999999997Q312.7 -17.45 314.475 -22.05Q316.25 -26.650000000000002 318.625 -31.075000000000003Q321.0 -35.5 323.825 -39.1Q326.65 -42.7 329.75 -44.825Q332.84999999999997 -46.95 336.04999999999995 -46.95Q340.29999999999995 -46.95 342.625 -44.925000000000004Q344.95 -42.900000000000006 345.475 -39.5Q346.0 -36.1 344.75 -31.950000000000003L336.9 -5.15Q336.75 -4.7 336.67499999999995 -4.2Q336.59999999999997 -3.7 336.59999999999997 -3.3000000000000003Q336.59999999999997 -2.45 336.94999999999993 -1.975Q337.29999999999995 -1.5 338.2 -1.5Q341.5 -1.5 344.45 -4.95Q347.4 -8.4 350.45 -15.950000000000001L351.59999999999997 -15.55Q349.29999999999995 -9.600000000000001 346.82499999999993 -5.9750000000000005Q344.34999999999997 -2.35 341.42499999999995 -0.675Q338.5 1.0 334.75 1.0ZM297.9 0.0 309.4 -44.75H302.54999999999995V-46.0H320.95L309.04999999999995 0.0Z"/><path class="ch" style="animation-delay:0.57s" d="M369.05 26.0Q362.05 26.0 357.5 24.450000000000003Q352.95 22.900000000000002 350.79999999999995 20.175Q348.65 17.45 348.65 14.0Q348.65 11.3 350.275 8.950000000000001Q351.9 6.6000000000000005 354.475 4.825Q357.05 3.0500000000000003 359.975 2.0250000000000004Q362.9 1.0 365.5 1.0H367.05Q364.25 1.5 362.1 3.35Q359.95 5.2 358.725 8.0Q357.5 10.8 357.5 14.100000000000001Q357.5 19.05 360.525 21.775Q363.55 24.5 369.8 24.5Q375.25 24.5 380.125 23.200000000000003Q385.0 21.900000000000002 388.725 19.575000000000003Q392.45 17.25 394.54999999999995 14.225000000000001Q396.65 11.200000000000001 396.65 7.800000000000001Q396.65 4.95 394.825 3.6750000000000003Q393.0 2.4000000000000004 389.7 2.4000000000000004Q388.75 2.4000000000000004 386.675 2.4000000000000004Q384.6 2.4000000000000004 381.975 2.4000000000000004Q379.35 2.4000000000000004 376.8 2.4000000000000004Q374.25 2.4000000000000004 372.3 2.4000000000000004Q370.35 2.4000000000000004 369.7 2.4000000000000004Q365.2 2.4000000000000004 361.775 1.1750000000000003Q358.35 -0.05 356.4 -2.3Q354.45 -4.55 354.45 -7.6000000000000005Q354.45 -10.25 355.95 -12.350000000000001Q357.45 -14.450000000000001 360.075 -15.95Q362.7 -17.45 366.075 -18.25Q369.45 -19.05 373.2 -19.05L373.15 -18.3Q368.2 -18.3 365.7 -16.325000000000003Q363.2 -14.350000000000001 363.2 -12.200000000000001Q363.2 -10.200000000000001 364.6 -9.15Q366.0 -8.1 368.2 -7.7Q370.4 -7.300000000000001 372.75 -7.300000000000001Q374.5 -7.300000000000001 377.025 -7.325000000000001Q379.55 -7.3500000000000005 382.0 -7.375Q384.45 -7.4 385.85 -7.4Q391.85 -7.4 395.775 -4.825Q399.7 -2.25 399.7 4.2Q399.7 9.65 397.0 13.75Q394.3 17.85 389.8 20.575000000000003Q385.3 23.3 379.875 24.65Q374.45 26.0 369.05 26.0ZM379.95 -16.0Q375.4 -16.0 371.775 -17.65Q368.15 -19.3 366.075 -22.35Q364.0 -25.400000000000002 364.0 -29.650000000000002Q364.0 -34.45 366.9 -38.375Q369.8 -42.300000000000004 374.6 -44.625Q379.4 -46.95 384.95 -46.95Q389.55 -46.95 393.15 -45.2Q396.75 -43.45 398.825 -40.275000000000006Q400.9 -37.1 400.9 -32.85Q400.9 -28.1 398.0 -24.275000000000002Q395.1 -20.450000000000003 390.35 -18.225Q385.6 -16.0 379.95 -16.0ZM378.65 -17.3Q380.35 -17.3 382.1 -18.875Q383.85 -20.450000000000003 385.45000000000005 -23.050000000000004Q387.05 -25.650000000000002 388.3 -28.675000000000004Q389.55 -31.700000000000003 390.275 -34.6Q391.0 -37.5 391.0 -39.7Q391.0 -42.25 389.875 -43.95Q388.75 -45.650000000000006 386.25 -45.650000000000006Q384.55 -45.650000000000006 382.8 -44.075Q381.05 -42.5 379.45000000000005 -39.925Q377.85 -37.35 376.6 -34.35Q375.35 -31.35 374.625 -28.425Q373.9 -25.5 373.9 -23.35Q373.9 -20.8 375.04999999999995 -19.05Q376.2 -17.3 378.65 -17.3ZM407.3 -46.5Q410.4 -46.5 412.5 -44.575Q414.6 -42.650000000000006 414.6 -39.45Q414.6 -36.95 413.1 -35.175Q411.6 -33.4 409.0 -33.4Q406.75 -33.4 405.1 -34.875Q403.45 -36.35 403.45 -38.800000000000004Q403.45 -41.0 404.9 -42.375Q406.35 -43.75 408.3 -43.95Q409.65 -43.85 410.825 -43.125Q412.0 -42.400000000000006 412.5 -41.1Q412.05 -43.050000000000004 410.475 -44.150000000000006Q408.9 -45.25 406.85 -45.25Q404.5 -45.25 402.425 -44.075Q400.35 -42.900000000000006 398.57500000000005 -40.60000000000001Q396.8 -38.300000000000004 395.15 -34.95L394.25 -35.45Q396.9 -41.0 400.04999999999995 -43.75Q403.2 -46.5 407.3 -46.5Z"/></g>
+  <g class="twp-svg-project" transform="translate(108.43 47.68)" fill="none" stroke="#fff" stroke-width="1.3" stroke-linejoin="round" vector-effect="non-scaling-stroke"><path vector-effect="non-scaling-stroke" d="M1.6376953125 0.0V-36.953125H11.40087890625Q14.46630859375 -36.953125 16.261474609375 -35.58837890625Q18.056640625 -34.2236328125 18.83349609375 -31.7041015625Q19.6103515625 -29.1845703125 19.6103515625 -25.69921875Q19.6103515625 -22.33984375 18.95947265625 -19.851806640625Q18.30859375 -17.36376953125 16.639404296875 -15.9990234375Q14.97021484375 -14.63427734375 11.90478515625 -14.63427734375H8.90234375V0.0ZM8.90234375 -21.26904296875H9.322265625Q11.3798828125 -21.26904296875 11.841796875 -22.423828125Q12.3037109375 -23.57861328125 12.3037109375 -25.8251953125Q12.3037109375 -27.9248046875 11.852294921875 -29.069091796875Q11.40087890625 -30.21337890625 9.72119140625 -30.21337890625H8.90234375Z"/><path vector-effect="non-scaling-stroke" d="M38.15494140625 0.0V-31.494140625H45.79751953125V-27.98779296875Q46.34341796875 -29.814453125 47.72916015625 -30.84326171875Q49.11490234375 -31.8720703125 51.21451171875 -31.8720703125V-25.59423828125Q50.29068359375 -25.59423828125 49.009921875 -25.394775390625Q47.72916015625 -25.1953125 46.76333984375 -24.848876953125Q45.79751953125 -24.50244140625 45.79751953125 -24.08251953125V0.0Z"/><path vector-effect="non-scaling-stroke" d="M78.55646484375 0.3359375Q69.15021484375 0.3359375 69.15021484375 -9.42724609375V-22.06689453125Q69.15021484375 -26.51806640625 71.64875 -29.174072265625Q74.14728515625 -31.830078125 78.55646484375 -31.830078125Q82.986640625 -31.830078125 85.48517578125 -29.174072265625Q87.9837109375 -26.51806640625 87.9837109375 -22.06689453125V-9.42724609375Q87.9837109375 0.3359375 78.55646484375 0.3359375ZM78.55646484375 -5.458984375Q79.5012890625 -5.458984375 79.910712890625 -6.141357421875Q80.32013671875 -6.82373046875 80.32013671875 -7.87353515625V-23.263671875Q80.32013671875 -26.01416015625 78.55646484375 -26.01416015625Q76.79279296875 -26.01416015625 76.79279296875 -23.263671875V-7.87353515625Q76.79279296875 -6.82373046875 77.202216796875 -6.141357421875Q77.611640625 -5.458984375 78.55646484375 -5.458984375Z"/><path vector-effect="non-scaling-stroke" d="M107.89304687500001 -33.42578125V-39.6826171875H115.40964843750001V-33.42578125ZM109.48875000000001 5.458984375Q107.09519531250001 5.458984375 106.29734375000001 4.9130859375V-0.1259765625Q106.67527343750001 -0.02099609375 106.99021484375001 -0.02099609375Q107.59910156250001 -0.02099609375 107.74607421875001 -0.44091796875Q107.89304687500001 -0.86083984375 107.89304687500001 -1.51171875V-31.494140625H115.40964843750001V-1.7216796875Q115.40964843750001 1.6376953125 114.07639648437501 3.54833984375Q112.74314453125001 5.458984375 109.48875000000001 5.458984375Z"/><path vector-effect="non-scaling-stroke" d="M143.549453125 0.3359375Q140.190078125 0.3359375 138.19544921875 -0.923828125Q136.2008203125 -2.18359375 135.33998046875 -4.55615234375Q134.479140625 -6.9287109375 134.479140625 -10.26708984375V-22.927734375Q134.479140625 -27.31591796875 136.998671875 -29.572998046875Q139.518203125 -31.830078125 143.9273828125 -31.830078125Q152.9976953125 -31.830078125 152.9976953125 -22.927734375V-20.63916015625Q152.9976953125 -16.48193359375 152.9137109375 -15.05419921875H141.9957421875V-8.96533203125Q141.9957421875 -8.12548828125 142.10072265625 -7.317138671875Q142.205703125 -6.5087890625 142.573134765625 -5.98388671875Q142.94056640625 -5.458984375 143.7594140625 -5.458984375Q144.9351953125 -5.458984375 145.229140625 -6.477294921875Q145.5230859375 -7.49560546875 145.5230859375 -9.13330078125V-12.15673828125H152.9976953125V-10.3720703125Q152.9976953125 -6.8447265625 152.126357421875 -4.461669921875Q151.25501953125 -2.07861328125 149.186904296875 -0.871337890625Q147.1187890625 0.3359375 143.549453125 0.3359375ZM141.95375 -18.79150390625H145.5230859375V-23.03271484375Q145.5230859375 -24.7333984375 145.1031640625 -25.478759765625Q144.6832421875 -26.22412109375 143.8433984375 -26.22412109375Q142.94056640625 -26.22412109375 142.447158203125 -25.51025390625Q141.95375 -24.79638671875 141.95375 -23.03271484375Z"/><path vector-effect="non-scaling-stroke" d="M181.53642578125002 0.3359375Q176.24541015625002 0.3359375 174.03032226562502 -2.37255859375Q171.81523437500002 -5.0810546875 171.81523437500002 -10.330078125V-20.0302734375Q171.81523437500002 -23.9775390625 172.65507812500002 -26.60205078125Q173.49492187500002 -29.2265625 175.59453125000002 -30.5283203125Q177.69414062500002 -31.830078125 181.43144531250002 -31.830078125Q184.03496093750002 -31.830078125 186.10307617187502 -30.90625Q188.17119140625002 -29.982421875 189.36796875000002 -28.19775390625Q190.56474609375002 -26.4130859375 190.56474609375002 -23.83056640625V-19.0224609375H182.90117187500002V-23.431640625Q182.90117187500002 -24.5234375 182.58623046875002 -25.268798828125Q182.27128906250002 -26.01416015625 181.22148437500002 -26.01416015625Q179.37382812500002 -26.01416015625 179.37382812500002 -23.3896484375V-8.12548828125Q179.37382812500002 -7.15966796875 179.79375000000002 -6.351318359375Q180.21367187500002 -5.54296875 181.17949218750002 -5.54296875Q182.16630859375002 -5.54296875 182.55473632812502 -6.330322265625Q182.94316406250002 -7.11767578125 182.94316406250002 -8.16748046875V-13.45849609375H190.56474609375002V-7.95751953125Q190.56474609375002 -5.35400390625 189.39946289062502 -3.495849609375Q188.23417968750002 -1.6376953125 186.19755859375002 -0.65087890625Q184.16093750000002 0.3359375 181.53642578125002 0.3359375Z"/><path vector-effect="non-scaling-stroke" d="M215.99605468750002 0.3359375Q212.95162109375002 0.3359375 211.89131835937502 -0.955322265625Q210.83101562500002 -2.24658203125 210.83101562500002 -4.9130859375V-24.54443359375H208.71041015625002V-30.2763671875H210.83101562500002V-36.953125H218.13765625000002V-30.2763671875H220.25826171875002V-24.54443359375H218.13765625000002V-6.6767578125Q218.13765625000002 -5.89990234375 218.38960937500002 -5.5849609375Q218.64156250000002 -5.27001953125 219.35542968750002 -5.27001953125Q219.85933593750002 -5.27001953125 220.25826171875002 -5.35400390625V-0.23095703125Q220.00630859375002 -0.14697265625 218.68355468750002 0.094482421875Q217.36080078125002 0.3359375 215.99605468750002 0.3359375Z"/></g>
+</svg>
+    </div>
+    <div><span class="twp-tag" data-i18n="twp.tag">Tu boda, como si fuera la nuestra.</span></div>
+    <span class="twp-side l" aria-hidden="true" data-i18n="twp.sideL">Nº 01 — Balneário Camboriú</span>
+    <span class="twp-side r" aria-hidden="true" data-i18n="twp.sideR">2 cámaras · 0 momentos perdidos</span>
+  </div>
   <div class="hero-content">
     <div class="hero-textbox">
-      <span class="eyebrow" data-i18n="hero.eyebrow">Fotografía de casamiento con alma</span>
+      <span class="eyebrow" data-i18n="hero.eyebrow">Fernando &amp; Jackeline · 9 años fotografiando bodas</span>
       <h1 data-i18n="hero.h1">¿De verdad quieres contratar al fotógrafo más barato el día de tu casamiento?</h1>
-      <p class="sub" data-i18n="hero.sub">Tu boda no se repite. Las fotos que la cuenten, tampoco deberían ser cualquier cosa.</p>
     </div>
     <div class="hero-btn-row">
       <a href="#paquetes" class="btn hero-btn" data-i18n="hero.btn1">¿Cuánto cuesta?</a>
       <a href="#contacto" class="btn hero-btn" data-i18n="hero.btn2" onclick="if(window.FO_Track){FO_Track.interesadoReunion();}">Quiero agendar una reunión</a>
-      <a href="#proceso" class="btn hero-btn" data-i18n="hero.btn3">¿Cómo es el método?</a>
     </div>
-    <p class="microcopy" style="color:rgba(255,255,255,0.75)" data-i18n="hero.microcopy">Sin compromiso. Te respondo en menos de 8h.</p>
+    <p class="microcopy" style="color:rgba(255,255,255,0.75)" data-i18n="hero.microcopy">Sin compromiso. Te respondemos en menos de 8h.</p>
   </div>
 </header>
 
@@ -456,9 +645,9 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     <div>
       <span class="eyebrow" data-i18n="problema.eyebrow">El problema</span>
       <h2 data-i18n="problema.h2">Buscas algo más que fotos bonitas</h2>
-      <p data-i18n="problema.p1">Quieres confiar en tu fotógrafo: en la calidad de su trabajo, en su calidez, su educación y su amabilidad el día más importante de tu vida.</p>
-      <p data-i18n="problema.p2">Busco hacerte fotos inolvidables, enfocadas en las emociones tuyas, de tu pareja y de las personas que más quieren.</p>
-      <p data-i18n="problema.p3">Por eso, antes de tu boda, nos reunimos: quiero conocer tus gustos y tu estilo antes de tomar la cámara.</p>
+      <p data-i18n="problema.p1">Quieres confiar en quienes van a fotografiar tu boda: en la calidad de su trabajo, en su calidez, su educación y en que no te hagan pasar vergüenza frente a tus invitados.</p>
+      <p data-i18n="problema.p2">Por eso trabajamos en pareja: mientras uno acompaña a los novios, el otro está en los detalles, las reacciones y la gente que más quieren. Así no se nos escapa ningún momento.</p>
+      <p data-i18n="problema.p3">Antes de la boda nos reunimos con ustedes para conocer sus gustos, su estilo y lo que necesitan. Así, el gran día ya sabemos qué fotos buscar.</p>
     </div>
   </div>
 </section>
@@ -473,12 +662,12 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       <div class="step">
         <span class="step-num" data-i18n="proceso.step1.num">Antes</span>
         <h3 data-i18n="proceso.step1.h3">Nos conocemos</h3>
-        <p data-i18n="proceso.step1.p">Reunión previa para hablar de tu historia, tus gustos y el estilo de fotos que quieres conservar para siempre, con asesoramiento de imagen incluido.</p>
+        <p data-i18n="proceso.step1.p">Hacemos una reunión previa para hablar de tu historia, tus gustos y el estilo de fotos que quieres conservar para siempre, con asesoramiento de imagen incluido.</p>
       </div>
       <div class="step">
         <span class="step-num" data-i18n="proceso.step2.num">El gran día</span>
-        <h3 data-i18n="proceso.step2.h3">Cobertura completa</h3>
-        <p data-i18n="proceso.step2.p">Making of, ceremonia y fiesta, con cobertura personalizada a cargo de 2 fotógrafos siempre atentos a los momentos reales y espontáneos.</p>
+        <h3 data-i18n="proceso.step2.h3">Cobertura personalizada</h3>
+        <p data-i18n="proceso.step2.p">Making of, ceremonia y fiesta según el paquete que elijas, cubiertos por nosotros dos: dos miradas atentas a los momentos reales y espontáneos.</p>
       </div>
       <div class="step">
         <span class="step-num" data-i18n="proceso.step3.num">Después</span>
@@ -493,7 +682,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
   <div class="wrap">
     <span class="eyebrow" data-i18n="promesa.eyebrow">Lo que está en juego</span>
     <h2 data-i18n="promesa.h2">Contratar al más barato puede costarte mucho más que dinero</h2>
-    <p data-i18n="promesa.p">Elegir por precio puede costarte los recuerdos que después no vas a poder recuperar. Nadie va a preocuparse por tu boda como yo.</p>
+    <p data-i18n="promesa.p">Elegir por precio puede costarte los recuerdos que después no vas a poder recuperar. Nadie va a preocuparse por tu boda como nosotros. Y tranqui: para tener un servicio espectacular con nosotros no hace falta pedir un préstamo al banco (ni a la suegra).</p>
   </div>
 </section>
 
@@ -532,22 +721,25 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
   </div>
   <div class="wrap">
     <div class="portafolio-cta">
-      <a href="galerias.html" class="btn" id="verGaleriaBtn" data-i18n="portafolio.galleriesBtn" onclick="if(window.FO_Track){FO_Track.vioGaleria();}">Ver galerías completas</a>
+      <a href="/galerias/" class="btn" id="verGaleriaBtn" data-i18n="portafolio.galleriesBtn" onclick="if(window.FO_Track){FO_Track.vioGaleria();}">Ver galerías completas</a>
     </div>
   </div>
 </section>
 
 <section class="sobre">
   <div class="wrap grid">
-    <div class="arch-frame">
-      <img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600669/FRX_6178_s8x5fs.jpg" data-i18n-alt="sobre.imgAlt" alt="Fernando Opoka, fotógrafo de bodas" loading="lazy">
+    <div class="arch-frame sobre-fader">
+      <img class="sobre-slide" src="https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_900,h_1200/Firefly_ponle_fondo_a_un_fondo_de_estudio_que_sea_neutrogris_oscuro_dagh83.png" srcset="https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_600,h_800/Firefly_ponle_fondo_a_un_fondo_de_estudio_que_sea_neutrogris_oscuro_dagh83.png 600w, https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_900,h_1200/Firefly_ponle_fondo_a_un_fondo_de_estudio_que_sea_neutrogris_oscuro_dagh83.png 900w" sizes="(min-width:768px) 40vw, 100vw" data-i18n-alt="sobre.imgAlt" alt="Fernando y Jackeline, fotógrafos de bodas" loading="lazy">
+      <img class="sobre-slide" src="https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_900,h_1200/Juntos_arvv0i.png" srcset="https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_600,h_800/Juntos_arvv0i.png 600w, https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_900,h_1200/Juntos_arvv0i.png 900w" sizes="(min-width:768px) 40vw, 100vw" aria-hidden="true" data-i18n-alt="sobre.imgAlt" alt="Fernando y Jackeline, fotógrafos de bodas" loading="lazy">
+      <img class="sobre-slide" src="https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_900,h_1200/aiao_jqwrfu.png" srcset="https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_600,h_800/aiao_jqwrfu.png 600w, https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_900,h_1200/aiao_jqwrfu.png 900w" sizes="(min-width:768px) 40vw, 100vw" aria-hidden="true" data-i18n-alt="sobre.imgAlt" alt="Fernando y Jackeline, fotógrafos de bodas" loading="lazy">
     </div>
     <div>
-      <span class="eyebrow" data-i18n="sobre.eyebrow">Sobre mí</span>
-      <h2>Fernando Opoka</h2>
-      <p data-i18n="sobre.p1">Llevo 9 años fotografiando bodas para parejas que quieren algo más que fotos básicas: quieren que alguien se preocupe genuinamente por su historia.</p>
-      <p data-i18n="sobre.p2">Trabajo con calidez, cercanía y con la certeza de que cada boda merece que alguien la mire con atención y respeto.</p>
-      <p class="credit" data-i18n="sobre.credit">Fotógrafo profesional de bodas</p>
+      <span class="eyebrow" data-i18n="sobre.eyebrow">Sobre nosotros</span>
+      <h2 data-i18n="sobre.h2">La pareja detrás de las fotos</h2>
+      <p data-i18n="sobre.p1">Fernando es fotógrafo profesional hace 9 años y Jackeline es nuestra segunda cámara y asesora de imagen.</p>
+      <p data-i18n-html="sobre.p2">Empezamos a fotografiar bodas porque nos apasionan las historias de las parejas, y porque nos dolía ver a tantos novios pasarla mal: fotógrafos que trataban mal a sus invitados, que tardaban meses en entregar o que entregaban fotos de mala calidad. Por eso decidimos fotografiar cada boda como si fuera <strong>la nuestra</strong>.</p>
+      <p data-i18n-html="sobre.p3">Además notamos un detalle importante: casi ningún fotógrafo le da importancia a la emoción de los padres o de los mejores amigos de los novios en los momentos más importantes. <strong>Para nosotros, esas reacciones también son parte de su historia.</strong></p>
+      <p class="credit" data-i18n="sobre.credit">Fotógrafos de bodas · Balneário Camboriú</p>
     </div>
   </div>
 </section>
@@ -574,8 +766,8 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
           <li data-i18n="pkg.mini.li3">Entrega en un plazo de 7 días</li>
           <li data-i18n="pkg.mini.li4">Más de 300 fotos del día de la boda</li>
           <li data-i18n="pkg.mini.li5">Galería online para descargar y compartir tus fotos</li>
-          <li data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
           <li data-i18n="pkg.mini.li7">Asesoramiento de imagen</li>
+          <li class="is-gift-item" data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
           <li class="not-included" data-i18n="pkg.mini.li8">Fotos editadas la misma noche de la boda</li>
           <li class="not-included" data-i18n="pkg.mini.li9">Álbum impreso de 25x25, regalo de 20 páginas</li>
         </ul>
@@ -597,9 +789,9 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
           <li data-i18n="pkg.mini.li3">Entrega en un plazo de 7 días</li>
           <li data-i18n="pkg.plus.li3">Más de 450 fotos del día de la boda</li>
           <li data-i18n="pkg.mini.li5">Galería online para descargar y compartir tus fotos</li>
-          <li data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
           <li data-i18n="pkg.mini.li7">Asesoramiento de imagen</li>
           <li data-i18n="pkg.plus.li4">10 fotos editadas la misma noche de la boda</li>
+          <li class="is-gift-item" data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
           <li class="is-gift-item" data-i18n="pkg.plus.li5">Álbum impreso de 25x25, 20 páginas de regalo (o 30 páginas con 15% off)</li>
         </ul>
         <button type="button" class="btn pkg-select" data-i18n="pkg.btn">Quiero este paquete</button>
@@ -620,9 +812,9 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
           <li data-i18n="pkg.mini.li3">Entrega en un plazo de 7 días</li>
           <li data-i18n="pkg.full.li3">Más de 600 fotos del día de la boda</li>
           <li data-i18n="pkg.mini.li5">Galería online para descargar y compartir tus fotos</li>
-          <li data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
           <li data-i18n="pkg.mini.li7">Asesoramiento de imagen</li>
           <li data-i18n="pkg.full.li4">25 fotos editadas la misma noche de la boda</li>
+          <li class="is-gift-item" data-i18n="pkg.mini.li6">Invitación digital de regalo</li>
           <li class="is-gift-item" data-i18n="pkg.full.li5">Álbum impreso de 25x25, 20 páginas de regalo (o 30 páginas con 50% off)</li>
         </ul>
         <button type="button" class="btn pkg-select" data-i18n="pkg.btn">Quiero este paquete</button>
@@ -676,6 +868,59 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
   </div>
 </section>
 
+<section class="analog" id="analogico" aria-labelledby="analogTitle">
+  <div class="vx-toggle-row">
+    <button type="button" class="vx-toggle" id="analogToggle" aria-expanded="false" aria-controls="analogPanel">
+      <span class="vx-toggle-box" aria-hidden="true">35mm</span>
+      <span class="vx-toggle-text"><strong data-i18n="analog.eyebrow">Servicio especial</strong><small data-i18n="analog.toggleSub">Fotos analógicas</small></span>
+      <span class="vx-chev" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 5 L7 10 L12 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </button>
+  </div>
+  <div class="vx-collapse" id="analogPanel" aria-hidden="true" inert>
+    <div class="vx-collapse-inner">
+      <div class="vx-stage">
+        <svg class="vx-art" viewBox="0 0 1600 860" aria-hidden="true" focusable="false"><defs><clipPath id="vxWipeD"><rect class="vx-wipe" x="0" y="-400" width="1600" height="4000"/><rect x="1600" y="-400" width="2000" height="4000"/><rect x="-2000" y="-400" width="2000" height="4000"/></clipPath></defs><path fill="var(--vx-ink)" d="M-554.0 1506.0 L206.9 745.0 L640.0 745.0 L648.5 744.4 L656.8 742.8 L664.9 740.1 L672.5 736.3 L679.6 731.6 L686.0 726.0 L926.9 485.0 L3200.0 485.0 L3200.0 3000.0 L-1400.0 3000.0 Z"/><g clip-path="url(#vxWipeD)"><path fill="var(--vx-y)" d="M-646.0 1414.0 L134.0 634.0 L140.4 628.4 L147.5 623.7 L155.1 619.9 L163.2 617.2 L171.5 615.6 L180.0 615.0 L613.1 615.0 L854.0 374.0 L860.4 368.4 L867.5 363.7 L875.1 359.9 L883.2 357.2 L891.5 355.6 L900.0 355.0 L3200.0 355.0 L3200.0 377.0 L900.0 377.0 L894.4 377.4 L888.9 378.5 L883.5 380.3 L878.5 382.8 L873.8 385.9 L869.6 389.6 L622.2 637.0 L180.0 637.0 L174.4 637.4 L168.9 638.5 L163.5 640.3 L158.5 642.8 L153.8 645.9 L149.6 649.6 L-630.4 1429.6 Z"/><path fill="var(--vx-o)" d="M-627.6 1432.4 L152.4 652.4 L156.3 649.1 L160.5 646.2 L165.1 644.0 L169.9 642.3 L174.9 641.3 L180.0 641.0 L623.8 641.0 L872.4 392.4 L876.3 389.1 L880.5 386.2 L885.1 384.0 L889.9 382.3 L894.9 381.3 L900.0 381.0 L3200.0 381.0 L3200.0 403.0 L900.0 403.0 L897.8 403.1 L895.6 403.6 L893.5 404.3 L891.5 405.3 L889.7 406.5 L888.0 408.0 L633.0 663.0 L180.0 663.0 L177.8 663.1 L175.6 663.6 L173.5 664.3 L171.5 665.3 L169.7 666.5 L168.0 668.0 L-612.0 1448.0 Z"/><path fill="var(--vx-r)" d="M-609.2 1450.8 L170.8 670.8 L172.1 669.7 L173.5 668.7 L175.0 668.0 L176.6 667.4 L178.3 667.1 L180.0 667.0 L634.6 667.0 L890.8 410.8 L892.1 409.7 L893.5 408.7 L895.0 408.0 L896.6 407.4 L898.3 407.1 L900.0 407.0 L3200.0 407.0 L3200.0 429.0 L903.7 429.0 L646.4 686.4 L645.5 687.1 L644.5 687.8 L643.4 688.3 L642.3 688.7 L641.2 688.9 L640.0 689.0 L183.7 689.0 L-593.6 1466.4 Z"/><path fill="var(--vx-m)" d="M-590.8 1469.2 L185.4 693.0 L640.0 693.0 L641.7 692.9 L643.4 692.6 L645.0 692.0 L646.5 691.3 L647.9 690.3 L649.2 689.2 L905.4 433.0 L3200.0 433.0 L3200.0 455.0 L914.5 455.0 L664.7 704.7 L661.3 707.8 L657.5 710.3 L653.4 712.3 L649.1 713.8 L644.6 714.7 L640.0 715.0 L194.5 715.0 L-575.3 1484.7 Z"/><path fill="var(--vx-p)" d="M-572.4 1487.6 L196.2 719.0 L640.0 719.0 L645.1 718.7 L650.1 717.7 L654.9 716.0 L659.5 713.8 L663.7 710.9 L667.6 707.6 L916.2 459.0 L3200.0 459.0 L3200.0 481.0 L925.3 481.0 L683.1 723.1 L677.1 728.4 L670.5 732.8 L663.3 736.4 L655.8 738.9 L648.0 740.5 L640.0 741.0 L205.3 741.0 L-556.9 1503.1 Z"/><text class="vx-sticker" font-size="17" transform="translate(722 482) rotate(-45)" data-i18n="analog.sticker">▶ ¡Nuevo!</text></g></svg>
+        <div class="vx-text">
+          <h2 class="vx-title" id="analogTitle">35<small>mm</small></h2>
+          <div class="vx-side">
+            <span class="vx-sub" data-i18n="analog.script">Fotos analógicas</span>
+            <div class="vx-tag">
+              <p class="vx-tag-text"><small data-i18n="analog.tagSmall">Como antes:</small><span data-i18n="analog.tagRed">Tu boda pintada con los colores de la película</span></p>
+              <span class="vx-dots" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <svg class="vx-band" viewBox="0 0 400 130" preserveAspectRatio="xMinYMax slice" aria-hidden="true" focusable="false"><defs><clipPath id="vxWipeM"><rect class="vx-wipe" x="0" y="-200" width="400" height="800"/><rect x="400" y="-200" width="2400" height="800"/></clipPath></defs><path fill="var(--vx-ink)" d="M-377.0 558.0 L53.5 127.5 L150.0 127.5 L154.2 127.2 L158.4 126.4 L162.4 125.0 L166.2 123.1 L169.8 120.8 L173.0 118.0 L218.5 72.5 L2400.0 72.5 L2400.0 3000.0 L-400.0 3000.0 Z"/><g clip-path="url(#vxWipeM)"><path fill="var(--vx-y)" d="M-423.0 512.0 L17.0 72.0 L20.2 69.2 L23.8 66.9 L27.6 65.0 L31.6 63.6 L35.8 62.8 L40.0 62.5 L136.5 62.5 L182.0 17.0 L185.2 14.2 L188.8 11.9 L192.6 10.0 L196.6 8.6 L200.8 7.8 L205.0 7.5 L2400.0 7.5 L2400.0 18.5 L205.0 18.5 L202.2 18.7 L199.4 19.2 L196.8 20.1 L194.2 21.4 L191.9 22.9 L189.8 24.8 L141.1 73.5 L40.0 73.5 L37.2 73.7 L34.4 74.2 L31.8 75.1 L29.2 76.4 L26.9 77.9 L24.8 79.8 L-415.2 519.8 Z"/><path fill="var(--vx-o)" d="M-413.8 521.2 L26.2 81.2 L28.1 79.5 L30.3 78.1 L32.5 77.0 L35.0 76.2 L37.5 75.7 L40.0 75.5 L141.9 75.5 L191.2 26.2 L193.1 24.5 L195.2 23.1 L197.5 22.0 L200.0 21.2 L202.5 20.7 L205.0 20.5 L2400.0 20.5 L2400.0 31.5 L205.0 31.5 L203.9 31.6 L202.8 31.8 L201.7 32.1 L200.8 32.6 L199.8 33.3 L199.0 34.0 L146.5 86.5 L40.0 86.5 L38.9 86.6 L37.8 86.8 L36.7 87.1 L35.8 87.6 L34.8 88.3 L34.0 89.0 L-406.0 529.0 Z"/><path fill="var(--vx-r)" d="M-404.6 530.4 L35.4 90.4 L36.0 89.8 L36.8 89.4 L37.5 89.0 L38.3 88.7 L39.2 88.6 L40.0 88.5 L147.3 88.5 L200.4 35.4 L201.0 34.8 L201.8 34.4 L202.5 34.0 L203.3 33.7 L204.2 33.6 L205.0 33.5 L2400.0 33.5 L2400.0 44.5 L206.9 44.5 L153.2 98.2 L152.7 98.6 L152.2 98.9 L151.7 99.2 L151.2 99.3 L150.6 99.5 L150.0 99.5 L41.9 99.5 L-396.8 538.2 Z"/><path fill="var(--vx-m)" d="M-395.4 539.6 L42.7 101.5 L150.0 101.5 L150.8 101.4 L151.7 101.3 L152.5 101.0 L153.2 100.6 L154.0 100.2 L154.6 99.6 L207.7 46.5 L2400.0 46.5 L2400.0 57.5 L212.2 57.5 L162.4 107.4 L160.7 108.9 L158.8 110.2 L156.7 111.2 L154.5 111.9 L152.3 112.4 L150.0 112.5 L47.2 112.5 L-387.6 547.4 Z"/><path fill="var(--vx-p)" d="M-386.2 548.8 L48.1 114.5 L150.0 114.5 L152.5 114.3 L155.0 113.8 L157.5 113.0 L159.8 111.9 L161.9 110.5 L163.8 108.8 L213.1 59.5 L2400.0 59.5 L2400.0 70.5 L217.6 70.5 L171.6 116.6 L168.6 119.2 L165.2 121.4 L161.7 123.2 L157.9 124.5 L154.0 125.2 L150.0 125.5 L52.6 125.5 L-378.4 556.6 Z"/></g></svg>
+        <div class="vx-bottom">
+          <div class="vx-info">
+            <p class="vx-lead" data-i18n="analog.lead">Además de tu paquete, sumá fotos hechas con una cámara analógica de verdad: película, grano y colores que ningún filtro puede imitar.</p>
+            <ul class="vx-list">
+              <li data-i18n="analog.li1">Cámara analógica con película real</li>
+              <li data-i18n="analog.li2">Colores y grano auténticos del film</li>
+              <li data-i18n="analog.li3">Se suma a cualquiera de los 3 paquetes</li>
+            </ul>
+          </div>
+          <div class="vx-card">
+            <div class="vx-card-head">
+              <span class="vx-box">35mm</span>
+              <p class="vx-card-title"><span data-i18n="analog.script">Fotos analógicas</span><small data-i18n="analog.cardSub">Se suma a cualquier paquete</small></p>
+            </div>
+            <div class="vx-price">
+              <span class="vx-price-big">R$ 1.180</span>
+              <span class="vx-price-meta"><span data-i18n="analog.rowCard">Tarjeta</span><br><span data-i18n="analog.installmentValue">6x R$ 196,67</span></span>
+            </div>
+            <p class="vx-pix" data-i18n="analog.pixLine">💚 Pix: R$ 1.000 (ahorrás R$ 180)</p>
+            <button type="button" class="analog-btn" id="analogBtn" aria-pressed="false" data-price-pix="1000" data-price-card="1180">Sumar a mi presupuesto</button>
+            <p class="analog-hint" data-i18n="analog.hint">Tocá de nuevo para quitarlo.</p>
+          </div>
+          <div class="vx-film" aria-hidden="true"><strong>FILM</strong><span>Color</span><span>35mm</span><span>Analog</span></div>
+        </div>
+      </div>
+      <div class="vx-fade" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
 <section class="payment-methods">
   <div class="wrap">
     <div class="section-head">
@@ -713,6 +958,10 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       <div class="budget-line" id="budgetExtraLine" hidden>
         <span id="budgetExtraLabel"></span>
         <span id="budgetExtraAmount"></span>
+      </div>
+      <div class="budget-line" id="budgetAnalogLine" hidden>
+        <span id="budgetAnalogLabel" data-i18n="budget.analogLabel">Fotos analógicas</span>
+        <span id="budgetAnalogAmount"></span>
       </div>
       <p class="budget-installments" id="budgetInstallments" hidden></p>
       <div class="budget-total" id="budgetTotalLine" hidden>
@@ -752,7 +1001,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
 </div>
 
 <div class="pkg-custom-band">
-  <p class="pkg-custom"><span data-i18n="custom.text">¿Ninguno se ajusta del todo? También armamos un paquete personalizado a tu medida.</span> <a href="https://wa.me/5547988821970" id="customPkgLink" target="_blank" rel="noopener" data-i18n="custom.link">Contame qué necesitás</a>.</p>
+  <p class="pkg-custom"><span data-i18n="custom.text">¿Ninguno se ajusta del todo? También armamos un paquete personalizado a tu medida.</span> <a href="https://wa.me/5547988821970" id="customPkgLink" target="_blank" rel="noopener" data-i18n="custom.link">Contanos qué necesitás</a>.</p>
 </div>
 
 <section class="cta-final" id="contacto">
@@ -760,22 +1009,16 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     <div class="section-head">
       <span class="eyebrow" data-i18n="cta.eyebrow">Agenda tu fecha</span>
       <h2 data-i18n="cta.h2">Conversemos sobre tu boda</h2>
-      <p class="intro" style="margin-left:auto; margin-right:auto;" data-i18n="cta.intro">Contame un poco de ustedes y de tu boda. Elegí un horario abajo, o escribime por WhatsApp o el formulario. Te respondo en menos de 8 horas.</p>
+      <p class="intro" style="margin-left:auto; margin-right:auto;" data-i18n="cta.intro">Contanos un poco de ustedes y de su boda. Escribinos por WhatsApp o completá el formulario. Te respondemos en menos de 8 horas.</p>
     </div>
 
-    <div class="cal-embed-wrap">
-      <div id="my-cal-inline"></div>
-    </div>
-    <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    </script>
 
     <div class="grid" style="margin-top:56px;">
       <div class="arch-frame">
         <img src="https://res.cloudinary.com/drfoww3ch/image/upload/v1777600668/Bere_Mati-178_tnpk93.jpg" data-i18n-alt="cta.imgAlt" alt="Novios el día de su boda" loading="lazy">
       </div>
       <div class="cta-text-col">
-        <p class="microcopy" style="margin:0 0 14px;" data-i18n="cta.preferOther">Escribime directo por WhatsApp:</p>
+        <p class="microcopy" style="margin:0 0 14px;" data-i18n="cta.preferOther">Escribinos directo por WhatsApp:</p>
 
       <form id="whatsappForm" class="mini-form">
         <div class="form-row two">
@@ -808,7 +1051,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
           <span data-i18n="cta.whatsappBtn">Agendar reunión por WhatsApp</span>
         </a>
       </form>
-      <p class="microcopy" data-i18n="form.microcopy">Sin compromiso. Respondo en menos de 8h.</p>
+      <p class="microcopy" data-i18n="form.microcopy">Sin compromiso. Respondemos en menos de 8h.</p>
     </div>
   </div>
 </div>
@@ -816,11 +1059,13 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
 
 <footer>
   <div class="wrap">
-    <div class="brand">Fernando Opoka Fotografía</div>
+    <div class="brand"><span class="brand-name" data-i18n="footer.brand">The Wedding Project</span><span class="brand-by" data-i18n="footer.by">Por Fernando Opoka</span></div>
     <div class="socials">
-      <a href="#" data-i18n-aria="footer.socialsAria" aria-label="Instagram de Fernando Opoka Fotografía">Instagram</a>
+      <a href="https://www.instagram.com/fernando.opoka.ph/" target="_blank" rel="noopener" data-i18n-aria="footer.socialsAria" aria-label="Instagram de The Wedding Project">Instagram</a>
+      <a href="/blog/" data-i18n="footer.blogLabel">Blog</a>
+      <a href="/privacidad.html" data-i18n="footer.privacyLabel">Política de Privacidad</a>
     </div>
-    <p class="fine" data-i18n="footer.fine">© 2026 Fernando Opoka Fotografía. Tus datos se usan únicamente para responder tu consulta.</p>
+    <p class="fine" data-i18n="footer.fine">© 2026 The Wedding Project · Fernando Opoka Fotografía. Tus datos se usan únicamente para responder tu consulta.</p>
   </div>
 </footer>
 
@@ -837,34 +1082,34 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     es: {
       'lang.switcher': '🌐 Idioma',
       'hero.imgAlt': 'Novios abrazados durante su casamiento, fotografía de Fernando Opoka',
-      'hero.eyebrow': 'Fotografía de casamiento con alma',
+      'hero.eyebrow': 'Fernando & Jackeline · 9 años fotografiando bodas',
       'hero.h1': '¿De verdad quieres contratar al fotógrafo más barato el día de tu casamiento?',
-      'hero.sub': 'Tu boda no se repite. Las fotos que la cuenten, tampoco deberían ser cualquier cosa.',
+      'hero.sub': 'Somos una pareja de fotógrafos: calidad, entrega rápida y personalizada, y una atención cercana, pensadas en lo que ustedes quieren, sienten y necesitan.',
       'hero.btn1': '¿Cuánto cuesta?',
       'hero.btn2': 'Quiero agendar una reunión',
       'hero.btn3': '¿Cómo es el método?',
-      'hero.microcopy': 'Sin compromiso. Te respondo en menos de 8h.',
+      'hero.microcopy': 'Sin compromiso. Te respondemos en menos de 8h.',
       'vsl.placeholder': 'Espacio reservado para tu VSL',
       'problema.imgAlt': 'Detalle emotivo de la ceremonia de boda',
       'problema.eyebrow': 'El problema',
       'problema.h2': 'Buscas algo más que fotos bonitas',
-      'problema.p1': 'Quieres confiar en tu fotógrafo: en la calidad de su trabajo, en su calidez, su educación y su amabilidad el día más importante de tu vida.',
-      'problema.p2': 'Busco hacerte fotos inolvidables, enfocadas en las emociones tuyas, de tu pareja y de las personas que más quieren.',
-      'problema.p3': 'Por eso, antes de tu boda, nos reunimos: quiero conocer tus gustos y tu estilo antes de tomar la cámara.',
+      'problema.p1': 'Quieres confiar en quienes van a fotografiar tu boda: en la calidad de su trabajo, en su calidez, su educación y en que no te hagan pasar vergüenza frente a tus invitados.',
+      'problema.p2': 'Por eso trabajamos en pareja: mientras uno acompaña a los novios, el otro está en los detalles, las reacciones y la gente que más quieren. Así no se nos escapa ningún momento.',
+      'problema.p3': 'Antes de la boda nos reunimos con ustedes para conocer sus gustos, su estilo y lo que necesitan. Así, el gran día ya sabemos qué fotos buscar.',
       'proceso.eyebrow': 'Cómo trabajamos',
       'proceso.h2': 'Un proceso pensado para que disfrutes tu día',
       'proceso.step1.num': 'Antes',
       'proceso.step1.h3': 'Nos conocemos',
-      'proceso.step1.p': 'Reunión previa para hablar de tu historia, tus gustos y el estilo de fotos que quieres conservar para siempre, con asesoramiento de imagen incluido.',
+      'proceso.step1.p': 'Hacemos una reunión previa para hablar de tu historia, tus gustos y el estilo de fotos que quieres conservar para siempre, con asesoramiento de imagen incluido.',
       'proceso.step2.num': 'El gran día',
-      'proceso.step2.h3': 'Cobertura completa',
-      'proceso.step2.p': 'Making of, ceremonia y fiesta, con cobertura personalizada a cargo de 2 fotógrafos siempre atentos a los momentos reales y espontáneos.',
+      'proceso.step2.h3': 'Cobertura personalizada',
+      'proceso.step2.p': 'Making of, ceremonia y fiesta según el paquete que elijas, cubiertos por nosotros dos: dos miradas atentas a los momentos reales y espontáneos.',
       'proceso.step3.num': 'Después',
       'proceso.step3.h3': 'Entrega sin esperas',
       'proceso.step3.p': 'Galería digital completa, sin límites, en 7 días. Según tu paquete, también hay opción de entrega inmediata de fotos la misma noche y álbumes impresos.',
       'promesa.eyebrow': 'Lo que está en juego',
       'promesa.h2': 'Contratar al más barato puede costarte mucho más que dinero',
-      'promesa.p': 'Elegir por precio puede costarte los recuerdos que después no vas a poder recuperar. Nadie va a preocuparse por tu boda como yo.',
+      'promesa.p': 'Elegir por precio puede costarte los recuerdos que después no vas a poder recuperar. Nadie va a preocuparse por tu boda como nosotros. Y tranqui: para tener un servicio espectacular con nosotros no hace falta pedir un préstamo al banco (ni a la suegra).',
       'portafolio.eyebrow': 'Portafolio',
       'portafolio.h2': 'Momentos auténticos',
       'portafolio.galleriesBtn': 'Ver galerías completas',
@@ -879,11 +1124,13 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'portafolio.alt17': 'Fotografía de boda 17', 'portafolio.alt18': 'Fotografía de boda 18',
       'portafolio.alt19': 'Fotografía de boda 19', 'portafolio.alt20': 'Fotografía de boda 20',
       'portafolio.alt21': 'Fotografía de boda 21', 'portafolio.alt22': 'Fotografía de boda 22',
-      'sobre.imgAlt': 'Fernando Opoka, fotógrafo de bodas',
-      'sobre.eyebrow': 'Sobre mí',
-      'sobre.p1': 'Llevo 9 años fotografiando bodas para parejas que quieren algo más que fotos básicas: quieren que alguien se preocupe genuinamente por su historia.',
-      'sobre.p2': 'Trabajo con calidez, cercanía y con la certeza de que cada boda merece que alguien la mire con atención y respeto.',
-      'sobre.credit': 'Fotógrafo profesional de bodas',
+      'sobre.imgAlt': 'Fernando y Jackeline, fotógrafos de bodas',
+      'sobre.eyebrow': 'Sobre nosotros',
+      'sobre.h2': 'La pareja detrás de las fotos',
+      'sobre.p1': 'Fernando es fotógrafo profesional hace 9 años y Jackeline es nuestra segunda cámara y asesora de imagen.',
+      'sobre.p2': 'Empezamos a fotografiar bodas porque nos apasionan las historias de las parejas, y porque nos dolía ver a tantos novios pasarla mal: fotógrafos que trataban mal a sus invitados, que tardaban meses en entregar o que entregaban fotos de mala calidad. Por eso decidimos fotografiar cada boda como si fuera <strong>la nuestra</strong>.',
+      'sobre.p3': 'Además notamos un detalle importante: casi ningún fotógrafo le da importancia a la emoción de los padres o de los mejores amigos de los novios en los momentos más importantes. <strong>Para nosotros, esas reacciones también son parte de su historia.</strong>',
+      'sobre.credit': 'Fotógrafos de bodas · Balneário Camboriú',
       'paquetes.eyebrow': 'Paquetes',
       'paquetes.h2': 'Elegí cómo quieres vivir tu día',
       'pkg.mini.eyebrow': 'Paquete 1',
@@ -945,7 +1192,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'budget.noAlbum': 'Sin álbum',
       'spotlight.hint': 'Elige una opción para continuar',
       'custom.text': '¿Ninguno se ajusta del todo? También armamos un paquete personalizado a tu medida.',
-      'custom.link': 'Contame qué necesitás',
+      'custom.link': 'Contanos qué necesitás',
       'payment.eyebrow': 'Cómo pagar',
       'payment.h2': 'Elegí tu método de pago',
       'payment.cardTitle1': 'Tarjeta de crédito',
@@ -961,11 +1208,31 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'extras.pixPrice20': 'Pix: R$ 1.300',
       'extras.pixPrice30': 'Pix: R$ 1.900',
       'extras.pixPrice40': 'Pix: R$ 2.200',
+      'analog.eyebrow': 'Servicio especial',
+      'analog.script': 'Fotos analógicas',
+      'analog.sticker': '▶ ¡Nuevo!',
+      'analog.rowCard': 'Tarjeta',
+      'analog.installmentValue': '6x R$ 196,67',
+      'analog.lead': 'Además de tu paquete, sumá fotos hechas con una cámara analógica de verdad: película, grano y colores que ningún filtro puede imitar.',
+      'analog.li1': 'Cámara analógica con película real',
+      'analog.li2': 'Colores y grano auténticos del film',
+      'analog.li3': 'Se suma a cualquiera de los 3 paquetes',
+      'analog.btnAdd': 'Sumar a mi presupuesto',
+      'analog.btnAdded': '✓ Sumado a tu presupuesto',
+      'analog.tagSmall': 'Como antes:',
+      'analog.tagRed': 'Tu boda pintada con los colores de la película',
+      'analog.cardSub': 'Se suma a cualquier paquete',
+      'analog.pixLine': '💚 Pix: R$ 1.000 (ahorrás R$ 180)',
+      'analog.toggleSub': 'Fotos analógicas',
+      'analog.hint': 'Tocá de nuevo para quitarlo.',
+      'budget.analogLabel': 'Fotos analógicas',
+      'wa.withAnalog': ' + fotos analógicas',
+      'wa.wantsAnalog': 'quiero consultar por el servicio de fotos analógicas.',
       'cta.eyebrow': 'Agenda tu fecha',
       'cta.h2': 'Conversemos sobre tu boda',
-      'cta.intro': 'Contame un poco de ustedes y de tu boda. Elegí un horario abajo, o escribime por WhatsApp o el formulario. Te respondo en menos de 8 horas.',
+      'cta.intro': 'Contanos un poco de ustedes y de su boda. Escribinos por WhatsApp o completá el formulario. Te respondemos en menos de 8 horas.',
       'cta.imgAlt': 'Novios el día de su boda',
-      'cta.preferOther': 'Escribime directo por WhatsApp:',
+      'cta.preferOther': 'Escribinos directo por WhatsApp:',
       'cta.whatsappBtn': 'Agendar reunión por WhatsApp',
       'form.nombre': 'Tu nombre',
       'form.pareja': 'Nombre de tu pareja',
@@ -974,17 +1241,25 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'form.fechaPlaceholder': 'Ej. 12 de octubre, Buenos Aires',
       'form.mensaje': 'Contanos un poco más',
       'form.submit': 'Enviar por WhatsApp',
-      'form.microcopy': 'Sin compromiso. Respondo en menos de 8h.',
-      'footer.socialsAria': 'Instagram de Fernando Opoka Fotografía',
-      'footer.fine': '© 2026 Fernando Opoka Fotografía. Tus datos se usan únicamente para responder tu consulta.',
+      'form.microcopy': 'Sin compromiso. Respondemos en menos de 8h.',
+      'footer.socialsAria': 'Instagram de The Wedding Project',
+      'footer.fine': '© 2026 The Wedding Project · Fernando Opoka Fotografía. Tus datos se usan únicamente para responder tu consulta.',
       'lightbox.close': 'Cerrar imagen ampliada',
       'lightbox.ariaLabel': 'Ampliar foto',
+      'twp.top': 'Fotografía de bodas',
+      'twp.tag': 'Tu boda, como si fuera la nuestra.',
+      'twp.sideL': 'Nº 01 — Balneário Camboriú',
+      'twp.sideR': '2 cámaras · 0 momentos perdidos',
+      'footer.brand': 'The Wedding Project',
+      'footer.by': 'Por Fernando Opoka',
+      'footer.blogLabel': 'Blog',
+      'footer.privacyLabel': 'Política de Privacidad',
       'wa.greetingName': 'Hola, soy {name}, ',
       'wa.greetingGeneric': 'Hola, ',
       'wa.wantsPkg': 'quiero consultar por el paquete {pkg}',
       'wa.withAlbum': ' con el álbum de {album}',
-      'wa.generic': 'quiero consultar por tus paquetes de fotografía de bodas.',
-      'wa.custom': 'no encontré un paquete que se ajuste del todo a lo que busco. ¿Podemos armar algo a mi medida? Te cuento un poco qué necesito: ',
+      'wa.generic': 'quiero consultar por sus paquetes de fotografía de bodas.',
+      'wa.custom': 'no encontré un paquete que se ajuste del todo a lo que busco. ¿Podemos armar algo a mi medida? Les cuento un poco qué necesito: ',
       'wa.partner': 'Pareja: {partner}.',
       'wa.date': 'Fecha y lugar: {date}.',
       'wa.email': 'Mi correo: {email}.',
@@ -993,34 +1268,34 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     pt: {
       'lang.switcher': '🌐 Idioma',
       'hero.imgAlt': 'Noivos abraçados durante o casamento, fotografia de Fernando Opoka',
-      'hero.eyebrow': 'Fotografia de casamento com alma',
+      'hero.eyebrow': 'Fernando & Jackeline · 9 anos fotografando casamentos',
       'hero.h1': 'Você realmente quer contratar o fotógrafo mais barato no dia do seu casamento?',
-      'hero.sub': 'Seu casamento não se repete. As fotos que vão contá-lo também não deveriam ser qualquer coisa.',
+      'hero.sub': 'Somos um casal de fotógrafos: qualidade, entrega rápida e personalizada e um atendimento próximo, pensados no que vocês querem, sentem e precisam.',
       'hero.btn1': 'Quanto custa?',
       'hero.btn2': 'Quero agendar uma reunião',
       'hero.btn3': 'Como funciona o método?',
-      'hero.microcopy': 'Sem compromisso. Respondo em menos de 8h.',
+      'hero.microcopy': 'Sem compromisso. Respondemos em menos de 8h.',
       'vsl.placeholder': 'Espaço reservado para o seu VSL',
       'problema.imgAlt': 'Detalhe emocionante da cerimônia de casamento',
       'problema.eyebrow': 'O problema',
       'problema.h2': 'Você busca mais do que fotos bonitas',
-      'problema.p1': 'Você quer confiar no seu fotógrafo: na qualidade do trabalho, na sua calidez, educação e gentileza no dia mais importante da sua vida.',
-      'problema.p2': 'Busco fazer fotos inesquecíveis, focadas nas emoções de vocês e das pessoas que mais amam.',
-      'problema.p3': 'Por isso, antes do casamento, nos encontramos: quero conhecer seus gostos e seu estilo antes de pegar a câmera.',
+      'problema.p1': 'Você quer confiar em quem vai fotografar o seu casamento: na qualidade do trabalho, na calidez, na educação e em que não te façam passar vergonha na frente dos convidados.',
+      'problema.p2': 'Por isso trabalhamos em casal: enquanto um acompanha os noivos, o outro fica nos detalhes, nas reações e nas pessoas que vocês mais amam. Assim nenhum momento escapa.',
+      'problema.p3': 'Antes do casamento nos reunimos com vocês para conhecer seus gostos, seu estilo e o que vocês precisam. Assim, no grande dia, já sabemos quais fotos buscar.',
       'proceso.eyebrow': 'Como trabalhamos',
       'proceso.h2': 'Um processo pensado para você aproveitar o seu dia',
       'proceso.step1.num': 'Antes',
       'proceso.step1.h3': 'Nos conhecemos',
-      'proceso.step1.p': 'Reunião prévia para falar da sua história, dos seus gostos e do estilo de fotos que você quer guardar para sempre, com consultoria de imagem incluída.',
+      'proceso.step1.p': 'Fazemos uma reunião prévia para falar da sua história, dos seus gostos e do estilo de fotos que você quer guardar para sempre, com consultoria de imagem incluída.',
       'proceso.step2.num': 'O grande dia',
-      'proceso.step2.h3': 'Cobertura completa',
-      'proceso.step2.p': 'Making of, cerimônia e festa, com cobertura personalizada de 2 fotógrafos sempre atentos aos momentos reais e espontâneos.',
+      'proceso.step2.h3': 'Cobertura personalizada',
+      'proceso.step2.p': 'Making of, cerimônia e festa de acordo com o pacote que vocês escolherem, cobertos por nós dois: dois olhares atentos aos momentos reais e espontâneos.',
       'proceso.step3.num': 'Depois',
       'proceso.step3.h3': 'Entrega sem demora',
       'proceso.step3.p': 'Galeria digital completa, sem limites, em 7 dias. Dependendo do seu pacote, também há opção de entrega imediata de fotos na mesma noite e álbuns impressos.',
       'promesa.eyebrow': 'O que está em jogo',
       'promesa.h2': 'Contratar o mais barato pode custar muito mais do que dinheiro',
-      'promesa.p': 'Escolher pelo preço pode custar as lembranças que depois você não vai conseguir recuperar. Ninguém vai se importar com o seu casamento como eu.',
+      'promesa.p': 'Escolher pelo preço pode custar as lembranças que depois você não vai conseguir recuperar. Ninguém vai se importar com o seu casamento como nós. E fica tranquilo: para ter um serviço espetacular com a gente não precisa pedir empréstimo no banco (nem pra sogra).',
       'portafolio.eyebrow': 'Portfólio',
       'portafolio.h2': 'Momentos autênticos',
       'portafolio.galleriesBtn': 'Ver galerias completas',
@@ -1035,11 +1310,13 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'portafolio.alt17': 'Fotografia de casamento 17', 'portafolio.alt18': 'Fotografia de casamento 18',
       'portafolio.alt19': 'Fotografia de casamento 19', 'portafolio.alt20': 'Fotografia de casamento 20',
       'portafolio.alt21': 'Fotografia de casamento 21', 'portafolio.alt22': 'Fotografia de casamento 22',
-      'sobre.imgAlt': 'Fernando Opoka, fotógrafo de casamentos',
-      'sobre.eyebrow': 'Sobre mim',
-      'sobre.p1': 'Há 9 anos fotografo casamentos para casais que querem mais do que fotos básicas: querem que alguém se importe genuinamente com a história deles.',
-      'sobre.p2': 'Trabalho com calor humano, proximidade e a certeza de que cada casamento merece que alguém o olhe com atenção e respeito.',
-      'sobre.credit': 'Fotógrafo profissional de casamentos',
+      'sobre.imgAlt': 'Fernando e Jackeline, fotógrafos de casamento',
+      'sobre.eyebrow': 'Sobre nós',
+      'sobre.h2': 'O casal por trás das fotos',
+      'sobre.p1': 'O Fernando é fotógrafo profissional há 9 anos e a Jackeline é nossa segunda câmera e consultora de imagem.',
+      'sobre.p2': 'Começamos a fotografar casamentos porque somos apaixonados pelas histórias dos casais, e porque doía ver tantos noivos passando por situações ruins: fotógrafos que tratavam mal os convidados, que demoravam meses para entregar ou que entregavam fotos de baixa qualidade. Por isso decidimos fotografar cada casamento como se fosse <strong>o nosso</strong>.',
+      'sobre.p3': 'Além disso, percebemos um detalhe importante: quase nenhum fotógrafo dá importância à emoção dos pais ou dos melhores amigos dos noivos nos momentos mais importantes. <strong>Para nós, essas reações também fazem parte da história de vocês.</strong>',
+      'sobre.credit': 'Fotógrafos de casamento · Balneário Camboriú',
       'paquetes.eyebrow': 'Pacotes',
       'paquetes.h2': 'Escolha como quer viver o seu dia',
       'pkg.mini.eyebrow': 'Pacote 1',
@@ -1101,7 +1378,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'budget.noAlbum': 'Sem álbum',
       'spotlight.hint': 'Escolha uma opção para continuar',
       'custom.text': 'Nenhum se encaixa totalmente? Também montamos um pacote personalizado sob medida.',
-      'custom.link': 'Me conte o que você precisa',
+      'custom.link': 'Conte pra gente o que você precisa',
       'payment.eyebrow': 'Como pagar',
       'payment.h2': 'Escolha sua forma de pagamento',
       'payment.cardTitle1': 'Cartão de crédito',
@@ -1117,11 +1394,31 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'extras.pixPrice20': 'Pix: R$ 1.300',
       'extras.pixPrice30': 'Pix: R$ 1.900',
       'extras.pixPrice40': 'Pix: R$ 2.200',
+      'analog.eyebrow': 'Serviço especial',
+      'analog.script': 'Fotos analógicas',
+      'analog.sticker': '▶ Novo!',
+      'analog.rowCard': 'Cartão',
+      'analog.installmentValue': '6x R$ 196,67',
+      'analog.lead': 'Além do seu pacote, adicione fotos feitas com uma câmera analógica de verdade: filme, grão e cores que nenhum filtro consegue imitar.',
+      'analog.li1': 'Câmera analógica com filme de verdade',
+      'analog.li2': 'Cores e grão autênticos do filme',
+      'analog.li3': 'Pode ser adicionado a qualquer um dos 3 pacotes',
+      'analog.btnAdd': 'Adicionar ao meu orçamento',
+      'analog.btnAdded': '✓ Adicionado ao orçamento',
+      'analog.tagSmall': 'Como antigamente:',
+      'analog.tagRed': 'Seu casamento pintado com as cores do filme',
+      'analog.cardSub': 'Pode ser somado a qualquer pacote',
+      'analog.pixLine': '💚 Pix: R$ 1.000 (economize R$ 180)',
+      'analog.toggleSub': 'Fotos analógicas',
+      'analog.hint': 'Toque de novo para remover.',
+      'budget.analogLabel': 'Fotos analógicas',
+      'wa.withAnalog': ' + fotos analógicas',
+      'wa.wantsAnalog': 'quero saber mais sobre o serviço de fotos analógicas.',
       'cta.eyebrow': 'Marque sua data',
       'cta.h2': 'Vamos conversar sobre o seu casamento',
-      'cta.intro': 'Me conte um pouco sobre vocês e sobre o casamento. Se escolher uma data e horário abaixo, você já agenda uma reunião comigo; se preferir, também pode me escrever direto pelo WhatsApp. Respondo em menos de 8 horas.',
+      'cta.intro': 'Contem um pouco sobre vocês e sobre o casamento. Escrevam pelo WhatsApp ou preencham o formulário. Respondemos em menos de 8 horas.',
       'cta.imgAlt': 'Noivos no dia do casamento',
-      'cta.preferOther': 'Me escreva direto pelo WhatsApp:',
+      'cta.preferOther': 'Escreva direto pra gente pelo WhatsApp:',
       'cta.whatsappBtn': 'Agendar reunião pelo WhatsApp',
       'form.nombre': 'Seu nome',
       'form.pareja': 'Nome do seu par',
@@ -1130,17 +1427,25 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'form.fechaPlaceholder': 'Ex.: 12 de outubro, Florianópolis',
       'form.mensaje': 'Conte um pouco mais',
       'form.submit': 'Enviar pelo WhatsApp',
-      'form.microcopy': 'Sem compromisso. Respondo em menos de 8h.',
-      'footer.socialsAria': 'Instagram do Fernando Opoka Fotografia',
-      'footer.fine': '© 2026 Fernando Opoka Fotografia. Seus dados são usados apenas para responder à sua consulta.',
+      'form.microcopy': 'Sem compromisso. Respondemos em menos de 8h.',
+      'footer.socialsAria': 'Instagram do The Wedding Project',
+      'footer.fine': '© 2026 The Wedding Project · Fernando Opoka Fotografia. Seus dados são usados apenas para responder à sua consulta.',
       'lightbox.close': 'Fechar imagem ampliada',
       'lightbox.ariaLabel': 'Ampliar foto',
+      'twp.top': 'Fotografia de casamento',
+      'twp.tag': 'O seu casamento, como se fosse o nosso.',
+      'twp.sideL': 'Nº 01 — Balneário Camboriú',
+      'twp.sideR': '2 câmeras · 0 momentos perdidos',
+      'footer.brand': 'The Wedding Project',
+      'footer.by': 'Por Fernando Opoka',
+      'footer.blogLabel': 'Blog',
+      'footer.privacyLabel': 'Política de Privacidade',
       'wa.greetingName': 'Olá, sou {name}, ',
       'wa.greetingGeneric': 'Olá, ',
       'wa.wantsPkg': 'quero saber mais sobre o pacote {pkg}',
       'wa.withAlbum': ' com o álbum de {album}',
-      'wa.generic': 'quero saber mais sobre os pacotes de fotografia de casamento.',
-      'wa.custom': 'não encontrei um pacote que combine totalmente com o que eu preciso. Podemos montar algo sob medida? Vou te contar um pouco o que estou buscando: ',
+      'wa.generic': 'quero saber mais sobre os pacotes de fotografia de casamento de vocês.',
+      'wa.custom': 'não encontrei um pacote que combine totalmente com o que eu preciso. Podemos montar algo sob medida? Vou contar pra vocês um pouco o que estou buscando: ',
       'wa.partner': 'Parceiro(a): {partner}.',
       'wa.date': 'Data e local: {date}.',
       'wa.email': 'Meu e-mail: {email}.',
@@ -1149,34 +1454,34 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     en: {
       'lang.switcher': '🌐 Language',
       'hero.imgAlt': 'Newlyweds embracing at their wedding, photography by Fernando Opoka',
-      'hero.eyebrow': 'Wedding photography with soul',
+      'hero.eyebrow': 'Fernando & Jackeline · 9 years photographing weddings',
       'hero.h1': 'Do you really want to hire the cheapest photographer for your wedding day?',
-      'hero.sub': "Your wedding won't happen twice. The photos that tell its story shouldn't be an afterthought either.",
+      'hero.sub': "We're a photographer couple: quality, fast and personalized delivery, and close, caring service, built around what you want, feel and need.",
       'hero.btn1': 'How much does it cost?',
       'hero.btn2': "I'd like to book a meeting",
       'hero.btn3': 'How does the process work?',
-      'hero.microcopy': "No commitment. I'll reply within 8h.",
+      'hero.microcopy': "No commitment. We'll reply within 8h.",
       'vsl.placeholder': 'Space reserved for your VSL',
       'problema.imgAlt': 'Emotional moment from the wedding ceremony',
       'problema.eyebrow': 'The problem',
       'problema.h2': "You're looking for more than pretty pictures",
-      'problema.p1': 'You want to trust your photographer: in the quality of their work, their warmth, professionalism, and kindness on the most important day of your life.',
-      'problema.p2': "I aim to create unforgettable photos, focused on your emotions, your partner's, and the people you love most.",
-      'problema.p3': "That's why, before your wedding, we meet: I want to get to know your taste and style before ever picking up the camera.",
+      'problema.p1': "You want to trust the people photographing your wedding: the quality of their work, their warmth, their manners, and that they won't embarrass you in front of your guests.",
+      'problema.p2': "That's why we work as a couple: while one of us stays with the newlyweds, the other catches the details, the reactions and the people you love most. Nothing slips past us.",
+      'problema.p3': 'Before the wedding we meet with you to get to know your taste, your style and what you need. That way, on the big day, we already know which photos to look for.',
       'proceso.eyebrow': 'How we work',
       'proceso.h2': 'A process designed for you to enjoy your day',
       'proceso.step1.num': 'Before',
       'proceso.step1.h3': 'We get to know each other',
-      'proceso.step1.p': 'A prior meeting to talk about your story, your taste, and the photo style you want to keep forever, including image consulting.',
+      'proceso.step1.p': 'We hold a prior meeting to talk about your story, your taste and the photo style you want to keep forever, including image consulting.',
       'proceso.step2.num': 'The big day',
-      'proceso.step2.h3': 'Full coverage',
-      'proceso.step2.p': 'Getting-ready photos, ceremony and reception, with personalized coverage by 2 photographers always watching for real, spontaneous moments.',
+      'proceso.step2.h3': 'Personalized coverage',
+      'proceso.step2.p': 'Getting-ready, ceremony and reception depending on the package you choose, covered by the two of us: two sets of eyes on every real, spontaneous moment.',
       'proceso.step3.num': 'Afterward',
       'proceso.step3.h3': 'No-wait delivery',
       'proceso.step3.p': 'A complete, unlimited digital gallery within 7 days. Depending on your package, same-night photo delivery and printed albums are also available.',
       'promesa.eyebrow': "What's at stake",
       'promesa.h2': 'Hiring the cheapest option can cost you far more than money',
-      'promesa.p': "Choosing by price can cost you memories you won't be able to get back later. No one will care about your wedding the way I will.",
+      'promesa.p': "Choosing by price can cost you memories you won't be able to get back later. No one will care about your wedding the way we will. And relax: getting a spectacular service from us doesn't require a bank loan (or borrowing from your in-laws).",
       'portafolio.eyebrow': 'Portfolio',
       'portafolio.h2': 'Genuine moments',
       'portafolio.galleriesBtn': 'See full galleries',
@@ -1191,11 +1496,13 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'portafolio.alt17': 'Wedding photo 17', 'portafolio.alt18': 'Wedding photo 18',
       'portafolio.alt19': 'Wedding photo 19', 'portafolio.alt20': 'Wedding photo 20',
       'portafolio.alt21': 'Wedding photo 21', 'portafolio.alt22': 'Wedding photo 22',
-      'sobre.imgAlt': 'Fernando Opoka, wedding photographer',
-      'sobre.eyebrow': 'About me',
-      'sobre.p1': "I've spent 9 years photographing weddings for couples who want more than basic photos: they want someone who genuinely cares about their story.",
-      'sobre.p2': 'I work with warmth and closeness, knowing every wedding deserves to be seen with care and respect.',
-      'sobre.credit': 'Professional wedding photographer',
+      'sobre.imgAlt': 'Fernando and Jackeline, wedding photographers',
+      'sobre.eyebrow': 'About us',
+      'sobre.h2': 'The couple behind the photos',
+      'sobre.p1': 'Fernando has been a professional photographer for 9 years, and Jackeline is our second shooter and image consultant.',
+      'sobre.p2': 'We started photographing weddings because we love couples\' stories, and because it hurt to see so many couples have a bad time: photographers who were rude to their guests, took months to deliver, or delivered poor-quality photos. So we decided to photograph every wedding as if it were <strong>our own</strong>.',
+      'sobre.p3': 'We also noticed something important: almost no photographer pays attention to the emotion of the couple\'s parents or best friends in the biggest moments. <strong>To us, those reactions are part of your story too.</strong>',
+      'sobre.credit': 'Wedding photographers · Balneário Camboriú',
       'paquetes.eyebrow': 'Packages',
       'paquetes.h2': 'Choose how you want to live your day',
       'pkg.mini.eyebrow': 'Package 1',
@@ -1257,7 +1564,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'budget.noAlbum': 'No album',
       'spotlight.hint': 'Choose an option to continue',
       'custom.text': "None of these quite fit? We also put together a custom package tailored to you.",
-      'custom.link': "Tell me what you need",
+      'custom.link': 'Tell us what you need',
       'payment.eyebrow': 'How to pay',
       'payment.h2': 'Choose your payment method',
       'payment.cardTitle1': 'Credit card',
@@ -1273,11 +1580,31 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'extras.pixPrice20': 'Pix: R$ 1,300',
       'extras.pixPrice30': 'Pix: R$ 1,900',
       'extras.pixPrice40': 'Pix: R$ 2,200',
+      'analog.eyebrow': 'Special service',
+      'analog.script': 'Analog photos',
+      'analog.sticker': '▶ New!',
+      'analog.rowCard': 'Card',
+      'analog.installmentValue': '6x R$196.67',
+      'analog.lead': 'On top of your package, add photos shot on a real analog camera: film, grain and colors no filter can imitate.',
+      'analog.li1': 'Analog camera with real film',
+      'analog.li2': 'Authentic film colors and grain',
+      'analog.li3': 'Can be added to any of the 3 packages',
+      'analog.btnAdd': 'Add to my quote',
+      'analog.btnAdded': '✓ Added to your quote',
+      'analog.tagSmall': 'Like the old days:',
+      'analog.tagRed': 'Your wedding painted in film colors',
+      'analog.cardSub': 'Add it to any package',
+      'analog.pixLine': '💚 Pix: R$ 1,000 (save R$ 180)',
+      'analog.toggleSub': 'Analog photos',
+      'analog.hint': 'Tap again to remove it.',
+      'budget.analogLabel': 'Analog photos',
+      'wa.withAnalog': ' + analog photos',
+      'wa.wantsAnalog': "I'd like to ask about the analog photo service.",
       'cta.eyebrow': 'Book your date',
       'cta.h2': "Let's talk about your wedding",
-      'cta.intro': "Tell me a bit about you and your wedding. Picking a date and time below books a meeting with me directly; if you'd rather, you can also message me directly on WhatsApp. I'll reply within 8 hours.",
+      'cta.intro': "Tell us a bit about you and your wedding. Message us on WhatsApp or fill out the form. We'll reply within 8 hours.",
       'cta.imgAlt': 'Newlyweds on their wedding day',
-      'cta.preferOther': 'Message me directly on WhatsApp:',
+      'cta.preferOther': 'Message us directly on WhatsApp:',
       'cta.whatsappBtn': 'Book a meeting on WhatsApp',
       'form.nombre': 'Your name',
       'form.pareja': "Your partner's name",
@@ -1286,11 +1613,19 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       'form.fechaPlaceholder': 'E.g. October 12th, Miami',
       'form.mensaje': 'Tell us a bit more',
       'form.submit': 'Send via WhatsApp',
-      'form.microcopy': "No commitment. I'll reply within 8h.",
-      'footer.socialsAria': 'Instagram for Fernando Opoka Fotografía',
-      'footer.fine': '© 2026 Fernando Opoka Fotografía. Your data is used only to respond to your inquiry.',
+      'form.microcopy': "No commitment. We'll reply within 8h.",
+      'footer.socialsAria': 'The Wedding Project on Instagram',
+      'footer.fine': '© 2026 The Wedding Project · Fernando Opoka Fotografía. Your data is used only to respond to your inquiry.',
       'lightbox.close': 'Close enlarged image',
       'lightbox.ariaLabel': 'Enlarge photo',
+      'twp.top': 'Wedding photography',
+      'twp.tag': 'Your wedding, as if it were our own.',
+      'twp.sideL': 'Nº 01 — Balneário Camboriú',
+      'twp.sideR': '2 cameras · 0 missed moments',
+      'footer.brand': 'The Wedding Project',
+      'footer.by': 'By Fernando Opoka',
+      'footer.blogLabel': 'Blog',
+      'footer.privacyLabel': 'Privacy Policy',
       'wa.greetingName': "Hi, I'm {name}, ",
       'wa.greetingGeneric': 'Hi, ',
       'wa.wantsPkg': "I'd like to ask about the {pkg} package",
@@ -1326,61 +1661,6 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     return pageLabelText(name);
   }
 
-  var calInitialized = false;
-  function initCalEmbedOnce(lang){
-    if(calInitialized || typeof Cal !== 'function') return;
-    calInitialized = true;
-    var calLangParam = lang === 'pt' ? 'pt-BR' : (lang === 'en' ? 'en' : 'es');
-    // event_id de Lead/Schedule generado ANTES de abrir el embed, para que
-    // viaje a Cal.com como metadata y netlify/functions/cal-webhook.js lo
-    // pueda reusar al mandar el mismo evento por CAPI.
-    var bookingMeta = window.FO_Track ? window.FO_Track.prepareBookingMetadata() : null;
-    var calConfig = { "theme": "light", "layout": "month_view" };
-    if(bookingMeta){
-      calConfig["metadata[eventIdLead]"] = bookingMeta.eventIdLead;
-      calConfig["metadata[eventIdSchedule]"] = bookingMeta.eventIdSchedule;
-      if(bookingMeta.fbp){ calConfig["metadata[fbp]"] = bookingMeta.fbp; }
-      if(bookingMeta.fbc){ calConfig["metadata[fbc]"] = bookingMeta.fbc; }
-    }
-    Cal("init", {origin:"https://cal.com"});
-    Cal("inline", {
-      elementOrSelector:"#my-cal-inline",
-      calLink: "fernando-opoka/prueba?lang=" + calLangParam,
-      layout: "month_view",
-      config: calConfig
-    });
-    Cal("ui", {
-      theme: "light",
-      styles: {branding:{brandColor:"#A98A5D"}},
-      cssVarsPerTheme: {
-        light: {
-          "cal-brand": "#A98A5D",
-          "cal-brand-emphasis": "#8B6F47",
-          "cal-brand-text": "#F7F2EA",
-          "cal-bg": "#F7F2EA",
-          "cal-bg-emphasis": "#EFE6D6",
-          "cal-bg-muted": "#F1E4CE",
-          "cal-border": "#E3D6BE",
-          "cal-border-emphasis": "#C9AE85",
-          "cal-text": "#332B24",
-          "cal-text-emphasis": "#332B24",
-          "cal-text-subtle": "#5C5245"
-        }
-      },
-      hideEventTypeDetails: false
-    });
-    // Dispara Lead + Schedule EN EL NAVEGADOR, cada uno con el mismo
-    // event_id que ya viajó arriba como metadata. netlify/functions/cal-webhook.js
-    // manda el mismo evento por CAPI del lado del servidor reusando ese
-    // mismo event_id: Meta deduplica en una sola conversión, no dos.
-    Cal("on", {
-      action: "bookingSuccessful",
-      callback: function(){
-        if(window.FO_Track){ FO_Track.confirmBooking(); }
-      }
-    });
-  }
-
   function applyLanguage(lang){
     if(!LANG[lang]) lang = 'es';
     currentLang = lang;
@@ -1401,8 +1681,6 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
       el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
     });
-
-    initCalEmbedOnce(lang);
 
     if(window.FO_rerenderDynamic){ window.FO_rerenderDynamic(); }
   }
@@ -1695,7 +1973,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     }
 
     function pulseAmounts(){
-      [budgetPkgAmount, budgetExtraAmount, budgetSubtotal, budgetInstallments,
+      [budgetPkgAmount, budgetExtraAmount, budgetAnalogAmount, budgetSubtotal, budgetInstallments,
        floatingSubtotalAmount, floatingSubtotalInstallments].forEach(function(el){
         if(!el || el.hidden) return;
         el.classList.remove('amount-pulse');
@@ -1735,6 +2013,9 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     var budgetExtraLine = document.getElementById('budgetExtraLine');
     var budgetExtraLabel = document.getElementById('budgetExtraLabel');
     var budgetExtraAmount = document.getElementById('budgetExtraAmount');
+    var budgetAnalogLine = document.getElementById('budgetAnalogLine');
+    var budgetAnalogAmount = document.getElementById('budgetAnalogAmount');
+    var analogBtn = document.getElementById('analogBtn');
     var budgetTotalLine = document.getElementById('budgetTotalLine');
     var budgetSubtotal = document.getElementById('budgetSubtotal');
     var budgetInstallments = document.getElementById('budgetInstallments');
@@ -1756,7 +2037,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     var hasScrolledToPayment = false;
     var popupDismissed = false;
     function syncFloatingPopup(){
-      var shouldShow = !!selectedPackage && !realSubtotalVisible && !popupDismissed;
+      var shouldShow = (!!selectedPackage || !!selectedAnalog) && !realSubtotalVisible && !popupDismissed;
       floatingSubtotal.classList.toggle('is-visible', shouldShow);
     }
 
@@ -1779,6 +2060,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
 
     var selectedPackage = null;
     var selectedExtra = null;
+    var selectedAnalog = null;
     var wantsCustom = false;
 
     function formatBRL(n){
@@ -1932,7 +2214,8 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       var hasExtra = !!selectedExtra;
       var isPixMode = (paymentMode !== 'card');
 
-      budgetEmpty.hidden = hasPkg;
+      var hasAnalog = !!selectedAnalog;
+      budgetEmpty.hidden = hasPkg || hasAnalog;
 
       budgetPkgLine.hidden = !hasPkg;
       if(hasPkg){
@@ -1963,17 +2246,34 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
         budgetExtraAmount.classList.remove('is-pix');
       }
 
-      var showTotal = hasPkg || hasExtra;
+      budgetAnalogLine.hidden = !hasAnalog;
+      if(hasAnalog){
+        animateAmount(budgetAnalogAmount, currentPrice(selectedAnalog));
+        budgetAnalogAmount.classList.toggle('is-pix', isPixMode);
+      } else {
+        budgetAnalogAmount.removeAttribute('data-raw');
+      }
+      if(analogBtn){
+        analogBtn.textContent = hasAnalog ? t('analog.btnAdded') : t('analog.btnAdd');
+        analogBtn.classList.toggle('is-added', hasAnalog);
+        analogBtn.setAttribute('aria-pressed', hasAnalog ? 'true' : 'false');
+      }
+
+      var showTotal = hasPkg || hasExtra || hasAnalog;
       budgetTotalLine.hidden = !showTotal;
       if(showTotal){
         var extraAdds = (hasExtra && selectedExtra.status === 'priced') ? currentPrice(selectedExtra) : 0;
-        var total = (hasPkg ? currentPrice(selectedPackage) : 0) + extraAdds;
+        var analogAdds = hasAnalog ? currentPrice(selectedAnalog) : 0;
+        var total = (hasPkg ? currentPrice(selectedPackage) : 0) + extraAdds + analogAdds;
         animateAmount(budgetSubtotal, total);
         animateAmount(floatingSubtotalAmount, total);
         budgetSubtotal.classList.toggle('is-pix', isPixMode);
         floatingSubtotalAmount.classList.toggle('is-pix', isPixMode);
         floatingSubtotalPkg.textContent = hasPkg ? selectedPackage.name : '';
-        floatingSubtotalExtra.textContent = hasExtra ? albumDisplayName(selectedExtra.name) : '';
+        var floatExtras = [];
+        if(hasExtra){ floatExtras.push(albumDisplayName(selectedExtra.name)); }
+        if(hasAnalog){ floatExtras.push(t('budget.analogLabel')); }
+        floatingSubtotalExtra.textContent = floatExtras.join(' + ');
 
         var noteText = (paymentMode === 'card')
           ? t('budget.installmentsLine', {amount: formatBRL(Math.round(total / 6))})
@@ -2013,7 +2313,12 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
         if(selectedExtra){
           msg += t('wa.withAlbum', {album: albumDisplayName(selectedExtra.name)});
         }
+        if(selectedAnalog){
+          msg += t('wa.withAnalog');
+        }
         msg += '.';
+      } else if(selectedAnalog){
+        msg += t('wa.wantsAnalog');
       } else {
         msg += t('wa.generic');
       }
@@ -2238,10 +2543,24 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
           popupDismissed = false;
           if(!hasScrolledToPayment){
             hasScrolledToPayment = true;
-            var paymentMethodsSection = document.querySelector('.payment-methods');
-            if(paymentMethodsSection){
+            // Desliza poco: solo lo justo para que el botón de "Servicio
+            // especial" (fotos analógicas) quede a la vista, sin pasarlo de largo.
+            var analogToggleBtn = document.getElementById('analogToggle');
+            if(analogToggleBtn){
               setTimeout(function(){
-                paymentMethodsSection.scrollIntoView({behavior:'smooth', block:'start'});
+                var r = analogToggleBtn.getBoundingClientRect();
+                var vh = window.innerHeight || document.documentElement.clientHeight;
+                var limit = vh - 24;
+                // En celular el popup del subtotal ocupa la parte de abajo:
+                // el botón tiene que quedar por encima de él.
+                var fs = document.getElementById('floatingSubtotal');
+                if(fs && fs.classList.contains('is-visible')){
+                  var fr = fs.getBoundingClientRect();
+                  if(fr.bottom > vh - 60){ limit = Math.min(limit, fr.top - 16); }
+                }
+                if(r.bottom > limit){
+                  window.scrollBy({top: r.bottom - limit, behavior:'smooth'});
+                }
               }, 50);
             }
           }
@@ -2251,7 +2570,43 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
       });
     });
 
+    var analogSection = document.getElementById('analogico');
+    var analogToggle = document.getElementById('analogToggle');
+    var analogPanel = document.getElementById('analogPanel');
+    if(analogSection && analogToggle && analogPanel){
+      analogToggle.addEventListener('click', function(){
+        var open = !analogSection.classList.contains('is-open');
+        analogSection.classList.toggle('is-open', open);
+        analogToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        analogPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+        if(open){ analogPanel.removeAttribute('inert'); } else { analogPanel.setAttribute('inert', ''); }
+        if(open){
+          // Cuando termina de desplegarse, encuadra la sección completa en pantalla.
+          setTimeout(function(){
+            analogSection.scrollIntoView({behavior:'smooth', block:'start'});
+          }, 550);
+        }
+      });
+    }
+
+    if(analogBtn){
+      analogBtn.addEventListener('click', function(){
+        if(selectedAnalog){
+          selectedAnalog = null;
+        } else {
+          selectedAnalog = {
+            pricePix: parseInt(analogBtn.getAttribute('data-price-pix'), 10) || 0,
+            priceCard: parseInt(analogBtn.getAttribute('data-price-card'), 10) || 0
+          };
+          popupDismissed = false;
+        }
+        updateBudget();
+        updateWhatsappLink();
+      });
+    }
+
     updateGiftMode();
+    updateBudget();
     updateWhatsappLink();
   })();
 
@@ -2273,6 +2628,7 @@ src="https://www.facebook.com/tr?id=1073898278650891&ev=PageView&noscript=1"
     revealGrids.forEach(function(grid){ revealObserver.observe(grid); });
   })();
 </script>
+
 
 </body>
 </html>

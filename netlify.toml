@@ -1,19 +1,45 @@
 [build]
   publish = "."
-    functions = "netlify/functions"
+  functions = "netlify/functions"
 
-    [functions]
-      node_bundler = "esbuild"
+[functions]
+  node_bundler = "esbuild"
 
-      # META_PIXEL_ID y META_AD_ACCOUNT_ID son IDs publicos, no secretos, pero el
-      # escaner de secretos de Netlify a veces igual los marca y bloquea el deploy.
-      # Los excluimos explicitamente del escaneo.
-      [build.environment]
-        SECRETS_SCAN_OMIT_KEYS = "META_PIXEL_ID,META_AD_ACCOUNT_ID"
+# META_PIXEL_ID y META_AD_ACCOUNT_ID son IDs publicos, no secretos, pero el
+# escaner de secretos de Netlify a veces igual los marca y bloquea el deploy.
+# Los excluimos explicitamente del escaneo.
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "META_PIXEL_ID,META_AD_ACCOUNT_ID"
 
-        [[headers]]
-          for = "/*"
-            [headers.values]
-                X-Frame-Options = "DENY"
-                    X-Content-Type-Options = "nosniff"
-                        Referrer-Policy = "strict-origin-when-cross-origin"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Direcciones viejas -> nuevas (para no romper links ya compartidos,
+# redirecciones de Mercado Pago / Cal.com ni anuncios).
+[[redirects]]
+  from = "/gracias-reunion.html"
+  to = "/gracias/reunion/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gracias-pago.html"
+  to = "/gracias/pago/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gracias-inicio-pago.html"
+  to = "/gracias/iniciopago/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/galerias.html"
+  to = "/galerias/"
+  status = 301
+  force = true
