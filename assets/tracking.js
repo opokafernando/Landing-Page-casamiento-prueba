@@ -15,9 +15,14 @@
 
    Mapa de eventos del embudo (definido junto con Fernando):
      PageView            -> automático, ya lo dispara el snippet base del Pixel.
-     interesado_reunion   (custom) -> clic en "Agendar reunión" / "Quiero agendar una reunión",
-                                      elegir un paquete de verdad, o tocar "Continuar con mi consulta".
-                                      Es la señal de INTENCIÓN, no de conversión confirmada.
+     interesado_reunion   (custom) -> clic en "Quiero agendar una reunión" o tocar
+                                      "Continuar con mi consulta". Es la señal de INTENCIÓN
+                                      de hablar, no de conversión confirmada. (Ya NO se dispara
+                                      al elegir/personalizar un paquete: eso es personalizo_producto.)
+     personalizo_producto (custom) -> elige o cambia algo de su presupuesto: paquete, álbum,
+                                      fotos analógicas, o la sesión incluida del Mini Wedding.
+                                      Params: content_type (paquete | album | analogico |
+                                      sesion_incluida), content_name, value, currency.
      Lead                (estándar) -> se dispara DOS veces a propósito, con el MISMO
                                        event_id en las dos: acá en el navegador, en el
                                        instante en que Cal.com confirma la reserva
@@ -155,6 +160,7 @@
        es la misma convención que ya usa Estudio Graphica, para no mezclar
        estilos de nombre entre eventos custom del mismo negocio. */
     interesadoReunion: function (params) { return fire('trackCustom', 'interesado_reunion', params); },
+    personalizoProducto: function (params) { return fire('trackCustom', 'personalizo_producto', params); },
     vioPortafolio: function (params) { return fire('trackCustom', 'vio_portafolio', params); },
     vioGaleria: function (params) { return fire('trackCustom', 'vio_galeria', params); },
     inicioEnBlog: function (params) { return fire('trackCustom', 'inicio_en_blog', params); },
