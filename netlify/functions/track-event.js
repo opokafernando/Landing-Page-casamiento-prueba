@@ -28,6 +28,7 @@ const ALLOWED_EVENTS = new Set([
   'Purchase',
   'ViewContent',
   'interesado_reunion',
+  'personalizo_producto',
   'vio_portafolio',
   'inicio_en_blog'
 ]);

@@ -1890,6 +1890,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
             }
           });
 
+          if(window.FO_Track){ FO_Track.personalizoProducto({ content_type: 'sesion_incluida', content_name: li.getAttribute('data-choice') || group }); }
           if(AfterChoice.callbacks[group]){
             var cb = AfterChoice.callbacks[group];
             AfterChoice.callbacks[group] = null;
@@ -2488,7 +2489,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
             pricePix: parseInt(card.getAttribute('data-price-pix'), 10) || 0,
             priceCard: parseInt(card.getAttribute('data-price-card'), 10) || 0
           };
-          if(window.FO_Track){ FO_Track.interesadoReunion({ content_name: selectedPackage.name }); }
+          if(window.FO_Track){ FO_Track.personalizoProducto({ content_type: 'paquete', content_name: selectedPackage.name, value: currentPrice(selectedPackage), currency: 'BRL' }); }
           wantsCustom = false;
           popupDismissed = false;
           pkgCards.forEach(function(c){ c.classList.remove('is-selected'); });
@@ -2539,6 +2540,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
           chip.classList.remove('is-selected');
         } else {
           selectedExtra = { name: name, pricePix: pricePix, priceCard: priceCard, status: status };
+          if(window.FO_Track){ FO_Track.personalizoProducto({ content_type: 'album', content_name: name, value: currentPrice(selectedExtra), currency: 'BRL', status: status }); }
           extraChips.forEach(function(c){ c.classList.remove('is-selected'); });
           chip.classList.add('is-selected');
           popupDismissed = false;
@@ -2599,6 +2601,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
             pricePix: parseInt(analogBtn.getAttribute('data-price-pix'), 10) || 0,
             priceCard: parseInt(analogBtn.getAttribute('data-price-card'), 10) || 0
           };
+          if(window.FO_Track){ FO_Track.personalizoProducto({ content_type: 'analogico', content_name: 'fotos_analogicas', value: currentPrice(selectedAnalog), currency: 'BRL' }); }
           popupDismissed = false;
         }
         updateBudget();
