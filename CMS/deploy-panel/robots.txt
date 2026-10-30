@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /panel/
-Allow: /
-
-Sitemap: https://fernando-opoka-bodas.netlify.app/sitemap.xml
