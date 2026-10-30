@@ -18,6 +18,13 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Panel de la web (CMS): que no aparezca en Google.
+[[headers]]
+  for = "/panel/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-store"
+
 # Direcciones viejas -> nuevas (para no romper links ya compartidos,
 # redirecciones de Mercado Pago / Cal.com ni anuncios).
 [[redirects]]

@@ -77,7 +77,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
     --bronze-soft: #C9AE85;
     --charcoal: #221D18;
     --line: rgba(51,43,36,0.14);
-    --radius-arch: 200px 200px 12px 12px;
+    --radius-arch: 28px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -171,18 +171,16 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   .problema{background:var(--cream);}
   .problema .grid{display:grid; gap:40px; align-items:center;}
   @media (min-width:768px){ .problema .grid{grid-template-columns: 0.9fr 1.1fr; gap:64px;} }
-  .arch-frame{border-radius:var(--radius-arch); overflow:hidden; aspect-ratio: 3/4;}
+  .arch-frame{border-radius:var(--radius-arch); overflow:hidden; aspect-ratio: 3/4; box-shadow:0 24px 60px rgba(34,29,24,0.16), 0 0 0 1px rgba(34,29,24,0.05);}
   .arch-frame img{width:100%; height:100%; object-fit:cover;}
   .problema h2{font-size:1.9rem; font-style:italic; margin-bottom:20px;}
   .problema p{color:var(--ink-soft); margin-bottom:16px; max-width:46ch;}
   @media (max-width:767px){
     .problema .grid{display:block; gap:0;}
-    .problema .grid .arch-frame{width:100%; max-width:none; margin:0; aspect-ratio:3/4.1; position:relative; filter:brightness(0.8);}
-    .problema .grid .arch-frame::after{content:''; position:absolute; inset:auto 0 0 0; height:85%; background:linear-gradient(to top, rgba(20,16,12,0.82) 0%, rgba(20,16,12,0.55) 32%, rgba(20,16,12,0.24) 62%, rgba(20,16,12,0) 100%); pointer-events:none;}
-    .problema .grid > div:last-child{position:relative; z-index:1; margin-top:-64px; background:rgba(20,16,12,0.86); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); border-radius:20px 20px 0 0; padding:26px 20px 20px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
-    .problema .grid.in-view > div:last-child{opacity:1; transform:translateY(0);}
-    .problema h2{color:#F7F2EA;}
-    .problema p{color:rgba(247,242,234,0.86);}
+    .problema .grid .arch-frame{width:100%; max-width:none; margin:0; aspect-ratio:3/4.1; position:relative;}
+    .problema .grid .arch-frame::after{content:''; position:absolute; inset:auto 0 0 0; height:38%; background:linear-gradient(to top, rgba(247,242,234,0.55) 0%, rgba(247,242,234,0) 100%); pointer-events:none;}
+    .problema .grid > div:last-child{position:relative; z-index:1; margin-top:-64px; background:rgba(250,246,239,0.74); -webkit-backdrop-filter:blur(22px) saturate(170%); backdrop-filter:blur(22px) saturate(170%); border:1px solid rgba(255,255,255,0.6); border-radius:24px; margin-left:12px; margin-right:12px; box-shadow:0 1px 0 rgba(255,255,255,0.7) inset, 0 18px 50px rgba(34,29,24,0.14); padding:26px 20px 20px; opacity:0; transform:translateY(16px) scale(0.985); transition:opacity .5s ease, transform .7s cubic-bezier(.2,.8,.2,1);}
+    .problema .grid.in-view > div:last-child{opacity:1; transform:none;}
   }
   .proceso{background:var(--cream-deep);}
   .steps{display:grid; gap:32px;}
@@ -221,13 +219,10 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   .sobre p strong{color:var(--ink); font-weight:600;}
   @media (max-width:767px){
     .sobre .grid{display:block; gap:0;}
-    .sobre .grid .arch-frame{width:100%; max-width:none; margin:0; aspect-ratio:3/4.1; position:relative; filter:brightness(0.8);}
-    .sobre .grid .arch-frame::after{content:''; position:absolute; inset:auto 0 0 0; height:85%; background:linear-gradient(to top, rgba(20,16,12,0.82) 0%, rgba(20,16,12,0.55) 32%, rgba(20,16,12,0.24) 62%, rgba(20,16,12,0) 100%); pointer-events:none;}
-    .sobre .grid > div:last-child{position:relative; z-index:1; margin-top:-64px; background:rgba(20,16,12,0.86); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); border-radius:20px 20px 0 0; padding:26px 20px 20px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
-    .sobre .grid.in-view > div:last-child{opacity:1; transform:translateY(0);}
-    .sobre h2{color:#F7F2EA;}
-    .sobre p{color:rgba(247,242,234,0.86);}
-    .sobre p strong{color:#F7F2EA;}
+    .sobre .grid .arch-frame{width:100%; max-width:none; margin:0; aspect-ratio:3/4.1; position:relative;}
+    .sobre .grid .arch-frame::after{content:''; position:absolute; inset:auto 0 0 0; height:38%; background:linear-gradient(to top, rgba(239,230,214,0.55) 0%, rgba(239,230,214,0) 100%); pointer-events:none;}
+    .sobre .grid > div:last-child{position:relative; z-index:1; margin-top:-64px; background:rgba(250,246,239,0.74); -webkit-backdrop-filter:blur(22px) saturate(170%); backdrop-filter:blur(22px) saturate(170%); border:1px solid rgba(255,255,255,0.6); border-radius:24px; margin-left:12px; margin-right:12px; box-shadow:0 1px 0 rgba(255,255,255,0.7) inset, 0 18px 50px rgba(34,29,24,0.14); padding:26px 20px 20px; opacity:0; transform:translateY(16px) scale(0.985); transition:opacity .5s ease, transform .7s cubic-bezier(.2,.8,.2,1);}
+    .sobre .grid.in-view > div:last-child{opacity:1; transform:none;}
   }
   /* Sobre nosotros: 3 fotos en loop. Cada una se ve sola 3 s y el fundido dura 1,5 s
      (ciclo total 13,5 s = 3 × (3 s + 1,5 s)). */
@@ -237,6 +232,53 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   .sobre-fader .sobre-slide:nth-child(2){animation-delay:3s;}
   .sobre-fader .sobre-slide:nth-child(3){animation-delay:7.5s;}
   @keyframes sobreFade{ 0%{opacity:0;} 11.111%{opacity:1;} 33.333%{opacity:1;} 44.444%{opacity:0;} 100%{opacity:0;} }
+  /* Ver más / Ver menos (Cómo trabajamos y Sobre nosotros) */
+  .more-body{display:grid; grid-template-rows:0fr; transition:grid-template-rows 0.6s ease;}
+  .more-body > div{overflow:hidden; min-height:0;}
+  .is-open > .more-body, .is-open .more-body{grid-template-rows:1fr;}
+  .more-btn{display:inline-flex; align-items:center; gap:8px; background:none; border:none; border-bottom:1px solid currentColor; padding:4px 0; margin-top:6px; font-family:'Jost', sans-serif; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--bronze); cursor:pointer;}
+  .more-btn::after{content:""; width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:translateY(-2px) rotate(45deg); transition:transform 0.3s ease;}
+  .more-btn[aria-expanded="true"]::after{transform:translateY(2px) rotate(-135deg);}
+  .more-btn .more-hide{display:none;}
+  .more-btn[aria-expanded="true"] .more-show{display:none;}
+  .more-btn[aria-expanded="true"] .more-hide{display:inline;}
+  .more-btn:focus-visible{outline:3px solid var(--bronze-soft); outline-offset:3px;}
+  .sobre .more-btn{margin-bottom:16px;}
+  .proceso .more-btn-wrap{text-align:center; margin-top:28px;}
+  .step .more-body p{padding-top:2px;}
+
+  /* Preguntas frecuentes: chat de WhatsApp */
+  .faq{background:var(--cream-deep);}
+  .faq-phone{max-width:420px; margin:0 auto; border-radius:34px; background:#1b1b1b; padding:10px; box-shadow:0 30px 70px rgba(34,29,24,0.28);}
+  .faq-screen{border-radius:26px; overflow:hidden; background:#EFE7DD; display:flex; flex-direction:column; height:560px;}
+  @media (max-width:420px){ .faq-screen{height:520px;} }
+  .faq-top{display:flex; align-items:center; gap:10px; background:#075E54; color:#fff; padding:14px 16px;}
+  .faq-avatar{width:38px; height:38px; border-radius:50%; background:var(--charcoal) center/cover no-repeat; flex-shrink:0; border:1px solid rgba(255,255,255,0.3);}
+  .faq-who{display:flex; flex-direction:column; line-height:1.2;}
+  .faq-who strong{font-weight:500; font-size:0.98rem;}
+  .faq-who span{font-size:0.75rem; opacity:0.85;}
+  .faq-chat{flex:1; overflow-y:auto; padding:16px 12px 10px; display:flex; flex-direction:column; gap:8px; scroll-behavior:smooth;
+    background-color:#EFE7DD; background-image:radial-gradient(rgba(120,100,80,0.07) 1px, transparent 1px); background-size:14px 14px;}
+  .bubble{max-width:84%; padding:8px 11px 18px; border-radius:10px; font-size:0.9rem; line-height:1.42; color:#1f1f1f; position:relative; box-shadow:0 1px 1px rgba(0,0,0,0.08); animation:bubbleIn 0.35s ease both;}
+  .bubble.in{align-self:flex-start; background:#fff; border-top-left-radius:2px;}
+  .bubble.out{align-self:flex-end; background:#D9FDD3; border-top-right-radius:2px;}
+  .bubble time{position:absolute; right:9px; bottom:4px; font-size:0.66rem; color:#667781;}
+  .bubble.out time::after{content:" ✓✓"; color:#53BDEB; letter-spacing:-2px;}
+  .faq-chat .is-pending{display:none;}
+  .typing{align-self:flex-start; background:#fff; border-radius:10px; border-top-left-radius:2px; padding:10px 12px; display:none; gap:4px; box-shadow:0 1px 1px rgba(0,0,0,0.08);}
+  .typing.out{align-self:flex-end; background:#D9FDD3; border-top-left-radius:10px; border-top-right-radius:2px;}
+  .typing.is-on{display:inline-flex;}
+  .typing i{width:7px; height:7px; border-radius:50%; background:#8a9aa3; animation:typingDot 1.1s infinite ease-in-out;}
+  .typing i:nth-child(2){animation-delay:0.15s;} .typing i:nth-child(3){animation-delay:0.3s;}
+  @keyframes typingDot{0%,60%,100%{transform:translateY(0); opacity:0.5;} 30%{transform:translateY(-4px); opacity:1;}}
+  @keyframes bubbleIn{from{opacity:0; transform:translateY(8px) scale(0.97);} to{opacity:1; transform:none;}}
+  .faq-bottom{display:flex; align-items:center; gap:10px; padding:10px 12px; background:#F0F0F0;}
+  .faq-input{flex:1; background:#fff; border-radius:20px; padding:9px 14px; font-size:0.85rem; color:#8a8a8a; text-decoration:none;}
+  .faq-send{width:38px; height:38px; border-radius:50%; background:#00A884; display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0; text-decoration:none; font-size:1rem;}
+  .faq-actions{text-align:center; margin-top:22px;}
+  .faq-replay{background:none; border:1px solid var(--line); border-radius:30px; padding:9px 20px; font-family:'Jost', sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink); cursor:pointer; visibility:hidden;}
+  .faq-replay.is-visible{visibility:visible;}
+  @media (prefers-reduced-motion: reduce){ .more-body{transition:none;} .bubble{animation:none;} .typing i{animation:none;} }
   @media (prefers-reduced-motion: reduce){ .sobre-fader .sobre-slide{animation:none;} .sobre-fader .sobre-slide:nth-child(1){opacity:1;} }
   .sobre .credit{font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--bronze); font-size:1.1rem;}
   .servicios{background:var(--cream);}
@@ -428,15 +470,13 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   .cta-final .arch-frame{aspect-ratio:3/4;}
   @media (max-width:899px){
     .cta-final .grid{display:block; gap:0;}
-    .cta-final .grid .arch-frame{width:100%; max-width:none; margin:0; aspect-ratio:3/4.1; position:relative; filter:brightness(0.8);}
-    .cta-final .grid .arch-frame::after{content:''; position:absolute; inset:auto 0 0 0; height:85%; background:linear-gradient(to top, rgba(20,16,12,0.82) 0%, rgba(20,16,12,0.55) 32%, rgba(20,16,12,0.24) 62%, rgba(20,16,12,0) 100%); pointer-events:none;}
-    .cta-text-col{text-align:left; position:relative; z-index:1; margin-top:-64px; background:rgba(20,16,12,0.86); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); border-radius:20px 20px 0 0; padding:26px 20px 22px; opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
-    .cta-final .grid.in-view .cta-text-col{opacity:1; transform:translateY(0);}
-    .cta-text-col .microcopy{color:rgba(247,242,234,0.86);}
-    .cta-text-col label{color:rgba(247,242,234,0.65);}
-    .cta-text-col input, .cta-text-col textarea{color:#F7F2EA; border-bottom-color:rgba(247,242,234,0.35);}
-    .cta-text-col input::placeholder, .cta-text-col textarea::placeholder{color:rgba(247,242,234,0.45);}
+    .cta-final .grid .arch-frame{width:100%; max-width:none; margin:0; aspect-ratio:3/4.1; position:relative;}
+    .cta-final .grid .arch-frame::after{content:''; position:absolute; inset:auto 0 0 0; height:38%; background:linear-gradient(to top, rgba(239,230,214,0.55) 0%, rgba(239,230,214,0) 100%); pointer-events:none;}
+    .cta-text-col{text-align:left; position:relative; z-index:1; margin-top:-64px; background:rgba(250,246,239,0.74); -webkit-backdrop-filter:blur(22px) saturate(170%); backdrop-filter:blur(22px) saturate(170%); border:1px solid rgba(255,255,255,0.6); border-radius:24px; margin-left:12px; margin-right:12px; box-shadow:0 1px 0 rgba(255,255,255,0.7) inset, 0 18px 50px rgba(34,29,24,0.14); padding:26px 20px 22px; opacity:0; transform:translateY(16px) scale(0.985); transition:opacity .5s ease, transform .7s cubic-bezier(.2,.8,.2,1);}
+    .cta-final .grid.in-view .cta-text-col{opacity:1; transform:none;}
   }
+  @media (max-width:899px) and (prefers-reduced-transparency: reduce){ .problema .grid > div:last-child, .sobre .grid > div:last-child, .cta-text-col{background:#FAF6EF; -webkit-backdrop-filter:none; backdrop-filter:none;} }
+  @media (max-width:899px) and (prefers-reduced-motion: reduce){ .problema .grid > div:last-child, .sobre .grid > div:last-child, .cta-text-col{transform:none !important; transition:opacity .3s ease;} }
   .cta-final h2{font-size:2rem; font-style:italic; margin-bottom:14px;}
   @media (min-width:768px){ .cta-final h2{font-size:2.5rem;} }
   .cta-final .intro{color:var(--ink-soft); margin-bottom:0; max-width:52ch;}
@@ -647,8 +687,11 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       <span class="eyebrow" data-i18n="problema.eyebrow">El problema</span>
       <h2 data-i18n="problema.h2">Buscas algo más que fotos bonitas</h2>
       <p data-i18n="problema.p1">Quieres confiar en quienes van a fotografiar tu boda: en la calidad de su trabajo, en su calidez, su educación y en que no te hagan pasar vergüenza frente a tus invitados.</p>
-      <p data-i18n="problema.p2">Por eso trabajamos en pareja: mientras uno acompaña a los novios, el otro está en los detalles, las reacciones y la gente que más quieren. Así no se nos escapa ningún momento.</p>
-      <p data-i18n="problema.p3">Antes de la boda nos reunimos con ustedes para conocer sus gustos, su estilo y lo que necesitan. Así, el gran día ya sabemos qué fotos buscar.</p>
+      <div class="more-group" id="problemaMore"><div class="more-body"><div>
+        <p data-i18n="problema.p2">Por eso trabajamos en pareja: mientras uno acompaña a los novios, el otro está en los detalles, las reacciones y la gente que más quieren. Así no se nos escapa ningún momento.</p>
+        <p data-i18n="problema.p3">Antes de la boda nos reunimos con ustedes para conocer sus gustos, su estilo y lo que necesitan. Así, el gran día ya sabemos qué fotos buscar.</p>
+      </div></div></div>
+      <button type="button" class="more-btn" aria-expanded="false" aria-controls="problemaMore"><span class="more-show" data-i18n="more.show">Ver más</span><span class="more-hide" data-i18n="more.hide">Ver menos</span></button>
     </div>
   </div>
 </section>
@@ -659,23 +702,24 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       <span class="eyebrow" data-i18n="proceso.eyebrow">Cómo trabajamos</span>
       <h2 data-i18n="proceso.h2">Un proceso pensado para que disfrutes tu día</h2>
     </div>
-    <div class="steps">
+    <div class="steps more-group" id="procesoMore">
       <div class="step">
         <span class="step-num" data-i18n="proceso.step1.num">Antes</span>
         <h3 data-i18n="proceso.step1.h3">Nos conocemos</h3>
-        <p data-i18n="proceso.step1.p">Hacemos una reunión previa para hablar de tu historia, tus gustos y el estilo de fotos que quieres conservar para siempre, con asesoramiento de imagen incluido.</p>
+        <div class="more-body"><div><p data-i18n="proceso.step1.p">Hacemos una reunión previa para hablar de tu historia, tus gustos y el estilo de fotos que quieres conservar para siempre, con asesoramiento de imagen incluido.</p></div></div>
       </div>
       <div class="step">
         <span class="step-num" data-i18n="proceso.step2.num">El gran día</span>
         <h3 data-i18n="proceso.step2.h3">Cobertura personalizada</h3>
-        <p data-i18n="proceso.step2.p">Making of, ceremonia y fiesta según el paquete que elijas, cubiertos por nosotros dos: dos miradas atentas a los momentos reales y espontáneos.</p>
+        <div class="more-body"><div><p data-i18n="proceso.step2.p">Making of, ceremonia y fiesta según el paquete que elijas, cubiertos por nosotros dos: dos miradas atentas a los momentos reales y espontáneos.</p></div></div>
       </div>
       <div class="step">
         <span class="step-num" data-i18n="proceso.step3.num">Después</span>
         <h3 data-i18n="proceso.step3.h3">Entrega sin esperas</h3>
-        <p data-i18n="proceso.step3.p">Galería digital completa, sin límites, en 7 días. Según tu paquete, también hay opción de entrega inmediata de fotos la misma noche y álbumes impresos.</p>
+        <div class="more-body"><div><p data-i18n="proceso.step3.p">Galería digital completa, sin límites, en 7 días. Según tu paquete, también hay opción de entrega inmediata de fotos la misma noche y álbumes impresos.</p></div></div>
       </div>
     </div>
+    <div class="more-btn-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="procesoMore"><span class="more-show" data-i18n="more.show">Ver más</span><span class="more-hide" data-i18n="more.hide">Ver menos</span></button></div>
   </div>
 </section>
 
@@ -738,8 +782,11 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       <span class="eyebrow" data-i18n="sobre.eyebrow">Sobre nosotros</span>
       <h2 data-i18n="sobre.h2">La pareja detrás de las fotos</h2>
       <p data-i18n="sobre.p1">Fernando es fotógrafo profesional hace 9 años y Jackeline es nuestra segunda cámara y asesora de imagen.</p>
-      <p data-i18n-html="sobre.p2">Empezamos a fotografiar bodas porque nos apasionan las historias de las parejas, y porque nos dolía ver a tantos novios pasarla mal: fotógrafos que trataban mal a sus invitados, que tardaban meses en entregar o que entregaban fotos de mala calidad. Por eso decidimos fotografiar cada boda como si fuera <strong>la nuestra</strong>.</p>
-      <p data-i18n-html="sobre.p3">Además notamos un detalle importante: casi ningún fotógrafo le da importancia a la emoción de los padres o de los mejores amigos de los novios en los momentos más importantes. <strong>Para nosotros, esas reacciones también son parte de su historia.</strong></p>
+      <div class="more-group" id="sobreMore"><div class="more-body"><div>
+        <p data-i18n-html="sobre.p2">Empezamos a fotografiar bodas porque nos apasionan las historias de las parejas, y porque nos dolía ver a tantos novios pasarla mal: fotógrafos que trataban mal a sus invitados, que tardaban meses en entregar o que entregaban fotos de mala calidad. Por eso decidimos fotografiar cada boda como si fuera <strong>la nuestra</strong>.</p>
+        <p data-i18n-html="sobre.p3">Además notamos un detalle importante: casi ningún fotógrafo le da importancia a la emoción de los padres o de los mejores amigos de los novios en los momentos más importantes. <strong>Para nosotros, esas reacciones también son parte de su historia.</strong></p>
+      </div></div></div>
+      <button type="button" class="more-btn" aria-expanded="false" aria-controls="sobreMore"><span class="more-show" data-i18n="more.show">Ver más</span><span class="more-hide" data-i18n="more.hide">Ver menos</span></button>
       <p class="credit" data-i18n="sobre.credit">Fotógrafos de bodas · Balneário Camboriú</p>
     </div>
   </div>
@@ -1005,6 +1052,43 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   <p class="pkg-custom"><span data-i18n="custom.text">¿Ninguno se ajusta del todo? También armamos un paquete personalizado a tu medida.</span> <a href="https://wa.me/5547988821970" id="customPkgLink" target="_blank" rel="noopener" data-i18n="custom.link">Contanos qué necesitás</a>.</p>
 </div>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="faq.eyebrow">Preguntas frecuentes</span>
+      <h2 data-i18n="faq.h2">Lo que más nos preguntan por WhatsApp</h2>
+    </div>
+    <div class="faq-phone">
+      <div class="faq-screen">
+        <div class="faq-top">
+          <span class="faq-avatar" style="background-image:url('https://res.cloudinary.com/drfoww3ch/image/upload/f_auto,q_auto,c_fill,g_auto,w_96,h_96/Juntos_arvv0i.png')" aria-hidden="true"></span>
+          <span class="faq-who"><strong>The Wedding Project</strong><span id="faqStatus" data-i18n="faq.status">en línea</span></span>
+        </div>
+        <div class="faq-chat" id="faqChat" role="log" aria-live="polite">
+        <div class="bubble in is-pending"><span data-i18n="faq.q1">¡Hola! ¿Tienen libre la fecha de nuestra boda? 💍</span><time>10:02</time></div>
+        <div class="bubble out is-pending"><span data-i18n="faq.a1">¡Hola! 😊 Pasanos la fecha y el lugar y te confirmamos en menos de 8 horas. La fecha queda reservada con una seña del 30%.</span><time>10:03</time></div>
+        <div class="bubble in is-pending"><span data-i18n="faq.q2">¿Cómo se paga?</span><time>10:05</time></div>
+        <div class="bubble out is-pending"><span data-i18n="faq.a2">Con Pix tenés 15% de descuento: 30% de seña para reservar y el resto hasta 30 días antes de la boda. Con tarjeta, hasta 6 cuotas sin interés.</span><time>10:06</time></div>
+        <div class="bubble in is-pending"><span data-i18n="faq.q3">¿Cuánto tardan en entregar las fotos?</span><time>10:08</time></div>
+        <div class="bubble out is-pending"><span data-i18n="faq.a3">La galería completa está lista en 7 días. Y según el paquete, también te entregamos fotos la misma noche de la boda.</span><time>10:09</time></div>
+        <div class="bubble in is-pending"><span data-i18n="faq.q4">¿Van los dos a la boda?</span><time>10:11</time></div>
+        <div class="bubble out is-pending"><span data-i18n="faq.a4">¡Sí! Siempre vamos Fernando y Jackeline: dos cámaras para no perdernos ningún momento, ni las reacciones de tu familia y tus amigos.</span><time>10:12</time></div>
+        <div class="bubble in is-pending"><span data-i18n="faq.q5">¿Trabajan fuera de Balneário Camboriú?</span><time>10:14</time></div>
+        <div class="bubble out is-pending"><span data-i18n="faq.a5">Sí, vamos a donde sea su boda. Si queda a más de 20 km de Balneário Camboriú, el valor puede aumentar por el traslado.</span><time>10:15</time></div>
+        <div class="bubble in is-pending"><span data-i18n="faq.q6">¿El álbum impreso está incluido?</span><time>10:17</time></div>
+        <div class="bubble out is-pending"><span data-i18n="faq.a6">En Wedding Plus y Full Wedding el álbum 25x25 de 20 páginas es de regalo. Y si querés, podés sumar uno más grande al armar tu presupuesto.</span><time>10:18</time></div>
+          <div class="typing" id="faqTyping" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="faq-bottom">
+          <a class="faq-input" id="faqInput" href="https://wa.me/5547988821970" target="_blank" rel="noopener" data-i18n="faq.cta">¿Tenés otra pregunta? Escribinos</a>
+          <a class="faq-send" id="faqSend" href="https://wa.me/5547988821970" target="_blank" rel="noopener" aria-label="WhatsApp">➤</a>
+        </div>
+      </div>
+    </div>
+    <div class="faq-actions"><button type="button" class="faq-replay" id="faqReplay" data-i18n="faq.replay">Ver de nuevo</button></div>
+  </div>
+</section>
+
 <section class="cta-final" id="contacto">
   <div class="wrap">
     <div class="section-head">
@@ -1132,6 +1216,26 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'sobre.p2': 'Empezamos a fotografiar bodas porque nos apasionan las historias de las parejas, y porque nos dolía ver a tantos novios pasarla mal: fotógrafos que trataban mal a sus invitados, que tardaban meses en entregar o que entregaban fotos de mala calidad. Por eso decidimos fotografiar cada boda como si fuera <strong>la nuestra</strong>.',
       'sobre.p3': 'Además notamos un detalle importante: casi ningún fotógrafo le da importancia a la emoción de los padres o de los mejores amigos de los novios en los momentos más importantes. <strong>Para nosotros, esas reacciones también son parte de su historia.</strong>',
       'sobre.credit': 'Fotógrafos de bodas · Balneário Camboriú',
+      'more.show': 'Ver más',
+      'more.hide': 'Ver menos',
+      'faq.eyebrow': 'Preguntas frecuentes',
+      'faq.h2': 'Lo que más nos preguntan por WhatsApp',
+      'faq.status': 'en línea',
+      'faq.typing': 'escribiendo…',
+      'faq.replay': 'Ver de nuevo',
+      'faq.cta': '¿Tenés otra pregunta? Escribinos',
+      'faq.q1': '¡Hola! ¿Tienen libre la fecha de nuestra boda? 💍',
+      'faq.a1': '¡Hola! 😊 Pasanos la fecha y el lugar y te confirmamos en menos de 8 horas. La fecha queda reservada con una seña del 30%.',
+      'faq.q2': '¿Cómo se paga?',
+      'faq.a2': 'Con Pix tenés 15% de descuento: 30% de seña para reservar y el resto hasta 30 días antes de la boda. Con tarjeta, hasta 6 cuotas sin interés.',
+      'faq.q3': '¿Cuánto tardan en entregar las fotos?',
+      'faq.a3': 'La galería completa está lista en 7 días. Y según el paquete, también te entregamos fotos la misma noche de la boda.',
+      'faq.q4': '¿Van los dos a la boda?',
+      'faq.a4': '¡Sí! Siempre vamos Fernando y Jackeline: dos cámaras para no perdernos ningún momento, ni las reacciones de tu familia y tus amigos.',
+      'faq.q5': '¿Trabajan fuera de Balneário Camboriú?',
+      'faq.a5': 'Sí, vamos a donde sea su boda. Si queda a más de 20 km de Balneário Camboriú, el valor puede aumentar por el traslado.',
+      'faq.q6': '¿El álbum impreso está incluido?',
+      'faq.a6': 'En Wedding Plus y Full Wedding el álbum 25x25 de 20 páginas es de regalo. Y si querés, podés sumar uno más grande al armar tu presupuesto.',
       'paquetes.eyebrow': 'Paquetes',
       'paquetes.h2': 'Elegí cómo quieres vivir tu día',
       'pkg.mini.eyebrow': 'Paquete 1',
@@ -1318,6 +1422,26 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'sobre.p2': 'Começamos a fotografar casamentos porque somos apaixonados pelas histórias dos casais, e porque doía ver tantos noivos passando por situações ruins: fotógrafos que tratavam mal os convidados, que demoravam meses para entregar ou que entregavam fotos de baixa qualidade. Por isso decidimos fotografar cada casamento como se fosse <strong>o nosso</strong>.',
       'sobre.p3': 'Além disso, percebemos um detalhe importante: quase nenhum fotógrafo dá importância à emoção dos pais ou dos melhores amigos dos noivos nos momentos mais importantes. <strong>Para nós, essas reações também fazem parte da história de vocês.</strong>',
       'sobre.credit': 'Fotógrafos de casamento · Balneário Camboriú',
+      'more.show': 'Ver mais',
+      'more.hide': 'Ver menos',
+      'faq.eyebrow': 'Perguntas frequentes',
+      'faq.h2': 'O que mais nos perguntam no WhatsApp',
+      'faq.status': 'online',
+      'faq.typing': 'digitando…',
+      'faq.replay': 'Ver de novo',
+      'faq.cta': 'Tem outra dúvida? Fale com a gente',
+      'faq.q1': 'Oi! Vocês têm a data do nosso casamento livre? 💍',
+      'faq.a1': 'Oi! 😊 Manda a data e o local e confirmamos em menos de 8 horas. A data fica reservada com um sinal de 30%.',
+      'faq.q2': 'Como funciona o pagamento?',
+      'faq.a2': 'No Pix você tem 15% de desconto: 30% de sinal para reservar e o restante até 30 dias antes do casamento. No cartão, em até 6x sem juros.',
+      'faq.q3': 'Em quanto tempo vocês entregam as fotos?',
+      'faq.a3': 'A galeria completa fica pronta em 7 dias. E, dependendo do pacote, também entregamos fotos na mesma noite do casamento.',
+      'faq.q4': 'Vocês dois vão ao casamento?',
+      'faq.a4': 'Sim! Sempre vamos o Fernando e a Jackeline: duas câmeras para não perder nenhum momento, nem as reações da família e dos amigos.',
+      'faq.q5': 'Vocês atendem fora de Balneário Camboriú?',
+      'faq.a5': 'Sim, vamos aonde for o casamento. Se for a mais de 20 km de Balneário Camboriú, o valor pode aumentar pelo deslocamento.',
+      'faq.q6': 'O álbum impresso está incluído?',
+      'faq.a6': 'No Wedding Plus e no Full Wedding o álbum 25x25 de 20 páginas é presente. E, se quiser, dá para incluir um maior ao montar o orçamento.',
       'paquetes.eyebrow': 'Pacotes',
       'paquetes.h2': 'Escolha como quer viver o seu dia',
       'pkg.mini.eyebrow': 'Pacote 1',
@@ -1504,6 +1628,26 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'sobre.p2': 'We started photographing weddings because we love couples\' stories, and because it hurt to see so many couples have a bad time: photographers who were rude to their guests, took months to deliver, or delivered poor-quality photos. So we decided to photograph every wedding as if it were <strong>our own</strong>.',
       'sobre.p3': 'We also noticed something important: almost no photographer pays attention to the emotion of the couple\'s parents or best friends in the biggest moments. <strong>To us, those reactions are part of your story too.</strong>',
       'sobre.credit': 'Wedding photographers · Balneário Camboriú',
+      'more.show': 'See more',
+      'more.hide': 'See less',
+      'faq.eyebrow': 'FAQ',
+      'faq.h2': 'What couples ask us most on WhatsApp',
+      'faq.status': 'online',
+      'faq.typing': 'typing…',
+      'faq.replay': 'Watch again',
+      'faq.cta': 'Got another question? Message us',
+      'faq.q1': 'Hi! Is our wedding date still available? 💍',
+      'faq.a1': 'Hi! 😊 Send us the date and venue and we’ll confirm in under 8 hours. A 30% deposit reserves your date.',
+      'faq.q2': 'How does payment work?',
+      'faq.a2': 'With Pix you get 15% off: a 30% deposit to book and the rest up to 30 days before the wedding. By card, up to 6 interest-free installments.',
+      'faq.q3': 'How long until we get our photos?',
+      'faq.a3': 'Your full gallery is ready in 7 days. Depending on the package, we also deliver photos the same night.',
+      'faq.q4': 'Do you both come to the wedding?',
+      'faq.a4': 'Yes! Fernando and Jackeline always come: two cameras so we don’t miss a moment, or your family and friends’ reactions.',
+      'faq.q5': 'Do you work outside Balneário Camboriú?',
+      'faq.a5': 'Yes, we go wherever your wedding is. For venues more than 20 km from Balneário Camboriú, travel may add to the price.',
+      'faq.q6': 'Is the printed album included?',
+      'faq.a6': 'With Wedding Plus and Full Wedding, a 20-page 25x25 album is our gift. You can also add a larger one when building your quote.',
       'paquetes.eyebrow': 'Packages',
       'paquetes.h2': 'Choose how you want to live your day',
       'pkg.mini.eyebrow': 'Package 1',
@@ -1661,6 +1805,68 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
     if(name === 'mayor'){ return t('extras.chipMayorTitle'); }
     return pageLabelText(name);
   }
+
+  // ---------- Ver más / Ver menos ----------
+  document.querySelectorAll('.more-btn').forEach(function(btn){
+    var group = document.getElementById(btn.getAttribute('aria-controls'));
+    if(!group) return;
+    btn.addEventListener('click', function(){
+      var open = !group.classList.contains('is-open');
+      group.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // ---------- Preguntas frecuentes: mensajes de WhatsApp que van llegando ----------
+  (function(){
+    var chat = document.getElementById('faqChat');
+    if(!chat) return;
+    var typing = document.getElementById('faqTyping');
+    var status = document.getElementById('faqStatus');
+    var replay = document.getElementById('faqReplay');
+    var bubbles = Array.prototype.slice.call(chat.querySelectorAll('.bubble'));
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var timers = [], running = false;
+    function later(fn, ms){ timers.push(setTimeout(fn, ms)); }
+    function toBottom(){ chat.scrollTop = chat.scrollHeight; }  // solo dentro del chat, la página no se mueve
+    function setTyping(on, out){
+      typing.classList.toggle('is-on', on);
+      typing.classList.toggle('out', !!out);
+      if(status){ status.textContent = t(on && out ? 'faq.typing' : 'faq.status'); }
+      if(on){ chat.appendChild(typing); toBottom(); }
+    }
+    function reset(){
+      timers.forEach(clearTimeout); timers = [];
+      bubbles.forEach(function(b){ b.classList.add('is-pending'); });
+      setTyping(false); chat.scrollTop = 0;
+      replay.classList.remove('is-visible');
+    }
+    function showAll(){
+      bubbles.forEach(function(b){ b.classList.remove('is-pending'); });
+      replay.classList.remove('is-visible');
+    }
+    function play(){
+      if(running) return;
+      running = true; reset();
+      var at = 400;
+      bubbles.forEach(function(b){
+        var out = b.classList.contains('out');
+        var len = b.textContent.length;
+        var think = out ? Math.min(1700, 500 + len * 8) : 650;
+        later(function(){ setTyping(true, out); }, at);
+        at += think;
+        later(function(){ setTyping(false); b.classList.remove('is-pending'); toBottom(); }, at);
+        at += out ? 1200 : 500;
+      });
+      later(function(){ running = false; replay.classList.add('is-visible'); }, at);
+    }
+    replay.addEventListener('click', function(){ running = false; play(); });
+    if(reduce || !('IntersectionObserver' in window)){ showAll(); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); play(); } });
+    }, {threshold: 0.4});
+    io.observe(chat);
+  })();
 
   function applyLanguage(lang){
     if(!LANG[lang]) lang = 'es';
@@ -2505,14 +2711,10 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
           // Solo la primera vez que elige un paquete lo llevamos a la
           // sección de álbumes; si ya pasó por ahí antes, es que está
           // comparando precios y no lo interrumpimos con un scroll.
-          if(!hasScrolledToExtras){
-            hasScrolledToExtras = true;
-            document.getElementById('extras').scrollIntoView({behavior:'smooth', block:'start'});
-          }
+          // (Sin desplazamiento automático: el cliente decide cuándo bajar.)
         }
 
         if(pkgId === 'mini' && !isMiniSessionDecided()){
-          card.scrollIntoView({behavior:'smooth', block:'center'});
           AfterChoice.callbacks['mini-session'] = function(){
             hideSpotlight();
             activate();
@@ -2544,29 +2746,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
           extraChips.forEach(function(c){ c.classList.remove('is-selected'); });
           chip.classList.add('is-selected');
           popupDismissed = false;
-          if(!hasScrolledToPayment){
-            hasScrolledToPayment = true;
-            // Desliza poco: solo lo justo para que el botón de "Servicio
-            // especial" (fotos analógicas) quede a la vista, sin pasarlo de largo.
-            var analogToggleBtn = document.getElementById('analogToggle');
-            if(analogToggleBtn){
-              setTimeout(function(){
-                var r = analogToggleBtn.getBoundingClientRect();
-                var vh = window.innerHeight || document.documentElement.clientHeight;
-                var limit = vh - 24;
-                // En celular el popup del subtotal ocupa la parte de abajo:
-                // el botón tiene que quedar por encima de él.
-                var fs = document.getElementById('floatingSubtotal');
-                if(fs && fs.classList.contains('is-visible')){
-                  var fr = fs.getBoundingClientRect();
-                  if(fr.bottom > vh - 60){ limit = Math.min(limit, fr.top - 16); }
-                }
-                if(r.bottom > limit){
-                  window.scrollBy({top: r.bottom - limit, behavior:'smooth'});
-                }
-              }, 50);
-            }
-          }
+          // (Sin desplazamiento automático al elegir un álbum.)
         }
         updateBudget();
         updateWhatsappLink();
