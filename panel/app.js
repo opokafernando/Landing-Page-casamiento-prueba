@@ -93,6 +93,7 @@
     $('#pending').classList.toggle('has', n > 0);
     $('#pendingText').textContent = n ? n + (n === 1 ? ' archivo con cambios' : ' archivos con cambios') : 'Sin cambios';
     $('#publishBtn').disabled = !n;
+    $('#branchPreviewBtn').disabled = !n;
     $('#discardBtn').hidden = !n;
     $('#previewBtn').hidden = !(state.previewPath && (state.previewPath in state.draft));
   }
@@ -115,21 +116,38 @@
     var paths = Object.keys(state.draft);
     var list = h('ul', {}, paths.map(function (p) { return h('li', { text: (state.draft[p] === null ? 'Borrar: ' : '') + p }); }));
     var msg = h('input', { class: 'field', value: 'Cambios desde el panel', 'aria-label': 'Descripción del cambio' });
-    sheet('Publicar cambios', [
+    sheet('Guardar cambios', [
       h('p', { class: 'muted', text: 'Se suben todos juntos en un solo deploy. Netlify tarda 1 o 2 minutos en mostrarlos.' }), list,
       h('label', { class: 'lbl', text: 'Descripción (opcional)' }), msg
     ], [
       { label: 'Cancelar', kind: 'secondary', run: function (c) { c(); } },
-      { label: 'Publicar', run: function (close, btn) {
-        busy(btn, true, 'Publicando');
+      { label: 'Guardar', run: function (close, btn) {
+        busy(btn, true, 'Guardando');
         api('cms-commit', { baseSha: state.sha, message: msg.value || 'Cambios desde el panel', files: state.draft }).then(function (r) {
           Object.keys(state.draft).forEach(function (p) { if (state.draft[p] === null) delete state.base[p]; else state.base[p] = state.draft[p]; });
           state.draft = {}; state.sha = r.sha; saveLocal(); refreshBar(); close();
-          toast('Publicado. En 1 o 2 minutos se ve en la web.', 5000);
+          toast('Guardado. En 1 o 2 minutos se ve en la web.', 5000);
           render();
-        }).catch(function (e) { busy(btn, false, 'Publicar'); toast(e.message, 7000); });
+        }).catch(function (e) { busy(btn, false, 'Guardar'); toast(e.message, 7000); });
       } }
     ]);
+  });
+
+  /* Preview: sube los cambios a un branch + pull request y da el link del Deploy Preview de Netlify. */
+  $('#branchPreviewBtn').addEventListener('click', function () {
+    var btn = this;
+    busy(btn, true, 'Subiendo');
+    api('cms-commit', { action: 'preview', baseSha: state.sha, message: 'Preview desde el panel', files: state.draft }).then(function (r) {
+      busy(btn, false, 'Preview'); refreshBar();
+      sheet('Preview lista', [
+        h('p', { class: 'muted', text: 'Subí los cambios al branch ' + r.branch + '. Netlify tarda 1 o 2 minutos en armar la previsualización (si pide iniciar sesión, usá tu cuenta de Netlify).' }),
+        h('p', {}, [h('a', { href: r.previewUrl, target: '_blank', rel: 'noopener', text: r.previewUrl })]),
+        h('p', { class: 'tiny', text: 'Esto todavía no cambia la web. Para publicarlo, tocá Guardar.' })
+      ], [
+        { label: 'Cerrar', kind: 'secondary', run: function (c) { c(); } },
+        { label: 'Abrir preview', run: function (c) { window.open(r.previewUrl, '_blank', 'noopener'); c(); } }
+      ]);
+    }).catch(function (e) { busy(btn, false, 'Preview'); refreshBar(); toast(e.message, 7000); });
   });
 
   /* ---------- navegación ---------- */

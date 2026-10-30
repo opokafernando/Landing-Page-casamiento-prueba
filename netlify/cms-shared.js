@@ -56,4 +56,4 @@ function parseBody(event) {
   try { return JSON.parse(event.body || '{}'); } catch (e) { return {}; }
 }
 
-module.exports = { json, checkAuth, gh, headSha, parseBody, BRANCH };
+module.exports = { json, checkAuth, gh, headSha, parseBody, BRANCH, REPO };
