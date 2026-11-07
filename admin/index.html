@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Admin · Leads</title>
+<style>
+  :root{
+    --bg:#F5F2EC; --surface:#FFFFFF; --ink:#1D1A17; --ink-2:#5E554B; --ink-3:#8C8379;
+    --line:rgba(29,26,23,0.09); --line-2:rgba(29,26,23,0.16);
+    --accent:#9A7A4C; --accent-ink:#7A5E36; --accent-soft:rgba(154,122,76,0.12);
+    --ok:#2E7D4F; --warn:#B4541F; --danger:#C2382B;
+    --r-lg:18px; --r-md:12px; --r-sm:9px;
+    --shadow:0 1px 2px rgba(29,26,23,0.05), 0 8px 24px rgba(29,26,23,0.06);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font:15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; min-height:100svh;}
+  button, input, select, textarea{font:inherit; color:inherit;}
+  button{cursor:pointer;}
+  [hidden]{display:none !important;}
+  .wrap{max-width:1180px; margin:0 auto; padding:24px 16px 60px;}
+  h1{font-size:1.5rem; letter-spacing:-0.015em;}
+  .muted{color:var(--ink-3); font-size:0.85rem;}
+  .error{color:var(--danger); font-size:0.88rem; min-height:1.2em;}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; border:none; border-radius:999px; padding:9px 16px; font-weight:600; font-size:0.88rem; background:var(--ink); color:#fff;}
+  .btn:disabled{opacity:0.4; cursor:default;}
+  .btn.secondary{background:rgba(29,26,23,0.07); color:var(--ink);}
+  .btn.small{padding:6px 12px; font-size:0.82rem;}
+  .field{width:100%; border:1px solid var(--line-2); background:#fff; border-radius:var(--r-sm); padding:9px 12px; font-size:0.92rem;}
+  .field:focus{outline:3px solid rgba(154,122,76,0.45); outline-offset:1px;}
+
+  /* Ingreso */
+  .login{min-height:100svh; display:flex; align-items:center; justify-content:center; padding:24px;}
+  .login-card{width:100%; max-width:360px; background:var(--surface); border-radius:24px; padding:32px 26px; box-shadow:var(--shadow); text-align:center;}
+  .login-card h1{margin-bottom:6px;}
+  .login-card p{color:var(--ink-2); font-size:0.9rem; margin-bottom:20px;}
+  .login-card form{display:flex; flex-direction:column; gap:12px;}
+
+  /* Cabecera y resumen */
+  .head{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:18px;}
+  .summary{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; margin-bottom:18px;}
+  .stat{background:var(--surface); border-radius:var(--r-md); padding:14px 16px; box-shadow:var(--shadow);}
+  .stat b{display:block; font-size:1.6rem; letter-spacing:-0.02em;}
+  .stat span{font-size:0.8rem; color:var(--ink-2); text-transform:capitalize;}
+  .stat.is-new b{color:var(--warn);}
+  .stat.is-booked b{color:var(--ok);}
+
+  /* Filtros y buscador */
+  .toolbar{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:14px;}
+  .chips{display:flex; gap:6px; flex-wrap:wrap;}
+  .chip{border:1px solid var(--line-2); background:var(--surface); border-radius:999px; padding:6px 12px; font-size:0.82rem; color:var(--ink-2);}
+  .chip.is-active{background:var(--ink); color:#fff; border-color:var(--ink);}
+  .search{flex:1; min-width:200px; max-width:320px;}
+
+  /* Tabla */
+  .table-wrap{background:var(--surface); border-radius:var(--r-lg); box-shadow:var(--shadow); overflow-x:auto;}
+  table{width:100%; border-collapse:collapse; font-size:0.88rem; min-width:900px;}
+  th, td{padding:12px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:middle;}
+  th{font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-3); font-weight:600; background:rgba(29,26,23,0.02);}
+  td .field{padding:6px 9px; font-size:0.85rem;}
+  .contract{display:flex; gap:6px; min-width:260px;}
+  .badge{display:inline-block; border-radius:999px; padding:3px 9px; font-size:0.74rem; font-weight:600; background:var(--accent-soft); color:var(--accent-ink); text-transform:capitalize;}
+  .badge.nuevo{background:rgba(180,84,31,0.12); color:var(--warn);}
+  .badge.reservado, .badge.confirmado{background:rgba(46,125,79,0.12); color:var(--ok);}
+  .badge.descartado{background:rgba(29,26,23,0.07); color:var(--ink-3);}
+  .empty{padding:30px; text-align:center; color:var(--ink-3);}
+
+  /* Alta manual */
+  details{background:var(--surface); border-radius:var(--r-lg); box-shadow:var(--shadow); padding:14px 18px; margin-bottom:18px;}
+  summary{cursor:pointer; font-weight:600;}
+  .grid-form{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:14px;}
+  .grid-form .full{grid-column:1 / -1;}
+  .grid-form label{font-size:0.78rem; color:var(--ink-2); display:flex; flex-direction:column; gap:4px;}
+
+  .toast{position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:var(--ink); color:#fff; padding:10px 16px; border-radius:999px; font-size:0.86rem; box-shadow:var(--shadow); opacity:0; transition:opacity .3s ease; pointer-events:none; max-width:90vw;}
+  .toast.is-visible{opacity:1;}
+  .toast.is-error{background:var(--danger);}
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <div class="login-card">
+    <h1>Admin · Leads</h1>
+    <p>Ingresá la contraseña para ver tus leads.</p>
+    <form id="loginForm" autocomplete="off">
+      <input class="field" id="pw" type="password" placeholder="Contraseña" required>
+      <button class="btn" type="submit" id="loginBtn">Entrar</button>
+      <div class="error" id="loginError"></div>
+    </form>
+  </div>
+</section>
+
+<main class="wrap" id="app" hidden>
+  <div class="head">
+    <div>
+      <h1>Leads</h1>
+      <div class="muted" id="updated"></div>
+    </div>
+    <div style="display:flex; gap:8px;">
+      <button class="btn secondary small" id="reloadBtn" type="button">Actualizar</button>
+      <button class="btn secondary small" id="logoutBtn" type="button">Salir</button>
+    </div>
+  </div>
+
+  <div class="summary" id="summary"></div>
+
+  <details>
+    <summary>Agregar lead a mano</summary>
+    <form class="grid-form" id="createForm">
+      <label>Nombre *<input class="field" name="name" required maxlength="120"></label>
+      <label>Teléfono<input class="field" name="phone" maxlength="40"></label>
+      <label>Email<input class="field" name="email" type="email" maxlength="120"></label>
+      <label>Fecha del evento<input class="field" name="eventDate" type="date"></label>
+      <label>Paquete<input class="field" name="package" maxlength="60"></label>
+      <label class="full">Notas<textarea class="field" name="notes" rows="2" maxlength="2000"></textarea></label>
+      <div class="full"><button class="btn" type="submit">Guardar lead</button></div>
+    </form>
+  </details>
+
+  <div class="toolbar">
+    <div class="chips" id="chips"></div>
+    <input class="field search" id="search" type="search" placeholder="Buscar por nombre">
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Contacto</th>
+          <th>Evento</th>
+          <th>Paquete</th>
+          <th>Estado</th>
+          <th>Contrato (PDF)</th>
+          <th>Creado</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>No hay leads con ese filtro.</div>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var ENDPOINT = '/.netlify/functions/admin-leads';
+  var pw = '';            // solo en memoria: se pide de nuevo al recargar
+  var leads = [];
+  var statuses = ['nuevo','contactado','reservado','confirmado','descartado'];
+  var filter = 'todos';
+  var query = '';
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  function toast(msg, isError){
+    var t = $('toast');
+    t.textContent = msg;
+    t.className = 'toast is-visible' + (isError ? ' is-error' : '');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function(){ t.className = 'toast'; }, 2600);
+  }
+
+  function api(payload){
+    return fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-CMS-Password': pw },
+      body: JSON.stringify(payload),
+      cache: 'no-store'
+    }).then(function(res){
+      return res.json().catch(function(){ return {}; }).then(function(data){
+        if (!res.ok) throw new Error(data.error || ('Error ' + res.status));
+        return data;
+      });
+    });
+  }
+
+  function el(tag, attrs, text){
+    var n = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function(k){ n.setAttribute(k, attrs[k]); });
+    if (text !== undefined && text !== null) n.textContent = text;
+    return n;
+  }
+
+  function fmtDate(iso){
+    if (!iso) return '';
+    var d = new Date(iso);
+    if (isNaN(d)) return '';
+    return d.toLocaleDateString('es-AR', { day:'2-digit', month:'2-digit', year:'2-digit' });
+  }
+
+  function norm(s){
+    return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  }
+
+  function load(){
+    return api({ action:'list' }).then(function(data){
+      leads = data.leads || [];
+      if (data.statuses && data.statuses.length) statuses = data.statuses;
+      $('updated').textContent = 'Actualizado ' + new Date().toLocaleTimeString('es-AR', { hour:'2-digit', minute:'2-digit' });
+      render();
+    });
+  }
+
+  function renderSummary(){
+    var box = $('summary');
+    box.textContent = '';
+    var counts = { total: leads.length };
+    statuses.forEach(function(s){ counts[s] = 0; });
+    leads.forEach(function(l){ if (counts[l.status] !== undefined) counts[l.status]++; });
+
+    function stat(label, n, cls){
+      var s = el('div', { 'class': 'stat ' + (cls || '') });
+      s.appendChild(el('b', null, String(n)));
+      s.appendChild(el('span', null, label));
+      box.appendChild(s);
+    }
+    stat('total', counts.total);
+    statuses.forEach(function(s){
+      stat(s, counts[s], s === 'nuevo' ? 'is-new' : (s === 'reservado' || s === 'confirmado' ? 'is-booked' : ''));
+    });
+  }
+
+  function renderChips(){
+    var box = $('chips');
+    box.textContent = '';
+    ['todos'].concat(statuses).forEach(function(s){
+      var b = el('button', { type:'button', 'class': 'chip' + (filter === s ? ' is-active' : ''), 'data-filter': s }, s);
+      b.addEventListener('click', function(){ filter = s; render(); });
+      box.appendChild(b);
+    });
+  }
+
+  function visibleLeads(){
+    var q = norm(query).trim();
+    return leads.filter(function(l){
+      if (filter !== 'todos' && l.status !== filter) return false;
+      if (q && norm(l.name).indexOf(q) === -1) return false;
+      return true;
+    });
+  }
+
+  function renderRows(){
+    var tbody = $('rows');
+    tbody.textContent = '';
+    var list = visibleLeads();
+    $('empty').hidden = list.length > 0;
+
+    list.forEach(function(l){
+      var tr = el('tr');
+
+      tr.appendChild(el('td', null, l.name));
+
+      var contact = el('td');
+      if (l.phone) contact.appendChild(el('div', null, l.phone));
+      if (l.email) contact.appendChild(el('div', { 'class':'muted' }, l.email));
+      tr.appendChild(contact);
+
+      tr.appendChild(el('td', null, l.eventDate || '—'));
+      tr.appendChild(el('td', null, l.package || '—'));
+
+      // Estado: selector que guarda al cambiar
+      var st = el('td');
+      var wrap = el('div', { style:'display:flex; flex-direction:column; gap:6px; align-items:flex-start;' });
+      wrap.appendChild(el('span', { 'class': 'badge ' + l.status }, l.status));
+      var sel = el('select', { 'class':'field', 'aria-label':'Cambiar estado de ' + l.name });
+      statuses.forEach(function(s){
+        var o = el('option', { value:s }, s);
+        if (s === l.status) o.selected = true;
+        sel.appendChild(o);
+      });
+      sel.addEventListener('change', function(){
+        var prev = l.status;
+        sel.disabled = true;
+        api({ action:'update', id:l.id, status: sel.value }).then(function(data){
+          Object.assign(l, data.lead);
+          toast('Estado: ' + l.status);
+          render();
+        }).catch(function(e){
+          sel.value = prev; sel.disabled = false;
+          toast(e.message, true);
+        });
+      });
+      wrap.appendChild(sel);
+      st.appendChild(wrap);
+      tr.appendChild(st);
+
+      // Contrato: pegar el enlace https al PDF
+      var ct = el('td');
+      var box = el('div', { 'class':'contract' });
+      var inp = el('input', { 'class':'field', type:'url', placeholder:'https://…/contrato.pdf', value: l.contractUrl || '', 'aria-label':'Enlace del contrato de ' + l.name });
+      var btn = el('button', { 'class':'btn small', type:'button' }, 'Guardar');
+      btn.addEventListener('click', function(){
+        var url = inp.value.trim();
+        btn.disabled = true;
+        api({ action:'update', id:l.id, contractUrl: url }).then(function(data){
+          Object.assign(l, data.lead);
+          toast(url ? 'Contrato guardado' : 'Contrato quitado');
+          render();
+        }).catch(function(e){
+          btn.disabled = false;
+          toast(e.message, true);
+        });
+      });
+      box.appendChild(inp); box.appendChild(btn);
+      ct.appendChild(box);
+      if (l.contractUrl) {
+        var open = el('a', { href: l.contractUrl, target:'_blank', rel:'noopener', 'class':'muted' }, 'Abrir PDF');
+        ct.appendChild(open);
+      }
+      tr.appendChild(ct);
+
+      tr.appendChild(el('td', { 'class':'muted' }, fmtDate(l.createdAt)));
+      tbody.appendChild(tr);
+    });
+  }
+
+  function render(){
+    renderSummary();
+    renderChips();
+    renderRows();
+  }
+
+  // Login: la contraseña se valida pidiendo la lista al servidor
+  $('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    pw = $('pw').value;
+    $('loginError').textContent = '';
+    $('loginBtn').disabled = true;
+    load().then(function(){
+      $('login').hidden = true;
+      $('app').hidden = false;
+      $('pw').value = '';
+    }).catch(function(err){
+      pw = '';
+      $('loginError').textContent = err.message;
+    }).finally(function(){ $('loginBtn').disabled = false; });
+  });
+
+  $('reloadBtn').addEventListener('click', function(){ load().then(function(){ toast('Lista actualizada'); }).catch(function(e){ toast(e.message, true); }); });
+
+  $('logoutBtn').addEventListener('click', function(){
+    pw = ''; leads = [];
+    $('app').hidden = true; $('login').hidden = false;
+  });
+
+  $('search').addEventListener('input', function(e){ query = e.target.value; renderRows(); });
+
+  $('createForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target;
+    var data = {
+      action:'create',
+      name: f.name.value, phone: f.phone.value, email: f.email.value,
+      eventDate: f.eventDate.value, 'package': f['package'].value, notes: f.notes.value
+    };
+    api(data).then(function(res){
+      leads.unshift(res.lead);
+      f.reset();
+      toast('Lead guardado');
+      render();
+    }).catch(function(err){ toast(err.message, true); });
+  });
+})();
+</script>
+</body>
+</html>

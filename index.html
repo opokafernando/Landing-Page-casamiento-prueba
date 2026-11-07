@@ -77,7 +77,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
     --bronze-soft: #C9AE85;
     --charcoal: #221D18;
     --line: rgba(51,43,36,0.14);
-    --radius-arch: 28px;
+    --radius-arch: 200px 200px 12px 12px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -171,7 +171,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   .problema{background:var(--cream);}
   .problema .grid{display:grid; gap:40px; align-items:center;}
   @media (min-width:768px){ .problema .grid{grid-template-columns: 0.9fr 1.1fr; gap:64px;} }
-  .arch-frame{border-radius:var(--radius-arch); overflow:hidden; aspect-ratio: 3/4; box-shadow:0 24px 60px rgba(34,29,24,0.16), 0 0 0 1px rgba(34,29,24,0.05);}
+  .arch-frame{border-radius:var(--radius-arch); overflow:hidden; aspect-ratio: 3/4;}
   .arch-frame img{width:100%; height:100%; object-fit:cover;}
   .problema h2{font-size:1.9rem; font-style:italic; margin-bottom:20px;}
   .problema p{color:var(--ink-soft); margin-bottom:16px; max-width:46ch;}
@@ -347,6 +347,20 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   .pkg-card.is-luxe li:last-child{border-bottom-color:var(--line);}
   .pkg-card.is-luxe .btn{background:var(--charcoal); color:var(--cream);}
   .pkg-card.is-luxe .btn:hover{background:var(--bronze);}
+  /* Móvil: pila de cartas. Wedding Plus al frente, las otras dos atrás mostrando solo el borde */
+  @media (max-width:767px){
+    .pkg-grid{position:relative; display:block; max-width:none; margin:0 auto; padding:0; touch-action:pan-y; user-select:none; -webkit-user-select:none; transition:height 0.45s cubic-bezier(0.23,1,0.32,1);}
+    .pkg-grid .pkg-card{position:absolute; top:0; left:50%; width:84%; margin:0; border-radius:18px; transition:transform 0.55s cubic-bezier(0.23,1,0.32,1), opacity 0.55s ease, box-shadow 0.55s ease;}
+    .pkg-grid .pkg-card[data-pos="front"]{transform:translateX(-50%) scale(1); z-index:3; box-shadow:0 22px 44px rgba(34,29,24,0.2);}
+    .pkg-grid .pkg-card[data-pos="left"]{transform:translateX(calc(-50% - 24px)) translateY(14px) rotate(-3.5deg) scale(0.95); z-index:2; box-shadow:0 10px 24px rgba(34,29,24,0.14); cursor:pointer;}
+    .pkg-grid .pkg-card[data-pos="right"]{transform:translateX(calc(-50% + 24px)) translateY(14px) rotate(3.5deg) scale(0.95); z-index:2; box-shadow:0 10px 24px rgba(34,29,24,0.14); cursor:pointer;}
+    .pkg-grid .pkg-badge{display:none;}
+    .pkg-grid .pkg-card[data-pos="left"] > *, .pkg-grid .pkg-card[data-pos="right"] > *{visibility:hidden;}
+  }
+  @media (max-width:767px) and (prefers-reduced-motion:reduce){ .pkg-grid .pkg-card, .pkg-grid{transition:none;} }
+  /* Celular en horizontal también: sin globos de regalo */
+  /* Sin globos de regalo en ningún tamaño (vertical, horizontal y computadora) */
+  .pkg-badge{display:none !important;}
   @media (max-width:767px){
     .pkg-card{padding:26px 22px;}
     .pkg-card h3{margin:6px 0 10px; font-size:1.4rem;}
@@ -1239,6 +1253,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'paquetes.eyebrow': 'Paquetes',
       'paquetes.h2': 'Elegí cómo quieres vivir tu día',
       'pkg.mini.eyebrow': 'Paquete 1',
+      'pkg.mini.tag': 'Más económico',
       'pkg.mini.li1': 'Hasta 6 horas de cobertura',
       'pkg.choice.preboda': 'Ensayo pre boda: 25 fotos',
       'pkg.choice.makingof': 'Making of',
@@ -1255,6 +1270,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'pkg.btn': 'Quiero este paquete',
       'pkg.plus.badge': 'Regalo: álbum 25x25 de 20 páginas (el de 30 páginas, con 15% off)',
       'pkg.plus.eyebrow': 'Paquete 2 · el más elegido',
+      'pkg.plus.tag': 'Más elegido',
       'pkg.plus.li1': 'Hasta 8 horas de cobertura',
       'pkg.plus.li2': 'Ensayo pre boda: 50 fotos + 1 video de 20 segundos',
       'pkg.plus.li3': 'Más de 450 fotos del día de la boda',
@@ -1264,6 +1280,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'pkg.plus.priceSave': '💚 Pagando con Pix: R$ 4.800 (ahorrás R$ 850)',
       'pkg.full.badge': 'Regalo: álbum 25x25 de 20 páginas (el de 30 páginas, con 50% off)',
       'pkg.full.eyebrow': 'Paquete 3',
+      'pkg.full.tag': 'Más completo',
       'pkg.full.li1': 'Hasta 10 horas de cobertura',
       'pkg.full.li2': 'Ensayo pre boda: 80 fotos + 2 videos de 20 segundos',
       'pkg.full.li3': 'Más de 600 fotos del día de la boda',
@@ -1445,6 +1462,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'paquetes.eyebrow': 'Pacotes',
       'paquetes.h2': 'Escolha como quer viver o seu dia',
       'pkg.mini.eyebrow': 'Pacote 1',
+      'pkg.mini.tag': 'Mais econômico',
       'pkg.mini.li1': 'Até 6 horas de cobertura',
       'pkg.choice.preboda': 'Ensaio pré-casamento: 25 fotos',
       'pkg.choice.makingof': 'Making of',
@@ -1461,6 +1479,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'pkg.btn': 'Quero este pacote',
       'pkg.plus.badge': 'Presente: álbum 25x25 de 20 páginas (o de 30 páginas, com 15% off)',
       'pkg.plus.eyebrow': 'Pacote 2 · o mais escolhido',
+      'pkg.plus.tag': 'Mais escolhido',
       'pkg.plus.li1': 'Até 8 horas de cobertura',
       'pkg.plus.li2': 'Ensaio pré-casamento: 50 fotos + 1 vídeo de 20 segundos',
       'pkg.plus.li3': 'Mais de 450 fotos do dia do casamento',
@@ -1470,6 +1489,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'pkg.plus.priceSave': '💚 Pagando no Pix: R$ 4.800 (economize R$ 850)',
       'pkg.full.badge': 'Presente: álbum 25x25 de 20 páginas (o 30 páginas com 50% off)',
       'pkg.full.eyebrow': 'Pacote 3',
+      'pkg.full.tag': 'Mais completo',
       'pkg.full.li1': 'Até 10 horas de cobertura',
       'pkg.full.li2': 'Ensaio pré-casamento: 80 fotos + 2 vídeos de 20 segundos',
       'pkg.full.li3': 'Mais de 600 fotos do dia do casamento',
@@ -1651,6 +1671,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'paquetes.eyebrow': 'Packages',
       'paquetes.h2': 'Choose how you want to live your day',
       'pkg.mini.eyebrow': 'Package 1',
+      'pkg.mini.tag': 'Most affordable',
       'pkg.mini.li1': 'Up to 6 hours of coverage',
       'pkg.choice.preboda': 'Pre-wedding session: 25 photos',
       'pkg.choice.makingof': 'Getting-ready coverage',
@@ -1667,6 +1688,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'pkg.btn': 'I want this package',
       'pkg.plus.badge': 'Gift: 25x25 album, 20 pages (30 pages at 15% off)',
       'pkg.plus.eyebrow': 'Package 2 · most popular',
+      'pkg.plus.tag': 'Most chosen',
       'pkg.plus.li1': 'Up to 8 hours of coverage',
       'pkg.plus.li2': 'Pre-wedding session: 50 photos + one 20-second video',
       'pkg.plus.li3': '450+ photos from the wedding day',
@@ -1676,6 +1698,7 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       'pkg.plus.priceSave': '💚 Paying with Pix: R$ 4,800 (save R$ 850)',
       'pkg.full.badge': 'Gift: 25x25 album, 20 pages (30-page album at 50% off)',
       'pkg.full.eyebrow': 'Package 3',
+      'pkg.full.tag': 'Most complete',
       'pkg.full.li1': 'Up to 10 hours of coverage',
       'pkg.full.li2': 'Pre-wedding session: 80 photos + two 20-second videos',
       'pkg.full.li3': '600+ photos from the wedding day',
@@ -2814,5 +2837,61 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
 </script>
 
 
+<script>
+(function(){
+  var grid=document.getElementById('pkgGrid');
+  if(!grid) return;
+  var mq=window.matchMedia('(max-width:767px)');
+  var cards=Array.prototype.slice.call(grid.querySelectorAll('.pkg-card'));
+  var plus=0;
+  cards.forEach(function(c,i){ if(c.getAttribute('data-package')==='plus') plus=i; });
+  var order=[plus].concat(cards.map(function(c,i){return i;}).filter(function(i){return i!==plus;}));
+  var sx=null, sy=null, suppress=false;
+
+  function layout(){
+    if(!mq.matches){
+      grid.style.height='';
+      cards.forEach(function(c){ c.removeAttribute('data-pos'); });
+      return;
+    }
+    cards[order[0]].setAttribute('data-pos','front');
+    if(order[1]!==undefined) cards[order[1]].setAttribute('data-pos','left');
+    if(order[2]!==undefined) cards[order[2]].setAttribute('data-pos','right');
+    grid.style.height=cards[order[0]].offsetHeight+'px';
+  }
+  function go(dir){
+    if(dir>0) order.push(order.shift()); else order.unshift(order.pop());
+    layout();
+  }
+
+  grid.addEventListener('pointerdown', function(e){
+    if(!mq.matches) return;
+    sx=e.clientX; sy=e.clientY;
+  }, {passive:true});
+  grid.addEventListener('pointerup', function(e){
+    if(sx===null||!mq.matches) return;
+    var dx=e.clientX-sx, dy=e.clientY-sy;
+    sx=null;
+    if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)*1.2){
+      go(dx<0?1:-1);
+      suppress=true;
+      setTimeout(function(){ suppress=false; }, 350);
+    }
+  });
+  grid.addEventListener('click', function(e){
+    if(!mq.matches) return;
+    if(suppress){ e.preventDefault(); e.stopPropagation(); return; }
+    var card=e.target.closest('.pkg-card');
+    if(!card) return;
+    var pos=card.getAttribute('data-pos');
+    if(pos==='left'){ e.preventDefault(); e.stopPropagation(); go(1); }
+    else if(pos==='right'){ e.preventDefault(); e.stopPropagation(); go(-1); }
+  }, true);
+
+  layout();
+  window.addEventListener('resize', layout);
+  window.addEventListener('load', layout);
+})();
+</script>
 </body>
 </html>

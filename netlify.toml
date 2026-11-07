@@ -25,6 +25,13 @@
     X-Robots-Tag = "noindex, nofollow"
     Cache-Control = "no-store"
 
+# Admin de leads: fuera de Google y sin caché.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store"
+
 # Direcciones viejas -> nuevas (para no romper links ya compartidos,
 # redirecciones de Mercado Pago / Cal.com ni anuncios).
 [[redirects]]
