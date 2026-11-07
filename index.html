@@ -347,17 +347,14 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   .pkg-card.is-luxe li:last-child{border-bottom-color:var(--line);}
   .pkg-card.is-luxe .btn{background:var(--charcoal); color:var(--cream);}
   .pkg-card.is-luxe .btn:hover{background:var(--bronze);}
-  /* Móvil: pila de cartas. Wedding Plus al frente, las otras dos atrás mostrando solo el borde */
+  /* Móvil: las 3 tarjetas una al lado de la otra, se desliza hacia los lados */
   @media (max-width:767px){
-    .pkg-grid{position:relative; display:block; max-width:none; margin:0 auto; padding:0; touch-action:pan-y; user-select:none; -webkit-user-select:none; transition:height 0.45s cubic-bezier(0.23,1,0.32,1);}
-    .pkg-grid .pkg-card{position:absolute; top:0; left:50%; width:84%; margin:0; border-radius:18px; transition:transform 0.55s cubic-bezier(0.23,1,0.32,1), opacity 0.55s ease, box-shadow 0.55s ease;}
-    .pkg-grid .pkg-card[data-pos="front"]{transform:translateX(-50%) scale(1); z-index:3; box-shadow:0 22px 44px rgba(34,29,24,0.2);}
-    .pkg-grid .pkg-card[data-pos="left"]{transform:translateX(calc(-50% - 24px)) translateY(14px) rotate(-3.5deg) scale(0.95); z-index:2; box-shadow:0 10px 24px rgba(34,29,24,0.14); cursor:pointer;}
-    .pkg-grid .pkg-card[data-pos="right"]{transform:translateX(calc(-50% + 24px)) translateY(14px) rotate(3.5deg) scale(0.95); z-index:2; box-shadow:0 10px 24px rgba(34,29,24,0.14); cursor:pointer;}
+    .pkg-grid{display:flex; flex-wrap:nowrap; align-items:stretch; gap:14px; max-width:none; margin:0 -20px; padding:30px 20px 34px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scroll-padding:0 20px; scrollbar-width:none;}
+    .pkg-grid::-webkit-scrollbar{display:none;}
+    .pkg-grid .pkg-card{flex:0 0 82%; max-width:340px; scroll-snap-align:center; margin:0;}
     .pkg-grid .pkg-badge{display:none;}
-    .pkg-grid .pkg-card[data-pos="left"] > *, .pkg-grid .pkg-card[data-pos="right"] > *{visibility:hidden;}
+    .pkg-wrap{position:relative;}
   }
-  @media (max-width:767px) and (prefers-reduced-motion:reduce){ .pkg-grid .pkg-card, .pkg-grid{transition:none;} }
   /* Celular en horizontal también: sin globos de regalo */
   /* Sin globos de regalo en ningún tamaño (vertical, horizontal y computadora) */
   .pkg-badge{display:none !important;}
@@ -683,15 +680,6 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
   </div>
 </header>
 
-<section class="vsl">
-  <div class="wrap">
-    <div class="vsl-box">
-      <div class="play">▶</div>
-      <p data-i18n="vsl.placeholder">Espacio reservado para tu VSL</p>
-    </div>
-  </div>
-</section>
-
 <section class="problema">
   <div class="wrap grid">
     <div class="arch-frame">
@@ -812,7 +800,9 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
       <span class="eyebrow" data-i18n="paquetes.eyebrow">Paquetes</span>
       <h2 data-i18n="paquetes.h2">Elegí cómo quieres vivir tu día</h2>
     </div>
+    <div class="pkg-wrap" id="pkgWrap">
     <div class="pkg-grid" id="pkgGrid">
+
 
       <div class="pkg-card" data-package="mini" data-package-name="Mini Wedding" data-price-pix="2600" data-price-card="3060">
         <span class="pkg-eyebrow" data-i18n="pkg.mini.eyebrow">Paquete 1</span>
@@ -881,6 +871,8 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
         </ul>
         <button type="button" class="btn pkg-select" data-i18n="pkg.btn">Quiero este paquete</button>
       </div>
+
+    </div>
 
     </div>
 
@@ -2840,57 +2832,48 @@ src="https://www.facebook.com/tr?id=2150861609138392&ev=PageView&noscript=1"
 <script>
 (function(){
   var grid=document.getElementById('pkgGrid');
-  if(!grid) return;
   var mq=window.matchMedia('(max-width:767px)');
+  if(!grid) return;
   var cards=Array.prototype.slice.call(grid.querySelectorAll('.pkg-card'));
-  var plus=0;
-  cards.forEach(function(c,i){ if(c.getAttribute('data-package')==='plus') plus=i; });
-  var order=[plus].concat(cards.map(function(c,i){return i;}).filter(function(i){return i!==plus;}));
-  var sx=null, sy=null, suppress=false;
-
-  function layout(){
-    if(!mq.matches){
-      grid.style.height='';
-      cards.forEach(function(c){ c.removeAttribute('data-pos'); });
-      return;
-    }
-    cards[order[0]].setAttribute('data-pos','front');
-    if(order[1]!==undefined) cards[order[1]].setAttribute('data-pos','left');
-    if(order[2]!==undefined) cards[order[2]].setAttribute('data-pos','right');
-    grid.style.height=cards[order[0]].offsetHeight+'px';
+  var plus=grid.querySelector('[data-package="plus"]');
+  var aL=document.getElementById('pkgArrowL'), aR=document.getElementById('pkgArrowR');
+  function centerLeft(c){ return c.offsetLeft-(grid.clientWidth-c.offsetWidth)/2; }
+  function current(){
+    var best=0, d=1e9, mid=grid.scrollLeft+grid.clientWidth/2;
+    cards.forEach(function(c,i){ var x=Math.abs(c.offsetLeft+c.offsetWidth/2-mid); if(x<d){d=x;best=i;} });
+    return best;
   }
-  function go(dir){
-    if(dir>0) order.push(order.shift()); else order.unshift(order.pop());
-    layout();
+  function update(){
+    if(!mq.matches||!aL) return;
+    var i=current();
+    aL.hidden=(i===0); aR.hidden=(i===cards.length-1);
   }
-
-  grid.addEventListener('pointerdown', function(e){
-    if(!mq.matches) return;
-    sx=e.clientX; sy=e.clientY;
-  }, {passive:true});
-  grid.addEventListener('pointerup', function(e){
-    if(sx===null||!mq.matches) return;
-    var dx=e.clientX-sx, dy=e.clientY-sy;
-    sx=null;
-    if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)*1.2){
-      go(dx<0?1:-1);
-      suppress=true;
-      setTimeout(function(){ suppress=false; }, 350);
-    }
-  });
-  grid.addEventListener('click', function(e){
-    if(!mq.matches) return;
-    if(suppress){ e.preventDefault(); e.stopPropagation(); return; }
-    var card=e.target.closest('.pkg-card');
-    if(!card) return;
-    var pos=card.getAttribute('data-pos');
-    if(pos==='left'){ e.preventDefault(); e.stopPropagation(); go(1); }
-    else if(pos==='right'){ e.preventDefault(); e.stopPropagation(); go(-1); }
-  }, true);
-
-  layout();
-  window.addEventListener('resize', layout);
-  window.addEventListener('load', layout);
+  function goTo(i){
+    i=Math.max(0,Math.min(cards.length-1,i));
+    grid.scrollTo({left:centerLeft(cards[i]),behavior:'smooth'});
+  }
+  function start(){
+    if(!mq.matches||!plus) return;
+    grid.style.scrollSnapType='none';
+    grid.scrollLeft=centerLeft(plus);
+    update();
+    setTimeout(function(){ grid.style.scrollSnapType=''; },50);
+  }
+  if(aL) aL.addEventListener('click',function(){ goTo(current()-1); });
+  if(aR) aR.addEventListener('click',function(){ goTo(current()+1); });
+  grid.addEventListener('scroll',function(){ window.requestAnimationFrame(update); },{passive:true});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting && !grid.__touched) start(); }); },{threshold:0}).observe(grid);
+  }
+  if('ResizeObserver' in window){ new ResizeObserver(function(){ if(!grid.__touched) start(); }).observe(grid); }
+  ['touchstart','wheel','mousedown'].forEach(function(ev){ grid.addEventListener(ev,function(){ grid.__touched=true; },{passive:true}); });
+  if(aL) aL.addEventListener('click',function(){ grid.__touched=true; }); if(aR) aR.addEventListener('click',function(){ grid.__touched=true; });
+  start();
+  [150,600,1500].forEach(function(t){ setTimeout(function(){ if(!grid.__touched) start(); },t); });
+  grid.addEventListener('pointerdown',function(){ grid.__touched=true; },{passive:true});
+  window.addEventListener('load',start);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ if(!grid.__touched) start(); });
+  window.addEventListener('resize',update);
 })();
 </script>
 </body>
